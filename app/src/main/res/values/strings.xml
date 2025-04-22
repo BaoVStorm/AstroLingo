@@ -1,3 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="navHome">Home</string>
+    <string name="navTest">Test</string>
+    <string name="navCourse">Course</string>
+    <string name="navAI">AI</string>
+    <string name="navSetting">Setting</string>
+
     <string name="app_name">AstroLingo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="homeFragment" translatable="false">Home Page</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="testFragment" translatable="false">Test Page</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="courseFragment" translatable="false">Course Page</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="AiFragment" translatable="false">AI Page</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="settingFragment" translatable="false">SettingPage</string>
+
+
 </resources>

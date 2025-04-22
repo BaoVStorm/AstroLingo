@@ -37,6 +37,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    implementation(libs.glide) // Glide library
+    annotationProcessor(libs.glide.compiler) // Glide compiler
+    implementation(libs.glide.okhttp3)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -17,6 +17,10 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.16.0"}
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version = "4.16.0"}
+glide-okhttp3 = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version = "4.16.0"}
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 

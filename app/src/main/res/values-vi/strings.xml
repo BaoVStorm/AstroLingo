@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navHome">Trang Chủ</string>
+    <string name="navTest">Thi</string>
+    <string name="navCourse">Lộ Trình</string>
+    <string name="navAI">AI</string>
+    <string name="navSetting">Cá Nhân</string>
+
+    <string name="app_name">AstroLingo</string>
+</resources>

@@ -5,15 +5,78 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/format_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/format_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Page"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:paddingVertical="13dp"
+            tools:ignore="MissingConstraints"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@+id/format_textView"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/format_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/format_bottomNav"
+        app:layout_constraintTop_toBottomOf="@+id/format_header"
+         >
+    </FrameLayout>
+
+    <!-- Shadow giả -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/shadow_top"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toTopOf="@+id/format_bottomNav" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/format_bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+
+        android:elevation="10dp"
+        android:background="@color/white"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:itemRippleColor="@color/bottom_nav_ripple_color"
+        app:itemIconTint="@color/bottom_nav_icon_color"
+        app:itemIconSize="35dp"
+        app:itemTextColor="@color/bottom_nav_icon_color"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
