@@ -8,21 +8,55 @@
 
     <string name="app_name">AstroLingo</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="homeFragment" translatable="false">Home Page</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="homeFragment" >Home Page</string>
 
-    <string name="testFragment" translatable="false">Test Page</string>
+    <string name="testFragment">Test Page</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="courseFragment" translatable="false">Course Page</string>
+    <string name="courseFragment">Course Page</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="AiFragment" translatable="false">AI Page</string>
+    <string name="AiFragment">AI Page</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="settingFragment" translatable="false">SettingPage</string>
+    <string name="settingFragment">SettingPage</string>
 
+    <string name="copyright">Copyright 2025 © AstroLingo</string>
+
+    <!-- Login, Register Page String  -->
+    <string name="loginPage">Login Page</string>
+    <string name="registerPage">Register Page</string>
+    <string name="loginWithUserName">Enter your username</string>
+    <string name="loginWithPassword">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="registerWithName">Enter your name</string>
+    <string name="registerWithTel">Enter your telephone</string>
+    <string name="registerWithPassword">Re-enter your password</string>
+
+    <string name="loginRegister_rule">
+        By logging into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
+    </string>
+    <string name="registerLogin_rule">
+        By registering into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
+    </string>
+    <string name="have_account">Do you have an account?</string>
+    <string name="dont_have_account">Don\'t you have an account?</string>
+
+    <string name="error_name_empty">Name yield shouldn\'t be empty!</string>
+    <string name="error_name_specialsympol">Name yield shouldn\'t have special symbol!</string>
+
+    <string name="error_username_empty">Username yield shouldn\'t be empty!</string>
+    <string name="error_username_specialsympol">Username yield shouldn\'t have special symbol or space!</string>
+
+    <string name="error_telephone_empty">Telephone yield shouldn\'t be empty!</string>
+    <string name="error_telephone_invalid">Telephone yield is invalid!</string>
+
+    <string name="error_password_empty">Password yield shouldn\'t be empty!</string>
+    <string name="error_password_invalid">Password yield shoundn\'t be less than 8 characters!</string>
+
+    <string name="error_repassword_empty">Re-password yield shouldn\'t be empty!</string>
+    <string name="error_repassword_invalid">Re-password yield isn\'t match with password!</string>
+
+    <string name="error_login_empty">Username or password yield shouldn\'t be empty!</string>
+    <string name="error_login_invalid">Username or password yield is invalid!</string>
 
 </resources>
