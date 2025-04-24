@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_base">16dp</dimen>
+
+
+    <!--  login register page  -->
+    <dimen name="gap_login_register_page">25dp</dimen>
+
 </resources>
