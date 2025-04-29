@@ -614,13 +614,13 @@
                 android:src="@drawable/icon_info" />
 
             <!-- Bảng xếp hạng Section -->
-<!--            <include-->
-<!--                android:id="@+id/scoreboardSection"-->
-<!--                layout="@layout/page_home_leaderboard"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:layout_below="@id/titleScoreboard"/>-->
+            <include
+                android:id="@+id/scoreboardSection"
+                layout="@layout/page_home_leaderboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/titleScoreboard"/>
 
         </RelativeLayout>
     </ScrollView>

@@ -501,7 +501,7 @@
             android:textSize="20sp"
             android:textColor="#fff"
             android:text="Xem thêm"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:gravity="center_horizontal"/>
     </LinearLayout>
 </LinearLayout>
