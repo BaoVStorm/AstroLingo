@@ -4,6 +4,6 @@
 
 
     <!--  login register page  -->
-    <dimen name="gap_login_register_page">25dp</dimen>
+    <dimen name="gap_login_register_page">28dp</dimen>
 
 </resources>

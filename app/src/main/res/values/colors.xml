@@ -17,7 +17,13 @@
 
     <color name="test">#C70707</color>
 
+
+
     <!-- login register button -->
+
+    <color name="loading">#BFAAE6</color>
     <color name="loginRegister_button_color">#8452D3</color>
+    <color name="button_field_hover">#682AD1</color>
+
 
 </resources>

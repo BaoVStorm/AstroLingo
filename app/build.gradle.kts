@@ -38,11 +38,21 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
-    implementation(libs.glide) // Glide library
+    implementation(libs.glide)
+    implementation(libs.core) // Glide library
     annotationProcessor(libs.glide.compiler) // Glide compiler
     implementation(libs.glide.okhttp3)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation(libs.volley)
+    implementation(libs.circleimageview)
+    implementation(libs.picasso)
+
+//    implementation(libs.credentials)
+//    implementation(libs.credentials.play.services.auth)
+//    implementation(libs.googleid)
+    implementation(libs.play.services.auth)
 }
