@@ -1,5 +1,9 @@
 [versions]
 agp = "8.8.0"
+circleimageview = "3.0.0"
+
+#credentials = "1.5.0"
+#googleid = "1.1.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -7,8 +11,17 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
+picasso = "2.5.2"
+playServicesAuth = "21.3.0"
+volley = "1.2.1"
+core = "1.16.0"
 
 [libraries]
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+
+#credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+#credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+#googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -20,6 +33,10 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.16.0"}
 glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version = "4.16.0"}
 glide-okhttp3 = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version = "4.16.0"}
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+volley = { module = "com.android.volley:volley", version.ref = "volley" }
+core = { group = "androidx.core", name = "core", version.ref = "core" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

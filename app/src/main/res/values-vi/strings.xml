@@ -8,8 +8,6 @@
 
     <string name="app_name">AstroLingo</string>
 
-
-
     <string name="homeFragment">Trang Chủ</string>
 
     <string name="testFragment">Thi</string>
@@ -36,9 +34,11 @@
     <string name="loginRegister_rule">
         Bằng việc đăng nhập vào AstroLingo, bạn đã đồng ý với <font color="#5616BA">Điều khoản và chính sách bảo mật</font> bảo mật của chúng tôi <font color="#C70707">*</font>
     </string>
+
     <string name="registerLogin_rule">
         Bằng việc đăng ký vào AstroLingo, bạn đã đồng ý với <font color="#5616BA">Điều khoản và chính sách bảo mật</font> bảo mật của chúng tôi <font color="#C70707">*</font>
     </string>
+
     <string name="have_account">Bạn đã có tài khoản?</string>
     <string name="dont_have_account">Bạn chưa có tài khoản?</string>
 
@@ -48,8 +48,8 @@
     <string name="error_username_empty">Tên tài khoản của bạn không được để trống!</string>
     <string name="error_username_specialsympol">Tên tài khoản không được có ký tự đặc biệt hay khoảng trắng!</string>
 
-    <string name="error_telephone_empty">Số điện thoại của bạn không được để trống!</string>
-    <string name="error_telephone_invalid">Số điện thoại của bạn không hợp lệ!</string>
+    <string name="error_telephone_empty">Số điện thoại không được để trống!</string>
+    <string name="error_telephone_invalid">Số điện thoại nên bắt đầu bằng 0 và có 10–11 chữ số!</string>
 
     <string name="error_password_empty">Mật khẩu của bạn không được để trống!</string>
     <string name="error_password_invalid">Mật khẩu của bạn phải có ít nhất 8 ký tự!</string>
@@ -59,4 +59,8 @@
 
     <string name="error_login_empty">Tên tài khoản hoặc mật khẩu không được để trống!</string>
     <string name="error_login_invalid">Tên tài khoản hoặc mật khẩu không hợp lệ!</string>
+
+    <string name="error_checkboxes">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
+
+    <string name="tickRule">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
 </resources>

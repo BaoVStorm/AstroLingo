@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  Không được phép thay đổi dòng này  -->
+    <string name="api_key" translatable="false">http://10.0.2.2:3000/</string>
+
+    <string name="client_ID" translatable="false">377354537953-q2eg1baq8mvdggc5cb8jh6ouhq7osuo4.apps.googleusercontent.com</string>
+    <!-- - - - - - - - - - - - - - - - - - - -->
+
     <string name="navHome">Home</string>
     <string name="navTest">Test</string>
     <string name="navCourse">Course</string>
@@ -7,7 +13,6 @@
     <string name="navSetting">Setting</string>
 
     <string name="app_name">AstroLingo</string>
-
 
     <string name="homeFragment" >Home Page</string>
 
@@ -35,6 +40,7 @@
     <string name="loginRegister_rule">
         By logging into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
     </string>
+
     <string name="registerLogin_rule">
         By registering into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
     </string>
@@ -48,7 +54,7 @@
     <string name="error_username_specialsympol">Username yield shouldn\'t have special symbol or space!</string>
 
     <string name="error_telephone_empty">Telephone yield shouldn\'t be empty!</string>
-    <string name="error_telephone_invalid">Telephone yield is invalid!</string>
+    <string name="error_telephone_invalid">Telephone yield should start by 0 and have 10–11 digits!</string>
 
     <string name="error_password_empty">Password yield shouldn\'t be empty!</string>
     <string name="error_password_invalid">Password yield shoundn\'t be less than 8 characters!</string>
@@ -58,5 +64,9 @@
 
     <string name="error_login_empty">Username or password yield shouldn\'t be empty!</string>
     <string name="error_login_invalid">Username or password yield is invalid!</string>
+
+    <string name="error_checkboxes">You have to agree out term and privacy policy!</string>
+
+    <string name="tickRule">You have to agree out term and privacy policy!</string>
 
 </resources>
