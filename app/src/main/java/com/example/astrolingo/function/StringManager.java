@@ -1,5 +1,8 @@
 package com.example.astrolingo.function;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringManager {
     public static boolean containsSpecialCharacter(String input) {
         // Regex: bất kỳ ký tự nào không phải chữ cái hoặc số
@@ -14,5 +17,12 @@ public class StringManager {
     public static boolean isPhoneNumber(String input) {
         // Regex cho số điện thoại VN: bắt đầu bằng 0, theo sau là 9-10 chữ số
         return input.matches("^0\\d{9,10}$");
+    }
+
+    public static boolean isValidEmail(String email) {
+        String regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }

@@ -39,7 +39,8 @@ dependencies {
     implementation(libs.constraintlayout)
 
     implementation(libs.glide)
-    implementation(libs.core) // Glide library
+    implementation(libs.core)
+    implementation(libs.annotations) // Glide library
     annotationProcessor(libs.glide.compiler) // Glide compiler
     implementation(libs.glide.okhttp3)
 
@@ -55,4 +56,6 @@ dependencies {
 //    implementation(libs.credentials.play.services.auth)
 //    implementation(libs.googleid)
     implementation(libs.play.services.auth)
+
+    implementation(libs.pinview)
 }

@@ -67,7 +67,7 @@
         android:id="@+id/imageView2"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        app:layout_constraintBottom_toTopOf="@+id/box_name"
+        app:layout_constraintBottom_toTopOf="@+id/box_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,29 +93,29 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/box_name"
+        android:id="@+id/box_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        app:layout_constraintTop_toBottomOf="@+id/box_username"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.35"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/icon_name"
             android:layout_width="31dp"
-            android:layout_height="29dp"
+            android:layout_height="30dp"
 
-            app:layout_constraintBottom_toBottomOf="@+id/input_name"
-            app:layout_constraintTop_toTopOf="@+id/input_name"
+            app:layout_constraintBottom_toBottomOf="@+id/input_mail"
+            app:layout_constraintTop_toTopOf="@+id/input_mail"
 
-            app:srcCompat="@drawable/icon_username_96"
+            app:srcCompat="@drawable/icon_assets_email"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/input_name"
+            android:id="@+id/input_mail"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
@@ -123,7 +123,7 @@
             android:ems="11"
             android:fontFamily="@font/afacad_medium"
 
-            android:hint="@string/registerWithName"
+            android:hint="@string/registerWithEmail"
             android:inputType="textPersonName"
 
             android:textSize="16sp"
@@ -140,8 +140,8 @@
             android:background="@color/main_color_purple"
 
             app:layout_constraintLeft_toLeftOf="@+id/icon_name"
-            app:layout_constraintRight_toRightOf="@+id/input_name"
-            app:layout_constraintTop_toBottomOf="@+id/input_name" />
+            app:layout_constraintRight_toRightOf="@+id/input_mail"
+            app:layout_constraintTop_toBottomOf="@+id/input_mail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -149,11 +149,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="@dimen/gap_login_register_page"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.35"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box_name"
         tools:ignore="MissingConstraints">
 
         <ImageView
@@ -176,7 +177,7 @@
             android:ems="11"
             android:fontFamily="@font/afacad_medium"
 
-            android:hint="@string/loginWithUserName"
+            android:hint="@string/RegisterWithUserName"
             android:inputType="text"
 
             android:textSize="16sp"
@@ -204,7 +205,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@id/box_username"
+        app:layout_constraintTop_toBottomOf="@id/box_email"
         android:layout_marginTop="@dimen/gap_login_register_page"
         >
 
@@ -439,11 +440,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/error_name"
+        android:id="@+id/error_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/afacad_medium"
-        android:text="@string/error_name_specialsympol"
+        android:text="@string/error_email_empty"
         android:visibility="invisible"
 
         android:textColor="@color/red"
@@ -451,7 +452,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/box_name"
+        app:layout_constraintTop_toBottomOf="@id/box_email"
         />
 
     <TextView

@@ -27,15 +27,25 @@
     <string name="copyright">Copyright 2025 © AstroLingo</string>
 
     <!-- Login, Register Page String  -->
+    <string name="next">Next</string>
+    <string name="verifyEmail">Verify Your Email</string>
+    <string name="verifyEmailCode">Please Enter The 4 Digit Code Sent To Your Email!</string>
+    <string name="createNewPass">Create New Password</string>
+    <string name="enterNewPass">Enter your new Password!</string>
+
     <string name="loginPage">Login Page</string>
     <string name="registerPage">Register Page</string>
-    <string name="loginWithUserName">Enter your username</string>
-    <string name="loginWithPassword">Enter your password</string>
+    <string name="forgotPasswordPage">Forgot Password</string>
+    <string name="loginWithUserName">Enter your username or email <font color="#EB4B4B">*</font> </string>
+    <string name="RegisterWithUserName">Enter your username <font color="#EB4B4B">*</font> </string>
+    <string name="loginWithPassword">Enter your password <font color="#EB4B4B">*</font> </string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="registerWithName">Enter your name</string>
+    <string name="registerWithEmail">Enter your email <font color="#EB4B4B">*</font> </string>
     <string name="registerWithTel">Enter your telephone</string>
-    <string name="registerWithPassword">Re-enter your password</string>
+    <string name="registerWithPassword">Re-enter your password <font color="#EB4B4B">*</font> </string>
+    <string name="forgotPassword">Forgot password?</string>
 
     <string name="loginRegister_rule">
         By logging into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
@@ -52,6 +62,10 @@
 
     <string name="error_username_empty">Username yield shouldn\'t be empty!</string>
     <string name="error_username_specialsympol">Username yield shouldn\'t have special symbol or space!</string>
+
+    <string name="error_email_empty">Email yield shouldn\'t be empty!</string>
+    <string name="error_email_invalid">Email yield isn\'t valid!</string>
+    <string name="error_email_exist">Email yield is already exist!</string>
 
     <string name="error_telephone_empty">Telephone yield shouldn\'t be empty!</string>
     <string name="error_telephone_invalid">Telephone yield should start by 0 and have 10–11 digits!</string>
