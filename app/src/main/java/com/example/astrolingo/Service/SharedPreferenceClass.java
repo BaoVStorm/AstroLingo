@@ -45,4 +45,12 @@ public class SharedPreferenceClass {
     public void clearAll() {
         editor.clear().commit();
     }
+
+    public boolean contains(String key) {
+        return appShared.contains(key);
+    }
+
+    public void VerifyToken() {
+
+    }
 }

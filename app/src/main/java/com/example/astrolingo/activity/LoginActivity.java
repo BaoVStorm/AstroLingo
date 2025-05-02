@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Debug;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -41,6 +43,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 // // google login
 //import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential;
@@ -68,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox checkBox;
     TextView error_username, error_password, error_checkbox, error_login;
     ConstraintLayout button_login, button_login_google;
-    TextView register_field;
+    TextView forgot_password, register_field;
     ProgressBar progressBar;
 
     String username, password;
@@ -84,14 +87,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        setContentView(R.layout.loginregister_login);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this, gso);
 
         utilService = new UtilService();
         sharedPreClass = new SharedPreferenceClass(this);
-
-        setContentView(R.layout.loginregister_login);
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
@@ -101,6 +103,8 @@ public class LoginActivity extends AppCompatActivity {
         checkBox = findViewById(R.id.checkBox_rule);
 
         register_field = findViewById(R.id.register_field);
+        forgot_password = findViewById(R.id.forgot_password_field);
+
         error_username = findViewById(R.id.error_username);
         error_password = findViewById(R.id.error_password);
         error_checkbox = findViewById(R.id.error_checkbox);
@@ -116,6 +120,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Log.e("error login google", "error login google");
+                progressBar.setVisibility(View.VISIBLE);
+
+                Intent intent = new Intent(LoginActivity.this, FogotPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -183,8 +199,10 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             if(response.getBoolean("success")) {
                                 String token = response.getString("token");
+                                String user_id = response.getString("user_id");
 
                                 sharedPreClass.setValue_string("token", token);
+                                sharedPreClass.setValue_string("user_id", user_id);
 
                                 Toast.makeText(LoginActivity.this, response.getString("msg"), Toast.LENGTH_SHORT).show();
                                 // Toast.makeText(RegisterActivity.this, token, Toast.LENGTH_SHORT).show();
@@ -261,13 +279,13 @@ public class LoginActivity extends AppCompatActivity {
             error_username.setText(getString(R.string.error_username_empty));
             error_username.setVisibility(View.VISIBLE);
         }
-        else {
-            if(StringManager.containsSpecialCharacter(username) || StringManager.containsSpace(username)) {
-                isValid = false;
-                error_username.setText(getString(R.string.error_username_specialsympol));
-                error_username.setVisibility(View.VISIBLE);
-            }
-        }
+//        else {
+//            if(StringManager.containsSpecialCharacter(username) || StringManager.containsSpace(username)) {
+//                isValid = false;
+//                error_username.setText(getString(R.string.error_username_specialsympol));
+//                error_username.setVisibility(View.VISIBLE);
+//            }
+//        }
 
         if(TextUtils.isEmpty(password))
         {
@@ -329,21 +347,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         progressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         if(SharedPreferenceClass.isAllowToken) {
-            SharedPreferences sharedPreferences = getSharedPreferences(SharedPreferenceClass.USER_PREP, MODE_PRIVATE);
 
-            if(sharedPreferences.contains("token")) {
+            if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
             }
         }
-
     }
 
     // -------------------------------------- Login Google Api --------------------------------------
@@ -398,11 +409,11 @@ public class LoginActivity extends AppCompatActivity {
                         // Log.e("success google auth", "success google auth");
 
                         if(response.getBoolean("success")) {
-
-
                             String token = response.getString("token");
+                            String user_id = response.getString("user_id");
 
                             sharedPreClass.setValue_string("token", token);
+                            sharedPreClass.setValue_string("user_id", user_id);
 
                             Toast.makeText(LoginActivity.this, response.getString("msg"), Toast.LENGTH_SHORT).show();
                             // Toast.makeText(RegisterActivity.this, token, Toast.LENGTH_SHORT).show();

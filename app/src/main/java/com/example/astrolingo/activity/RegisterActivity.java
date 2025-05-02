@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -39,18 +40,19 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
     SharedPreferenceClass sharedPreClass;
 
-    EditText input_name, input_username, input_telephone, input_password, input_passwordAu;
-    TextView error_name, error_username, error_telephone, error_password, error_passwordAu, error_checkbox;
+    EditText input_mail, input_username, input_telephone, input_password, input_passwordAu;
+    TextView error_mail, error_username, error_telephone, error_password, error_passwordAu, error_checkbox;
     Button btn_register;
     TextView login_field;
     ProgressBar progressBar;
     UtilService utilService;
     CheckBox checkBox;
-    String name, username, telephone, password, passwordAu;
+    String mail, username, telephone, password, passwordAu;
     boolean isCheck = false;
 
     @Override
@@ -63,13 +65,13 @@ public class RegisterActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
 
         login_field = findViewById(R.id.login_field);
-        input_name = findViewById(R.id.input_name);
+        input_mail = findViewById(R.id.input_mail);
         input_username = findViewById(R.id.input_username);
         input_telephone = findViewById(R.id.input_telephone);
         input_password = findViewById(R.id.input_password);
         input_passwordAu = findViewById(R.id.input_passwordAu);
 
-        error_name = findViewById(R.id.error_name);
+        error_mail = findViewById(R.id.error_mail);
         error_username = findViewById(R.id.error_username);
         error_telephone = findViewById(R.id.error_telephone);
         error_password = findViewById(R.id.error_password);
@@ -94,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
             // tắt keyboard
             utilService.hideKeyboard(v, RegisterActivity.this);
 
-            name = input_name.getText().toString();
+            mail = input_mail.getText().toString();
             username = input_username.getText().toString();
             telephone = input_telephone.getText().toString();
             password = input_password.getText().toString();
@@ -113,29 +115,27 @@ public class RegisterActivity extends AppCompatActivity {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("user_name", username);
-        params.put("full_name", name);
+        params.put("email", mail);
         params.put("phone_number", telephone);
         params.put("password", password);
 
         String apiRegister = getString(R.string.api_key) + "api/auth/register";
-
-//        Log.e("apiRegister", apiRegister);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, apiRegister,
                 new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-//                        Log.e("success", "success");
 
                         try {
                             if(response.getBoolean("success")) {
                                 String token = response.getString("token");
+                                String user_id = response.getString("user_id");
 
                                 sharedPreClass.setValue_string("token", token);
+                                sharedPreClass.setValue_string("user_id", user_id);
 
                                 Toast.makeText(RegisterActivity.this, response.getString("msg"), Toast.LENGTH_SHORT).show();
-//                                Toast.makeText(RegisterActivity.this, token, Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                             }
 
@@ -150,12 +150,10 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-//                        Log.e("VolleyError", "Error: " + error.toString());
-
                         NetworkResponse response = error.networkResponse;
                         if(error instanceof ServerError && response != null) {
 
-//                            Log.e("err", "err");
+                            // Log.e("err", "err");
 
                             try {
                                 String res = new String(response.data, HttpHeaderParser.parseCharset(response.headers, "utf-8"));
@@ -197,16 +195,16 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean validate(View view) {
         boolean isValid = true;
 
-        if(TextUtils.isEmpty(name)) {
+        if(TextUtils.isEmpty(mail)) {
             isValid = false;
-            error_name.setText(getString(R.string.error_name_empty));
-            error_name.setVisibility(View.VISIBLE);
+            error_mail.setText(getString(R.string.error_email_empty));
+            error_mail.setVisibility(View.VISIBLE);
         }
         else {
-            if(StringManager.containsSpecialCharacter(name)) {
+            if(!StringManager.isValidEmail(mail)) {
                 isValid = false;
-                error_name.setText(getString(R.string.error_name_specialsympol));
-                error_name.setVisibility(View.VISIBLE);
+                error_mail.setText(getString(R.string.error_email_invalid));
+                error_mail.setVisibility(View.VISIBLE);
             }
         }
 
@@ -224,19 +222,19 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        if(TextUtils.isEmpty(telephone))
+        if(!TextUtils.isEmpty(telephone))
         {
-            isValid = false;
-            error_telephone.setText(getString(R.string.error_telephone_empty));
-            error_telephone.setVisibility(View.VISIBLE);
-        }
-        else {
             if(!StringManager.isPhoneNumber(telephone)) {
                 isValid = false;
                 error_telephone.setText(getString(R.string.error_telephone_invalid));
                 error_telephone.setVisibility(View.VISIBLE);
             }
         }
+//        else {
+//            isValid = false;
+//            error_telephone.setText(getString(R.string.error_telephone_empty));
+//            error_telephone.setVisibility(View.VISIBLE);
+//        }
 
         if(TextUtils.isEmpty(password))
         {
@@ -278,18 +276,18 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void inVisibiltyError() {
-        error_name.setVisibility(View.INVISIBLE);
+        error_mail.setVisibility(View.INVISIBLE);
         error_username.setVisibility(View.INVISIBLE);
         error_telephone.setVisibility(View.INVISIBLE);
         error_password.setVisibility(View.INVISIBLE);
         error_passwordAu.setVisibility(View.INVISIBLE);
         error_checkbox.setVisibility(View.INVISIBLE);
 
-        input_name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        input_mail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus)
-                    error_name.setVisibility(View.INVISIBLE);
+                    error_mail.setVisibility(View.INVISIBLE);
             }
         });
         input_username.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -329,20 +327,28 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         progressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         if(SharedPreferenceClass.isAllowToken) {
-            SharedPreferences sharedPreferences = getSharedPreferences(SharedPreferenceClass.USER_PREP, MODE_PRIVATE);
 
-            if(sharedPreferences.contains("token")) {
+            if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                 finish();
             }
         }
-
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        if(SharedPreferenceClass.isAllowToken) {
+//            SharedPreferences sharedPreferences = getSharedPreferences(SharedPreferenceClass.USER_PREP, MODE_PRIVATE);
+//
+//            if(sharedPreferences.contains("token")) {
+//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//                finish();
+//            }
+//        }
+//
+//    }
 }
