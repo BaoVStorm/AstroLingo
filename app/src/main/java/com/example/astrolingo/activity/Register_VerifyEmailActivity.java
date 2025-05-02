@@ -67,8 +67,6 @@ public class Register_VerifyEmailActivity extends AppCompatActivity {
         emailSend = getIntent().getStringExtra("email");
         your_email.setText(emailSend);
 
-        progressBar.setVisibility(View.GONE);
-
         inVisibiltyError();
 
         // click button
@@ -246,6 +244,7 @@ public class Register_VerifyEmailActivity extends AppCompatActivity {
     }
 
     public void inVisibiltyError() {
+        progressBar.setVisibility(View.GONE);
         error_text.setVisibility(View.INVISIBLE);
 
         pinView.setOnFocusChangeListener(new View.OnFocusChangeListener() {

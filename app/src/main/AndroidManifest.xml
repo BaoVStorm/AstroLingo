@@ -25,11 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.ForgotPasswordActivity" />
+        <activity android:name=".activity.ForgotPassword_VerifyEmailActivity" />
+        <activity android:name=".activity.ForgotPassword_NewPassword" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.Register_VerifyEmailActivity" />
+        <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.SuccessActivity" />
     </application>
 

@@ -84,6 +84,8 @@
     <string name="verification_success">Xác thực thành công</string>
     <string name="verification_success_detail">Địa chỉ email của bạn đã được xác thực thành công.</string>
 
+    <string name="resetpassword_success">Mật khẩu của bạn đã được thiết lập lại thành công</string>
+
     <string name="dont_get_email">Bạn chưa nhận được email?</string>
     <string name="resend">Gửi lại</string>
 

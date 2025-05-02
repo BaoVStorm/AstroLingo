@@ -12,9 +12,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.astrolingo.R;
 
+import java.util.Objects;
+
 public class SuccessActivity extends AppCompatActivity {
 
-    TextView header_text;
+    TextView header_text, enter_textview;
     ProgressBar progressBar;
     ConstraintLayout button;
 
@@ -24,11 +26,15 @@ public class SuccessActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.successful);
 
+        enter_textview = findViewById(R.id.enter_textview);
         header_text = findViewById(R.id.header_text);
         progressBar = findViewById(R.id.progressBar);
         button = findViewById(R.id.button);
 
         // init
+        if(Objects.equals(getIntent().getStringExtra("text"), "password"))
+            enter_textview.setText(getString(R.string.resetpassword_success));
+
         progressBar.setVisibility(View.GONE);
 
         button.setOnClickListener(v -> {

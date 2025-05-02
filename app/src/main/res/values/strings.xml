@@ -89,6 +89,8 @@
     <string name="verification_success">Verification Success</string>
     <string name="verification_success_detail">Your email address was successfully verified.</string>
 
+    <string name="resetpassword_success">Your password has been reset successfully.</string>
+
     <string name="dont_get_email">Didn\'t you get e-mail?</string>
     <string name="resend">Send it again</string>
 
