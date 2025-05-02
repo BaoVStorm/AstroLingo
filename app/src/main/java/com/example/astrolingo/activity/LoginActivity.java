@@ -2,11 +2,8 @@ package com.example.astrolingo.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Debug;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -35,7 +32,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.Service.UtilService;
-import com.example.astrolingo.function.StringManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -131,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 //                Log.e("error login google", "error login google");
                 progressBar.setVisibility(View.VISIBLE);
 
-                Intent intent = new Intent(LoginActivity.this, FogotPasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -224,20 +220,25 @@ public class LoginActivity extends AppCompatActivity {
                         NetworkResponse response = error.networkResponse;
                         if(error instanceof ServerError && response != null) {
 
-                            // Log.e("err", "err");
-
                             try {
                                 String res = new String(response.data, HttpHeaderParser.parseCharset(response.headers, "utf-8"));
-
                                 JSONObject obj = new JSONObject(res);
-
                                 // thông báo
                                 Toast.makeText(LoginActivity.this, obj.getString("msg"), Toast.LENGTH_SHORT).show();
 
-                                boolean error_server = obj.getBoolean("error_server");
-                                if(!error_server) {
-                                    error_login.setText(getString(R.string.error_login_invalid));
-                                    error_login.setVisibility(View.VISIBLE);
+                                if(!obj.getBoolean("verified")) {
+                                    String mail = obj.getString("email");
+
+                                    Intent resultIntent = new Intent(LoginActivity.this, Register_VerifyEmailActivity.class);
+                                    resultIntent.putExtra("email", mail);
+                                    startActivity(resultIntent);
+                                }
+                                else {
+                                    boolean error_server = obj.getBoolean("error_server");
+                                    if(!error_server) {
+                                        error_login.setText(getString(R.string.error_login_invalid));
+                                        error_login.setVisibility(View.VISIBLE);
+                                    }
                                 }
 
                                 progressBar.setVisibility(View.GONE);

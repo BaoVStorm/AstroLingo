@@ -28,6 +28,7 @@
 
     <!-- Login, Register Page String  -->
     <string name="next">Next</string>
+    <string name="got_it">Got it</string>
     <string name="verifyEmail">Verify Your Email</string>
     <string name="verifyEmailCode">Please Enter The 4 Digit Code Sent To Your Email!</string>
     <string name="createNewPass">Create New Password</string>
@@ -79,8 +80,16 @@
     <string name="error_login_empty">Username or password yield shouldn\'t be empty!</string>
     <string name="error_login_invalid">Username or password yield is invalid!</string>
 
+    <string name="error_digited_invalid">Please enter 4 digits sent to your email!</string>
+
     <string name="error_checkboxes">You have to agree out term and privacy policy!</string>
 
     <string name="tickRule">You have to agree out term and privacy policy!</string>
+
+    <string name="verification_success">Verification Success</string>
+    <string name="verification_success_detail">Your email address was successfully verified.</string>
+
+    <string name="dont_get_email">Didn\'t you get e-mail?</string>
+    <string name="resend">Send it again</string>
 
 </resources>

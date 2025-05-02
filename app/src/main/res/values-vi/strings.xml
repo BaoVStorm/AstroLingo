@@ -22,6 +22,7 @@
 
     <!-- Login Page String  -->
     <string name="next">Tiếp tục</string>
+    <string name="got_it">Hoàn thành</string>
     <string name="verifyEmail">Xác thực email của bạn</string>
     <string name="verifyEmailCode">Hãy nhập 4 số mã đã được gửi đến email của bạn!</string>
     <string name="createNewPass">Tạo mật khẩu mới</string>
@@ -74,7 +75,16 @@
     <string name="error_login_empty">Tên tài khoản hoặc mật khẩu không được để trống!</string>
     <string name="error_login_invalid">Tên tài khoản hoặc mật khẩu không hợp lệ!</string>
 
+    <string name="error_digited_invalid">Hãy nhập 4 số mã đã được gửi đến email của bạn!</string>
+
     <string name="error_checkboxes">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
 
     <string name="tickRule">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
+
+    <string name="verification_success">Xác thực thành công</string>
+    <string name="verification_success_detail">Địa chỉ email của bạn đã được xác thực thành công.</string>
+
+    <string name="dont_get_email">Bạn chưa nhận được email?</string>
+    <string name="resend">Gửi lại</string>
+
 </resources>
