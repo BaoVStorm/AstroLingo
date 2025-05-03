@@ -10,7 +10,7 @@
     <!-- Avatar và Background -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="300dp">
 
         <!-- Hình nền -->
         <ImageView
@@ -32,8 +32,8 @@
             <!-- Avatar -->
             <ImageView
                 android:id="@+id/imgAvatar"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:src="@drawable/icon_ava2"
                 android:padding="8dp" />
 
@@ -52,9 +52,9 @@
                     android:id="@+id/txtUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Username"
-                    android:textColor="#800080"
-                    android:textStyle="bold"
+                    android:text="ANH ĐÀO"
+                    android:fontFamily="@font/afacad_bold"
+                    android:textColor="@color/purple"
                     android:textSize="25sp" />
 
                 <TextView
@@ -62,10 +62,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="200★"
-                    android:textColor="#FF9800"
-                    android:textStyle="bold"
+                    android:textColor="@color/orange"
+                    android:fontFamily="@font/afacad_bold"
                     android:layout_marginStart="8dp"
-                    android:textSize="sp" />
+                    android:textSize="25sp" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
@@ -74,7 +74,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="15dp"
         android:overScrollMode="never">
 
         <LinearLayout
@@ -90,13 +90,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_chinhsuahoso"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9C27B0" />
+                android:background="@color/main_color" />
 
             <!-- Email -->
             <LinearLayout
@@ -120,13 +120,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_email"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9C27B0" />
+                android:background="@color/main_color" />
 
             <!-- Số điện thoại -->
             <!-- Email -->
@@ -151,13 +151,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_phone"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -173,7 +173,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9C27B0" />
+                android:background="@color/main_color" />
 
             <!-- Ngày sinh -->
             <!-- Email -->
@@ -182,13 +182,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_calendar"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9C27B0" />
+                android:background="@color/main_color" />
 
             <!-- Giới tính -->
             <!-- Email -->
@@ -213,13 +213,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_gender"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -235,7 +235,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9C27B0" />
+                android:background="@color/main_color" />
 
 
         </LinearLayout>
@@ -245,7 +245,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:orientation="vertical">
@@ -253,12 +253,13 @@
         <Button
             android:id="@+id/btnEdit"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="#800080"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/loginRegister_button_color"
             android:minWidth="200dp"
             android:text="Chỉnh sửa"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:fontFamily="@font/afacad_bold"
+            android:textSize="25sp"/>
     </LinearLayout>
 
 </LinearLayout>
