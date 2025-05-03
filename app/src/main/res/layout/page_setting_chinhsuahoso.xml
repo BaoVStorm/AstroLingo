@@ -54,18 +54,19 @@
                     android:layout_height="wrap_content"
                     android:text="Username"
                     android:textColor="#800080"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/afacad_bold"
                     android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/txtScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/afacad_bold"
                     android:text="200★"
                     android:textColor="#FF9800"
                     android:textStyle="bold"
                     android:layout_marginStart="8dp"
-                    android:textSize="sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

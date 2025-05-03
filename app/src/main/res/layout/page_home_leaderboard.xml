@@ -2,11 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/bg_leaderboad">
+    android:background="@drawable/bg_leaderboad_1">
 
     <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:src="@drawable/leadboard"
             android:layout_gravity="center"/>
     
@@ -36,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:paddingTop="120dp"
+                android:paddingTop="85dp"
                 android:layout_marginLeft="30dp"
                 android:orientation="vertical"
                 android:gravity="center">
@@ -45,8 +45,9 @@
                     android:id="@+id/top2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hihi"
+                    android:text="User2"
                     android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:paddingBottom="8dp"/>
@@ -74,6 +75,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6666"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="16sp"
                         android:textColor="#FFD700"
                         android:gravity="center"/>
                 </LinearLayout>
@@ -86,7 +89,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical"
                 android:gravity="center">
 
@@ -94,17 +97,18 @@
                     android:id="@+id/top1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hehe"
+                    android:text="User1"
                     android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
                     android:textColor="#fff"
                     android:gravity="center"
-                    android:paddingBottom="1dp"/>
+                    android:paddingBottom="8dp"/>
 
                 <ImageView
                     android:id="@+id/top1_icon"
-                    android:src="@drawable/icon_lead"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"/>
+                    android:src="@drawable/icon_ava2"
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"/>
 
                 <LinearLayout
                     android:id="@+id/coin_and_score_top1"
@@ -122,7 +126,9 @@
                         android:id="@+id/top1_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/afacad_medium"
                         android:text="9999"
+                        android:textSize="16sp"
                         android:textColor="#FFD700"
                         android:gravity="center"/>
                 </LinearLayout>
@@ -134,7 +140,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:paddingTop="120dp"
+                android:paddingTop="105dp"
                 android:layout_marginRight="30dp"
                 android:orientation="vertical"
                 android:gravity="center">
@@ -143,8 +149,9 @@
                     android:id="@+id/top3_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Haha"
+                    android:text="User3"
                     android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:paddingBottom="8dp"/>
@@ -152,8 +159,8 @@
                 <ImageView
                     android:id="@+id/top3_icon"
                     android:src="@drawable/icon_ava2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"/>
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
 
                 <LinearLayout
                     android:id="@+id/coin_and_score_top3"
@@ -172,6 +179,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3333"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="16sp"
                         android:textColor="#FFD700"
                         android:gravity="center"/>
                 </LinearLayout>
@@ -229,9 +238,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="congphandeptrai"
+                    android:text="user4"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:id="@+id/coin_and_score_top4"
@@ -250,7 +259,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2222"
-                        android:textSize="17sp"
+                        android:textSize="16sp"
                         android:fontFamily="@font/afacad_medium"
                         android:textColor="#A4A40F"
                         android:gravity="center"/>
@@ -290,7 +299,7 @@
 
         </LinearLayout>
 
-        ///////////////////////////////////////////////////
+<!--        ///////////////////////////////////////////////////-->
         <!-- 5th place -->
         <LinearLayout
             android:id="@+id/fifth_place_Section"
@@ -332,9 +341,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="congphan again??"
+                    android:text="user5"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:id="@+id/coin_and_score_top5"
@@ -353,7 +362,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1111"
-                        android:textSize="17sp"
+                        android:textSize="16sp"
                         android:fontFamily="@font/afacad_medium"
                         android:textColor="#A4A40F"
                         android:gravity="center"/>
@@ -392,7 +401,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        ///////////////////////////////////////////////
+<!--        ///////////////////////////////////////////////-->
         <!-- 6th place -->
         <LinearLayout
             android:id="@+id/sixth_place_Section"
@@ -434,9 +443,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="wow! congphandeptrai"
+                    android:text="user6"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:id="@+id/coin_and_score_top6"
@@ -455,7 +464,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="999"
-                        android:textSize="17sp"
+                        android:textSize="16sp"
                         android:fontFamily="@font/afacad_medium"
                         android:textColor="#A4A40F"
                         android:gravity="center"/>
@@ -495,13 +504,15 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/leaderboard_see_more"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/afacad_italic"
-            android:textSize="20sp"
+            android:fontFamily="@font/afacad_medium"
+            android:textSize="16sp"
             android:textColor="#fff"
             android:text="Xem thêm"
             android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center_horizontal"/>
     </LinearLayout>
 </LinearLayout>
