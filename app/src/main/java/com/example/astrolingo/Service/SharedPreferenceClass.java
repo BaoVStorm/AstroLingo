@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPreferenceClass {
-    public static final boolean isAllowToken = false;
+    public static final boolean isAllowToken = true;
     public static final String USER_PREP = "astrolingo_prep";
     private SharedPreferences appShared;
     private SharedPreferences.Editor editor;

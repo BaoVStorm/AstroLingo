@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TestPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.test.TestFragment"
+    android:background="@color/green">
+
+    <!-- Background cố định -->
+    <ImageView
+        android:id="@+id/fixed_background_page_test_prepare_start_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/testTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test 10 ETS 2024"
+            android:textSize="32sp"
+            android:textColor="#8553D5"
+            android:fontFamily="@font/afacad_bold" />
+
+        <TextView
+            android:id="@+id/testTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời gian: 120 phút"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacad_regular"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/testQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Câu hỏi: 200"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacad_regular"
+            android:layout_marginBottom="24dp" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/icon_work" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bắt đầu nào"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/afacad_bold"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="#8553D5" />
+
+    </LinearLayout>
+</FrameLayout>
