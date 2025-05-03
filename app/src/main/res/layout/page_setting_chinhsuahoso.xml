@@ -1,0 +1,264 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background3"
+    android:padding="20dp">
+
+    <!-- Avatar và Background -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <!-- Hình nền -->
+        <ImageView
+            android:id="@+id/imgBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background5" />
+
+        <!-- Khối chứa Avatar + Username -->
+        <LinearLayout
+            android:id="@+id/layoutAvatarAndInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Avatar -->
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/icon_ava2"
+                android:padding="8dp" />
+
+            <!-- Username + Điểm -->
+            <LinearLayout
+                android:id="@+id/layoutUsernameScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/white_background_retangle"
+                android:padding="8dp"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#800080"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/txtScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200★"
+                    android:textColor="#FF9800"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:textSize="sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- ScrollView chứa thông tin cá nhân -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Các trường thông tin -->
+
+            <!-- Tên -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_chinhsuahoso"
+                    app:tint="#9C27B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/chinhsuahoso_name"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_email"
+                    app:tint="#9C27B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/chinhsuahoso_email"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+            <!-- Số điện thoại -->
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_phone"
+                    app:tint="#9C27B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/chinhsuahoso_sdt"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+            <!-- Ngày sinh -->
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_calendar"
+                    app:tint="#9C27B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/chinhsuahoso_date"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+            <!-- Giới tính -->
+            <!-- Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_gender"
+                    app:tint="#9C27B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/chinhsuahoso_gender"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Button "Chỉnh sửa" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#800080"
+            android:minWidth="200dp"
+            android:text="Chỉnh sửa"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
