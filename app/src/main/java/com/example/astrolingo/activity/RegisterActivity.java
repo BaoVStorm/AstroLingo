@@ -136,7 +136,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 sharedPreClass.setValue_string("user_id", user_id);
 
                                 Toast.makeText(RegisterActivity.this, response.getString("msg"), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
+                                Intent resultIntent = new Intent(RegisterActivity.this, Register_VerifyEmailActivity.class);
+                                resultIntent.putExtra("email", mail);
+                                startActivity(resultIntent);
                             }
 
                             progressBar.setVisibility(View.GONE);
