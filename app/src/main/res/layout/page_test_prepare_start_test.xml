@@ -31,7 +31,10 @@
             android:layout_gravity="left"
             android:layout_marginTop="30dp"
             android:layout_marginStart="15dp"
-            android:src="@drawable/icon_back" />
+            android:src="@drawable/back_press_color_purple"
+            android:clickable="true"
+            android:focusable="true"
+            />
 
         <TextView
             android:id="@+id/testTitle"

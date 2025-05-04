@@ -20,9 +20,12 @@
                 android:id="@+id/backIcon"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/icon_back"
+                android:src="@drawable/back_press_color_purple"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="-5dp"
+
+                android:clickable="true"
+                android:focusable="true"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

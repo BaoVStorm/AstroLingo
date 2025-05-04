@@ -344,20 +344,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        progressBar.setVisibility(View.GONE);
-
-        if(SharedPreferenceClass.isAllowToken) {
-
-            if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                finish();
-            }
-        }
-    }
-
     // -------------------------------------- Login Google Api --------------------------------------
     private void loginUser_google() {
         progressBar.setVisibility(View.VISIBLE);
@@ -472,5 +458,20 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonObjectRequest);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        progressBar.setVisibility(View.GONE);
+
+        if(SharedPreferenceClass.isAllowToken) {
+            SharedPreferenceClass tempsharedPreClass = new SharedPreferenceClass(this);
+
+            if(!Objects.equals(tempsharedPreClass.getValue_string("user_id"), "null")) {
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
+            }
+        }
     }
 }

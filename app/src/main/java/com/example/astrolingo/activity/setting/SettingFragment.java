@@ -97,7 +97,7 @@ public class SettingFragment extends Fragment {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
 
         Toast.makeText(getActivity(), "User Log out! Please login again!", Toast.LENGTH_SHORT).show();
-        
+
         startActivity(intent);
         getActivity().finish();
     }
