@@ -39,6 +39,7 @@ public class SettingFragment extends Fragment {
     LinearLayout btnChinhSuaHoSo;
     ImageView avatarImageView;
     TextView usernameTextView, coinTextView;
+    TextView headerText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,14 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate layout page_setting vào fragment
         View view = inflater.inflate(R.layout.page_setting, container, false);
+
+        // init profile
+        if (getActivity() != null) {
+            headerText = getActivity().findViewById(R.id.format_textView);
+            if (headerText != null) {
+                headerText.setText(getString(R.string.settingFragment));
+            }
+        }
 
         // Khởi tạo SharedPreferenceClass
         sharedPreClass = new SharedPreferenceClass(view.getContext());
