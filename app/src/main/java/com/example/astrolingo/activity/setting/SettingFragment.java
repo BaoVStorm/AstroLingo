@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ import com.example.astrolingo.R;
 // API library
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.LoginActivity;
+import com.example.astrolingo.activity.MainActivity;
 import com.example.astrolingo.api.UserApi;
 
 import com.android.volley.VolleyError;
@@ -58,6 +60,9 @@ public class SettingFragment extends Fragment {
         usernameTextView = view.findViewById(R.id.usernameTextView);
         coinTextView = view.findViewById(R.id.coinTextView);
 
+        // set up underline
+        logout_field.setPaintFlags(logout_field.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
         // Điều chỉnh sự kiện logout
         logout_field.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +93,13 @@ public class SettingFragment extends Fragment {
 
     // logout user
     private void logOut() {
+        sharedPreClass.clearAll();
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
 
+        Toast.makeText(getActivity(), "User Log out! Please login again!", Toast.LENGTH_SHORT).show();
+        
+        startActivity(intent);
+        getActivity().finish();
     }
 
     // insert userAPI
