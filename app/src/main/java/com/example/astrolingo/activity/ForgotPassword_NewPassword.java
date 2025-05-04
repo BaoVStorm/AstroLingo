@@ -1,9 +1,11 @@
 package com.example.astrolingo.activity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,11 +42,13 @@ public class ForgotPassword_NewPassword extends AppCompatActivity {
     UtilService utilService;
     TextView input_password, input_passwordAu;
     TextView error_password, error_passwordAu;
+    ImageView backIcon;
     ConstraintLayout next_button;
     ProgressBar progressBar;
 
     String password, passwordAu;
     String emailSend, otp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,8 @@ public class ForgotPassword_NewPassword extends AppCompatActivity {
 
         next_button = findViewById(R.id.button_forgotPassword);
         progressBar = findViewById(R.id.progressBar);
+
+        backIcon = findViewById(R.id.backIcon);
 
         // init
         utilService = new UtilService();
@@ -84,6 +90,11 @@ public class ForgotPassword_NewPassword extends AppCompatActivity {
                 forgotPassword_newPassword();
             }
 
+        });
+
+        // back icon
+        backIcon.setOnClickListener(v -> {
+            finish();
         });
     }
 

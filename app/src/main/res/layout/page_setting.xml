@@ -53,7 +53,9 @@
                     android:fontFamily="@font/afacad_bold"
                     android:text="200"
                     android:textColor="#FF9800"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+
+                    />
 
                 <ImageView
                     android:layout_width="20dp"
@@ -96,6 +98,7 @@
 
             <!-- Item example -->
             <LinearLayout
+                android:id="@+id/btnChinhSuaHoSo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
