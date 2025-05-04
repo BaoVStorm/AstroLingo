@@ -22,7 +22,7 @@
                 android:layout_height="35dp"
                 android:src="@drawable/back_press_color_purple"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="-5dp"
+                android:layout_marginStart="15dp"
 
                 android:clickable="true"
                 android:focusable="true"
@@ -55,12 +55,18 @@
             android:gravity="center_horizontal">
 
             <!-- Avatar -->
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgAvatar"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/icon_ava2"
-                android:padding="8dp" />
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:padding="1dp"
+                />
 
             <!-- Username + Điểm -->
             <LinearLayout

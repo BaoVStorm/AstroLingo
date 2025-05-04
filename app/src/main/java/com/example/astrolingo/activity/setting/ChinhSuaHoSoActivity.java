@@ -73,7 +73,7 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
                 txtPhone.setText(userObject.getString("phone_number"));
 
             if(!userObject.isNull("date_of_birth"))
-                txtDate.setText(userObject.getString("date_of_birth"));
+                txtDate.setText(userObject.getString("date_of_birth").split("T")[0]);
 
             if(!userObject.isNull("gender"))
                 txtGender.setText(userObject.getString("gender"));

@@ -76,18 +76,24 @@
             app:layout_constraintBottom_toBottomOf="@+id/background"
             tools:ignore="MissingConstraints">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView3"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
 
                 android:layout_marginVertical="20dp"
                 android:layout_marginHorizontal="15dp"
-                android:background="@drawable/icon_ava"
+                android:src="@drawable/icon_ava2"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/main_color_purple"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
+                />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"

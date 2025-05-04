@@ -16,12 +16,18 @@
         android:padding="15dp"
         android:layout_marginVertical="5dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/avatarImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/icon_ava2"
-            android:scaleType="centerCrop" />
+
+            app:shapeAppearanceOverlay="@style/CircularImageView"
+            app:strokeColor="@color/main_color_purple"
+            app:strokeWidth="2dp"
+            android:padding="1dp"
+            />
 
         <LinearLayout
             android:layout_width="0dp"
