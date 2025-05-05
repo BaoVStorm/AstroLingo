@@ -113,4 +113,15 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Nữ</string>
+
+    <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
+    <string name="seemore">See more</string>
+    <string name="miniTestTitle">TOEIC Listening Reading MiniTest | </string>
+    <string name="fullTestTitle">TOEIC Listening Reading FullTest | </string>
+
+    <!-- Giao diện Chuẩn bị làm bài test có nút Bắt đầu nào  -->
+    <string name="startnow">Start Now</string>
+    <string name="number_of_questions">Number of Questions: 200</string>
+    <string name="test_time">Duration: 120 minutes</string>
+    <string name="testTitle">Test 10 ETS 2024</string>
 </resources>
