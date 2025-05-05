@@ -94,4 +94,23 @@
     <string name="dont_get_email">Didn\'t you get e-mail?</string>
     <string name="resend">Send it again</string>
 
+
+    <!-- Setting Page String  -->
+    <!-- Setting Page String  -->
+    <string name="chinhsuahoso">Edit Profile</string>
+    <string name="ngonngusudung">Language</string>
+    <string name="giaodientoi">Dark Mode</string>
+    <string name="hienthi">Display</string>
+    <string name="nhacnhohoctap">Study Reminder</string>
+    <string name="phanhoihotro">Feedback and Support</string>
+    <string name="danhgia5sao">Rate 5 Stars</string>
+    <string name="dieukhoansudung">Terms of Use</string>
+    <string name="select_ngonngusudung">English</string>
+    <string name="setting_dangxuat">Log out</string>
+    <!-- Setting Page "Chỉnh sửa hồ sơ" String  -->
+    <string name="chinhsuahoso_name">Anh Đào</string>
+    <string name="chinhsuahoso_email">anhdao@gmai.com</string>
+    <string name="chinhsuahoso_sdt">0123456789</string>
+    <string name="chinhsuahoso_date">01/01/2004</string>
+    <string name="chinhsuahoso_gender">Nữ</string>
 </resources>
