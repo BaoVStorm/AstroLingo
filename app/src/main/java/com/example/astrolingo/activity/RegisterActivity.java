@@ -194,7 +194,7 @@ public class RegisterActivity extends AppCompatActivity {
 //        Log.e("passs", "passs");
 
         // set retry policy
-        int socketTime = 3000;
+        int socketTime = 10000;
         RetryPolicy policy = new DefaultRetryPolicy(socketTime,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
         jsonObjectRequest.setRetryPolicy(policy);

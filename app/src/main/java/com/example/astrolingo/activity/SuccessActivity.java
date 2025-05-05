@@ -32,8 +32,11 @@ public class SuccessActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
 
         // init
-        if(Objects.equals(getIntent().getStringExtra("text"), "password"))
+        if(Objects.equals(getIntent().getStringExtra("text"), "password")) {
             enter_textview.setText(getString(R.string.resetpassword_success));
+            header_text.setText(getString(R.string.forgotPasswordPage));
+        }
+
 
         progressBar.setVisibility(View.GONE);
 
