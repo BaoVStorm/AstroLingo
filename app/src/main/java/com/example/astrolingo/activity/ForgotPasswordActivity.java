@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,7 +49,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     TextView error_text;
     ConstraintLayout button_next;
     ProgressBar progressBar;
-
+    ImageView backIcon;
     String email;
 
     @Override
@@ -64,6 +65,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         button_next = findViewById(R.id.button_forgotPassword);
         error_text = findViewById(R.id.error_password);
         progressBar = findViewById(R.id.progressBar);
+        backIcon = findViewById(R.id.backIcon);
 
         inVisibiltyError();
 
@@ -76,6 +78,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             if(validate(v)) {
                 forgotPassword();
             }
+        });
+
+        backIcon.setOnClickListener(v -> {
+            finish();
         });
     }
 

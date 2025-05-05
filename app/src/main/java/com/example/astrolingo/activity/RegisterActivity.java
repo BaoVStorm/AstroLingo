@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView error_mail, error_username, error_telephone, error_password, error_passwordAu, error_checkbox;
     Button btn_register;
     TextView login_field;
+    ImageView backIcon;
     ProgressBar progressBar;
     UtilService utilService;
     CheckBox checkBox;
@@ -81,6 +83,8 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register = findViewById(R.id.button_register);
         checkBox = findViewById(R.id.checkBox_rule);
 
+        backIcon = findViewById(R.id.backIcon);
+
         utilService = new UtilService();
         sharedPreClass = new SharedPreferenceClass(this);
 
@@ -107,6 +111,11 @@ public class RegisterActivity extends AppCompatActivity {
                 registerUser();
             }
 
+        });
+
+        // back icon
+        backIcon.setOnClickListener(v -> {
+            finish();
         });
     }
 

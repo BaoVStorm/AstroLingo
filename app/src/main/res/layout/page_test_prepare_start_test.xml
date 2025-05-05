@@ -26,11 +26,15 @@
 
         <ImageView
             android:id="@+id/backIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_gravity="left"
-            android:layout_marginTop="25dp"
-            android:src="@drawable/icon_back" />
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/back_press_color_purple"
+            android:clickable="true"
+            android:focusable="true"
+            />
 
         <TextView
             android:id="@+id/testTitle"
@@ -48,7 +52,7 @@
             android:text="Thời gian: 120 phút"
             android:textSize="24sp"
             android:textColor="@color/black"
-            android:fontFamily="@font/afacad_regular"
+            android:fontFamily="@font/afacad_medium"
             android:layout_marginTop="8dp" />
 
         <TextView
@@ -58,7 +62,9 @@
             android:text="Câu hỏi: 200"
             android:textSize="24sp"
             android:textColor="@color/black"
-            android:fontFamily="@font/afacad_regular"
+
+            android:fontFamily="@font/afacad_medium"
+
             android:layout_marginBottom="24dp" />
 
         <ImageView
@@ -66,16 +72,37 @@
             android:layout_height="250dp"
             android:src="@drawable/icon_work" />
 
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bắt đầu nào"
-            android:textSize="28sp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/afacad_bold"
-            android:layout_marginTop="70dp"
-            android:backgroundTint="#8553D5" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_forgotPassword"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_username"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_medium"
+
+                android:text="Bắt đầu nào"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 </FrameLayout>

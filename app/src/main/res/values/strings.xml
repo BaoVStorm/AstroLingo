@@ -14,7 +14,7 @@
 
     <string name="app_name">AstroLingo</string>
 
-    <string name="homeFragment" >Home Page</string>
+    <string name="homeFragment">Home Page</string>
 
     <string name="testFragment">Test Page</string>
 
@@ -22,7 +22,7 @@
 
     <string name="AiFragment">AI Page</string>
 
-    <string name="settingFragment">SettingPage</string>
+    <string name="settingFragment">Setting Page</string>
 
     <string name="copyright">Copyright 2025 © AstroLingo</string>
 
