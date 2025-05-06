@@ -21,6 +21,7 @@ public class TestFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_test, container, false);
 
         TextView fullTestTitle = view.findViewById(R.id.fullTestTitle);
@@ -29,9 +30,8 @@ public class TestFragment extends Fragment {
         miniTestTitle.setText("TOEIC Listening & Reading MiniTest | " + 13);
         populateTests(view.findViewById(R.id.fullTestGrid), 12, true);
         populateTests(view.findViewById(R.id.miniTestGrid), 12, false);
+
         return view;
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_test, container, false);
     }
 
     private void populateTests(GridLayout gridlayout, int displayCount, boolean isFullTest){

@@ -118,4 +118,19 @@
     <string name="number_of_questions">Số câu hỏi: 200</string>
     <string name="test_time">Thời gian: 120 phút</string>
     <string name="testTitle">Test 10 ETS 2024</string>
+
+    <!-- Giao diện đầu tiên của trang Làm lại câu sai khi nhấn nút "Câu làm sai" ở HomePage-->
+    <string name="retry_wrong_answer">Làm lại câu sai</string>
+    <string name="listening_comprehension">Nghe hiểu</string>
+    <string name="picture_description">Mô tả\ntranh</string>
+    <string name="ques_and_ans">Hỏi-Đáp</string>
+    <string name="conversation">Đoạn hội thoại</string>
+    <string name="short_talk">Bài nói ngắn</string>
+
+    <string name="reading_comprehension">Đọc hiểu</string>
+    <string name="fill_the_blank">Hoàn thành câu</string>
+    <string name="fill_the_paragraph">Hoàn thành\nđoạn văn</string>
+    <string name="single_paragraph">Đoạn đơn</string>
+    <string name="double_paragraph">Đoạn kép</string>
+    <string name="triple_paragraph">Đoạn tam</string>
 </resources>
