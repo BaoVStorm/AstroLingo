@@ -73,6 +73,39 @@ public class UserApi {
      */
 
 
+    public static void getTopScore(Context context, String token, Response.Listener<JSONObject> onSuccess, Response.ErrorListener onError) {
+        String apiLogin = context.getString(R.string.api_key) + "api/auth/getTopScore";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                apiLogin,
+                null,
+                onSuccess, // listener thành công truyền từ Activity
+                onError    // listener lỗi truyền từ Activity
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                headers.put("Authorization", "Bearer " + token); // nếu cần token
+                return headers;
+            }
+        };
+
+        // Cấu hình retry
+        int socketTime = 5000;
+        RetryPolicy policy = new DefaultRetryPolicy(
+                socketTime,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        );
+        jsonObjectRequest.setRetryPolicy(policy);
+
+        // Thêm request vào hàng đợi
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(jsonObjectRequest);
+    }
+
 
 
 }
