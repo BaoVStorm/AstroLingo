@@ -31,5 +31,9 @@
     <color name="loginRegister_button_color">#8452D3</color>
     <color name="button_field_hover">#682AD1</color>
 
+    <!--  seekbar (test)  -->
+    <color name="colorPrimary">#8452D3</color>
+
+    <color name="colorPrimaryLight">#8E74C3</color>
 
 </resources>
