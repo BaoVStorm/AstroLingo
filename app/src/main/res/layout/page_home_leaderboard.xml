@@ -26,8 +26,26 @@
             android:layout_gravity="center"
             tools:ignore="MissingConstraints" />
 
-
         <!-- 2nd Place -->
+        <TextView
+            android:id="@+id/top2_name"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/afacad_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingBottom="8dp"
+            android:text="UserDemo123"
+            android:textColor="#fff"
+            android:textSize="18sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/second_place_Section"
+            app:layout_constraintLeft_toLeftOf="@+id/second_place_Section"
+            app:layout_constraintRight_toRightOf="@+id/second_place_Section"
+
+            />
+
         <LinearLayout
             android:id="@+id/second_place_Section"
             android:layout_width="0dp"
@@ -35,7 +53,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-
+            android:layout_marginTop="32dp"
             app:layout_constraintWidth_percent="0.21"
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintVertical_bias="0.44"
@@ -46,19 +64,6 @@
             app:layout_constraintEnd_toEndOf="@+id/fixed_leaderboard_background"
 
             tools:ignore="MissingConstraints">
-
-            <TextView
-                android:id="@+id/top2_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/afacad_medium"
-                android:gravity="center"
-                android:paddingBottom="8dp"
-                android:text="Trần Vũ Bão"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:textColor="#fff"
-                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/top2_icon"
@@ -97,6 +102,22 @@
         </LinearLayout>
 
         <!-- 1st Place -->
+        <TextView
+            android:id="@+id/top1_name"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/afacad_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingBottom="8dp"
+            android:text="User2"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/first_place_Section"
+            app:layout_constraintLeft_toLeftOf="@+id/first_place_Section"
+            app:layout_constraintRight_toRightOf="@+id/first_place_Section"
+            />
+
         <LinearLayout
             android:id="@+id/first_place_Section"
             android:layout_width="0dp"
@@ -104,6 +125,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:layout_marginTop="32dp"
 
             app:layout_constraintWidth_percent="0.23"
             app:layout_constraintHorizontal_bias="0.5"
@@ -115,18 +137,6 @@
             app:layout_constraintEnd_toEndOf="@+id/fixed_leaderboard_background"
 
             tools:ignore="MissingConstraints">
-
-            <TextView
-                android:id="@+id/top1_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/afacad_medium"
-                android:gravity="center"
-                android:paddingBottom="8dp"
-                android:text="User2"
-                android:maxLines="1"
-                android:textColor="#fff"
-                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/top1_icon"
@@ -163,6 +173,21 @@
         </LinearLayout>
 
         <!-- 3rd Place -->
+        <TextView
+            android:id="@+id/top3_name"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/afacad_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingBottom="8dp"
+            android:text="User3"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/third_place_Section"
+            app:layout_constraintLeft_toLeftOf="@+id/third_place_Section"
+            app:layout_constraintRight_toRightOf="@+id/third_place_Section"/>
+
         <LinearLayout
             android:id="@+id/third_place_Section"
             android:layout_width="0dp"
@@ -170,6 +195,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:layout_marginTop="35dp"
 
             app:layout_constraintWidth_percent="0.20"
             app:layout_constraintHorizontal_bias="0.88"
@@ -181,18 +207,6 @@
             app:layout_constraintEnd_toEndOf="@+id/fixed_leaderboard_background"
 
             tools:ignore="MissingConstraints">
-
-            <TextView
-                android:id="@+id/top3_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User3"
-                android:maxLines="1"
-                android:fontFamily="@font/afacad_medium"
-                android:textSize="16sp"
-                android:textColor="#fff"
-                android:gravity="center"
-                android:paddingBottom="8dp"/>
 
             <ImageView
                 android:id="@+id/top3_icon"
@@ -279,7 +293,7 @@
                     android:id="@+id/top4_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/afacad_medium"
+                    android:fontFamily="@font/afacad_bold"
                     android:text="user4"
                     android:maxLines="1"
 
@@ -336,7 +350,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="+6"
+                    android:text="+3"
                     android:textColor="#000000"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -440,7 +454,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="+6"
+                    android:text="+2"
                     android:textColor="#000000"
                     android:textSize="18sp" />
             </LinearLayout>

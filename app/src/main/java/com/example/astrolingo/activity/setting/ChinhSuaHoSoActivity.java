@@ -17,7 +17,7 @@ import org.json.JSONObject;
 
 public class ChinhSuaHoSoActivity extends AppCompatActivity {
     private JSONObject userObject;
-    private ImageView avatarImageView;
+    private ImageView avatarImageView, backIcon;
     TextView usernameTextView, coinTextView, txtFullName, txtEmail, txtPhone, txtDate, txtGender;
 
     @Override
@@ -34,6 +34,7 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
         txtPhone = findViewById(R.id.txtPhone);
         txtDate = findViewById(R.id.txtDate);
         txtGender = findViewById(R.id.txtGender);
+        backIcon = findViewById(R.id.backIcon);
 
         // get data from intent
         String jsonString = getIntent().getStringExtra("user_data");
@@ -46,6 +47,10 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
 
             v.setPadding(0, systemBars.top, 0, 0);
             return insets;
+        });
+
+        backIcon.setOnClickListener(v -> {
+            finish();
         });
     }
 

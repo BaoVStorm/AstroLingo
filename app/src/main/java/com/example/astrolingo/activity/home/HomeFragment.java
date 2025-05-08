@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,58 +78,56 @@ public class HomeFragment extends Fragment {
         UserApi.getTopScore(
             view.getContext(),
             sharedPreClass.getValue_string("token"),
-            new Response.Listener<JSONObject>() {
+            new Response.Listener<JSONArray>() {
                 @Override
-                public void onResponse(JSONObject response) {
+                public void onResponse(JSONArray jsonArray) {
                     // Xử lý khi thành công
                     // Log.d("API_SUCCESS", response.toString());
                     try {
-                        JSONArray jsonArray = new JSONArray(response);
 
-                        if (!jsonArray.isNull(0)) {
-                            // top 1
-                            first_place_Section.setVisibility(View.VISIBLE);
+                        View[] sections = {
+                                first_place_Section, second_place_Section, third_place_Section,
+                                fourth_place_Section, fifth_place_Section, sixth_place_Section
+                        };
 
+                        int[] nameIds = {
+                                R.id.top1_name, R.id.top2_name, R.id.top3_name,
+                                R.id.top4_name, R.id.top5_name, R.id.top6_name
+                        };
+
+                        int[] scoreIds = {
+                                R.id.top1_score, R.id.top2_score, R.id.top3_score,
+                                R.id.top4_score, R.id.top5_score, R.id.top6_score
+                        };
+
+                        int[] iconIds = {
+                                R.id.top1_icon, R.id.top2_icon, R.id.top3_icon,
+                                R.id.icon_top4, R.id.icon_top5, R.id.icon_top6
+                        };
+
+                        for (int nameId : nameIds) {
+                            view.findViewById(nameId).setVisibility(View.GONE);
                         }
-                        else
-                            return;
 
-                        if (!jsonArray.isNull(1)) {
-                            // top 2
-                            second_place_Section.setVisibility(View.VISIBLE);
+                        for (int i = 0; i < jsonArray.length() && i < 6; i++) {
+                            sections[i].setVisibility(View.VISIBLE);
 
-                        }
-                        else
-                            return;
+                            if (jsonArray.isNull(i))
+                                continue;
 
-                        if (!jsonArray.isNull(2)) {
-                            // top 3
-                            third_place_Section.setVisibility(View.VISIBLE);
+                            JSONObject user = jsonArray.getJSONObject(i);
 
-                        }
-                        else
-                            return;
+                            TextView nameView = view.findViewById(nameIds[i]);
+                            TextView scoreView = view.findViewById(scoreIds[i]);
+                            ImageView iconView = view.findViewById(iconIds[i]);
 
-                        if (!jsonArray.isNull(3)) {
-                            // top 4
-                            fourth_place_Section.setVisibility(View.VISIBLE);
+                            nameView.setVisibility(View.VISIBLE);
+                            nameView.setText(user.getString("user_name"));
+                            scoreView.setText(String.valueOf(user.getInt("score")));
 
-                        }
-                        else
-                            return;
-
-                        if (!jsonArray.isNull(4)) {
-                            // top 5
-                            fifth_place_Section.setVisibility(View.VISIBLE);
-
-                        }
-                        else
-                            return;
-
-                        if (!jsonArray.isNull(5)) {
-                            // top 6
-                            sixth_place_Section.setVisibility(View.VISIBLE);
-
+                            if (!user.isNull("photo_url")) {
+                                iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+                            }
                         }
 
                     } catch (JSONException e) {
