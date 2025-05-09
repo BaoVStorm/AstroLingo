@@ -43,7 +43,10 @@ public class SharedPreferenceClass {
     }
 
     public void clearAll() {
+
         editor.clear().commit();
+        editor.putString("user_id", "null").commit();
+        editor.putString("token", "null").commit();
     }
 
     public boolean contains(String key) {
