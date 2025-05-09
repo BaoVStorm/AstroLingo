@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:layout_gravity="center"
+    android:elevation="8dp">
+
+    <EditText
+        android:id="@+id/etVocabulary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Từ vựng"
+        android:drawableStart="@drawable/icon_tuvung"
+        android:drawablePadding="8dp"
+        android:background="@null"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/etPronounce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phiên âm"
+        android:drawableStart="@drawable/icon_phienam"
+        android:drawablePadding="8dp"
+        android:background="@null"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/etMeaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nghĩa"
+        android:drawableStart="@drawable/icon_nghia"
+        android:drawablePadding="8dp"
+        android:background="@null"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnAddWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm từ vựng"
+        android:backgroundTint="@color/main_color_purple_dark"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

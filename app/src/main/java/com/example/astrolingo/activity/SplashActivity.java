@@ -120,6 +120,45 @@ public class SplashActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    //    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        Thread thread = new Thread() {
+//            public void run() {
+//                try {
+//                    sleep(1500);
+//
+//                    if (SharedPreferenceClass.isAllowToken) {
+////                        if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
+////                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+////                        }
+////                        else {
+////                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+////                        }
+//
+//                        VerifyToken();
+//                    } else {
+//                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                    }
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//
+//                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                }
+//
+//                finish();
+//            }
+//        };
+//
+//        thread.start();
+//
+//    }
+//}
+//
+// AnhDao
+// Nếu bạn muốn vào luôn MainActivity mà không cần kiểm tra token hay đăng nhập, sửa lại thành:
     @Override
     protected void onResume() {
         super.onResume();
@@ -127,33 +166,20 @@ public class SplashActivity extends AppCompatActivity {
         Thread thread = new Thread() {
             public void run() {
                 try {
-                    sleep(1500);
+                    sleep(1500); // chờ splash
 
-                    if (SharedPreferenceClass.isAllowToken) {
-//                        if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
-//                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-//                        }
-//                        else {
-//                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-//                        }
-
-                        VerifyToken();
-                    } else {
-                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                    }
+                    // Bỏ kiểm tra token, vào thẳng MainActivity
+                    startActivity(new Intent(SplashActivity.this, TuYeuThichActivity.class));
+                    finish(); // kết thúc SplashActivity
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    startActivity(new Intent(SplashActivity.this, TuYeuThichActivity.class));
+                    finish();
                 }
-
-                finish();
             }
         };
 
         thread.start();
-
     }
 }
-
