@@ -55,14 +55,14 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreClass.setValue_string("user_id", "null");
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
     }
 
     protected void VerifyToken() {
-        if(!sharedPreClass.contains("token")) {
+        if (!sharedPreClass.contains("token")) {
             startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         }
 
@@ -74,7 +74,7 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            if(response.getBoolean("success")) {
+                            if (response.getBoolean("success")) {
                                 String user_id = response.getString("user_id");
 
                                 sharedPreClass.setValue_string("user_id", user_id);
@@ -83,8 +83,7 @@ public class SplashActivity extends AppCompatActivity {
 
                                 // Toast.makeText(RegisterActivity.this, token, Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                            }
-                            else
+                            } else
                                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                             // progressBar.setVisibility(View.GONE);
                         } catch (JSONException je) {
@@ -130,7 +129,7 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     sleep(1500);
 
-                    if(SharedPreferenceClass.isAllowToken) {
+                    if (SharedPreferenceClass.isAllowToken) {
 //                        if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
 //                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
 //                        }
@@ -139,8 +138,7 @@ public class SplashActivity extends AppCompatActivity {
 //                        }
 
                         VerifyToken();
-                    }
-                    else {
+                    } else {
                         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     }
 
@@ -157,6 +155,5 @@ public class SplashActivity extends AppCompatActivity {
         thread.start();
 
     }
-
-
 }
+
