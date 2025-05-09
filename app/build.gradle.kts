@@ -58,4 +58,6 @@ dependencies {
     implementation(libs.play.services.auth)
 
     implementation(libs.pinview)
+
+    implementation(libs.material.v1110)
 }

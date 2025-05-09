@@ -22,6 +22,7 @@ public class TestDetailActivity extends AppCompatActivity {
         testTitle = findViewById(R.id.testTitle);
         testTime = findViewById(R.id.testTime);
         testQuestions = findViewById(R.id.testQuestions);
+        backIcon = findViewById(R.id.backIcon);
 
         PageTestMainItem test = (PageTestMainItem) getIntent().getSerializableExtra("testItem");
 
@@ -31,15 +32,9 @@ public class TestDetailActivity extends AppCompatActivity {
             testQuestions.setText("Số câu hỏi: " + test.getNumberOfQuestions());
         }
 
-        backIcon = findViewById(R.id.backIcon);
         backIcon.setOnClickListener(v ->{
-            Log.d("TestDetailActivity", "Back clicked - finishing activity");
             finish();
         });
-        //Xử lý sự kiện khi nhấn nút "Bắt đầu nào"
-//        Button startButton = findViewById(R.id.startButton);
-//        startButton.setOnClickListener(v -> {
-//            //Xử lý sự kiện khi nhấn nút "Bắt đầu nào"
-//        });
+
     }
 }

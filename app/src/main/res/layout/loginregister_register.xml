@@ -49,18 +49,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/backward"
+        android:id="@+id/backIcon"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:scaleType="centerCrop"
+        android:src="@drawable/back_press_color"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
 
-        app:srcCompat="@drawable/backward3"
-        tools:ignore="MissingConstraints" />
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"

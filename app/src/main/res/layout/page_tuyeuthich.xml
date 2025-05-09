@@ -1,0 +1,137 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background4">
+
+    <!-- Header -->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Body chứa layout con có padding ngang -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:id="@+id/tvCreateVocab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tự tạo"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:fontFamily="@font/afacad_medium"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCreate"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <!-- View con để gán background -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background5">
+
+                <ImageView
+                    android:id="@+id/addVocab"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Add"
+                    android:src="@drawable/icon_heart" />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvSavedVocab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Từ vựng đã lưu"
+            android:textStyle="bold"
+            android:fontFamily="@font/afacad_medium"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:hint="Tìm kiếm từ vựng"
+                android:drawableStart="@drawable/icon_search"
+                android:paddingStart="12dp"
+                android:background="@drawable/bg_search_input_tudatra"/>
+
+            <ImageView
+                android:id="@+id/btn_date"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/icon_setting_calendar"
+                android:contentDescription="Chọn ngày"/>
+        </LinearLayout>
+
+        <!-- Button nhóm -->
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnFlashcards"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:text="Flashcards"/>
+
+            <Button
+                android:id="@+id/btnPairing"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:text="Ghép cặp từ"/>
+
+            <Button
+                android:id="@+id/btnSelect"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:text="Chọn từ"/>
+        </LinearLayout>
+
+        <!-- Danh sách từ -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_words"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

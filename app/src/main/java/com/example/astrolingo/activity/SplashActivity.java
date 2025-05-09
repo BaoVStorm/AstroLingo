@@ -55,14 +55,14 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreClass.setValue_string("user_id", "null");
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
     }
 
     protected void VerifyToken() {
-        if(!sharedPreClass.contains("token")) {
+        if (!sharedPreClass.contains("token")) {
             startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         }
 
@@ -74,7 +74,7 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            if(response.getBoolean("success")) {
+                            if (response.getBoolean("success")) {
                                 String user_id = response.getString("user_id");
 
                                 sharedPreClass.setValue_string("user_id", user_id);
@@ -83,8 +83,7 @@ public class SplashActivity extends AppCompatActivity {
 
                                 // Toast.makeText(RegisterActivity.this, token, Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                            }
-                            else
+                            } else
                                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                             // progressBar.setVisibility(View.GONE);
                         } catch (JSONException je) {
@@ -121,6 +120,45 @@ public class SplashActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    //    @Override
+//    protected void onResume() {
+//        super.onResume();
+//
+//        Thread thread = new Thread() {
+//            public void run() {
+//                try {
+//                    sleep(1500);
+//
+//                    if (SharedPreferenceClass.isAllowToken) {
+////                        if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
+////                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+////                        }
+////                        else {
+////                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+////                        }
+//
+//                        VerifyToken();
+//                    } else {
+//                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                    }
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//
+//                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                }
+//
+//                finish();
+//            }
+//        };
+//
+//        thread.start();
+//
+//    }
+//}
+//
+// AnhDao
+// Nếu bạn muốn vào luôn MainActivity mà không cần kiểm tra token hay đăng nhập, sửa lại thành:
     @Override
     protected void onResume() {
         super.onResume();
@@ -128,33 +166,20 @@ public class SplashActivity extends AppCompatActivity {
         Thread thread = new Thread() {
             public void run() {
                 try {
-                    sleep(1500);
+                    sleep(1500); // chờ splash
 
-                    if(SharedPreferenceClass.isAllowToken) {
-//                        if(!Objects.equals(sharedPreClass.getValue_string("user_id"), "null")) {
-//                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-//                        }
-//                        else {
-//                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-//                        }
-
-                        VerifyToken();
-                    }
-                    else {
-                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                    }
+                    // Bỏ kiểm tra token, vào thẳng MainActivity
+                    startActivity(new Intent(SplashActivity.this, TuYeuThichActivity.class));
+                    finish(); // kết thúc SplashActivity
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    startActivity(new Intent(SplashActivity.this, TuYeuThichActivity.class));
+                    finish();
                 }
             }
         };
 
         thread.start();
-
     }
-
-
 }

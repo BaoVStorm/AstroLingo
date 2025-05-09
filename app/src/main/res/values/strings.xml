@@ -2,6 +2,7 @@
 <resources>
     <!--  Không được phép thay đổi dòng này  -->
     <string name="api_key" translatable="false">http://10.0.2.2:3000/</string>
+    <string name="api_key_server" translatable="false">https://astrolingo.onrender.com/</string>
 
     <string name="client_ID" translatable="false">377354537953-q2eg1baq8mvdggc5cb8jh6ouhq7osuo4.apps.googleusercontent.com</string>
     <!-- - - - - - - - - - - - - - - - - - - -->
@@ -14,7 +15,7 @@
 
     <string name="app_name">AstroLingo</string>
 
-    <string name="homeFragment" >Home Page</string>
+    <string name="homeFragment">Home Page</string>
 
     <string name="testFragment">Test Page</string>
 
@@ -22,7 +23,7 @@
 
     <string name="AiFragment">AI Page</string>
 
-    <string name="settingFragment">SettingPage</string>
+    <string name="settingFragment">Setting Page</string>
 
     <string name="copyright">Copyright 2025 © AstroLingo</string>
 

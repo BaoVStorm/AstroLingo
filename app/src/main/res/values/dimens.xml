@@ -5,5 +5,8 @@
 
     <!--  login register page  -->
     <dimen name="gap_login_register_page">28dp</dimen>
-
+    
+    
+    <!-- Ai page -->
+    <dimen name="corner_radius_message_ai">20dp</dimen>
 </resources>
