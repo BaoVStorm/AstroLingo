@@ -52,6 +52,7 @@
 
         android:focusable="true"
         android:src="@drawable/back_press_color"
+        android:background="@android:color/transparent"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -30,7 +30,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_asset_replay5" />
+            app:srcCompat="@drawable/icon_asset_replay5"
+            android:background="@android:color/transparent"
+            />
 
         <ImageView
             android:id="@+id/audio_pause"
@@ -45,7 +47,8 @@
             app:layout_constraintTop_toTopOf="@+id/audio_reply5"
             app:layout_constraintBottom_toBottomOf="@+id/audio_reply5"
 
-            app:srcCompat="@drawable/icon_asset_pause_fill" />
+            app:srcCompat="@drawable/icon_asset_pause_fill"
+            android:background="@android:color/transparent"/>
 
         <ImageView
             android:id="@+id/audio_forward5"
@@ -59,7 +62,8 @@
             app:layout_constraintTop_toTopOf="@+id/audio_reply5"
             app:layout_constraintBottom_toBottomOf="@+id/audio_reply5"
 
-            app:srcCompat="@drawable/icon_asset_forward5" />
+            app:srcCompat="@drawable/icon_asset_forward5"
+            android:background="@android:color/transparent"/>
 
         <TextView
             android:id="@+id/audio_starttime"

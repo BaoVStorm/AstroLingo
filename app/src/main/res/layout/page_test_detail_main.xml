@@ -116,6 +116,7 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/icon_asset_info"
+            android:background="@android:color/transparent"
 
             app:layout_constraintLeft_toRightOf="@+id/header_part"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -132,6 +133,7 @@
 
             android:focusable="true"
             android:src="@drawable/icon_asset_setting"
+            android:background="@android:color/transparent"
 
             app:layout_constraintLeft_toRightOf="@+id/header_info"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -148,6 +150,7 @@
 
             android:focusable="true"
             android:src="@drawable/icon_asset_pause"
+            android:background="@android:color/transparent"
 
             app:layout_constraintLeft_toRightOf="@+id/header_setting"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -164,6 +167,7 @@
 
             android:focusable="true"
             android:src="@drawable/icon_asset_overview"
+            android:background="@android:color/transparent"
 
             app:layout_constraintLeft_toRightOf="@+id/header_pause"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -180,6 +184,7 @@
 
             android:focusable="true"
             android:src="@drawable/back_press_color"
+            android:background="@android:color/transparent"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
