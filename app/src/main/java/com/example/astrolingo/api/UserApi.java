@@ -57,7 +57,7 @@ public class UserApi {
 
     /*
         ------ gọi hàm getUserSchema tại 1 activity nào đó (để lấy dữ liệu của người dùng từ token đã có) -----
-        UserData.getUserSchema(this, token,
+        UserApi.getUserSchema(this, token,
         new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

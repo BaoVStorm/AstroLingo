@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.astrolingo.R;
 
@@ -77,18 +78,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void loadFragment(Fragment fragment, boolean isInit) {
-        if(isInit) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.format_frameLayout, fragment)
-                    .commit();
+//    private void loadFragment(Fragment fragment, boolean isInit) {
+//        if(isInit) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.format_frameLayout, fragment)
+//                    .commit();
+//
+//            return;
+//        }
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.format_frameLayout, fragment)
+//                .commit();
+//
+//    }
 
-            return;
+    private void loadFragment(Fragment fragment, boolean isInit) {
+        String tag = fragment.getClass().getSimpleName();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // Ẩn tất cả fragment đang hiện
+        for (Fragment f : fragmentManager.getFragments()) {
+            if (f != null && f.isVisible()) {
+                fragmentManager.beginTransaction().hide(f).commit();
+            }
         }
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.format_frameLayout, fragment)
-                .commit();
+        // Kiểm tra nếu fragment đã được add trước đó
+        Fragment existingFragment = fragmentManager.findFragmentByTag(tag);
 
+        if (existingFragment != null) {
+            fragmentManager.beginTransaction().show(existingFragment).commit();
+        } else {
+            fragmentManager.beginTransaction()
+                    .add(R.id.format_frameLayout, fragment, tag)
+                    .commit();
+        }
     }
 }
