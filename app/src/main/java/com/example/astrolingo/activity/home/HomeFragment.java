@@ -75,75 +75,75 @@ public class HomeFragment extends Fragment {
         fifth_place_Section.setVisibility(View.GONE);
         sixth_place_Section.setVisibility(View.GONE);
 
-        UserApi.getTopScore(
-            view.getContext(),
-            sharedPreClass.getValue_string("token"),
-            new Response.Listener<JSONArray>() {
-                @Override
-                public void onResponse(JSONArray jsonArray) {
-                    // Xử lý khi thành công
-                    // Log.d("API_SUCCESS", response.toString());
-                    try {
-
-                        View[] sections = {
-                                first_place_Section, second_place_Section, third_place_Section,
-                                fourth_place_Section, fifth_place_Section, sixth_place_Section
-                        };
-
-                        int[] nameIds = {
-                                R.id.top1_name, R.id.top2_name, R.id.top3_name,
-                                R.id.top4_name, R.id.top5_name, R.id.top6_name
-                        };
-
-                        int[] scoreIds = {
-                                R.id.top1_score, R.id.top2_score, R.id.top3_score,
-                                R.id.top4_score, R.id.top5_score, R.id.top6_score
-                        };
-
-                        int[] iconIds = {
-                                R.id.top1_icon, R.id.top2_icon, R.id.top3_icon,
-                                R.id.icon_top4, R.id.icon_top5, R.id.icon_top6
-                        };
-
-                        for (int nameId : nameIds) {
-                            view.findViewById(nameId).setVisibility(View.GONE);
-                        }
-
-                        for (int i = 0; i < jsonArray.length() && i < 6; i++) {
-                            sections[i].setVisibility(View.VISIBLE);
-
-                            if (jsonArray.isNull(i))
-                                continue;
-
-                            JSONObject user = jsonArray.getJSONObject(i);
-
-                            TextView nameView = view.findViewById(nameIds[i]);
-                            TextView scoreView = view.findViewById(scoreIds[i]);
-                            ImageView iconView = view.findViewById(iconIds[i]);
-
-                            nameView.setVisibility(View.VISIBLE);
-                            nameView.setText(user.getString("user_name"));
-                            scoreView.setText(String.valueOf(user.getInt("score")));
-
-                            if (!user.isNull("photo_url")) {
-                                iconView.setImageURI(Uri.parse(user.getString("photo_url")));
-                            }
-                        }
-
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    // Xử lý khi có lỗi
-                    Log.e("API_ERROR", error.toString());
-                    Toast.makeText(view.getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        );
+//        UserApi.getTopScore(
+//            view.getContext(),
+//            sharedPreClass.getValue_string("token"),
+//            new Response.Listener<JSONArray>() {
+//                @Override
+//                public void onResponse(JSONArray jsonArray) {
+//                    // Xử lý khi thành công
+//                    // Log.d("API_SUCCESS", response.toString());
+//                    try {
+//
+//                        View[] sections = {
+//                                first_place_Section, second_place_Section, third_place_Section,
+//                                fourth_place_Section, fifth_place_Section, sixth_place_Section
+//                        };
+//
+//                        int[] nameIds = {
+//                                R.id.top1_name, R.id.top2_name, R.id.top3_name,
+//                                R.id.top4_name, R.id.top5_name, R.id.top6_name
+//                        };
+//
+//                        int[] scoreIds = {
+//                                R.id.top1_score, R.id.top2_score, R.id.top3_score,
+//                                R.id.top4_score, R.id.top5_score, R.id.top6_score
+//                        };
+//
+//                        int[] iconIds = {
+//                                R.id.top1_icon, R.id.top2_icon, R.id.top3_icon,
+//                                R.id.icon_top4, R.id.icon_top5, R.id.icon_top6
+//                        };
+//
+//                        for (int nameId : nameIds) {
+//                            view.findViewById(nameId).setVisibility(View.GONE);
+//                        }
+//
+//                        for (int i = 0; i < jsonArray.length() && i < 6; i++) {
+//                            sections[i].setVisibility(View.VISIBLE);
+//
+//                            if (jsonArray.isNull(i))
+//                                continue;
+//
+//                            JSONObject user = jsonArray.getJSONObject(i);
+//
+//                            TextView nameView = view.findViewById(nameIds[i]);
+//                            TextView scoreView = view.findViewById(scoreIds[i]);
+//                            ImageView iconView = view.findViewById(iconIds[i]);
+//
+//                            nameView.setVisibility(View.VISIBLE);
+//                            nameView.setText(user.getString("user_name"));
+//                            scoreView.setText(String.valueOf(user.getInt("score")));
+//
+//                            if (!user.isNull("photo_url")) {
+//                                iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+//                            }
+//                        }
+//
+//                    } catch (JSONException e) {
+//                        throw new RuntimeException(e);
+//                    }
+//                }
+//            },
+//            new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//                    // Xử lý khi có lỗi
+//                    Log.e("API_ERROR", error.toString());
+//                    Toast.makeText(view.getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        );
 
     }
 }

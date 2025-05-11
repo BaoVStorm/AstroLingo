@@ -8,11 +8,11 @@
     android:layout_height="match_parent">
 
     <!-- Bảng xếp hạng Section -->
-    <include
-        android:id="@+id/header"
-        layout="@layout/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+<!--    <include-->
+<!--        android:id="@+id/header"-->
+<!--        layout="@layout/header"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
 
     <!-- Background cố định -->
     <ImageView
@@ -21,7 +21,7 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/background11"
-        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 

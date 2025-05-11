@@ -149,13 +149,18 @@ public class SplashActivity extends AppCompatActivity {
 
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 }
-
-                finish();
             }
         };
 
         thread.start();
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        finish();
     }
 
 
