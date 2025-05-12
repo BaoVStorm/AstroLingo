@@ -111,6 +111,22 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
     private void addListPage() throws JSONException {
 
+        /*
+        temp response
+
+        [
+            {
+                "_id": "68206059a87bed1c0357e730",
+                "part_id": 1,
+                "group_question_id": "test1_part1_1",
+                "url_image1": "https://estudyme.hoc102.com/legacy-data/kslearning/images/418922160-1620725865601-pic1.png",
+                "url_audio": "https://storage.googleapis.com/estudyme/dev/2022/06/27/30449101.mp3",
+                "test_id": 1
+            }
+        ]
+
+         */
+
         // get list group question
         TestApi.getListGroupQuestion(
             testObject.getInt("test_id"),
@@ -140,7 +156,15 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                                 partDefault = jsonObject.getInt("part_id");
                             }
 
-                            list_page.add(new testDetail_page("part1"));
+                            testDetail_page detailPage = new testDetail_page();
+                            detailPage.setGroupQuestionId(jsonObject.getString("group_question_id"));
+
+                            if(jsonObject.getInt("part_id") <= 4)
+                                detailPage.setType("listening");
+                            else
+                                detailPage.setType("reading");
+
+                            list_page.add(detailPage);
 
                         }
 

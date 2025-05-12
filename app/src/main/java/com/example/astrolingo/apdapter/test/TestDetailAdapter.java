@@ -3,7 +3,7 @@ package com.example.astrolingo.apdapter.test;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,12 +33,13 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
-    public static class Part1ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtQuestion;
+    public static class ListeningViewHolder extends RecyclerView.ViewHolder {
+        ListView lv_question;
 
-        public Part1ViewHolder(@NonNull View itemView) {
+        public ListeningViewHolder(@NonNull View itemView) {
             super(itemView);
-//            txtQuestion = itemView.findViewById(R.id.txtQuestion);
+
+            lv_question = itemView.findViewById(R.id.lv_question);
         }
     }
 
@@ -58,15 +59,15 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         } else if (viewType == 1) {
             view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.page_test_detail_part1, parent, false);
+                    .inflate(R.layout.page_test_detail_listening, parent, false);
 
-            return new Part1ViewHolder(view);
+            return new ListeningViewHolder(view);
 
         } else {
             view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.page_test_detail_part2, parent, false);
+                    .inflate(R.layout.page_test_detail_reading, parent, false);
 
-            return new Part1ViewHolder(view);
+            return new ListeningViewHolder(view);
         }
 
     }
@@ -87,8 +88,10 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             viewHolder.txtTitlePart.setText(String.valueOf(item.getTitle()));
             viewHolder.txtContentPart.setText(String.valueOf(item.getContent()));
 
-        } else if (holder instanceof Part1ViewHolder) {
-//            ((Part1ViewHolder) holder).txtQuestion.setText(item.getQuestion());
+        } else if (holder instanceof ListeningViewHolder) {
+            ListeningViewHolder viewHolder = (ListeningViewHolder) holder;
+
+//            ((ListeningViewHolder) holder).txtQuestion.setText(item.getQuestion());
         }
     }
 
