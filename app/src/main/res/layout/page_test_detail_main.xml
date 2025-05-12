@@ -110,7 +110,7 @@
             android:id="@+id/header_info"
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="5dp"
 
             android:clickable="true"
@@ -118,7 +118,7 @@
             android:src="@drawable/icon_asset_info"
             android:background="@android:color/transparent"
 
-            app:layout_constraintLeft_toRightOf="@+id/header_part"
+            app:layout_constraintLeft_toRightOf="@+id/header_part_full"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

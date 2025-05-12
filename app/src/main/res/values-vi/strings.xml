@@ -31,7 +31,7 @@
     <string name="loginPage">Đăng nhập</string>
     <string name="registerPage">Đăng ký</string>
     <string name="forgotPasswordPage">Quên mật khẩu</string>
-    <string name="loginWithUserName">Nhập tên tài khoản hoặc email của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="loginWithUserName">Nhập tên tài khoản hoặc email <font color="#EB4B4B">*</font> </string>
     <string name="RegisterWithUserName">Nhập tên tài khoản của bạn <font color="#EB4B4B">*</font> </string>
     <string name="loginWithPassword">Nhập mật khẩu của bạn <font color="#EB4B4B">*</font> </string>
     <string name="login">Đăng nhập</string>

@@ -42,16 +42,19 @@ public class TestDetailActivity extends AppCompatActivity {
             testTime.setText("Thời gian: " + testObject.getInt("test_time") + " phút");
             testQuestions.setText("Số câu hỏi: " + testObject.getInt("question_number"));
 
+            button_forgotPassword.setOnClickListener(v ->{
+                Intent intent = new Intent(TestDetailActivity.this, TestDetailMainActivity.class);
+                intent.putExtra("testObject", testObject.toString());
+
+                startActivity(intent);
+            });
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
-        button_forgotPassword.setOnClickListener(v ->{
-            startActivity(new Intent(TestDetailActivity.this, TestDetailMainActivity.class));
 
-//            finish();
-        });
 
         backIcon.setOnClickListener(v ->{
             finish();

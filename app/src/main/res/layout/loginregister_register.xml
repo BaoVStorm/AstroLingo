@@ -82,8 +82,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toTopOf="@+id/box_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -101,7 +101,7 @@
         android:textColor="@color/main_color_purple"
 
         android:fontFamily="@font/afacad_bold"
-        android:textSize="32sp"
+        android:textSize="@dimen/logo_text_size"
 
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:hint="@string/registerWithEmail"
@@ -168,7 +168,7 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.35"
+        app:layout_constraintVertical_bias="0.33"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +191,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:hint="@string/RegisterWithUserName"
@@ -246,7 +246,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:inputType="phone"
@@ -303,7 +303,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:inputType="textPassword"
@@ -360,7 +360,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:inputType="textPassword"
@@ -393,7 +393,7 @@
         android:text="@string/registerLogin_rule"
 
         android:fontFamily="@font/afacad_medium"
-        android:textSize="16sp"
+        android:textSize="@dimen/policy_text_size"
 
         android:gravity="start"
 
@@ -405,7 +405,7 @@
 
     <Button
         android:id="@+id/button_register"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/button_input_width"
         android:layout_height="wrap_content"
 
         android:fontFamily="@font/afacad_bold"
@@ -416,7 +416,7 @@
 
         android:backgroundTint="@color/loginRegister_button_color"
         android:paddingHorizontal="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox_rule" />
 
@@ -437,7 +437,7 @@
             android:text="@string/have_account"
 
             android:fontFamily="@font/afacad_medium"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_size_label"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -445,11 +445,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintLeft_toRightOf="@+id/textView5"
 
             android:fontFamily="@font/afacad_bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_size_label"
             android:textColor="@color/text_color_selector"
             tools:ignore="MissingConstraints"
             />

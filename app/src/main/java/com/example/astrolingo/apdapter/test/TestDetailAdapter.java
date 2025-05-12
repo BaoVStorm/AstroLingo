@@ -14,60 +14,88 @@ import com.example.astrolingo.domain.test.testDetail_page;
 import java.util.List;
 
 import com.example.astrolingo.R;
-public class TestDetailAdapter extends RecyclerView.Adapter<TestDetailAdapter.ViewHolder>{
+public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<testDetail_page> itemList;
 
     public TestDetailAdapter(List<testDetail_page> itemList) {
         this.itemList = itemList;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgThumbnail;
-        TextView txtTitle;
 
-        public ViewHolder(@NonNull View itemView) {
+    // ---------------------------------- Edit layout ----------------------------------
+    public static class StartPartViewHolder extends RecyclerView.ViewHolder {
+        TextView txtTitlePart, txtContentPart;
+
+        public StartPartViewHolder(@NonNull View itemView) {
             super(itemView);
-//            imgThumbnail = itemView.findViewById(R.id.imgThumbnail);
-//            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtTitlePart = itemView.findViewById(R.id.title_part);
+            txtContentPart = itemView.findViewById(R.id.content_part);
         }
     }
 
+    public static class Part1ViewHolder extends RecyclerView.ViewHolder {
+        TextView txtQuestion;
+
+        public Part1ViewHolder(@NonNull View itemView) {
+            super(itemView);
+//            txtQuestion = itemView.findViewById(R.id.txtQuestion);
+        }
+    }
+
+
+    // ---------------------------------- ----------------------------------
+
     @NonNull
     @Override
-    public TestDetailAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view;
         if (viewType == 0) {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.page_test_detail_startpart, parent, false);
+
+            return new StartPartViewHolder(view);
+
         } else if (viewType == 1) {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.page_test_detail_part1, parent, false);
+
+            return new Part1ViewHolder(view);
+
         } else {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.page_test_detail_part2, parent, false);
+
+            return new Part1ViewHolder(view);
         }
 
-
-        return new ViewHolder(view);
     }
 
     @Override
     public int getItemViewType(int position) {
         testDetail_page item = itemList.get(position);
-        return item.getType(); // giả sử bạn có 1 phương thức getType() trả về int
+        return item.getType();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TestDetailAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         testDetail_page item = itemList.get(position);
-//        holder.txtTitle.setText(item.getTitle());
-//        holder.imgThumbnail.setImageResource(item.getImageResId()); // Nếu dùng ảnh online thì load bằng Glide/Picasso
+
+        if (holder instanceof StartPartViewHolder) {
+            StartPartViewHolder viewHolder = (StartPartViewHolder) holder;
+
+            viewHolder.txtTitlePart.setText(String.valueOf(item.getTitle()));
+            viewHolder.txtContentPart.setText(String.valueOf(item.getContent()));
+
+        } else if (holder instanceof Part1ViewHolder) {
+//            ((Part1ViewHolder) holder).txtQuestion.setText(item.getQuestion());
+        }
     }
 
     @Override
     public int getItemCount() {
         return itemList.size();
     }
-
 }
+
+
