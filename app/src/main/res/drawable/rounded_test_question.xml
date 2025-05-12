@@ -1,19 +1,11 @@
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#20FFFFFF">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Bo góc + màu nền gốc -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/loginRegister_button_color" />
+            <solid android:color="@color/white" />
             <corners android:radius="12dp" />
         </shape>
     </item>
 
-    <!-- Đảm bảo ripple theo bo góc -->
-    <item android:id="@android:id/mask">
-        <shape android:shape="rectangle">
-            <solid android:color="@android:color/white" /> <!-- Mask cần có màu -->
-            <corners android:radius="12dp" />
-        </shape>
-    </item>
-</ripple>
+</layer-list>
