@@ -8,7 +8,6 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/box_audio"
         android:layout_height="60dp"
         android:layout_width="match_parent"
         android:background="@color/white"
@@ -47,7 +46,7 @@
             app:layout_constraintTop_toTopOf="@+id/audio_reply5"
             app:layout_constraintBottom_toBottomOf="@+id/audio_reply5"
 
-            app:srcCompat="@drawable/icon_asset_pause_fill"
+            app:srcCompat="@drawable/icon_asset_play_fill"
             android:background="@android:color/transparent"/>
 
         <ImageView
