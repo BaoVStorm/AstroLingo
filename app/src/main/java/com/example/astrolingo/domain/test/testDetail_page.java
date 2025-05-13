@@ -1,9 +1,13 @@
 package com.example.astrolingo.domain.test;
 
+import java.util.ArrayList;
+
 public class testDetail_page {
     private String title, content;
     private String type;
+    private String audioUrl;
     private String group_question_id;
+    private ArrayList<String> list_image_url;
     private int part_id;
 
     public testDetail_page(){}
@@ -14,6 +18,18 @@ public class testDetail_page {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public void setListImageUrl(ArrayList<String> list_image_url) {
+        this.list_image_url = list_image_url;
+    }
+    public ArrayList<String> getListImageUrl() {
+        return list_image_url;
+    }
+    public void setAudioUrl(String audioUrl) {
+        this.audioUrl = audioUrl;
+    }
+    public String getAudioUrl() {
+        return audioUrl;
     }
     public void setGroupQuestionId(String group_question_id) {
         this.group_question_id = group_question_id;

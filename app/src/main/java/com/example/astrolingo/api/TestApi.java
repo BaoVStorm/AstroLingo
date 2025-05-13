@@ -249,12 +249,12 @@ public class TestApi {
         requestQueue.add(jsonObjectRequest);
     }
 
-    public static void getListQuestion(String group_question_id, Context context, String token, Response.Listener<JSONObject> onSuccess, Response.ErrorListener onError) {
+    public static void getListQuestion(String group_question_id, Context context, String token, Response.Listener<JSONArray> onSuccess, Response.ErrorListener onError) {
         String apiurl = context.getString(R.string.api_key) + "api/test/getListQuestion";
 
         apiurl = apiurl + "?group_question_id=" + group_question_id;
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
                 Request.Method.GET,
                 apiurl,
                 null,

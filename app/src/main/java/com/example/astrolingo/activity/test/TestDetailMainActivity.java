@@ -159,13 +159,34 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                             testDetail_page detailPage = new testDetail_page();
                             detailPage.setGroupQuestionId(jsonObject.getString("group_question_id"));
 
+                            // set type
                             if(jsonObject.getInt("part_id") <= 4)
                                 detailPage.setType("listening");
                             else
                                 detailPage.setType("reading");
 
-                            list_page.add(detailPage);
+                            // add list imageurl
+                            ArrayList<String> listImageUrl = new ArrayList<>();
 
+                            if(!jsonObject.isNull("url_image1"))
+                                listImageUrl.add(jsonObject.getString("url_image1"));
+
+                            for(int index = 1; index <= 5; index++) {
+                                String urlImageText = "url_image" + (index + 1);
+
+                                if(!jsonObject.isNull(urlImageText))
+                                    listImageUrl.add(jsonObject.getString(urlImageText));
+                                else
+                                    break;
+                            }
+
+                            detailPage.setListImageUrl(listImageUrl);
+
+                            // add audio url
+                            if(!jsonObject.isNull("url_audio"))
+                                detailPage.setAudioUrl(jsonObject.getString("url_audio"));
+
+                            list_page.add(detailPage);
                         }
 
                         // thêm danh sách vào viewpager

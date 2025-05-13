@@ -14,9 +14,15 @@ public class question_test {
     String question_id = "null", question_text = "null", ans_1 = "null", ans_2 = "null", ans_3 = "null", ans_4 = "null";
     int correct_answer;
 
+    String imageUrl = "null";
+
+    String audioUrl = "null";
+
+    String type;
 
     public question_test() {};
 
+    // set type "question"
     public question_test(String question_text, String ans_1, String ans_2, String ans_3, String ans_4, int correct_answer) {
         this.question_text = question_text;
         this.ans_1 = ans_1;
@@ -24,8 +30,30 @@ public class question_test {
         this.ans_3 = ans_3;
         this.ans_4 = ans_4;
         this.correct_answer = correct_answer;
+
+        this.type = "question";
     }
 
+    // set type "image"
+    public question_test(String imageUrl) {
+        this.imageUrl = imageUrl;
+
+        this.type = "image";
+    }
+
+//    public question_test(String audioUrl, String type) {
+//        this.audioUrl = audioUrl;
+//
+//        this.type = "audio";
+//    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getType() {
+        return type;
+    }
     public void setQuestionId(String question_id) {
         this.question_id = question_id;
     }
