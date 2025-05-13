@@ -140,10 +140,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     // ------------------------------------ function ------------------------------------
     private void addQuestion(List<question_test> list_QuestionTest, testDetail_page item, Context context, ListeningViewHolder viewHolder) {
-//        list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
-//        list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
-//        list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
-//        list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
+        // list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
 
         SharedPreferenceClass sharedClass = new SharedPreferenceClass(context);
 
