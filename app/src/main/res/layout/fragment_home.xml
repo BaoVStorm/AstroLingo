@@ -631,7 +631,7 @@
 
                 android:layout_above="@id/scoreboardSection"
                 android:layout_alignParentEnd="true"
-                android:translationY="100dp"
+                android:translationY="95dp"
                 />
 
         </RelativeLayout>
