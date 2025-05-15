@@ -30,7 +30,7 @@
         android:text="@string/app_name"
 
         android:textColor="@color/white"
-        android:textSize="64sp"
+        android:textSize="50sp"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:fontFamily="@font/afacad_italic"
         android:text="Learn English, the cosmic way"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="22sp"
 
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +72,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="315dp"
-        android:layout_height="277dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,9 +85,9 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
         style="?android:attr/progressBarStyleLarge"
 
         android:indeterminateTint="@color/loading"
