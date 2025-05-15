@@ -145,5 +145,12 @@ public class HomeFragment extends Fragment {
             }
         );
 
+
+
     }
+
+    public String getType() {
+        return "home";
+    }
+
 }

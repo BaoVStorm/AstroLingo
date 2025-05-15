@@ -3,8 +3,10 @@ package com.example.astrolingo.activity;
 //
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -27,6 +29,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView header;
     private BottomNavigationView bottomNav;
     private FrameLayout frame;
 
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNav = findViewById(R.id.format_bottomNav);
         frame = findViewById(R.id.format_frameLayout);
+        header = findViewById(R.id.format_textView);
 
         // navigate bottom nav
         bottomNav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -46,18 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.navHome) {
+                    header.setText(getString(R.string.navHome));
                     loadFragment(new HomeFragment(), false);
                     return true;
                 } else if (id == R.id.navTest) {
+                    header.setText(getString(R.string.navTest));
                     loadFragment(new TestFragment(), false);
                     return true;
                 } else if (id == R.id.navCourse) {
+                    header.setText(getString(R.string.navCourse));
                     loadFragment(new CourseFragment(), false);
                     return true;
                 } else if (id == R.id.navAI) {
+                    header.setText(getString(R.string.navAI));
                     loadFragment(new AiFragment(), false);
                     return true;
                 } else if (id == R.id.navSetting) {
+                    header.setText(getString(R.string.navSetting));
                     loadFragment(new SettingFragment(), false);
                     return true;
                 }
