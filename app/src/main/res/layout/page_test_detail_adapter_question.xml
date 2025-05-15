@@ -38,7 +38,7 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="12dp"
             android:text="asdfasdfadsfasdfasdfasdfsadfasdfasdfadsasdasdasdasdasdasdasdasa"
-            android:textSize="18sp"
+            android:textSize="17sp"
 
             tools:ignore="MissingConstraints" />
 

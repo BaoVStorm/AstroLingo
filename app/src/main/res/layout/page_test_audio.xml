@@ -8,7 +8,7 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_width="match_parent"
         android:background="@color/white"
 
@@ -19,8 +19,8 @@
 
         <ImageView
             android:id="@+id/audio_reply5"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:scaleType="centerCrop"
             android:layout_marginStart="10dp"
 
@@ -35,8 +35,8 @@
 
         <ImageView
             android:id="@+id/audio_pause"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:scaleType="centerCrop"
             android:layout_marginStart="5dp"
 
@@ -51,8 +51,8 @@
 
         <ImageView
             android:id="@+id/audio_forward5"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:scaleType="centerCrop"
             android:layout_marginStart="5dp"
             app:tint="@color/dark_grey"
@@ -74,7 +74,7 @@
 
             android:fontFamily="@font/afacad_medium"
             android:text="00:00"
-            android:textSize="16sp"
+            android:textSize="14sp"
 
             app:layout_constraintLeft_toRightOf="@+id/audio_forward5"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
 
             android:gravity="center"
             android:text="00:00"
-            android:textSize="16sp"
+            android:textSize="14sp"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
