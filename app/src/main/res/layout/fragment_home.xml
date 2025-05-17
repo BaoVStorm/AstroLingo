@@ -54,8 +54,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleVocabulary_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleVocabulary"
                 android:layout_below="@id/welcome_img_homepage_CardView"
                 android:layout_marginTop="30dp"
@@ -193,8 +193,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleGame_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleGame"
                 android:layout_below="@id/vocabSection"
                 android:layout_marginTop="30dp"
@@ -367,8 +367,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleHistory_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleHistory"
                 android:layout_below="@id/gameSection"
                 android:layout_marginTop="30dp"
@@ -504,8 +504,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleAI_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleAI"
                 android:layout_below="@id/historySection"
                 android:layout_marginTop="30dp"
@@ -605,8 +605,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleScoreboard_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleScoreboard"
                 android:layout_below="@id/AISection"
                 android:layout_marginTop="30dp"

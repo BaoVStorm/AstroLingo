@@ -17,6 +17,8 @@
         android:src="@drawable/background11"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/navAnswerBox"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,6 +61,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navAnswerBox"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:background="@drawable/shadow_top"
+
+        app:layout_constraintBottom_toBottomOf="@+id/fixed_background" />
+
+    <include
+        android:id="@+id/navAnswerBox"
+        layout="@layout/page_test_detail_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

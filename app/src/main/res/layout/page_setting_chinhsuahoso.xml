@@ -23,7 +23,7 @@
                 android:src="@drawable/back_press_color_purple"
                 android:background="@android:color/transparent"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="0dp"
 
                 android:clickable="true"
                 android:focusable="true"
@@ -53,16 +53,17 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="vertical"
+            android:padding="13dp"
             android:gravity="center_horizontal">
 
             <!-- Avatar -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgAvatar"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_ava2"
-
+                android:layout_marginBottom="5dp"
                 app:shapeAppearanceOverlay="@style/CircularImageView"
                 app:strokeColor="@color/white"
                 app:strokeWidth="2dp"
@@ -72,12 +73,13 @@
             <!-- Username + Điểm -->
             <LinearLayout
                 android:id="@+id/layoutUsernameScore"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:background="@drawable/white_background_retangle"
-                android:padding="8dp"
+                android:background="@drawable/rounded_board_white"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="12dp"
                 android:layout_marginTop="12dp">
 
                 <TextView
@@ -87,7 +89,7 @@
                     android:text="Username"
                     android:textColor="#800080"
                     android:fontFamily="@font/afacad_bold"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/txtScore"
@@ -135,11 +137,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_chinhsuahoso"
                     app:tint="#9C27B0" />
 
@@ -150,7 +157,7 @@
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_name"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -166,11 +173,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_email"
                     app:tint="#9C27B0" />
 
@@ -181,7 +190,7 @@
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_email"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -198,11 +207,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_phone"
                     app:tint="#9C27B0" />
 
@@ -213,7 +224,7 @@
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_sdt"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -230,11 +241,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_calendar"
                     app:tint="#9C27B0" />
 
@@ -245,7 +258,7 @@
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_date"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -262,11 +275,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_gender"
                     app:tint="#9C27B0" />
 
@@ -277,7 +292,7 @@
                     android:layout_marginStart="12dp"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_gender"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -295,15 +310,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnEdit"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:backgroundTint="#800080"
             android:minWidth="200dp"
             android:text="Chỉnh sửa"

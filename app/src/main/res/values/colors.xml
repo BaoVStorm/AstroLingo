@@ -35,7 +35,7 @@
 
     <!--  seekbar (test)  -->
     <color name="colorPrimary">#8452D3</color>
-
+    <color name="chooseAnswer">#6938BC</color>
     <color name="colorPrimaryLight">#8E74C3</color>
 
 </resources>

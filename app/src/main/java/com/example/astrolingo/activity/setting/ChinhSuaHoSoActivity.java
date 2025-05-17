@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 
 import org.json.JSONException;
@@ -62,8 +63,15 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
         try {
             JSONObject userObject = new JSONObject(jsonString);
 
-            if(!userObject.isNull("photo_url"))
-                avatarImageView.setImageURI(Uri.parse(userObject.getString("photo_url")));
+            if(!userObject.isNull("photo_url")) {
+//                avatarImageView.setImageURI(Uri.parse(userObject.getString("photo_url")));
+
+                Glide.with(this.getApplicationContext())
+                        .load(userObject.getString("photo_url"))
+                        .placeholder(R.drawable.icon_ava2) // hình mặc định nếu chưa có ảnh
+                        .error(R.drawable.icon_ava2)         // hình nếu lỗi tải
+                        .into(avatarImageView);
+            }
 
             if(userObject.isNull("score"))
                 coinTextView.setText(String.valueOf(0));

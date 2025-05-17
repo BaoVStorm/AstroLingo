@@ -115,4 +115,8 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Nữ</string>
+
+    <!--  Test  -->
+    <string name="Sentence">Câu</string>
+
 </resources>

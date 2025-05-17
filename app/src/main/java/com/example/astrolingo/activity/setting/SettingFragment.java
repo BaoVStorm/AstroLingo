@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 
 // API library
@@ -49,7 +50,7 @@ public class SettingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate layout page_setting vào fragment
-        View view = inflater.inflate(R.layout.page_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
         // init profile
         if (getActivity() != null) {
@@ -85,7 +86,7 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Đổi màu nền của nút
-                btnChinhSuaHoSo.setBackgroundColor(Color.parseColor("#9F7EFF"));
+//                btnChinhSuaHoSo.setBackgroundColor(Color.parseColor("#9F7EFF"));
 
                 // Mở activity ChinhSuaHoSoActivity
                 Intent intent = new Intent(getActivity(), ChinhSuaHoSoActivity.class);
@@ -125,7 +126,13 @@ public class SettingFragment extends Fragment {
                         userObject = response.getJSONObject("user");
 
                         if(!userObject.isNull("photo_url")) {
-                            avatarImageView.setImageURI(Uri.parse(userObject.getString("photo_url")));
+//                            avatarImageView.setImageURI(Uri.parse(userObject.getString("photo_url")));
+
+                            Glide.with(view.getContext())
+                                    .load(userObject.getString("photo_url"))
+                                    .placeholder(R.drawable.icon_ava2) // hình mặc định nếu chưa có ảnh
+                                    .error(R.drawable.icon_ava2)         // hình nếu lỗi tải
+                                    .into(avatarImageView);
                         }
 
                         usernameTextView.setText(userObject.getString("full_name"));

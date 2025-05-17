@@ -50,23 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.navHome) {
-                    header.setText(getString(R.string.navHome));
+                    header.setText(getString(R.string.homeFragment));
                     loadFragment(new HomeFragment(), false);
                     return true;
                 } else if (id == R.id.navTest) {
-                    header.setText(getString(R.string.navTest));
+                    header.setText(getString(R.string.testFragment));
                     loadFragment(new TestFragment(), false);
                     return true;
                 } else if (id == R.id.navCourse) {
-                    header.setText(getString(R.string.navCourse));
+                    header.setText(getString(R.string.courseFragment));
                     loadFragment(new CourseFragment(), false);
                     return true;
                 } else if (id == R.id.navAI) {
-                    header.setText(getString(R.string.navAI));
+                    header.setText(getString(R.string.AiFragment));
                     loadFragment(new AiFragment(), false);
                     return true;
                 } else if (id == R.id.navSetting) {
-                    header.setText(getString(R.string.navSetting));
+                    header.setText(getString(R.string.settingFragment));
                     loadFragment(new SettingFragment(), false);
                     return true;
                 }

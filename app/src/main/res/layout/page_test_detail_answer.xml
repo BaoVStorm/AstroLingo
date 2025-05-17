@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/navQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/navQuestion1"
+            layout="@layout/page_test_detail_question_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            />
+
+        <include
+            android:id="@+id/navQuestion2"
+            layout="@layout/page_test_detail_question_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navQuestion3"
+            layout="@layout/page_test_detail_question_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navQuestion4"
+            layout="@layout/page_test_detail_question_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+
+        <include
+            android:id="@+id/navQuestion5"
+            layout="@layout/page_test_detail_question_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navQuestion">
+
+        <include
+            android:id="@+id/navAnswer1"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer2"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer3"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer4"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

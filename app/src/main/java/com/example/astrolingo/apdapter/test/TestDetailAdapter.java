@@ -2,7 +2,9 @@ package com.example.astrolingo.apdapter.test;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.media.AudioManager;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
@@ -10,18 +12,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.api.TestApi;
+import com.example.astrolingo.domain.test.nav_answer;
 import com.example.astrolingo.domain.test.question_test;
 import com.example.astrolingo.domain.test.testDetail_page;
 import com.example.astrolingo.domain.test.AudioState;
@@ -34,10 +39,13 @@ import java.util.Map;
 import java.util.Objects;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.function.StringManager;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<testDetail_page> itemList;
@@ -67,6 +75,11 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         TextView audio_starttime, audio_endtime;
         SeekBar audio_seekbar;
 
+        LinearLayout navQuestion;
+        View navQuestion1, navQuestion2, navQuestion3, navQuestion4, navQuestion5;
+        View navAnswer1, navAnswer2, navAnswer3, navAnswer4;
+
+
         public ListeningViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -81,6 +94,19 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             audio_endtime = itemView.findViewById(R.id.audio_endtime);
 
             audio_seekbar = itemView.findViewById(R.id.audio_seekbar);
+
+            // nav Answer, Question
+            navQuestion = itemView.findViewById(R.id.navQuestion);
+            navQuestion1 = itemView.findViewById(R.id.navQuestion1);
+            navQuestion2 = itemView.findViewById(R.id.navQuestion2);
+            navQuestion3 = itemView.findViewById(R.id.navQuestion3);
+            navQuestion4 = itemView.findViewById(R.id.navQuestion4);
+            navQuestion5 = itemView.findViewById(R.id.navQuestion5);
+
+            navAnswer1 = itemView.findViewById(R.id.navAnswer1);
+            navAnswer2 = itemView.findViewById(R.id.navAnswer2);
+            navAnswer3 = itemView.findViewById(R.id.navAnswer3);
+            navAnswer4 = itemView.findViewById(R.id.navAnswer4);
         }
     }
 
@@ -111,23 +137,21 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         View view;
         if (viewType == 0) {
-            view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.page_test_detail_startpart, parent, false);
+            view = inflater.inflate(R.layout.page_test_detail_startpart, parent, false);
 
             return new StartPartViewHolder(view);
 
         } else if (viewType == 1) {
-            view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.page_test_detail_listening, parent, false);
+            view = inflater.inflate(R.layout.page_test_detail_listening, parent, false);
 
             return new ListeningViewHolder(view);
 
         } else {
-            view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.page_test_detail_listening, parent, false);
+            view = inflater.inflate(R.layout.page_test_detail_listening, parent, false);
 
             return new ListeningViewHolder(view);
         }
@@ -142,11 +166,16 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 
     // Audio
-    public MediaPlayer curMediaPlayer = null;
+//    MediaPlayer sharedMediaPlayer = new MediaPlayer();
+//    int currentPlayingPosition = -1;
     public Map<Integer, AudioState> map_audio = new HashMap<>();
     public Handler handler = new Handler();
     public Runnable updateSeekBar= null;
-//    public boolean isPlaying = false;
+
+    // Lưu số câu hỏi trong 1 group_question và số đáp án, câu trả lời trong 1 câu hỏi
+    HashMap<String, ArrayList<Integer>> map_groupQuestion = new HashMap<>();     // key: group_question_id, value: danh sách các mã câu hỏi
+    HashMap<Integer, nav_answer> map_answer = new HashMap<>();     // key: mã câu hỏi, value: nav_answer(count_ans, currentChoose)
+
     // ---
 
     @SuppressLint("ResourceAsColor")
@@ -161,9 +190,12 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             viewHolder.txtContentPart.setText(String.valueOf(item.getContent()));
 
         } else if (holder instanceof ListeningViewHolder) {
-            Log.e("position", String.valueOf(position) + String.valueOf(item.getTitle()));
+            // Log.e("position", String.valueOf(position) + String.valueOf(item.getTitle()));
 
             ListeningViewHolder viewHolder = (ListeningViewHolder) holder;
+
+            // init navAnswer, mavQuestion
+            initNavAnswer(viewHolder);
 
             List<question_test> list_QuestionTest = new ArrayList<>();
 
@@ -183,7 +215,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                 // init
                 if(!map_audio.containsKey(position)) {
-                    curMediaPlayer = new MediaPlayer();
+                    MediaPlayer curMediaPlayer = new MediaPlayer();
 
                     try {
                         curMediaPlayer.setDataSource(urlAudio);
@@ -288,14 +320,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private void playAudio(String urlAudio, ListeningViewHolder viewHolder, int positionAdapter, ImageView audio_pause) {
-//        if (!map_audio.containsKey(positionAdapter)) {
-//            //
-////            bug here
-//
-//        } else {
-//
-//        }
-
         if (Objects.requireNonNull(map_audio.get(positionAdapter)).isPlaying()) {
             // Đang phát → pause
             Objects.requireNonNull(map_audio.get(positionAdapter)).getMediaPlayer().pause();
@@ -343,44 +367,75 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     // Log.d("API_SUCCESS", response.toString());
 
                     try {
+                        int index = 0;
+
+                        ArrayList<Integer> list_question = new ArrayList<>();
+
                         for(int i = 0; i < arrayObject.length(); i++) {
+                            index ++;
+
+                            int count_ans = 0;
+
                             JSONObject object = arrayObject.getJSONObject(i);
 
                             String questionText, ans1, ans2, ans3, ans4;
                             int correctNumber;
 
                             if(!object.isNull("question_text"))
-                                questionText = object.getString("question_text");
+                                questionText = index + ". " + object.getString("question_text");
                             else
                                 questionText = "null";
 
-                            if(!object.isNull("ans_1"))
+                            if(!object.isNull("ans_1")) {
                                 ans1 = object.getString("ans_1");
+                                count_ans++;
+                            }
                             else
                                 ans1 = "null";
 
-                            if(!object.isNull("ans_2"))
+                            if(!object.isNull("ans_2")) {
                                 ans2 = object.getString("ans_2");
-                            else
+                                count_ans++;
+                            } else
                                 ans2 = "null";
 
-                            if(!object.isNull("ans_3"))
+                            if(!object.isNull("ans_3")) {
                                 ans3 = object.getString("ans_3");
-                            else
+                                count_ans++;
+                            } else
                                 ans3 = "null";
 
-                            if(!object.isNull("ans_4"))
+                            if(!object.isNull("ans_4")) {
                                 ans4 = object.getString("ans_4");
-                            else
+                                count_ans++;
+                            } else
                                 ans4 = "null";
 
-                            if(!object.isNull("correct_answer"))
+                            if(!object.isNull("correct_answer")) {
                                 correctNumber = object.getInt("correct_answer");
-                            else
+                            } else
                                 correctNumber = 1;
 
                             list_QuestionTest.add(new question_test(questionText, ans1, ans2, ans3, ans4, correctNumber));
+
+                            int question_id = StringManager.extractLastNumber(object.getString("question_id"));
+
+                            // add to list_question to add to HashMap map_groupQuestion
+                            list_question.add(question_id);
+
+                            // add to HashMap map_answer
+                            if(!map_answer.containsKey(question_id)) {
+                                nav_answer navAnswer = new nav_answer(0, count_ans);
+                                map_answer.put(question_id, navAnswer);
+                            }
                         }
+
+                        String group_question_id = item.getGroupQuestionId();
+
+                        if(!map_groupQuestion.containsKey(group_question_id))
+                            map_groupQuestion.put(group_question_id, list_question);
+
+                        editNavAnswer(group_question_id, viewHolder);
 
                         QuestionAdapter adapter = new QuestionAdapter(viewHolder.lv_question.getContext(), list_QuestionTest);
                         viewHolder.lv_question.setAdapter(adapter);
@@ -401,5 +456,184 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         );
 
     }
+
+    private void editNavAnswer(String group_question_id, ListeningViewHolder viewHolder) {
+        if(!map_groupQuestion.containsKey(group_question_id))
+            return;
+
+        ArrayList<Integer> list_question = map_groupQuestion.get(group_question_id);
+
+        View[] views = new View[] {
+                viewHolder.navQuestion1,
+                viewHolder.navQuestion2,
+                viewHolder.navQuestion3,
+                viewHolder.navQuestion4,
+                viewHolder.navQuestion5
+        };
+
+        if(list_question.size() <= 1) {
+            viewHolder.navQuestion.setVisibility(View.GONE);
+        }
+        else {
+            viewHolder.navQuestion.setVisibility(View.VISIBLE);
+
+            for(int i = 0; i < list_question.size(); i++) {
+                views[i].setVisibility(View.VISIBLE);
+
+                // set listener lick question i
+                int finalI = i;
+                views[i].setOnClickListener(v -> {
+                    // reset hightlight question
+                    for (View view : views) {
+                        view.findViewById(R.id.navQuestion_highlight).setVisibility(View.GONE);
+                    }
+
+                    chooseQuestion(list_question.get(finalI), viewHolder);
+                    v.findViewById(R.id.navQuestion_highlight).setVisibility(View.VISIBLE);
+                });
+            }
+
+            for(int i = list_question.size(); i < 5; i++)
+                views[i].setVisibility(View.GONE);
+        }
+
+        // reset hightlight question
+        for (View view : views) {
+            view.findViewById(R.id.navQuestion_highlight).setVisibility(View.GONE);
+        }
+
+        // choose question1
+        chooseQuestion(list_question.get(0), viewHolder);
+        viewHolder.navQuestion1.findViewById(R.id.navQuestion_highlight).setVisibility(View.VISIBLE);
+    }
+
+    private void chooseQuestion(int question_id, ListeningViewHolder viewHolder) {
+        if(!map_answer.containsKey(question_id))
+            return;
+
+        nav_answer navAnswer = map_answer.get(question_id);
+
+        View[] views = new View[] {
+            viewHolder.navAnswer1,
+            viewHolder.navAnswer2,
+            viewHolder.navAnswer3,
+            viewHolder.navAnswer4
+        };
+
+
+        for(int i = 0; i < Objects.requireNonNull(navAnswer).getCountAns(); i++) {
+            views[i].setVisibility(View.VISIBLE);
+
+            // set listener lick answer i
+            int finalI = i;
+            views[i].setOnClickListener(v-> {
+                navAnswer.setCurrentChoose(finalI + 1);
+
+                // Reset tất cả đáp án về màu gốc
+                for (View view : views) {
+                    resetAnswer(view, viewHolder);
+                }
+
+                highlightAnswer(v, viewHolder);
+            });
+        }
+
+        // Reset tất cả đáp án về màu gốc
+        for (View view : views) {
+            resetAnswer(view, viewHolder);
+        }
+
+        int currentChoose = navAnswer.getCurrentChoose();
+        if(currentChoose >= 1 && currentChoose <= 4)
+            highlightAnswer(views[currentChoose - 1], viewHolder);
+
+        for(int i = navAnswer.getCountAns(); i < 4; i++)
+            views[i].setVisibility(View.GONE);
+    }
+
+    private void resetAnswer(View view, RecyclerView.ViewHolder viewHolder) {
+        ShapeableImageView avatarImageView = view.findViewById(R.id.avatarImageView);
+        avatarImageView.setBackgroundColor(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.white));
+        avatarImageView.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.dark_grey)));
+
+        TextView navAnswer_text = view.findViewById(R.id.navAnswer_text);
+        navAnswer_text.setTextColor(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.dark_grey));
+    }
+
+    private void highlightAnswer(View view, RecyclerView.ViewHolder viewHolder) {
+        ShapeableImageView avatarImageView = view.findViewById(R.id.avatarImageView);
+        avatarImageView.setBackgroundColor(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.chooseAnswer));
+        avatarImageView.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.chooseAnswer)));
+
+        TextView navAnswer_text = view.findViewById(R.id.navAnswer_text);
+        navAnswer_text.setTextColor(ContextCompat.getColor(viewHolder.itemView.getContext(), R.color.white));
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void initNavAnswer(ListeningViewHolder viewHolder) {
+        View[] navQuestions = new View[] {
+                viewHolder.navQuestion1,
+                viewHolder.navQuestion2,
+                viewHolder.navQuestion3,
+                viewHolder.navQuestion4,
+                viewHolder.navQuestion5
+        };
+
+        for (int i = 0; i < navQuestions.length; i++) {
+            TextView navQuestion_text = navQuestions[i].findViewById(R.id.navQuestion_text);
+            View navQuestion_highlight = navQuestions[i].findViewById(R.id.navQuestion_highlight);
+
+            Context context = viewHolder.itemView.getContext();
+
+            navQuestion_text.setText(context.getString(R.string.Sentence) + " " + (i + 1));
+
+            navQuestion_highlight.setVisibility(View.GONE);
+            navQuestions[i].setVisibility(View.GONE);
+        }
+
+        viewHolder.navQuestion.setVisibility(View.GONE);
+
+        View[] navAnswers = new View[] {
+                viewHolder.navAnswer1,
+                viewHolder.navAnswer2,
+                viewHolder.navAnswer3,
+                viewHolder.navAnswer4
+        };
+
+        String[] answers = new String[] {
+                "A",
+                "B",
+                "C",
+                "D"
+        };
+
+        for (int i = 0; i < navAnswers.length; i++) {
+            TextView navAnswer_text = navAnswers[i].findViewById(R.id.navAnswer_text);
+
+            navAnswer_text.setText(answers[i]);
+
+            navAnswers[i].setVisibility(View.GONE);
+        }
+    }
+
+    //    --------------------- update app
+    // Memory Leak từ MediaPlayer và Handler
+    // MediaPlayer cần được release() trong onViewRecycled() hoặc khi không dùng nữa.
+//    @Override
+//    public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
+//        super.onViewRecycled(holder);
+//        if (holder instanceof ListeningViewHolder) {
+//            int position = holder.getAdapterPosition();
+//            if (map_audio.containsKey(position)) {
+//                MediaPlayer mp = map_audio.get(position).getMediaPlayer();
+//                if (mp != null) {
+//                    mp.stop();
+//                    mp.release();
+//                }
+//                map_audio.remove(position);
+//            }
+//            handler.removeCallbacks(updateSeekBar);
+//        }
+//    }
 }
 

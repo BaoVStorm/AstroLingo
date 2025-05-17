@@ -25,4 +25,14 @@ public class StringManager {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public static int extractLastNumber(String input) {
+        String[] parts = input.split("_");
+        try {
+            return Integer.parseInt(parts[parts.length - 1]);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return -1; // hoặc giá trị mặc định nếu không hợp lệ
+        }
+    }
 }
