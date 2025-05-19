@@ -46,7 +46,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         header_part_full = findViewById(R.id.header_part_full);
         header_part_number = findViewById(R.id.header_part_number);
 
-        //
+        // get test object
         String testString = getIntent().getStringExtra("testObject");
 
         // add temp value
@@ -66,13 +66,30 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         header_time.setText(testObject.optString("test_time"));
         header_part_full.setText(testObject.optString("question_number"));
 
-        // add list
-//        try {
-//            addListPage();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//            finish();
-//        }
+        // set viewpager listener
+        viewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+
+                if (list_page != null && position < list_page.size()) {
+                    testDetail_page currentPage = list_page.get(position);
+
+                    // Chỉ cập nhật nếu không phải là trang giới thiệu ("start_part")
+                    if (currentPage.getType() != 0) {
+                        int partId = currentPage.getPart();
+
+                        // Cập nhật text cho header_part_number
+                        header_part_number.setText("Part " + partId);
+                    } else {
+                        header_part_number.setText("Start Part");
+                    }
+                }
+            }
+        });
+
+
+
         getListPart_addListPage();
 
     }
@@ -218,5 +235,12 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         detailPage.setTitle(partJSONArray.getJSONObject(part_id - 1).getString("title"));
 
         Log.e("print", detailPage.getContent());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        finish();
     }
 }

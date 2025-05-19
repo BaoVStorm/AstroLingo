@@ -367,22 +367,20 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     // Log.d("API_SUCCESS", response.toString());
 
                     try {
-                        int index = 0;
-
                         ArrayList<Integer> list_question = new ArrayList<>();
 
                         for(int i = 0; i < arrayObject.length(); i++) {
-                            index ++;
-
                             int count_ans = 0;
 
                             JSONObject object = arrayObject.getJSONObject(i);
+
+                            int question_id = StringManager.extractLastNumber(object.getString("question_id"));
 
                             String questionText, ans1, ans2, ans3, ans4;
                             int correctNumber;
 
                             if(!object.isNull("question_text"))
-                                questionText = index + ". " + object.getString("question_text");
+                                questionText = question_id + ". " + object.getString("question_text");
                             else
                                 questionText = "null";
 
@@ -417,8 +415,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                                 correctNumber = 1;
 
                             list_QuestionTest.add(new question_test(questionText, ans1, ans2, ans3, ans4, correctNumber));
-
-                            int question_id = StringManager.extractLastNumber(object.getString("question_id"));
 
                             // add to list_question to add to HashMap map_groupQuestion
                             list_question.add(question_id);

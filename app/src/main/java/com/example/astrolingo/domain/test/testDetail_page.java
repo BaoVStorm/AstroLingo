@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class testDetail_page {
     private String title, content;
     private String type;
+    private String partHeader;
     private String audioUrl;
     private String group_question_id;
     private ArrayList<String> list_image_url;
@@ -24,6 +25,12 @@ public class testDetail_page {
     }
     public ArrayList<String> getListImageUrl() {
         return list_image_url;
+    }
+    public void setPartHeader(String partHeader) {
+        this.partHeader = partHeader;
+    }
+    public String getPartHeader() {
+        return partHeader;
     }
     public void setAudioUrl(String audioUrl) {
         this.audioUrl = audioUrl;
