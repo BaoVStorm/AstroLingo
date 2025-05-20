@@ -1,9 +1,11 @@
 package com.example.astrolingo.activity.test;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,6 +40,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     ViewPager2 viewpager;
     JSONObject testObject;
     TextView header_time, header_part_full, header_part_number, header_spe, header_part, header_part_full_bottom, header_submit;
+    ImageView header_info, header_setting, header_pause, header_overview;
     ImageView backIcon;
     View header_spe_bottom;
     List<testDetail_page> list_page;
@@ -45,6 +48,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     JSONArray partJSONArray;
     int lastAudioPosition = -1;
     CountdownHelper countdownHelper;
+
+    Dialog dialog_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         sharedPreClass = new SharedPreferenceClass(this);
         // init
         initValue();
+
+        initDialog();
 
         // get test object
         String testString = getIntent().getStringExtra("testObject");
@@ -150,6 +157,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         });
 
         getListPart_addListPage();
+
+        // set listener icon
+        setListenerIcon();
     }
 
     private void initValue() {
@@ -166,6 +176,28 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         header_part_full_bottom = findViewById(R.id.header_part_full_bottom);
         header_part_full = findViewById(R.id.header_part_full);
         header_part_number = findViewById(R.id.header_part_number);
+
+        // init icon header
+        header_info = findViewById(R.id.header_info);
+        header_setting = findViewById(R.id.header_setting);
+        header_pause = findViewById(R.id.header_pause);
+        header_overview = findViewById(R.id.header_overview);
+    }
+
+    private void initDialog() {
+        dialog_info = new Dialog(this);
+        dialog_info.setContentView(R.layout.page_test_detail_dialog_info);
+        dialog_info.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_info.setCanceledOnTouchOutside(true);
+
+//        dialog_info.dismiss();
+//        dialog_info.show();
+    }
+
+    private void setListenerIcon() {
+        header_info.setOnClickListener( v -> {
+            dialog_info.show();
+        });
     }
 
     private void getListPart_addListPage() {
