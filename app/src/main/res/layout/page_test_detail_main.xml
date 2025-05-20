@@ -13,66 +13,99 @@
         android:background="@color/main_color_purple"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/header_part"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box_part"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="17dp"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/afacad_bold"
-            android:text="Part 1"
-            android:textColor="@color/white"
-            android:textSize="18sp"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/backIcon"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/header_part_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            <TextView
+                android:id="@+id/header_part"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_bold"
+                android:text="Part 0"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="2dp"
 
-            android:fontFamily="@font/afacad_regular"
-            android:text="1"
-            android:textColor="@color/white"
-            android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            app:layout_constraintStart_toStartOf="@+id/header_part"
-            app:layout_constraintTop_toBottomOf="@+id/header_part"
-             />
+            <TextView
+                android:id="@+id/header_part_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                android:fontFamily="@font/afacad_regular"
+                android:text="101"
+                android:textColor="@color/white"
+                android:textSize="13sp"
 
-        <TextView
-            android:id="@+id/spe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_part" />
 
-            android:fontFamily="@font/afacad_regular"
-            android:text="/"
-            android:textColor="@color/white"
-            android:textSize="16sp"
 
-            app:layout_constraintLeft_toRightOf="@+id/header_part_number"
-            app:layout_constraintTop_toTopOf="@+id/header_part_number"
-            app:layout_constraintBottom_toBottomOf="@+id/header_part_number"
-            />
+            <View
+                android:id="@+id/header_spe_bottom"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/white"
 
-        <TextView
-            android:id="@+id/header_part_full"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/header_part_number"
+                app:layout_constraintRight_toRightOf="@+id/header_part_number"
+                app:layout_constraintTop_toBottomOf="@+id/header_part_number" />
 
-            android:fontFamily="@font/afacad_regular"
-            android:text="200"
-            android:textColor="@color/white"
-            android:textSize="16sp"
+            <TextView
+                android:id="@+id/header_part_full_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:fontFamily="@font/afacad_regular"
+                android:text="200"
+                android:textColor="@color/white"
+                android:textSize="13sp"
 
-            app:layout_constraintLeft_toRightOf="@+id/spe"
-            app:layout_constraintTop_toTopOf="@+id/spe"
-            app:layout_constraintBottom_toBottomOf="@+id/spe"
-            />
+                app:layout_constraintLeft_toLeftOf="@id/header_part_number"
+                app:layout_constraintRight_toRightOf="@+id/header_part_number"
+                app:layout_constraintTop_toBottomOf="@+id/header_part_number" />
+
+            <TextView
+                android:id="@+id/header_spe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_regular"
+                android:visibility="gone"
+                android:paddingHorizontal="2dp"
+                android:text="/"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/header_part_number"
+                app:layout_constraintLeft_toRightOf="@+id/header_part_number"
+                app:layout_constraintTop_toTopOf="@+id/header_part_number" />
+
+            <TextView
+                android:id="@+id/header_part_full"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:fontFamily="@font/afacad_regular"
+                android:text="200"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/header_spe"
+                app:layout_constraintLeft_toRightOf="@+id/header_spe"
+                app:layout_constraintTop_toTopOf="@+id/header_spe" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/header_submit"
@@ -99,7 +132,7 @@
             android:fontFamily="@font/afacad_regular"
             android:text="01:50:20"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="13sp"
 
             app:layout_constraintTop_toBottomOf="@+id/header_submit"
             app:layout_constraintLeft_toLeftOf="@+id/header_submit"
@@ -118,7 +151,7 @@
             android:src="@drawable/icon_asset_info"
             android:background="@android:color/transparent"
 
-            app:layout_constraintLeft_toRightOf="@+id/header_part_full"
+            app:layout_constraintLeft_toRightOf="@+id/box_part"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

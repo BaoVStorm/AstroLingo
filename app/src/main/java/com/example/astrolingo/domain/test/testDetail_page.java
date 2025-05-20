@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class testDetail_page {
     private String title, content;
     private String type;
-    private String partHeader;
+    private int first_question;
+    private int question_count;
     private String audioUrl;
     private String group_question_id;
     private ArrayList<String> list_image_url;
@@ -16,7 +17,6 @@ public class testDetail_page {
     public testDetail_page(String type_) {
         type = type_;
     }
-
     public void setType(String type) {
         this.type = type;
     }
@@ -26,11 +26,27 @@ public class testDetail_page {
     public ArrayList<String> getListImageUrl() {
         return list_image_url;
     }
-    public void setPartHeader(String partHeader) {
-        this.partHeader = partHeader;
+    public void setPartHeader(int first_question, int question_count) {
+        this.first_question = first_question;
+        this.question_count = question_count;
+    }
+    private String editPartNumber(String s) {
+        for(int i = 0; i <= 3 - s.length(); i++) {
+            s = "0" + s;
+        }
+
+        return s;
     }
     public String getPartHeader() {
+        String partHeader = editPartNumber(first_question + "");
+
+        if(question_count > 1)
+            partHeader += " - " + editPartNumber((first_question + question_count - 1) + "");
+
         return partHeader;
+    }
+    public int getQuestionCount() {
+        return question_count;
     }
     public void setAudioUrl(String audioUrl) {
         this.audioUrl = audioUrl;

@@ -1,6 +1,10 @@
 package com.example.astrolingo.activity.test;
 
+import android.annotation.SuppressLint;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +20,7 @@ import com.example.astrolingo.apdapter.test.TestDetailAdapter;
 import com.example.astrolingo.domain.test.testDetail_page;
 
 import com.example.astrolingo.api.TestApi;
+import com.example.astrolingo.function.StringManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,7 +33,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     SharedPreferenceClass sharedPreClass;
     ViewPager2 viewpager;
     JSONObject testObject;
-    TextView header_time, header_part_full, header_part_number;
+    TextView header_time, header_part_full, header_part_number, header_spe, header_part, header_part_full_bottom, header_submit;
+    ImageView backIcon;
+    View header_spe_bottom;
     List<testDetail_page> list_page;
 
     JSONArray partJSONArray;
@@ -39,12 +46,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         setContentView(R.layout.page_test_detail_main);
 
         sharedPreClass = new SharedPreferenceClass(this);
-
         // init
-        viewpager = findViewById(R.id.viewpager);
-        header_time = findViewById(R.id.header_time);
-        header_part_full = findViewById(R.id.header_part_full);
-        header_part_number = findViewById(R.id.header_part_number);
+        initValue();
 
         // get test object
         String testString = getIntent().getStringExtra("testObject");
@@ -53,7 +56,6 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         list_page = new ArrayList<>();
 //        list_page.add(new testDetail_page("start_part"));
 //        list_page.add(new testDetail_page("part1"));
-//        list_page.add(new testDetail_page("part2"));
 
         try {
             testObject = new JSONObject(testString);
@@ -65,6 +67,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         // init value
         header_time.setText(testObject.optString("test_time"));
         header_part_full.setText(testObject.optString("question_number"));
+        header_part_full_bottom.setText(testObject.optString("question_number"));
 
         // set viewpager listener
         viewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -74,24 +77,58 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
                 if (list_page != null && position < list_page.size()) {
                     testDetail_page currentPage = list_page.get(position);
+                    header_part.setText("Part " + currentPage.getPart());
 
                     // Chỉ cập nhật nếu không phải là trang giới thiệu ("start_part")
                     if (currentPage.getType() != 0) {
-                        int partId = currentPage.getPart();
+                        header_part_number.setVisibility(View.VISIBLE);
 
                         // Cập nhật text cho header_part_number
-                        header_part_number.setText("Part " + partId);
+                        header_part_number.setText(currentPage.getPartHeader());
+
+                        if(currentPage.getQuestionCount() <= 1) {
+                            header_spe_bottom.setVisibility(View.GONE);
+                            header_part_full_bottom.setVisibility(View.GONE);
+
+                            header_spe.setVisibility(View.VISIBLE);
+                            header_part_full.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            header_spe.setVisibility(View.GONE);
+                            header_part_full.setVisibility(View.GONE);
+
+                            header_spe_bottom.setVisibility(View.VISIBLE);
+                            header_part_full_bottom.setVisibility(View.VISIBLE);
+                        }
+
                     } else {
-                        header_part_number.setText("Start Part");
+                        header_part_number.setVisibility(View.GONE);
+                        header_spe.setVisibility(View.GONE);
+                        header_spe_bottom.setVisibility(View.GONE);
+                        header_part_full.setVisibility(View.GONE);
+                        header_part_full_bottom.setVisibility(View.GONE);
                     }
                 }
             }
         });
 
-
-
         getListPart_addListPage();
+    }
 
+    private void initValue() {
+        backIcon = findViewById(R.id.backIcon);
+
+        header_submit = findViewById(R.id.header_submit);
+        header_submit.setPaintFlags(header_submit.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        viewpager = findViewById(R.id.viewpager);
+        header_time = findViewById(R.id.header_time);
+        header_part = findViewById(R.id.header_part);
+        header_spe = findViewById(R.id.header_spe);
+        header_spe_bottom = findViewById(R.id.header_spe_bottom);
+        header_part_full_bottom = findViewById(R.id.header_part_full_bottom);
+        header_part_full = findViewById(R.id.header_part_full);
+        header_part_number = findViewById(R.id.header_part_number);
     }
 
     private void getListPart_addListPage() {
@@ -138,7 +175,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                 "group_question_id": "test1_part1_1",
                 "url_image1": "https://estudyme.hoc102.com/legacy-data/kslearning/images/418922160-1620725865601-pic1.png",
                 "url_audio": "https://storage.googleapis.com/estudyme/dev/2022/06/27/30449101.mp3",
-                "test_id": 1
+                "test_id": 1,
+                "first_question_id": "test1_1",
+                "question_count": 1
             }
         ]
 
@@ -165,7 +204,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
                             if(partDefault != jsonObject.getInt("part_id")) {
                                 testDetail_page detailPage = new testDetail_page("start_part");
-
+                                detailPage.setPart(jsonObject.getInt("part_id"));
                                 editTestDetailPage(detailPage, jsonObject.getInt("part_id"));
 
                                 list_page.add(detailPage);
@@ -174,7 +213,13 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                             }
 
                             testDetail_page detailPage = new testDetail_page();
+                            detailPage.setPart(jsonObject.getInt("part_id"));
+
                             detailPage.setGroupQuestionId(jsonObject.getString("group_question_id"));
+
+                            int first_question = StringManager.extractLastNumber(jsonObject.getString("first_question_id"));
+                            int question_count = jsonObject.getInt("question_count");
+                            detailPage.setPartHeader(first_question, question_count);
 
                             // set type
                             if(jsonObject.getInt("part_id") <= 4)
