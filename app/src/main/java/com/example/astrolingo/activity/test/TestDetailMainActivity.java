@@ -188,6 +188,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         dialog_info = new Dialog(this);
         dialog_info.setContentView(R.layout.page_test_detail_dialog_info);
         dialog_info.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_info.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
         dialog_info.setCanceledOnTouchOutside(true);
 
 //        dialog_info.dismiss();

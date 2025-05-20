@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="@android:color/transparent"
@@ -10,11 +10,11 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="290dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:paddingHorizontal="25dp"
-        android:paddingVertical="10dp"
+        android:paddingHorizontal="23dp"
+        android:paddingVertical="15dp"
         >
 
         <TextView
@@ -24,7 +24,7 @@
             android:gravity="center"
             android:text="How to do test"
 
-            android:textSize="20sp"
+            android:textSize="23sp"
             android:fontFamily="@font/afacad_bold"
             android:textColor="@color/main_color_purple_dark"
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Listening"
 
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:fontFamily="@font/afacad_medium"
             android:textColor="@color/black"
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Listen audio and look at pictures (if exist) to choose the correct answer."
             android:paddingStart="10dp"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:fontFamily="@font/afacad_medium"
             android:textColor="@color/dark_grey"
 
@@ -68,11 +68,11 @@
             android:layout_height="wrap_content"
             android:text="Reading"
 
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:fontFamily="@font/afacad_medium"
             android:textColor="@color/black"
 
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/content_listening"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -87,8 +87,8 @@
             android:text="Reading questions and pictures (if exist) below to choose the answer."
             android:textColor="@color/dark_grey"
 
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp"
+            android:textSize="15sp"
+            android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
