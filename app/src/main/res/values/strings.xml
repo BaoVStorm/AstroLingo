@@ -114,9 +114,11 @@
     <string name="chinhsuahoso_email">anhdao@gmai.com</string>
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
-    <string name="chinhsuahoso_gender">Nữ</string>
+    <string name="chinhsuahoso_gender">Female</string>
 
     <!--  Test  -->
-    <string name="Sentence">Câu</string>
+    <string name="Sentence">Sen</string>
+    <string name="Submit">Submit</string>
+    <string name="part">Part</string>
 
 </resources>

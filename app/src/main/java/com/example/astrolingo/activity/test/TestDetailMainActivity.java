@@ -15,11 +15,15 @@ import android.util.Log;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
+import com.example.astrolingo.Service.AudioTestManager;
+import com.example.astrolingo.Service.CountdownHelper;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.apdapter.test.TestDetailAdapter;
+import com.example.astrolingo.domain.test.AudioState;
 import com.example.astrolingo.domain.test.testDetail_page;
 
 import com.example.astrolingo.api.TestApi;
+import com.example.astrolingo.function.CountdownListener;
 import com.example.astrolingo.function.StringManager;
 
 import org.json.JSONArray;
@@ -37,8 +41,10 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     ImageView backIcon;
     View header_spe_bottom;
     List<testDetail_page> list_page;
-
+    TestDetailAdapter testDetailAdapter;
     JSONArray partJSONArray;
+    int lastAudioPosition = -1;
+    CountdownHelper countdownHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +70,23 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             finish();
         }
 
+        initCountTime(Integer.parseInt(testObject.optString("test_time")));
+
         // init value
-        header_time.setText(testObject.optString("test_time"));
         header_part_full.setText(testObject.optString("question_number"));
         header_part_full_bottom.setText(testObject.optString("question_number"));
+
+        // set backIcon
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(testDetailAdapter != null)
+                    testDetailAdapter.release();
+
+                AudioTestManager.releaseAll();
+                finish();
+            }
+        });
 
         // set viewpager listener
         viewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -75,15 +94,33 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
+                // Nếu có audio đang phát ở trang trước thì dừng
+                if (lastAudioPosition != -1) {
+                    AudioState prev = AudioTestManager.map_audio.get(lastAudioPosition);
+                    if (prev != null && prev.getMediaPlayer() != null && prev.getMediaPlayer().isPlaying()) {
+                        prev.getMediaPlayer().pause();
+                        prev.setPlaying(false);
+                        prev.changeAudioPauseStop(true);
+                    }
+                }
+
+                lastAudioPosition = position;
+
+                // update audio_endtime
+                AudioState curAudio = AudioTestManager.map_audio.get(position);
+                if(curAudio != null)
+                    curAudio.updateAudioEndtime();
+
+                // Cập nhật header_test
                 if (list_page != null && position < list_page.size()) {
                     testDetail_page currentPage = list_page.get(position);
-                    header_part.setText("Part " + currentPage.getPart());
+                    String header_part_text =  getString(R.string.part) + " " + currentPage.getPart();
+                    header_part.setText(header_part_text);
 
                     // Chỉ cập nhật nếu không phải là trang giới thiệu ("start_part")
                     if (currentPage.getType() != 0) {
-                        header_part_number.setVisibility(View.VISIBLE);
-
                         // Cập nhật text cho header_part_number
+                        header_part_number.setVisibility(View.VISIBLE);
                         header_part_number.setText(currentPage.getPartHeader());
 
                         if(currentPage.getQuestionCount() <= 1) {
@@ -180,7 +217,6 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                 "question_count": 1
             }
         ]
-
          */
 
         // get list group question
@@ -252,8 +288,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                         }
 
                         // thêm danh sách vào viewpager
-                        TestDetailAdapter adapter = new TestDetailAdapter(list_page);
-                        viewpager.setAdapter(adapter);
+                        testDetailAdapter = new TestDetailAdapter(list_page, viewpager);
+                        viewpager.setAdapter(testDetailAdapter);
 
                     } catch (JSONException e) {
                         Log.e("error", e.toString());
@@ -278,8 +314,23 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         detailPage.setPart(part_id);
         detailPage.setContent(partJSONArray.getJSONObject(part_id - 1).getString("description"));
         detailPage.setTitle(partJSONArray.getJSONObject(part_id - 1).getString("title"));
+    }
 
-        Log.e("print", detailPage.getContent());
+    private void initCountTime(int time) {
+        countdownHelper = new CountdownHelper(new CountdownListener() {
+            @Override
+            public void onTick(String formattedTime) {
+                header_time.setText(formattedTime);
+            }
+
+            @Override
+            public void onFinish() {
+               Log.e("Time", "Time countdown end");
+                // Thêm logic khi hết giờ
+            }
+        });
+
+        countdownHelper.startCountdown((long) time * 60 * 1000); // 2 tiếng
     }
 
     @Override
@@ -287,5 +338,14 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         super.onStop();
 
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (testDetailAdapter != null) {
+            testDetailAdapter.release();
+        }
+        AudioTestManager.releaseAll();
+        super.onDestroy();
     }
 }

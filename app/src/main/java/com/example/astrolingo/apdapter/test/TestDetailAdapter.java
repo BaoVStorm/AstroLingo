@@ -21,9 +21,11 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.astrolingo.Service.AudioTestManager;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.api.TestApi;
 import com.example.astrolingo.domain.test.nav_answer;
@@ -39,6 +41,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.function.NumberManager;
 import com.example.astrolingo.function.StringManager;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -47,23 +50,25 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
-public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<testDetail_page> itemList;
+    private ViewPager2 viewPager;
 
-    public TestDetailAdapter(List<testDetail_page> itemList) {
+    public TestDetailAdapter(List<testDetail_page> itemList, ViewPager2 viewPager) {
         this.itemList = itemList;
+        this.viewPager = viewPager;
     }
-
-
 
     // ---------------------------------- Edit layout ----------------------------------
     public static class StartPartViewHolder extends RecyclerView.ViewHolder {
         TextView txtTitlePart, txtContentPart;
+        ConstraintLayout button_login;
 
         public StartPartViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTitlePart = itemView.findViewById(R.id.title_part);
             txtContentPart = itemView.findViewById(R.id.content_part);
+            button_login = itemView.findViewById(R.id.button_login);
         }
     }
 
@@ -78,7 +83,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         LinearLayout navQuestion;
         View navQuestion1, navQuestion2, navQuestion3, navQuestion4, navQuestion5;
         View navAnswer1, navAnswer2, navAnswer3, navAnswer4;
-
 
         public ListeningViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -131,7 +135,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 //        }
 //    }
 
-
     // ---------------------------------- ----------------------------------
 
     @NonNull
@@ -168,7 +171,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     // Audio
 //    MediaPlayer sharedMediaPlayer = new MediaPlayer();
 //    int currentPlayingPosition = -1;
-    public Map<Integer, AudioState> map_audio = new HashMap<>();
     public Handler handler = new Handler();
     public Runnable updateSeekBar= null;
 
@@ -189,10 +191,19 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             viewHolder.txtTitlePart.setText(String.valueOf(item.getTitle()));
             viewHolder.txtContentPart.setText(String.valueOf(item.getContent()));
 
-        } else if (holder instanceof ListeningViewHolder) {
-            // Log.e("position", String.valueOf(position) + String.valueOf(item.getTitle()));
+            viewHolder.button_login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (viewPager != null && position + 1 < itemList.size()) {
+                        viewPager.setCurrentItem(position + 1, true); // true = animate
+                    }
+                }
+            });
 
+        } else if (holder instanceof ListeningViewHolder) {
             ListeningViewHolder viewHolder = (ListeningViewHolder) holder;
+
+            viewHolder.audio_pause.setImageResource(R.drawable.icon_asset_play_fill);
 
             // init navAnswer, mavQuestion
             initNavAnswer(viewHolder);
@@ -214,7 +225,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 String urlAudio = item.getAudioUrl();
 
                 // init
-                if(!map_audio.containsKey(position)) {
+                if(!AudioTestManager.map_audio.containsKey(position)) {
                     MediaPlayer curMediaPlayer = new MediaPlayer();
 
                     try {
@@ -224,11 +235,13 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         curMediaPlayer.prepareAsync();
 
                         viewHolder.audio_seekbar.setProgress(0);
+                        viewHolder.audio_starttime.setText(NumberManager.numberToTime_minute(0));
 
                         curMediaPlayer.setOnPreparedListener(mp -> {
                             viewHolder.audio_seekbar.setVisibility(View.VISIBLE);
+                            viewHolder.audio_endtime.setText(NumberManager.numberToTime_minute(mp.getDuration()));
 
-                            Objects.requireNonNull(map_audio.get(position)).setPlaying(false);
+                            Objects.requireNonNull(AudioTestManager.map_audio.get(position)).setPlaying(false);
 
                             viewHolder.audio_seekbar.setMax(mp.getDuration());
                             startUpdatingSeekBar(viewHolder, position); // Hàm riêng bên dưới
@@ -237,14 +250,18 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         curMediaPlayer.setOnCompletionListener(mp -> {
                             handler.removeCallbacks(updateSeekBar);
                             viewHolder.audio_pause.setImageResource(R.drawable.icon_asset_play_fill);
-                            Objects.requireNonNull(map_audio.get(position)).setPlaying(false);
+                            Objects.requireNonNull(AudioTestManager.map_audio.get(position)).setPlaying(false);
                         });
 
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
-                    map_audio.put(position, new AudioState(curMediaPlayer,position));
+                    AudioState audioState = new AudioState(curMediaPlayer,position);
+                    audioState.setAudioPause(viewHolder.audio_pause);
+                    audioState.setAudioEndtime(viewHolder.audio_endtime);
+                    AudioTestManager.map_audio.put(position, audioState);
+
                 }
 
                 // edit seekbar and listener
@@ -260,8 +277,8 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     // Handle when user moves SeekBar
                     viewHolder.audio_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                            if (Objects.requireNonNull(map_audio.get(position)).getMediaPlayer() != null && fromUser) {
-                                Objects.requireNonNull(map_audio.get(position)).getMediaPlayer().seekTo(progress);
+                            if (Objects.requireNonNull(AudioTestManager.map_audio.get(position)).getMediaPlayer() != null && fromUser) {
+                                Objects.requireNonNull(AudioTestManager.map_audio.get(position)).getMediaPlayer().seekTo(progress);
                             }
                         }
                         @Override public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -270,23 +287,25 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                     // set relay or forward button
                     viewHolder.audio_reply5.setOnClickListener(v -> {
-                        MediaPlayer mediaPlayer = Objects.requireNonNull(map_audio.get(position)).getMediaPlayer();
+                        MediaPlayer mediaPlayer = Objects.requireNonNull(AudioTestManager.map_audio.get(position)).getMediaPlayer();
                         if (mediaPlayer != null) {
                             int currentPosition = mediaPlayer.getCurrentPosition();
                             int newPosition = Math.max(currentPosition - 5000, 0); // Giảm 5 giây, không nhỏ hơn 0
                             mediaPlayer.seekTo(newPosition);
                             viewHolder.audio_seekbar.setProgress(newPosition);
+                            viewHolder.audio_starttime.setText(NumberManager.numberToTime_minute(newPosition));
                         }
                     });
 
                     // set relay or forward button
                     viewHolder.audio_forward5.setOnClickListener(v -> {
-                        MediaPlayer mediaPlayer = Objects.requireNonNull(map_audio.get(position)).getMediaPlayer();
+                        MediaPlayer mediaPlayer = Objects.requireNonNull(AudioTestManager.map_audio.get(position)).getMediaPlayer();
                         if (mediaPlayer != null) {
                             int currentPosition = mediaPlayer.getCurrentPosition();
                             int newPosition = Math.min(currentPosition + 5000, mediaPlayer.getDuration()); // Giảm 5 giây, không nhỏ hơn 0
                             mediaPlayer.seekTo(newPosition);
                             viewHolder.audio_seekbar.setProgress(newPosition);
+                            viewHolder.audio_starttime.setText(NumberManager.numberToTime_minute(newPosition));
                         }
                     });
 
@@ -310,9 +329,17 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         updateSeekBar = new Runnable() {
             @Override
             public void run() {
-                if (Objects.requireNonNull(map_audio.get(position)).getMediaPlayer() != null && Objects.requireNonNull(map_audio.get(position)).isPlaying()) {
-                    viewHolder.audio_seekbar.setProgress(Objects.requireNonNull(map_audio.get(position)).getMediaPlayer().getCurrentPosition());
+                AudioState audioState = AudioTestManager.map_audio.get(position);
+
+                if (audioState != null && audioState.getMediaPlayer() != null && audioState.isPlaying()) {
+                    int currentPosition = audioState.getMediaPlayer().getCurrentPosition();
+
+                    viewHolder.audio_seekbar.setProgress(currentPosition);
+                    viewHolder.audio_starttime.setText(NumberManager.numberToTime_minute(currentPosition));
                     handler.postDelayed(this, 500);
+                } else {
+                    // Không phát nữa => dừng cập nhật seekbar
+                    handler.removeCallbacks(this);
                 }
             }
         };
@@ -320,16 +347,16 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private void playAudio(String urlAudio, ListeningViewHolder viewHolder, int positionAdapter, ImageView audio_pause) {
-        if (Objects.requireNonNull(map_audio.get(positionAdapter)).isPlaying()) {
+        if (Objects.requireNonNull(AudioTestManager.map_audio.get(positionAdapter)).isPlaying()) {
             // Đang phát → pause
-            Objects.requireNonNull(map_audio.get(positionAdapter)).getMediaPlayer().pause();
+            Objects.requireNonNull(AudioTestManager.map_audio.get(positionAdapter)).getMediaPlayer().pause();
             handler.removeCallbacks(updateSeekBar);
-            Objects.requireNonNull(map_audio.get(positionAdapter)).setPlaying(false);
+            Objects.requireNonNull(AudioTestManager.map_audio.get(positionAdapter)).setPlaying(false);
             audio_pause.setImageResource(R.drawable.icon_asset_play_fill);
         } else {
             // Đang pause → resume
-            Objects.requireNonNull(map_audio.get(positionAdapter)).getMediaPlayer().start();
-            Objects.requireNonNull(map_audio.get(positionAdapter)).setPlaying(true);
+            Objects.requireNonNull(AudioTestManager.map_audio.get(positionAdapter)).getMediaPlayer().start();
+            Objects.requireNonNull(AudioTestManager.map_audio.get(positionAdapter)).setPlaying(true);
             startUpdatingSeekBar(viewHolder, positionAdapter);
             audio_pause.setImageResource(R.drawable.icon_asset_pause_fill);
         }
@@ -473,8 +500,14 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         else {
             viewHolder.navQuestion.setVisibility(View.VISIBLE);
 
+            Context context = viewHolder.itemView.getContext();
+
             for(int i = 0; i < list_question.size(); i++) {
                 views[i].setVisibility(View.VISIBLE);
+
+                TextView navQuestion_text = views[i].findViewById(R.id.navQuestion_text);
+                int lastNumber = StringManager.extractLastNumber(list_question.get(i).toString());
+                navQuestion_text.setText(context.getString(R.string.Sentence) + " " + lastNumber);
 
                 // set listener lick question i
                 int finalI = i;
@@ -515,7 +548,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             viewHolder.navAnswer3,
             viewHolder.navAnswer4
         };
-
 
         for(int i = 0; i < Objects.requireNonNull(navAnswer).getCountAns(); i++) {
             views[i].setVisibility(View.VISIBLE);
@@ -575,6 +607,8 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 viewHolder.navQuestion5
         };
 
+        int index;
+
         for (int i = 0; i < navQuestions.length; i++) {
             TextView navQuestion_text = navQuestions[i].findViewById(R.id.navQuestion_text);
             View navQuestion_highlight = navQuestions[i].findViewById(R.id.navQuestion_highlight);
@@ -609,6 +643,12 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             navAnswer_text.setText(answers[i]);
 
             navAnswers[i].setVisibility(View.GONE);
+        }
+    }
+
+    public void release() {
+        if (handler != null && updateSeekBar != null) {
+            handler.removeCallbacks(updateSeekBar);
         }
     }
 

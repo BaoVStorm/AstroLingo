@@ -109,5 +109,8 @@
     <string name="chinhsuahoso_gender">Nữ</string>
 
     <!--  Test  -->
-    <string name="Sentence">Sen</string>
+    <string name="Sentence">Câu</string>
+    <string name="Submit">Nộp bài</string>
+    <string name="part">Phần</string>
+
 </resources>

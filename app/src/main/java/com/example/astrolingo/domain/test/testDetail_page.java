@@ -31,7 +31,8 @@ public class testDetail_page {
         this.question_count = question_count;
     }
     private String editPartNumber(String s) {
-        for(int i = 0; i <= 3 - s.length(); i++) {
+        int len = s.length();
+        for(int i = 1; i <= 3 - len; i++) {
             s = "0" + s;
         }
 
