@@ -59,7 +59,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     int lastAudioPosition = -1;
     CountdownHelper countdownHelper;
 
-    Dialog dialog_info, dialog_pause;
+    Dialog dialog_info, dialog_pause, dialog_submit;
     BottomSheetDialog bottomDialog_filter;
 
     @Override
@@ -182,6 +182,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+
+        // edit submit dialog
+        editSubmitDialog();
     }
 
     private void initValue() {
@@ -221,6 +224,12 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         dialog_pause.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
         dialog_pause.setCanceledOnTouchOutside(true);
 
+        dialog_submit = new Dialog(this);
+        dialog_submit.setContentView(R.layout.page_test_detail_dialog_submit);
+        dialog_submit.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_submit.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
+        dialog_submit.setCanceledOnTouchOutside(true);
+
         bottomDialog_filter = new BottomSheetDialog(this);
         bottomDialog_filter.setContentView(R.layout.page_test_detail_dialog_filter);
 //        bottomDialog_filter.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
@@ -250,6 +259,22 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
         header_overview.setOnClickListener( v -> {
             bottomDialog_filter.show();
+        });
+
+        header_submit.setOnClickListener( v -> {
+            dialog_submit.show();
+        });
+    }
+    private void editSubmitDialog() {
+        ConstraintLayout button_next = dialog_submit.findViewById(R.id.button_next);
+        ConstraintLayout button_exit = dialog_submit.findViewById(R.id.button_exit);
+
+        button_next.setOnClickListener(v -> {
+            submitTest();
+        });
+
+        button_exit.setOnClickListener(v -> {
+            dialog_submit.dismiss();
         });
     }
 
@@ -310,7 +335,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             group_reading_highlight.setVisibility(View.GONE);
             group_all_highlight.setVisibility(View.VISIBLE);
         });
+    }
 
+    private void submitTest() {
 
     }
 
@@ -552,6 +579,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             public void onFinish() {
                Log.e("Time", "Time countdown end");
                 // Thêm logic khi hết giờ
+                submitTest();
             }
         });
 

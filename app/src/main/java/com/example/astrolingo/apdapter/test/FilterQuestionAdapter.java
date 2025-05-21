@@ -26,13 +26,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class FilterQuestionAdapter extends ArrayAdapter<nav_answer> {
-
     private static final int TYPE_LISTENING = 0;
     private static final int TYPE_READING = 1;
 
     private ViewPager2 viewPager;
     private BottomSheetDialog bottomDialog_filter;
-
 
     private final List<nav_answer> originalList;   // Danh sách đầy đủ
     private List<nav_answer> displayList;          // Danh sách đang hiển thị

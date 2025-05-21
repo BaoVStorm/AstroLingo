@@ -128,5 +128,6 @@
     <string name="wantContinue">Do you want to continue?</string>
     <string name="Continue">Continue</string>
     <string name="Exit">Exit</string>
+    <string name="wantSubmit">Do you want to submit?</string>
 
 </resources>
