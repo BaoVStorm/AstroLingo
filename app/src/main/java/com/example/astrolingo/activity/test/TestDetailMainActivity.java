@@ -27,6 +27,7 @@ import com.example.astrolingo.domain.test.testDetail_page;
 import com.example.astrolingo.api.TestApi;
 import com.example.astrolingo.function.CountdownListener;
 import com.example.astrolingo.function.StringManager;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +50,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     int lastAudioPosition = -1;
     CountdownHelper countdownHelper;
 
-    Dialog dialog_info;
+    Dialog dialog_info, dialog_pause;
+    BottomSheetDialog bottomDialog_filter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,6 +162,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
         // set listener icon
         setListenerIcon();
+
+        // edit bottom Dialog filter
+        editBottomDialogFilter();
     }
 
     private void initValue() {
@@ -190,15 +195,37 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         dialog_info.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog_info.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
         dialog_info.setCanceledOnTouchOutside(true);
-
 //        dialog_info.dismiss();
 //        dialog_info.show();
+
+        dialog_pause = new Dialog(this);
+        dialog_pause.setContentView(R.layout.page_test_detail_dialog_pause);
+        dialog_pause.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_pause.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
+        dialog_pause.setCanceledOnTouchOutside(true);
+
+        bottomDialog_filter = new BottomSheetDialog(this);
+        bottomDialog_filter.setContentView(R.layout.page_test_detail_dialog_filter);
+//        bottomDialog_filter.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
+        bottomDialog_filter.setCanceledOnTouchOutside(true);
     }
 
     private void setListenerIcon() {
         header_info.setOnClickListener( v -> {
             dialog_info.show();
         });
+
+        header_pause.setOnClickListener( v -> {
+            dialog_pause.show();
+        });
+
+        header_overview.setOnClickListener( v -> {
+            bottomDialog_filter.show();
+        });
+    }
+
+    private void editBottomDialogFilter() {
+
     }
 
     private void getListPart_addListPage() {

@@ -112,5 +112,10 @@
     <string name="Sentence">Câu</string>
     <string name="Submit">Nộp bài</string>
     <string name="part">Phần</string>
+    <string name="howToDoTest">Hướng đẫn làm bài thi</string>
+    <string name="listening">Nghe hiểu</string>
+    <string name="listening_description">Lắng nghe đoạn ghi âm và nhìn vào bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="reading">Đọc hiểu</string>
+    <string name="reading_description">Đọc các câu hỏi và bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
 
 </resources>

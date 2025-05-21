@@ -25,6 +25,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.astrolingo.Service.AnswerTestMananger;
 import com.example.astrolingo.Service.AudioTestManager;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.api.TestApi;
@@ -169,16 +170,13 @@ import org.w3c.dom.Text;
 
 
     // Audio
-//    MediaPlayer sharedMediaPlayer = new MediaPlayer();
-//    int currentPlayingPosition = -1;
     public Handler handler = new Handler();
     public Runnable updateSeekBar= null;
 
     // Lưu số câu hỏi trong 1 group_question và số đáp án, câu trả lời trong 1 câu hỏi
     HashMap<String, ArrayList<Integer>> map_groupQuestion = new HashMap<>();     // key: group_question_id, value: danh sách các mã câu hỏi
-    HashMap<Integer, nav_answer> map_answer = new HashMap<>();     // key: mã câu hỏi, value: nav_answer(count_ans, currentChoose)
+    // HashMap<Integer, nav_answer> map_answer = new HashMap<>();     // key: mã câu hỏi, value: nav_answer(count_ans, currentChoose)
 
-    // ---
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -447,9 +445,9 @@ import org.w3c.dom.Text;
                             list_question.add(question_id);
 
                             // add to HashMap map_answer
-                            if(!map_answer.containsKey(question_id)) {
+                            if(!AnswerTestMananger.map_answer.containsKey(question_id)) {
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
-                                map_answer.put(question_id, navAnswer);
+                                AnswerTestMananger.map_answer.put(question_id, navAnswer);
                             }
                         }
 
@@ -537,10 +535,10 @@ import org.w3c.dom.Text;
     }
 
     private void chooseQuestion(int question_id, ListeningViewHolder viewHolder) {
-        if(!map_answer.containsKey(question_id))
+        if(!AnswerTestMananger.map_answer.containsKey(question_id))
             return;
 
-        nav_answer navAnswer = map_answer.get(question_id);
+        nav_answer navAnswer = AnswerTestMananger.map_answer.get(question_id);
 
         View[] views = new View[] {
             viewHolder.navAnswer1,

@@ -120,5 +120,9 @@
     <string name="Sentence">Sen</string>
     <string name="Submit">Submit</string>
     <string name="part">Part</string>
-
+    <string name="howToDoTest">How to do test</string>
+    <string name="listening">Listening</string>
+    <string name="listening_description">Listen audio and look at pictures (if exist) to choose the correct answer.</string>
+    <string name="reading">Reading</string>
+    <string name="reading_description">Reading questions and look at pictures (if exist) below to choose the answer.</string>
 </resources>

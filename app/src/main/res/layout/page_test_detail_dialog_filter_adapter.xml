@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    >
+
+    <ImageView
+        android:id="@+id/icon_warning"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icon_assets_warning" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+
+        android:text="Câu 1"
+        android:textSize="18sp"
+        android:fontFamily="@font/afacad_medium"
+        android:textColor="@color/dark_grey"
+
+        app:layout_constraintStart_toEndOf="@+id/icon_warning" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6">
+
+        <include
+            android:id="@+id/navAnswer1"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer2"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer3"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+        <include
+            android:id="@+id/navAnswer4"
+            layout="@layout/page_test_detail_answer_box"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
