@@ -35,4 +35,14 @@ public class StringManager {
             return -1; // hoặc giá trị mặc định nếu không hợp lệ
         }
     }
+
+    public static String extractSecondPart(String input) {
+        String[] parts = input.split("_");
+        try {
+            return parts[1]; // phần tử thứ 2 (index 1)
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return null; // hoặc giá trị mặc định nếu không hợp lệ
+        }
+    }
 }

@@ -101,60 +101,60 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         viewpager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                super.onPageSelected(position);
+            super.onPageSelected(position);
 
-                // Nếu có audio đang phát ở trang trước thì dừng
-                if (lastAudioPosition != -1) {
-                    AudioState prev = AudioTestManager.map_audio.get(lastAudioPosition);
-                    if (prev != null && prev.getMediaPlayer() != null && prev.getMediaPlayer().isPlaying()) {
-                        prev.getMediaPlayer().pause();
-                        prev.setPlaying(false);
-                        prev.changeAudioPauseStop(true);
-                    }
+            // Nếu có audio đang phát ở trang trước thì dừng
+            if (lastAudioPosition != -1) {
+                AudioState prev = AudioTestManager.map_audio.get(lastAudioPosition);
+                if (prev != null && prev.getMediaPlayer() != null && prev.getMediaPlayer().isPlaying()) {
+                    prev.getMediaPlayer().pause();
+                    prev.setPlaying(false);
+                    prev.changeAudioPauseStop(true);
                 }
+            }
 
-                lastAudioPosition = position;
+            lastAudioPosition = position;
 
-                // update audio_endtime
-                AudioState curAudio = AudioTestManager.map_audio.get(position);
-                if(curAudio != null)
-                    curAudio.updateAudioEndtime();
+            // update audio_endtime
+            AudioState curAudio = AudioTestManager.map_audio.get(position);
+            if(curAudio != null)
+                curAudio.updateAudioEndtime();
 
-                // Cập nhật header_test
-                if (list_page != null && position < list_page.size()) {
-                    testDetail_page currentPage = list_page.get(position);
-                    String header_part_text =  getString(R.string.part) + " " + currentPage.getPart();
-                    header_part.setText(header_part_text);
+            // Cập nhật header_test
+            if (list_page != null && position < list_page.size()) {
+                testDetail_page currentPage = list_page.get(position);
+                String header_part_text =  getString(R.string.part) + " " + currentPage.getPart();
+                header_part.setText(header_part_text);
 
-                    // Chỉ cập nhật nếu không phải là trang giới thiệu ("start_part")
-                    if (currentPage.getType() != 0) {
-                        // Cập nhật text cho header_part_number
-                        header_part_number.setVisibility(View.VISIBLE);
-                        header_part_number.setText(currentPage.getPartHeader());
+                // Chỉ cập nhật nếu không phải là trang giới thiệu ("start_part")
+                if (currentPage.getType() != 0) {
+                    // Cập nhật text cho header_part_number
+                    header_part_number.setVisibility(View.VISIBLE);
+                    header_part_number.setText(currentPage.getPartHeader());
 
-                        if(currentPage.getQuestionCount() <= 1) {
-                            header_spe_bottom.setVisibility(View.GONE);
-                            header_part_full_bottom.setVisibility(View.GONE);
-
-                            header_spe.setVisibility(View.VISIBLE);
-                            header_part_full.setVisibility(View.VISIBLE);
-                        }
-                        else {
-                            header_spe.setVisibility(View.GONE);
-                            header_part_full.setVisibility(View.GONE);
-
-                            header_spe_bottom.setVisibility(View.VISIBLE);
-                            header_part_full_bottom.setVisibility(View.VISIBLE);
-                        }
-
-                    } else {
-                        header_part_number.setVisibility(View.GONE);
-                        header_spe.setVisibility(View.GONE);
+                    if(currentPage.getQuestionCount() <= 1) {
                         header_spe_bottom.setVisibility(View.GONE);
-                        header_part_full.setVisibility(View.GONE);
                         header_part_full_bottom.setVisibility(View.GONE);
+
+                        header_spe.setVisibility(View.VISIBLE);
+                        header_part_full.setVisibility(View.VISIBLE);
                     }
+                    else {
+                        header_spe.setVisibility(View.GONE);
+                        header_part_full.setVisibility(View.GONE);
+
+                        header_spe_bottom.setVisibility(View.VISIBLE);
+                        header_part_full_bottom.setVisibility(View.VISIBLE);
+                    }
+
+                } else {
+                    header_part_number.setVisibility(View.GONE);
+                    header_spe.setVisibility(View.GONE);
+                    header_spe_bottom.setVisibility(View.GONE);
+                    header_part_full.setVisibility(View.GONE);
+                    header_part_full_bottom.setVisibility(View.GONE);
                 }
+            }
             }
         });
 

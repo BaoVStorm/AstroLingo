@@ -319,4 +319,39 @@ public class TestApi {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public static void getListQuestionByTestId(int test_id, Context context, String token, Response.Listener<JSONArray> onSuccess, Response.ErrorListener onError) {
+        String apiurl = context.getString(R.string.api_key) + "api/test/getListQuestionByTestId";
+
+        apiurl = apiurl + "?test_id=" + test_id;
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                apiurl,
+                null,
+                onSuccess, // listener thành công truyền từ Activity
+                onError    // listener lỗi truyền từ Activity
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                headers.put("Authorization", "Bearer " + token); // nếu cần token
+                return headers;
+            }
+        };
+
+        // Cấu hình retry
+        int socketTime = 7000;
+        RetryPolicy policy = new DefaultRetryPolicy(
+                socketTime,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        );
+        jsonObjectRequest.setRetryPolicy(policy);
+
+        // Thêm request vào hàng đợi
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(jsonObjectRequest);
+    }
+
 }
