@@ -125,4 +125,8 @@
     <string name="listening_description">Listen audio and look at pictures (if exist) to choose the correct answer.</string>
     <string name="reading">Reading</string>
     <string name="reading_description">Reading questions and look at pictures (if exist) below to choose the answer.</string>
+    <string name="wantContinue">Do you want to continue?</string>
+    <string name="Continue">Continue</string>
+    <string name="Exit">Exit</string>
+
 </resources>

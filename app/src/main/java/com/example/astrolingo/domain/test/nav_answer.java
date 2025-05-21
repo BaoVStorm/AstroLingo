@@ -4,8 +4,7 @@ public class nav_answer {
     private int count_ans = 0;
     private int currentChoose = 0;
     private int correctAnswer = 0;
-    private int question_id;
-    private String part;
+    private int question_id, part;
 
     public nav_answer() {
         this.count_ans = 0;
@@ -23,7 +22,7 @@ public class nav_answer {
     public void setCorrectAnswer(int correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
-    public void setInfo(String part, int question_id) {
+    public void setInfo(int part, int question_id) {
         this.part = part;
         this.question_id = question_id;
     }
@@ -33,7 +32,7 @@ public class nav_answer {
     public int getCountAns() {
         return count_ans;
     }
-    public String getPart() {
+    public int getPart() {
         return part;
     }
     public int getQuestion_id() {

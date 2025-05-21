@@ -6,10 +6,14 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
@@ -17,16 +21,21 @@ import android.util.Log;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
+import com.example.astrolingo.Service.AnswerTestMananger;
 import com.example.astrolingo.Service.AudioTestManager;
 import com.example.astrolingo.Service.CountdownHelper;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.apdapter.test.FilterQuestionAdapter;
+import com.example.astrolingo.apdapter.test.QuestionAdapter;
 import com.example.astrolingo.apdapter.test.TestDetailAdapter;
 import com.example.astrolingo.domain.test.AudioState;
+import com.example.astrolingo.domain.test.nav_answer;
 import com.example.astrolingo.domain.test.testDetail_page;
 
 import com.example.astrolingo.api.TestApi;
 import com.example.astrolingo.function.CountdownListener;
 import com.example.astrolingo.function.StringManager;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.json.JSONArray;
@@ -164,7 +173,15 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         setListenerIcon();
 
         // edit bottom Dialog filter
-        editBottomDialogFilter();
+        header_overview.setVisibility(View.GONE);
+        int test_id = 0;
+        try {
+            test_id = testObject.getInt("test_id");
+            getAndAddQuestionOfTest(test_id);
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void initValue() {
@@ -208,6 +225,18 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         bottomDialog_filter.setContentView(R.layout.page_test_detail_dialog_filter);
 //        bottomDialog_filter.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
         bottomDialog_filter.setCanceledOnTouchOutside(true);
+
+        // ngăn lướt xuống dialog
+        bottomDialog_filter.setOnShowListener(dialog -> {
+            BottomSheetDialog d = (BottomSheetDialog) dialog;
+            FrameLayout bottomSheet = d.findViewById(com.google.android.material.R.id.design_bottom_sheet);
+            if (bottomSheet != null) {
+                BottomSheetBehavior<View> behavior = BottomSheetBehavior.from(bottomSheet);
+                behavior.setState(BottomSheetBehavior.STATE_EXPANDED); // Mở full
+                behavior.setSkipCollapsed(true); // Bỏ qua trạng thái collapsed
+                behavior.setDraggable(false); // Ngăn không cho vuốt xuống để đóng
+            }
+        });
     }
 
     private void setListenerIcon() {
@@ -225,6 +254,63 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     }
 
     private void editBottomDialogFilter() {
+        header_overview.setVisibility(View.VISIBLE);
+
+        ListView questionListView = bottomDialog_filter.findViewById(R.id.lv_question);
+
+        FilterQuestionAdapter adapter = new FilterQuestionAdapter(this, AnswerTestMananger.list_answer);
+        adapter.setViewPager(viewpager);
+        adapter.setBottomDialog_filter(bottomDialog_filter);
+        questionListView.setAdapter(adapter);
+
+        ConstraintLayout filter_listening = bottomDialog_filter.findViewById(R.id.filter_listening);
+        ConstraintLayout filter_reading = bottomDialog_filter.findViewById(R.id.filter_reading);
+        ConstraintLayout filter_all = bottomDialog_filter.findViewById(R.id.filter_all);
+
+        View group_listening_highlight = bottomDialog_filter.findViewById(R.id.group_listening_highlight);
+        View group_reading_highlight = bottomDialog_filter.findViewById(R.id.group_reading_highlight);
+        View group_all_highlight = bottomDialog_filter.findViewById(R.id.group_all_highlight);
+
+        LinearLayout box_type = bottomDialog_filter.findViewById(R.id.box_type);
+        assert box_type != null;
+
+        // init view
+        box_type.setVisibility(View.GONE);
+        group_listening_highlight.setVisibility(View.GONE);
+        group_reading_highlight.setVisibility(View.GONE);
+        group_all_highlight.setVisibility(View.VISIBLE);
+
+        // Event type
+        assert filter_listening != null;
+        filter_listening.setOnClickListener(v -> {
+            adapter.filterListening();
+            questionListView.post(() -> questionListView.smoothScrollToPosition(0));
+
+            group_listening_highlight.setVisibility(View.VISIBLE);
+            group_reading_highlight.setVisibility(View.GONE);
+            group_all_highlight.setVisibility(View.GONE);
+        });
+
+        assert filter_reading != null;
+        filter_reading.setOnClickListener(v -> {
+            adapter.filterReading();
+            questionListView.post(() -> questionListView.smoothScrollToPosition(0));
+
+            group_listening_highlight.setVisibility(View.GONE);
+            group_reading_highlight.setVisibility(View.VISIBLE);
+            group_all_highlight.setVisibility(View.GONE);
+        });
+
+        assert filter_all != null;
+        filter_all.setOnClickListener(v -> {
+            adapter.resetFilter();
+            questionListView.post(() -> questionListView.smoothScrollToPosition(0));
+
+            group_listening_highlight.setVisibility(View.GONE);
+            group_reading_highlight.setVisibility(View.GONE);
+            group_all_highlight.setVisibility(View.VISIBLE);
+        });
+
 
     }
 
@@ -367,6 +453,85 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             }
         );
 
+    }
+
+
+    private void getAndAddQuestionOfTest(int test_id) {
+
+//        [
+//            {
+//                "_id": "68206440a87bed1c0357e798",
+//                "question_id": "test1_1",
+//                "group_question_id": "test1_part1_1",
+//                "question_text": "Look at the picture marked number 1 in your test book",
+//                "correct_answer": 4,
+//                "ans_1": "A",
+//                "ans_2": "B",
+//                "ans_3": "C",
+//                "ans_4": "D"
+//            }
+//        ]
+        AnswerTestMananger.releaseAll();
+//        AnswerTestMananger.list_answer.add(new nav_answer(0, 0));
+
+        TestApi.getListQuestionByTestId(test_id,
+                this,
+                sharedPreClass.getValue_string("token"),
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray jsonArray) {
+                        // Xử lý khi thành công
+                        try {
+
+                            for(int i = 0; i < jsonArray.length(); i++) {
+                                if(jsonArray.isNull(i)) {
+                                    throw new JSONException("Null value");
+                                }
+
+                                JSONObject object = jsonArray.getJSONObject(i);
+
+                                int question_id = StringManager.extractLastNumber(object.getString("question_id"));
+                                int part_id = StringManager.extractNumberFromSecondPart(object.getString("group_question_id"));
+                                int count_ans = 0;
+                                int correct_ans = 1;
+
+                                if(!object.isNull("ans_1"))
+                                    count_ans++;
+
+                                if(!object.isNull("ans_2"))
+                                    count_ans++;
+
+                                if(!object.isNull("ans_3"))
+                                    count_ans++;
+
+                                if(!object.isNull("ans_4"))
+                                    count_ans++;
+
+                                if(!object.isNull("correct_answer"))
+                                    correct_ans = object.getInt("correct_answer");
+
+                                nav_answer navAnswer = new nav_answer(0, count_ans);
+                                navAnswer.setCorrectAnswer(correct_ans);
+                                navAnswer.setInfo(part_id, question_id);
+//                            AnswerTestMananger.map_answer.put(question_id, navAnswer);
+                                AnswerTestMananger.list_answer.add(navAnswer);
+                            }
+
+                            editBottomDialogFilter();
+                        } catch (JSONException e) {
+                            Log.e("error", e.toString());
+                            throw new RuntimeException(e);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Xử lý khi có lỗi
+                        Log.e("API_ERROR", error.toString());
+                    }
+                }
+        );
     }
 
     private void editTestDetailPage(testDetail_page detailPage, int part_id) throws JSONException {

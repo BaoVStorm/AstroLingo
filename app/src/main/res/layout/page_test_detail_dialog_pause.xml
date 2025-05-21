@@ -32,7 +32,7 @@
             android:id="@+id/text_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do you want to continue?"
+            android:text="@string/wantContinue"
             android:layout_marginTop="16dp"
 
             android:textSize="18sp"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/afacad_bold"
 
-                android:text="Continue"
+                android:text="@string/Continue"
                 android:textColor="@color/white"
                 android:textSize="16sp"
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/afacad_bold"
 
-                android:text="Exit"
+                android:text="@string/Exit"
                 android:textColor="@color/loginRegister_button_color"
                 android:textSize="16sp"
 

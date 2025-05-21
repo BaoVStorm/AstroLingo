@@ -400,7 +400,7 @@ import org.w3c.dom.Text;
                             JSONObject object = arrayObject.getJSONObject(i);
 
                             int question_id = StringManager.extractLastNumber(object.getString("question_id"));
-                            String part_id = StringManager.extractSecondPart(object.getString("group_question_id"));
+                            int part_id = StringManager.extractNumberFromSecondPart(object.getString("group_question_id"));
 
                             String questionText, ans1, ans2, ans3, ans4;
                             int correctNumber;
@@ -447,7 +447,7 @@ import org.w3c.dom.Text;
 
                             // add to HashMap map_answer
 //                            if(!AnswerTestMananger.map_answer.containsKey(question_id)) {
-                            if(AnswerTestMananger.list_answer.size() - 1 < question_id) {
+                            if(AnswerTestMananger.list_answer.size() < question_id) {
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
                                 navAnswer.setCorrectAnswer(correctNumber);
                                 navAnswer.setInfo(part_id, question_id);
@@ -541,11 +541,11 @@ import org.w3c.dom.Text;
 
     private void chooseQuestion(int question_id, ListeningViewHolder viewHolder) {
 //        if(!AnswerTestMananger.map_answer.containsKey(question_id))
-        if(AnswerTestMananger.list_answer.size() - 1 < question_id)
+        if(AnswerTestMananger.list_answer.size()< question_id)
                 return;
 
 //        nav_answer navAnswer = AnswerTestMananger.map_answer.get(question_id);
-        nav_answer navAnswer = AnswerTestMananger.getAnswer(question_id);
+        nav_answer navAnswer = AnswerTestMananger.getAnswer(question_id - 1);
 
         View[] views = new View[] {
             viewHolder.navAnswer1,

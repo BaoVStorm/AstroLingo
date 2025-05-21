@@ -57,6 +57,7 @@
                 >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/filter_listening"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -85,6 +86,36 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/filter_all"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/group_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+
+                        android:text="Tất cả"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textColor="@color/dark_grey"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/group_all_highlight"
+                        />
+                    <View
+                        android:id="@+id/group_all_highlight"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/main_color_purple"
+
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/filter_reading"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -167,6 +198,16 @@
                 />
             </LinearLayout>
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+
+                app:layout_constraintBottom_toTopOf="@+id/lv_question"
+                app:layout_constraintStart_toStartOf="@+id/lv_question"
+                app:layout_constraintEnd_toEndOf="@+id/lv_question"
+                />
+
             <ListView
                 android:id="@+id/lv_question"
                 android:layout_width="match_parent"
@@ -179,6 +220,16 @@
                 >
 
             </ListView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+
+                app:layout_constraintTop_toBottomOf="@+id/lv_question"
+                app:layout_constraintStart_toStartOf="@+id/lv_question"
+                app:layout_constraintEnd_toEndOf="@+id/lv_question"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

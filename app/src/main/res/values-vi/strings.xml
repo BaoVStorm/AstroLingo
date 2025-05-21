@@ -117,5 +117,8 @@
     <string name="listening_description">Lắng nghe đoạn ghi âm và nhìn vào bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
     <string name="reading">Đọc hiểu</string>
     <string name="reading_description">Đọc các câu hỏi và bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="wantContinue">Bạn có muốn tiếp tục?</string>
+    <string name="Continue">Tiếp tục</string>
+    <string name="Exit">Thoát</string>
 
 </resources>
