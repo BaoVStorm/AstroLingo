@@ -1,9 +1,11 @@
 package com.example.astrolingo.activity.home;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -19,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.activity.test.TestSubmit;
 import com.example.astrolingo.api.UserApi;
 
 import org.json.JSONArray;
@@ -32,6 +35,7 @@ public class HomeFragment extends Fragment {
     TextView leaderboard_seeMore, headerText;
 
     LinearLayout first_place_Section, second_place_Section, third_place_Section, fourth_place_Section, fifth_place_Section, sixth_place_Section;
+    CardView vocab_search;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +52,11 @@ public class HomeFragment extends Fragment {
 
         // Khởi tạo SharedPreferenceClass
         sharedPreClass = new SharedPreferenceClass(view.getContext());
+
+        vocab_search = view.findViewById(R.id.icon_vocab_search_CardView);
+        vocab_search.setOnClickListener(v-> {
+           startActivity(new Intent(getActivity(), TestSubmit.class));
+        });
 
         // Get 5 user section
         first_place_Section = view.findViewById(R.id.first_place_Section);
