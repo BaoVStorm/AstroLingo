@@ -451,6 +451,9 @@ import org.w3c.dom.Text;
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
                                 navAnswer.setCorrectAnswer(correctNumber);
                                 navAnswer.setInfo(part_id, question_id);
+                                navAnswer.setGroup_question_id(object.getString("group_question_id"));
+                                navAnswer.setQuestion_id_text(object.getString("question_id"));
+
 //                                AnswerTestMananger.map_answer.put(question_id, navAnswer);
                                 AnswerTestMananger.list_answer.add(navAnswer);
                             }

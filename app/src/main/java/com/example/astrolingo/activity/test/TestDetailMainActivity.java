@@ -550,6 +550,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
                                 navAnswer.setCorrectAnswer(correct_ans);
                                 navAnswer.setInfo(part_id, question_id);
+                                navAnswer.setGroup_question_id(object.getString("group_question_id"));
+                                navAnswer.setQuestion_id_text(object.getString("question_id"));
+
 //                            AnswerTestMananger.map_answer.put(question_id, navAnswer);
                                 AnswerTestMananger.list_answer.add(navAnswer);
                             }

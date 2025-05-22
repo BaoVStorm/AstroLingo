@@ -28,6 +28,7 @@ import com.example.astrolingo.api.UserApi;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -93,7 +94,8 @@ public class TestSubmitActivity extends AppCompatActivity {
             name_test.setText(testObject.getString("title"));
         } catch (JSONException e) {
             e.printStackTrace();
-            finish();
+//            finish();
+//            AnswerTestMananger.releaseAll();
         }
 
         // edit user info
@@ -112,6 +114,7 @@ public class TestSubmitActivity extends AppCompatActivity {
         // set event button
         button_gotIt.setOnClickListener(v -> {
             finish();
+            AnswerTestMananger.releaseAll();
         });
 
         button_result.setOnClickListener(v -> {
@@ -134,7 +137,8 @@ public class TestSubmitActivity extends AppCompatActivity {
 
         // back icon
         backIcon.setOnClickListener(v -> {
-           finish();
+            finish();
+            AnswerTestMananger.releaseAll();
         });
     }
 
@@ -240,6 +244,7 @@ public class TestSubmitActivity extends AppCompatActivity {
 
                         updateViewUser();
                         saveTestScore();
+                        addUserAnswer();
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -303,6 +308,54 @@ public class TestSubmitActivity extends AppCompatActivity {
         total_score_test = AnswerTestMananger.getScore();
         pass_score.setText(total_score_test + "");
 
+    }
+
+    private void addUserAnswer() {
+        // user_id
+        // test_id
+
+        //selected_answer
+        //is_wrong
+
+        // --
+
+        //question_number
+        //question_id
+        //group_question_id
+        //part_id
+
+        try {
+            HashMap<String, Object> params = new HashMap<>();
+
+            params.put("user_id", user_id);
+            params.put("test_id", test_id);
+
+            JSONArray answersArray = AnswerTestMananger.getLisJSONArray();
+
+            params.put("answers", answersArray);
+
+            CertificateApi.addUserAnswers(
+                params,
+                this,
+                sharedPreClass.getValue_string("token"),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Xử lý khi thành công
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Xử lý khi có lỗi
+                        Log.e("API_ERROR", error.toString());
+                        Toast.makeText(TestSubmitActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            );
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 //    @Override

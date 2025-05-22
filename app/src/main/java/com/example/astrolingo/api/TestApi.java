@@ -28,11 +28,11 @@ public class TestApi {
         apiurl = apiurl + "?part_id=" + part_id;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                apiurl,
-                null,
-                onSuccess, // listener thành công truyền từ Activity
-                onError    // listener lỗi truyền từ Activity
+            Request.Method.GET,
+            apiurl,
+            null,
+            onSuccess, // listener thành công truyền từ Activity
+            onError    // listener lỗi truyền từ Activity
         ) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
