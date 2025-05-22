@@ -3,7 +3,7 @@ package com.example.astrolingo.domain.test;
 public class nav_answer {
     private int count_ans = 0;
     private int currentChoose = 0;
-    private int correctAnswer = 0;
+    private int correctAnswer = 10;
     private int question_id, part;
 
     public nav_answer() {
@@ -40,6 +40,12 @@ public class nav_answer {
     }
     public int getCurrentChoose() {
         return currentChoose;
+    }
+    public boolean checkAnswer() {
+        if(currentChoose == correctAnswer) {
+            return true;
+        }
+        return false;
     }
 
 }

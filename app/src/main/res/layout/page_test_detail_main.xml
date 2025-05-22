@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/main_color_purple"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+
+        android:paddingTop="50dp"
+        >
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

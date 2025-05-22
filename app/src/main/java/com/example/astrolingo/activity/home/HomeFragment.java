@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
-import com.example.astrolingo.activity.test.TestSubmit;
+import com.example.astrolingo.activity.test.TestSubmitActivity;
 import com.example.astrolingo.api.UserApi;
 
 import org.json.JSONArray;
@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         vocab_search = view.findViewById(R.id.icon_vocab_search_CardView);
         vocab_search.setOnClickListener(v-> {
-           startActivity(new Intent(getActivity(), TestSubmit.class));
+           startActivity(new Intent(getActivity(), TestSubmitActivity.class));
         });
 
         // Get 5 user section

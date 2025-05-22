@@ -2,6 +2,7 @@ package com.example.astrolingo.activity.test;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +50,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     SharedPreferenceClass sharedPreClass;
     ViewPager2 viewpager;
     JSONObject testObject;
+    String testString;
     TextView header_time, header_part_full, header_part_number, header_spe, header_part, header_part_full_bottom, header_submit;
     ImageView header_info, header_setting, header_pause, header_overview;
     ImageView backIcon;
@@ -74,7 +76,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         initDialog();
 
         // get test object
-        String testString = getIntent().getStringExtra("testObject");
+        testString = getIntent().getStringExtra("testObject");
 
         // add temp value
         list_page = new ArrayList<>();
@@ -338,7 +340,15 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     }
 
     private void submitTest() {
+        dialog_info.dismiss();
+        dialog_pause.dismiss();
+        dialog_submit.dismiss();
+        bottomDialog_filter.dismiss();
 
+        Intent intent = new Intent(this, TestSubmitActivity.class);
+        intent.putExtra("testObject", testString);
+        startActivity(intent);
+        finish();
     }
 
     private void getListPart_addListPage() {
