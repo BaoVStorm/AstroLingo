@@ -151,7 +151,7 @@ public class FilterQuestionAdapter extends ArrayAdapter<nav_answer> {
 
     private void highLightAnswer(ShapeableImageView avatarImageView, TextView navAnswer_text, Context context) {
         avatarImageView.setBackgroundColor(ContextCompat.getColor(context, R.color.chooseAnswer));
-        avatarImageView.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(context, R.color.chooseAnswer)));
+        avatarImageView.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(context, R.color.chooseAnswer_Border)));
 
         navAnswer_text.setTextColor(ContextCompat.getColor(context, R.color.white));
     }

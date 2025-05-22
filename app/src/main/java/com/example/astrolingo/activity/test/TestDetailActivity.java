@@ -58,6 +58,7 @@ public class TestDetailActivity extends AppCompatActivity {
                 intent.putExtra("testObject", testObject.toString());
 
                 startActivity(intent);
+                finish();
             });
 
         } catch (JSONException e) {

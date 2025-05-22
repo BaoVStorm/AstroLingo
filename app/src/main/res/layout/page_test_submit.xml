@@ -571,14 +571,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_gotIt"
-        android:layout_width="160dp"
+        android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_button"
         android:clickable="true"
         android:elevation="2dp"
         android:focusable="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10">
@@ -600,14 +600,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_result"
-        android:layout_width="160dp"
+        android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_button"
         android:clickable="true"
         android:elevation="2dp"
         android:focusable="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="25dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
