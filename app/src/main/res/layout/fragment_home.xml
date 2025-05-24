@@ -54,8 +54,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleVocabulary_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleVocabulary"
                 android:layout_below="@id/welcome_img_homepage_CardView"
                 android:layout_marginTop="30dp"
@@ -80,8 +80,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_vocab_search_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
@@ -89,8 +89,8 @@
 
                         <ImageView
                             android:id="@+id/icon_vocab_search_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_vocab_search" />
                     </androidx.cardview.widget.CardView>
@@ -101,7 +101,7 @@
                         android:text="Tra từ vựng"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -117,8 +117,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_learn_vocab_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
@@ -126,8 +126,8 @@
 
                         <ImageView
                             android:id="@+id/icon_learn_vocab_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_learn_vocab" />
                     </androidx.cardview.widget.CardView>
@@ -138,7 +138,7 @@
                         android:text="Học từ vựng"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -154,16 +154,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_word_of_you_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_word_of_you_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_word_of_you" />
                     </androidx.cardview.widget.CardView>
@@ -174,7 +174,7 @@
                         android:text="Từ của bạn"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
             </RelativeLayout>
@@ -193,8 +193,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleGame_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleGame"
                 android:layout_below="@id/vocabSection"
                 android:layout_marginTop="30dp"
@@ -219,8 +219,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_hangman_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
@@ -228,8 +228,8 @@
 
                         <ImageView
                             android:id="@+id/icon_hangman_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_hangman" />
                     </androidx.cardview.widget.CardView>
@@ -240,7 +240,7 @@
                         android:text="Hangman"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -256,16 +256,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_word_attack_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_word_attack_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_word_attack" />
                     </androidx.cardview.widget.CardView>
@@ -276,7 +276,7 @@
                         android:text="Word attack"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -292,16 +292,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_treasure_g_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_treasure_g_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_treasure_g" />
                     </androidx.cardview.widget.CardView>
@@ -312,7 +312,7 @@
                         android:text="TreasureG"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -328,16 +328,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_puzword_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_puzword_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_puzword" />
                     </androidx.cardview.widget.CardView>
@@ -348,7 +348,7 @@
                         android:text="Puzword"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
             </RelativeLayout>
@@ -367,8 +367,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleHistory_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleHistory"
                 android:layout_below="@id/gameSection"
                 android:layout_marginTop="30dp"
@@ -393,8 +393,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_lookuped_word_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
@@ -402,8 +402,8 @@
 
                         <ImageView
                             android:id="@+id/icon_lookuped_word_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_lookuped_word" />
                     </androidx.cardview.widget.CardView>
@@ -414,7 +414,7 @@
                         android:text="Từ đã tra"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -430,16 +430,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_wrong_answer_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_wrong_answer_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_wrong_answer" />
                     </androidx.cardview.widget.CardView>
@@ -449,7 +449,7 @@
                         android:text="Câu làm sai"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -465,16 +465,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_test_history_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_test_history_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_test_history" />
                     </androidx.cardview.widget.CardView>
@@ -485,7 +485,7 @@
                         android:text="Lịch sử"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
             </RelativeLayout>
@@ -504,8 +504,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleAI_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleAI"
                 android:layout_below="@id/historySection"
                 android:layout_marginTop="30dp"
@@ -530,8 +530,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_chatbot_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
@@ -539,8 +539,8 @@
 
                         <ImageView
                             android:id="@+id/icon_chatbot_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_chatbot" />
                     </androidx.cardview.widget.CardView>
@@ -551,7 +551,7 @@
                         android:text="Chatbot"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
 
@@ -567,16 +567,16 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/icon_ai_writing_CardView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
                         android:layout_marginTop="5dp"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp"
                         app:cardUseCompatPadding="true">
                         <ImageView
                             android:id="@+id/icon_ai_writing_ImageView"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_ai_writing" />
                     </androidx.cardview.widget.CardView>
@@ -586,7 +586,7 @@
                         android:text="AI Writing"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text_button_home"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
             </RelativeLayout>
@@ -605,8 +605,8 @@
 
             <ImageView
                 android:id="@+id/icon_info_titleScoreboard_ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_toEndOf="@id/titleScoreboard"
                 android:layout_below="@id/AISection"
                 android:layout_marginTop="30dp"
@@ -625,13 +625,13 @@
                 android:layout_below="@id/titleScoreboard"/>
 
             <ImageView
-                android:layout_width="145dp"
-                android:layout_height="145dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
                 android:src="@drawable/icon_lead_shadow"
 
                 android:layout_above="@id/scoreboardSection"
                 android:layout_alignParentEnd="true"
-                android:translationY="110dp"
+                android:translationY="95dp"
                 />
 
         </RelativeLayout>

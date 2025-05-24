@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
 
         android:fontFamily="@font/afacad_regular"
-        android:text="Copyright 2025 © AstroLingo"
+        android:text="@string/copyright"
         android:textColor="@color/white"
         android:textSize="15sp"
 
@@ -65,8 +65,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginBottom="35dp"
 
         app:layout_constraintTop_toBottomOf="@+id/header"
@@ -85,7 +85,7 @@
         android:textColor="@color/main_color_purple"
 
         android:fontFamily="@font/afacad_bold"
-        android:textSize="32sp"
+        android:textSize="@dimen/logo_text_size"
 
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.36"
+        app:layout_constraintVertical_bias="0.38"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -121,7 +121,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:hint="@string/loginWithUserName"
@@ -153,7 +153,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
         app:layout_constraintTop_toBottomOf="@id/box_username"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         >
 
         <ImageView
@@ -176,7 +176,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
             android:background="@null"
-            android:ems="11"
+            android:ems="10"
             android:fontFamily="@font/afacad_medium"
 
             android:inputType="textPassword"
@@ -209,11 +209,11 @@
         android:text="@string/loginRegister_rule"
 
         android:fontFamily="@font/afacad_medium"
-        android:textSize="16sp"
+        android:textSize="@dimen/policy_text_size"
 
         android:gravity="start"
 
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@+id/box_password"
         app:layout_constraintLeft_toLeftOf="@+id/box_password"
         app:layout_constraintRight_toRightOf="@+id/box_password"
@@ -228,7 +228,7 @@
         android:visibility="visible"
 
         android:textColor="@color/main_color_purple"
-        android:textSize="16sp"
+        android:textSize="@dimen/font_size_label"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -239,7 +239,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_login"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/button_input_height"
         android:layout_marginTop="30dp"
 
         android:background="@drawable/rounded_button"
@@ -257,7 +257,7 @@
             android:fontFamily="@font/afacad_medium"
 
             android:text="@string/login"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textColor="@color/white"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -271,7 +271,7 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="@color/grey"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.73"
         app:layout_constraintBottom_toTopOf="@+id/button_login_google"
         app:layout_constraintEnd_toEndOf="@+id/box_password"
         app:layout_constraintStart_toStartOf="@+id/box_password"
@@ -282,14 +282,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_login_google"
-        android:layout_width="230dp"
-        android:layout_height="45dp"
+        android:layout_width="@dimen/button_input_width"
+        android:layout_height="@dimen/button_input_height"
 
         android:background="@drawable/rounded_white"
         android:clickable="true"
         android:focusable="true"
 
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="62dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_login"
@@ -298,7 +298,7 @@
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -309,8 +309,8 @@
 
             <ImageView
                 android:id="@+id/icon_google"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:background="@drawable/icon_assets_google"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -322,7 +322,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login with Google"
 
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:fontFamily="@font/afacad_medium"
 
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -349,7 +349,7 @@
             android:text="@string/dont_have_account"
 
             android:fontFamily="@font/afacad_medium"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_size_label"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -357,11 +357,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintLeft_toRightOf="@+id/textView5"
 
             android:fontFamily="@font/afacad_bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_size_label"
             android:textColor="@color/text_color_selector"
             tools:ignore="MissingConstraints"
             />
@@ -394,7 +394,7 @@
         android:visibility="invisible"
 
         android:textColor="@color/red"
-        android:textSize="14sp"
+        android:textSize="@dimen/error_text_size"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -410,7 +410,7 @@
         android:visibility="invisible"
 
         android:textColor="@color/red"
-        android:textSize="14sp"
+        android:textSize="@dimen/error_text_size"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -426,7 +426,7 @@
         android:visibility="invisible"
         android:layout_marginTop="2dp"
         android:textColor="@color/red"
-        android:textSize="14sp"
+        android:textSize="@dimen/error_text_size"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

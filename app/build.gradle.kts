@@ -57,5 +57,9 @@ dependencies {
 //    implementation(libs.googleid)
     implementation(libs.play.services.auth)
 
+    implementation(libs.viewpager2)
+
     implementation(libs.pinview)
+
+    implementation(libs.material.v1110)
 }

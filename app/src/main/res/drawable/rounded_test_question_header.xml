@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bo góc + màu nền gốc -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/header_question" />
+            <corners
+                android:topRightRadius="12dp"
+                android:topLeftRadius="12dp" />
+        </shape>
+    </item>
+</layer-list>

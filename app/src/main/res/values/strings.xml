@@ -2,8 +2,8 @@
 <resources>
     <!--  Không được phép thay đổi dòng này  -->
     <string name="api_key" translatable="false">https://astrolingo.onrender.com/</string>
-
-    <string name="_api_key" translatable="false">http://10.0.2.2:3000/</string>
+    <string name="api_key_server" translatable="false">http://13.215.189.134:3000/</string>
+    <string name="api_key_aws" translatable="false">http://10.0.2.2:3000/</string>
 
     <string name="client_ID" translatable="false">377354537953-q2eg1baq8mvdggc5cb8jh6ouhq7osuo4.apps.googleusercontent.com</string>
     <!-- - - - - - - - - - - - - - - - - - - -->
@@ -16,7 +16,7 @@
 
     <string name="app_name">AstroLingo</string>
 
-    <string name="homeFragment" >Home Page</string>
+    <string name="homeFragment">Home Page</string>
 
     <string name="testFragment">Test Page</string>
 
@@ -24,7 +24,7 @@
 
     <string name="AiFragment">AI Page</string>
 
-    <string name="settingFragment">SettingPage</string>
+    <string name="settingFragment">Setting Page</string>
 
     <string name="copyright">Copyright 2025 © AstroLingo</string>
 
@@ -114,7 +114,23 @@
     <string name="chinhsuahoso_email">anhdao@gmai.com</string>
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
-    <string name="chinhsuahoso_gender">Nữ</string>
+    <string name="chinhsuahoso_gender">Female</string>
+
+    <!--  Test  -->
+    <string name="Sentence">Sen</string>
+    <string name="Submit">Submit</string>
+    <string name="part">Part</string>
+    <string name="howToDoTest">How to do test</string>
+    <string name="listening">Listening</string>
+    <string name="listening_description">Listen audio and look at pictures (if exist) to choose the correct answer.</string>
+    <string name="reading">Reading</string>
+    <string name="reading_description">Reading questions and look at pictures (if exist) below to choose the answer.</string>
+    <string name="wantContinue">Do you want to continue?</string>
+    <string name="Continue">Continue</string>
+    <string name="Exit">Exit</string>
+    <string name="wantSubmit">Do you want to submit?</string>
+    <string name="submit">Submit</string>
+    <string name="no">No</string>
 
     <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
     <string name="seemore">See more</string>

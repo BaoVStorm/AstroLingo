@@ -3,6 +3,7 @@ package com.example.astrolingo.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class Register_VerifyEmailActivity extends AppCompatActivity {
 
     TextView header_text, your_email;
     TextView error_text, resend_field;
+    ImageView backIcon;
     PinView pinView;
     ConstraintLayout next_button;
     ProgressBar progressBar;
@@ -58,6 +60,7 @@ public class Register_VerifyEmailActivity extends AppCompatActivity {
         next_button = findViewById(R.id.button_forgotPassword);
         progressBar = findViewById(R.id.progressBar);
         resend_field = findViewById(R.id.resend_field);
+        backIcon = findViewById(R.id.backIcon);
 
         // init
         utilService = new UtilService();
@@ -88,6 +91,11 @@ public class Register_VerifyEmailActivity extends AppCompatActivity {
             utilService.hideKeyboard(v, Register_VerifyEmailActivity.this);
 
             resendEmail();
+        });
+
+        // back icon
+        backIcon.setOnClickListener(v -> {
+            finish();
         });
     }
 

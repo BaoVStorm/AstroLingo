@@ -25,4 +25,40 @@ public class StringManager {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public static int extractLastNumber(String input) {
+        String[] parts = input.split("_");
+        try {
+            return Integer.parseInt(parts[parts.length - 1]);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return -1; // hoặc giá trị mặc định nếu không hợp lệ
+        }
+    }
+
+    public static String extractSecondPart(String input) {
+        String[] parts = input.split("_");
+        try {
+            return parts[1]; // phần tử thứ 2 (index 1)
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            return null; // hoặc giá trị mặc định nếu không hợp lệ
+        }
+    }
+
+    public static int extractNumberFromSecondPart(String input) {
+        String[] parts = input.split("_");
+        try {
+            // Lấy phần tử thứ 2 (index 1), ví dụ: "part1"
+            String secondPart = parts[1];
+
+            // Lấy các chữ số cuối từ "part1" bằng regex
+            String number = secondPart.replaceAll("\\D+", ""); // Bỏ chữ, giữ số
+
+            return Integer.parseInt(number); // Chuyển thành số nguyên
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1; // Trả về -1 nếu lỗi
+        }
+    }
 }

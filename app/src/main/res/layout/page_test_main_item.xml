@@ -15,28 +15,28 @@ Ngoài ra sẽ dễ thiết lập code cho sự kiện click trên các item nà
     android:layout_marginEnd="16dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/size_button_home"
+        android:layout_height="@dimen/size_button_home"
         android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="2dp"
         app:cardUseCompatPadding="true">
 
         <ImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="@dimen/size_icon_home"
+            android:layout_height="@dimen/size_icon_home"
             android:layout_gravity="center"
             android:src="@drawable/icon_test_item" />
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/itemLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Item"
-        android:textSize="17sp"
+        android:textSize="@dimen/text_button_home"
         android:fontFamily="@font/afacad_regular"
         android:textColor="@color/black"
         android:gravity="center"
-        android:paddingTop="4dp"/>
+        android:paddingTop="2dp"/>
 </LinearLayout>

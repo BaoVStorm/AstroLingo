@@ -6,11 +6,18 @@ import android.content.SharedPreferences;
 public class SharedPreferenceClass {
     public static final boolean isAllowToken = true;
     public static final String USER_PREP = "astrolingo_prep";
+    public static final String ANSWER_TEST_PREP = "answer_test_prep";
+
     private SharedPreferences appShared;
     private SharedPreferences.Editor editor;
 
     public SharedPreferenceClass(Context context) {
         appShared = context.getSharedPreferences(USER_PREP, Context.MODE_PRIVATE);
+        this.editor = appShared.edit();
+    }
+
+    public SharedPreferenceClass(Context context, String PREP) {
+        appShared = context.getSharedPreferences(PREP, Context.MODE_PRIVATE);
         this.editor = appShared.edit();
     }
 
@@ -43,7 +50,10 @@ public class SharedPreferenceClass {
     }
 
     public void clearAll() {
+
         editor.clear().commit();
+        editor.putString("user_id", "null").commit();
+        editor.putString("token", "null").commit();
     }
 
     public boolean contains(String key) {

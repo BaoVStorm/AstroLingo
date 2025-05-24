@@ -3,8 +3,10 @@ package com.example.astrolingo.activity;
 //
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.astrolingo.R;
 
@@ -26,6 +29,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView header;
     private BottomNavigationView bottomNav;
     private FrameLayout frame;
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNav = findViewById(R.id.format_bottomNav);
         frame = findViewById(R.id.format_frameLayout);
+        header = findViewById(R.id.format_textView);
 
         // navigate bottom nav
         bottomNav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -45,18 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.navHome) {
+                    header.setText(getString(R.string.homeFragment));
                     loadFragment(new HomeFragment(), false);
                     return true;
                 } else if (id == R.id.navTest) {
+                    header.setText(getString(R.string.testFragment));
                     loadFragment(new TestFragment(), false);
                     return true;
                 } else if (id == R.id.navCourse) {
+                    header.setText(getString(R.string.courseFragment));
                     loadFragment(new CourseFragment(), false);
                     return true;
                 } else if (id == R.id.navAI) {
+                    header.setText(getString(R.string.AiFragment));
                     loadFragment(new AiFragment(), false);
                     return true;
                 } else if (id == R.id.navSetting) {
+                    header.setText(getString(R.string.settingFragment));
                     loadFragment(new SettingFragment(), false);
                     return true;
                 }
@@ -77,18 +87,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void loadFragment(Fragment fragment, boolean isInit) {
-        if(isInit) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.format_frameLayout, fragment)
-                    .commit();
+//    private void loadFragment(Fragment fragment, boolean isInit) {
+//        if(isInit) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(R.id.format_frameLayout, fragment)
+//                    .commit();
+//
+//            return;
+//        }
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.format_frameLayout, fragment)
+//                .commit();
+//
+//    }
 
-            return;
+    private void loadFragment(Fragment fragment, boolean isInit) {
+        String tag = fragment.getClass().getSimpleName();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // Ẩn tất cả fragment đang hiện
+        for (Fragment f : fragmentManager.getFragments()) {
+            if (f != null && f.isVisible()) {
+                fragmentManager.beginTransaction().hide(f).commit();
+            }
         }
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.format_frameLayout, fragment)
-                .commit();
+        // Kiểm tra nếu fragment đã được add trước đó
+        Fragment existingFragment = fragmentManager.findFragmentByTag(tag);
 
+        if (existingFragment != null) {
+            fragmentManager.beginTransaction().show(existingFragment).commit();
+        } else {
+            fragmentManager.beginTransaction()
+                    .add(R.id.format_frameLayout, fragment, tag)
+                    .commit();
+        }
     }
 }

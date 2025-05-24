@@ -5,12 +5,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background3"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:id="@+id/main"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"
+        >
+            <ImageView
+                android:id="@+id/backIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/back_press_color_purple"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="0dp"
+
+                android:clickable="true"
+                android:focusable="true"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Avatar và Background -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="250dp">
 
         <!-- Hình nền -->
         <ImageView
@@ -27,25 +53,33 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="vertical"
+            android:padding="13dp"
             android:gravity="center_horizontal">
 
             <!-- Avatar -->
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgAvatar"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/icon_ava2"
-                android:padding="8dp" />
+                android:layout_marginBottom="5dp"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:padding="1dp"
+                />
 
             <!-- Username + Điểm -->
             <LinearLayout
                 android:id="@+id/layoutUsernameScore"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:background="@drawable/white_background_retangle"
-                android:padding="8dp"
+                android:background="@drawable/rounded_board_white"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="12dp"
                 android:layout_marginTop="12dp">
 
                 <TextView
@@ -55,17 +89,30 @@
                     android:text="Username"
                     android:textColor="@color/purple"
                     android:fontFamily="@font/afacad_bold"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/txtScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200★"
-                    android:textColor="@color/orange"
                     android:fontFamily="@font/afacad_bold"
+                    android:text="0"
+                    android:textColor="@color/orange"
+                    android:textStyle="bold"
                     android:layout_marginStart="8dp"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/afacad_bold"
+                    android:text="★"
+                    android:textColor="#FF9800"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="1dp"
+                    android:textSize="18sp" />
+
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
@@ -74,7 +121,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
+        android:paddingTop="10dp"
         android:overScrollMode="never">
 
         <LinearLayout
@@ -90,21 +137,27 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_chinhsuahoso"
                     app:tint="@color/main_color" />
 
                 <TextView
+                    android:id="@+id/txtFullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_regular"
+                    android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_name"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -120,21 +173,24 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_email"
                     app:tint="@color/main_color" />
 
                 <TextView
+                    android:id="@+id/txtEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_regular"
+                    android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_email"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -151,21 +207,24 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_phone"
                     app:tint="@color/main_color" />
 
                 <TextView
+                    android:id="@+id/txtPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_regular"
+                    android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_sdt"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -182,21 +241,24 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_calendar"
                     app:tint="@color/main_color" />
 
                 <TextView
+                    android:id="@+id/txtDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_regular"
+                    android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_date"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -213,21 +275,24 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="12dp"
+                android:layout_marginVertical="5dp"
+                >
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_setting_gender"
                     app:tint="@color/main_color" />
 
                 <TextView
+                    android:id="@+id/txtGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_regular"
+                    android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_gender"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -245,15 +310,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnEdit"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/loginRegister_button_color"
             android:minWidth="200dp"
             android:text="Chỉnh sửa"

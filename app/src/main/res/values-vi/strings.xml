@@ -23,7 +23,7 @@
     <!-- Login Page String  -->
     <string name="next">Tiếp tục</string>
     <string name="got_it">Hoàn thành</string>
-    <string name="verifyEmail">Xác thực email của bạn</string>
+    <string name="verifyEmail">Xác thực email</string>
     <string name="verifyEmailCode">Hãy nhập 4 số mã đã được gửi đến email của bạn!</string>
     <string name="createNewPass">Tạo mật khẩu mới</string>
     <string name="enterNewPass">Nhập mật khẩu mới của bạn!</string>
@@ -31,7 +31,7 @@
     <string name="loginPage">Đăng nhập</string>
     <string name="registerPage">Đăng ký</string>
     <string name="forgotPasswordPage">Quên mật khẩu</string>
-    <string name="loginWithUserName">Nhập tên tài khoản hoặc email của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="loginWithUserName">Nhập tên tài khoản hoặc email <font color="#EB4B4B">*</font> </string>
     <string name="RegisterWithUserName">Nhập tên tài khoản của bạn <font color="#EB4B4B">*</font> </string>
     <string name="loginWithPassword">Nhập mật khẩu của bạn <font color="#EB4B4B">*</font> </string>
     <string name="login">Đăng nhập</string>
@@ -107,6 +107,23 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Nữ</string>
+
+    <!--  Test  -->
+    <string name="Sentence">Câu</string>
+    <string name="Submit">Nộp bài</string>
+    <string name="part">Phần</string>
+    <string name="howToDoTest">Hướng đẫn làm bài thi</string>
+    <string name="listening">Nghe hiểu</string>
+    <string name="listening_description">Lắng nghe đoạn ghi âm và nhìn vào bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="reading">Đọc hiểu</string>
+    <string name="reading_description">Đọc các câu hỏi và bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="wantContinue">Bạn có muốn tiếp tục?</string>
+    <string name="Continue">Tiếp tục</string>
+    <string name="Exit">Thoát</string>
+    <string name="wantSubmit">Bạn có muốn nộp bài?</string>
+    <string name="submit">Nộp bài</string>
+    <string name="no">Không</string>
+
 
     <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
     <string name="seemore">Xem thêm</string>

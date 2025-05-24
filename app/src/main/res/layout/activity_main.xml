@@ -68,7 +68,7 @@
         android:elevation="10dp"
         android:paddingHorizontal="20dp"
 
-        app:itemIconSize="35dp"
+        app:itemIconSize="30dp"
         app:itemIconTint="@color/bottom_nav_icon_color"
         app:itemRippleColor="@color/bottom_nav_ripple_color"
         app:itemTextColor="@color/bottom_nav_icon_color"

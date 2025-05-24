@@ -4,6 +4,9 @@
         <domain includeSubdomains="true">10.0.2.2</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">13.215.189.134</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">astrolingo.onrender.com</domain>
     </domain-config>
 
