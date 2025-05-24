@@ -150,4 +150,13 @@
     <string name="single_paragraph">Đoạn đơn</string>
     <string name="double_paragraph">Đoạn kép</string>
     <string name="triple_paragraph">Đoạn tam</string>
+
+    <!-- search activity -->
+    <string name="vietnamese">Việt</string>
+    <string name="english">Anh</string>
+    <string name="input_search">Nhập văn bản</string>
+    <string name="translate_text">Dịch văn bản</string>
+    <string name="word_translated">Từ đã tra</string>
+    <string name="word_mark">Từ đã đánh dấu</string>
+
 </resources>

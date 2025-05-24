@@ -47,4 +47,8 @@
 
     <color name="colorPrimaryLight">#8E74C3</color>
 
+    <!-- search word -->
+    <color name="background_word">#E8E3F2</color>
+
+
 </resources>

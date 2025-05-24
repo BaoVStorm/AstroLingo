@@ -2,6 +2,9 @@
 <resources>
     <!--  Không được phép thay đổi dòng này  -->
     <string name="api_key" translatable="false">https://astrolingo.onrender.com/</string>
+    <string name="api_translateVTE_key" translatable="false">https://lingva.ml/api/v1/vi/en/</string>
+    <string name="api_translateETV_key" translatable="false">https://lingva.ml/api/v1/en/vi/</string>
+
     <string name="api_key_server" translatable="false">http://13.215.189.134:3000/</string>
     <string name="api_key_aws" translatable="false">http://10.0.2.2:3000/</string>
 
@@ -157,4 +160,14 @@
     <string name="single_paragraph">Single\nParagraph</string>
     <string name="double_paragraph">Double\nParagraph</string>
     <string name="triple_paragraph">Triple\nParagraph</string>
+
+    <!-- search activity -->
+    <string name="vietnamese">Vietnamese</string>
+    <string name="english">English</string>
+    <string name="input_search">Input text</string>
+    <string name="translate_text">Translate text</string>
+    <string name="word_translated">Words translated</string>
+    <string name="word_mark">Words marked</string>
+
+
 </resources>
