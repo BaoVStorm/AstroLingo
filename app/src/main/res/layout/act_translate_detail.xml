@@ -75,7 +75,7 @@
 
                 android:singleLine="false"
                 android:hint="@string/input_search"
-
+                android:textColor="@color/black_light"
                 android:textSize="30sp"
 
                 app:layout_constraintEnd_toEndOf="parent"

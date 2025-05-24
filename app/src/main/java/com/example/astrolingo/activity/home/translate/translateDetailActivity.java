@@ -97,6 +97,7 @@ public class translateDetailActivity extends AppCompatActivity {
 //        textTranslate
 //        isTranslateEnglish
         progressBar.setVisibility(View.VISIBLE);
+        disableText(origin_text);
 
         translateApi.translateLanguage(
             textTranslate,
@@ -111,6 +112,7 @@ public class translateDetailActivity extends AppCompatActivity {
 
                         updateTextTranslate(translatedText);
                         progressBar.setVisibility(View.GONE);
+                        enableText(origin_text);
                     } catch (JSONException e) {
                         Toast.makeText(translateDetailActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         throw new RuntimeException(e);
@@ -160,7 +162,15 @@ public class translateDetailActivity extends AppCompatActivity {
         translate_text.setText(translatedText);
     }
 
-    private
+    private void disableText(TextView tv) {
+        tv.setFocusable(false);
+        tv.setTextColor(getColor(R.color.grey));
+    }
+
+    private void enableText(TextView tv) {
+        tv.setFocusable(true);
+        tv.setTextColor(getColor(R.color.black_light));
+    }
 
 //    @Override
 //    protected void onRestart() {
