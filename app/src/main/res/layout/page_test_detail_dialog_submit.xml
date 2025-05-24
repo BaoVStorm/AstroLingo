@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/afacad_bold"
 
-                android:text="@string/Continue"
+                android:text="@string/submit"
                 android:textColor="@color/white"
                 android:textSize="16sp"
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/afacad_bold"
 
-                android:text="@string/Exit"
+                android:text="@string/no"
                 android:textColor="@color/loginRegister_button_color"
                 android:textSize="16sp"
 

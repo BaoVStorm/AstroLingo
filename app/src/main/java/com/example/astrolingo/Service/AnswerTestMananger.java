@@ -35,7 +35,7 @@ public class AnswerTestMananger {
         list_answer.clear();
     }
 
-    private static void calScore() {
+    public static void calScore() {
         numCorrect = numWrong = 0;
         numberCorrect_Reading = numberCorrect_Listening = 0;
         score = 0;
@@ -57,36 +57,36 @@ public class AnswerTestMananger {
     }
 
     public static int getScore() {
-        if(score == -1)
-            calScore();
+//        calScore();
 
         return Math.min(list_answer.size() * 5 - 10, score);
+//        return score;
     }
 
     public static int getNumberOfCorrect() {
-        if(numCorrect == -1)
-            calScore();
+//        if(numCorrect == -1)
+//            calScore();
 
         return numCorrect;
     }
 
     public static int getNumberOfCorrect_Listening() {
-        if(numberCorrect_Listening == -1)
-            calScore();
+//        if(numberCorrect_Listening == -1)
+//            calScore();
 
         return numberCorrect_Listening;
     }
 
     public static int getNumberOfCorrect_Reading() {
-        if(numberCorrect_Reading == -1)
-            calScore();
+//        if(numberCorrect_Reading == -1)
+//            calScore();
 
         return numberCorrect_Reading;
     }
 
     public static int getNumberOfWrong() {
-        if(numWrong == -1)
-            calScore();
+//        if(numWrong == -1)
+//            calScore();
 
         return numWrong;
     }

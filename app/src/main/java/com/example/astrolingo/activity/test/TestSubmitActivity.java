@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.AnswerTestMananger;
+import com.example.astrolingo.Service.AudioTestManager;
 import com.example.astrolingo.Service.DateUtils;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.apdapter.test.FilterQuestionAdapter;
@@ -96,7 +97,11 @@ public class TestSubmitActivity extends AppCompatActivity {
             e.printStackTrace();
 //            finish();
 //            AnswerTestMananger.releaseAll();
+            exitActivity();
         }
+
+        // score test
+        scoreTest();
 
         // edit user info
         getUserInfo();
@@ -108,13 +113,9 @@ public class TestSubmitActivity extends AppCompatActivity {
         test_date_content.setText(currentDate);
         valid_date_content.setText(validDate);
 
-        // score test
-        scoreTest();
-
         // set event button
         button_gotIt.setOnClickListener(v -> {
-            finish();
-            AnswerTestMananger.releaseAll();
+            exitActivity();
         });
 
         button_result.setOnClickListener(v -> {
@@ -137,8 +138,7 @@ public class TestSubmitActivity extends AppCompatActivity {
 
         // back icon
         backIcon.setOnClickListener(v -> {
-            finish();
-            AnswerTestMananger.releaseAll();
+            exitActivity();
         });
     }
 
@@ -293,6 +293,7 @@ public class TestSubmitActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void scoreTest() {
+        AnswerTestMananger.calScore();
         numberQuestion = AnswerTestMananger.getNumberOfQuestion();
         numberWrong = AnswerTestMananger.getNumberOfWrong();
 
@@ -357,6 +358,17 @@ public class TestSubmitActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    private void exitActivity() {
+        if(bottomDialog_filter != null)
+            bottomDialog_filter.dismiss();
+
+        AudioTestManager.releaseAll();
+        AnswerTestMananger.releaseAll();
+
+        finish();
+    }
+
 
 //    @Override
 //    protected void onRestart() {

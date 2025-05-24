@@ -121,5 +121,7 @@
     <string name="Continue">Tiếp tục</string>
     <string name="Exit">Thoát</string>
     <string name="wantSubmit">Bạn có muốn nộp bài?</string>
+    <string name="submit">Nộp bài</string>
+    <string name="no">Không</string>
 
 </resources>

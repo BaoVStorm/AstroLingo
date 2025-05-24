@@ -87,7 +87,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
             testObject = new JSONObject(testString);
         } catch (JSONException e) {
             e.printStackTrace();
-            finish();
+            exitActivity();
         }
 
         initCountTime(Integer.parseInt(testObject.optString("test_time")));
@@ -103,8 +103,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                 if(testDetailAdapter != null)
                     testDetailAdapter.release();
 
-                AudioTestManager.releaseAll();
-                finish();
+                exitActivity();
             }
         });
 
@@ -184,6 +183,10 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+
+
+        // edit submit dialog
+        editPauseDialog();
 
         // edit submit dialog
         editSubmitDialog();
@@ -280,6 +283,19 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         });
     }
 
+    private void editPauseDialog() {
+        ConstraintLayout button_next = dialog_pause.findViewById(R.id.button_next);
+        ConstraintLayout button_exit = dialog_pause.findViewById(R.id.button_exit);
+
+        button_next.setOnClickListener(v -> {
+            dialog_pause.dismiss();
+        });
+
+        button_exit.setOnClickListener(v -> {
+            exitActivity();
+        });
+    }
+
     private void editBottomDialogFilter() {
         header_overview.setVisibility(View.VISIBLE);
 
@@ -340,14 +356,22 @@ public class TestDetailMainActivity extends AppCompatActivity  {
     }
 
     private void submitTest() {
-        dialog_info.dismiss();
-        dialog_pause.dismiss();
-        dialog_submit.dismiss();
-        bottomDialog_filter.dismiss();
+        if(dialog_info != null)
+            dialog_info.dismiss();
+
+        if(dialog_pause != null)
+            dialog_pause.dismiss();
+
+        if(dialog_submit != null)
+            dialog_submit.dismiss();
+
+        if(bottomDialog_filter != null)
+            bottomDialog_filter.dismiss();
 
         Intent intent = new Intent(this, TestSubmitActivity.class);
         intent.putExtra("testObject", testString);
         startActivity(intent);
+
         finish();
     }
 
@@ -400,7 +424,7 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                 "question_count": 1
             }
         ]
-         */
+        */
 
         // get list group question
         TestApi.getListGroupQuestion(
@@ -599,12 +623,31 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         countdownHelper.startCountdown((long) time * 60 * 1000); // 2 tiếng
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    private void exitActivity() {
+        if(dialog_info != null)
+            dialog_info.dismiss();
+
+        if(dialog_pause != null)
+            dialog_pause.dismiss();
+
+        if(dialog_submit != null)
+            dialog_submit.dismiss();
+
+        if(bottomDialog_filter != null)
+            bottomDialog_filter.dismiss();
+
+        AudioTestManager.releaseAll();
+        AnswerTestMananger.releaseAll();
 
         finish();
     }
+
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//
+//        finish();
+//    }
 
     @Override
     protected void onDestroy() {
