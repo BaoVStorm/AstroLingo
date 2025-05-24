@@ -170,5 +170,8 @@
     <string name="word_translated">Words translated</string>
     <string name="word_mark">Words marked</string>
 
+    <!--  history search activity -->
+    <string name="all">All</string>
+
 
 </resources>

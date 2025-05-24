@@ -160,4 +160,7 @@
     <string name="word_translated">Từ đã tra</string>
     <string name="word_mark">Từ đã đánh dấu</string>
 
+    <!--  history search activity -->
+    <string name="all">Tất cả</string>
+
 </resources>
