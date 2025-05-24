@@ -1,5 +1,7 @@
 package com.example.astrolingo.domain.home.history;
 
+import com.example.astrolingo.R;
+
 public class history_word {
     boolean isTranslateEnglish = true;
     String word = "", meaning = "";
@@ -23,6 +25,13 @@ public class history_word {
     }
     public String getWord() {
         return word;
+    }
+    public int getTranslateType() {
+        if (isTranslateEnglish) {
+            return R.string.english;
+        } else {
+            return R.string.vietnamese;
+        }
     }
     public boolean isTranslateEnglish() {
         return isTranslateEnglish;
