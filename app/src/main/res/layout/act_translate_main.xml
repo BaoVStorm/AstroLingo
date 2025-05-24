@@ -55,7 +55,6 @@
             android:imeOptions="flagNoEnterAction"
 
             android:inputType="textMultiLine"
-            android:movementMethod="android.text.method.ScrollingMovementMethod"
             android:overScrollMode="ifContentScrolls"
 
             android:paddingHorizontal="25dp"
@@ -70,7 +69,6 @@
 
             android:textSize="30sp"
 
-            android:verticalScrollBarEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

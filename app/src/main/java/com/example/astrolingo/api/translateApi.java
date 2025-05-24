@@ -1,6 +1,7 @@
 package com.example.astrolingo.api;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -34,6 +35,8 @@ public class translateApi {
         String encoderString = StringManager.changeStringtoURLEncoder(textTranslate);
 
         apiurl = apiurl + encoderString;
+
+        Log.d("TRANSLATE_URL", "Requesting URL: " + apiurl);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
             Request.Method.GET,

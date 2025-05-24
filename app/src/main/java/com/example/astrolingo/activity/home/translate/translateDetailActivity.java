@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,13 +30,14 @@ public class translateDetailActivity extends AppCompatActivity {
     private View header;
     private EditText origin_text, translate_text;
     private String textTranslate;
+    private ProgressBar progressBar;
     private boolean isTranslateEnglish;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_translate_main);
+        setContentView(R.layout.act_translate_detail);
 
         textTranslate = "";
         isTranslateEnglish = true;
@@ -64,7 +66,10 @@ public class translateDetailActivity extends AppCompatActivity {
         origin_title = findViewById(R.id.origin_title);
         translate_title = findViewById(R.id.translate_title);
 
+        progressBar = findViewById(R.id.progressBar);
+
         // init value
+        progressBar.setVisibility(View.GONE);
         header_title.setText(this.getString(R.string.translate_header));
         origin_text.setText(textTranslate);
         updateLanguageTranslate();
@@ -84,11 +89,14 @@ public class translateDetailActivity extends AppCompatActivity {
             finish();
         });
 
+        // set value
+        translateText();
     }
 
     private void translateText() {
 //        textTranslate
 //        isTranslateEnglish
+        progressBar.setVisibility(View.VISIBLE);
 
         translateApi.translateLanguage(
             textTranslate,
@@ -102,7 +110,7 @@ public class translateDetailActivity extends AppCompatActivity {
                         String translatedText = response.getString("translation");
 
                         updateTextTranslate(translatedText);
-
+                        progressBar.setVisibility(View.GONE);
                     } catch (JSONException e) {
                         Toast.makeText(translateDetailActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         throw new RuntimeException(e);
@@ -151,6 +159,8 @@ public class translateDetailActivity extends AppCompatActivity {
     private void updateTextTranslate(String translatedText){
         translate_text.setText(translatedText);
     }
+
+    private
 
 //    @Override
 //    protected void onRestart() {

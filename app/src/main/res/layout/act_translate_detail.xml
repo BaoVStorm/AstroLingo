@@ -64,7 +64,6 @@
                 android:imeOptions="flagNoEnterAction"
 
                 android:inputType="textMultiLine"
-                android:movementMethod="android.text.method.ScrollingMovementMethod"
                 android:overScrollMode="ifContentScrolls"
 
                 android:paddingHorizontal="25dp"
@@ -79,7 +78,6 @@
 
                 android:textSize="30sp"
 
-                android:verticalScrollBarEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -91,6 +89,7 @@
 
                 android:layout_height="match_parent"
                 android:background="@null"
+                android:textColor="@color/light_blue"
 
                 android:focusable="false"
                 android:cursorVisible="false"
@@ -101,7 +100,6 @@
                 android:imeOptions="flagNoEnterAction"
 
                 android:inputType="textMultiLine"
-                android:movementMethod="android.text.method.ScrollingMovementMethod"
                 android:overScrollMode="ifContentScrolls"
 
                 android:paddingHorizontal="25dp"
@@ -115,7 +113,6 @@
 
                 android:textSize="30sp"
 
-                android:verticalScrollBarEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -126,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@+id/box_input"
-            app:layout_constraintBottom_toBottomOf="@+id/box_input"
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
             >
 
             <TextView
@@ -172,7 +169,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line2" />
 
-            
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="30dp"
+                android:indeterminateTint="@color/loading"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

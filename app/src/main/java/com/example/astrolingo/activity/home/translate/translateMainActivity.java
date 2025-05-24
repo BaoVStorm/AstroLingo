@@ -69,7 +69,7 @@ public class translateMainActivity extends AppCompatActivity {
         });
 
         icon_switch.setOnClickListener(v ->{
-
+            switchLanguage();
         });
 
         word_history_button.setOnClickListener(v ->{
@@ -91,6 +91,7 @@ public class translateMainActivity extends AppCompatActivity {
         Intent intent = new Intent(translateMainActivity.this, translateDetailActivity.class);
         intent.putExtra("textTranslate", textTranslate);
         intent.putExtra("isTranslateEnglish", isTranslateEnglish);
+        startActivity(intent);
     }
 
     private void switchLanguage() {

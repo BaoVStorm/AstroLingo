@@ -9,5 +9,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">astrolingo.onrender.com</domain>
     </domain-config>
-
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">lingva.ml</domain>
+    </domain-config>
 </network-security-config>
