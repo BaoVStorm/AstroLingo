@@ -152,6 +152,7 @@
     <string name="triple_paragraph">Đoạn tam</string>
 
     <!-- search activity -->
+    <string name="translate_header">Dịch văn bản</string>
     <string name="vietnamese">Việt</string>
     <string name="english">Anh</string>
     <string name="input_search">Nhập văn bản</string>

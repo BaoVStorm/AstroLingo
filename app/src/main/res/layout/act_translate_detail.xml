@@ -42,12 +42,11 @@
         >
 
         <LinearLayout
-            android:id="@+id/box_input"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
 
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
@@ -92,8 +91,10 @@
 
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
+
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:longClickable="false"
 
                 android:fontFamily="@font/afacad_medium"
                 android:gravity="top"
@@ -137,10 +138,10 @@
                 android:layout_marginStart="25dp"
 
                 android:fontFamily="@font/afacad_regular"
-                android:text="Việt"
+                android:text="@string/vietnamese"
                 android:textColor="@color/dark_grey"
 
-                android:textSize="16dp"
+                android:textSize="16sp"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -163,18 +164,20 @@
                 android:layout_marginStart="25dp"
 
                 android:fontFamily="@font/afacad_regular"
-                android:text="Việt"
+                android:text="@string/english"
                 android:textColor="@color/dark_grey"
 
-                android:textSize="16dp"
+                android:textSize="16sp"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/line2" />
 
+            
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/button_search"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/button_search"
@@ -186,7 +189,7 @@
             android:text="Tra Từ vựng"
             android:textColor="@color/white"
 
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/line1" />
 
         <View
@@ -227,6 +230,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/card_origin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/afacad_medium"
@@ -258,13 +262,14 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/card_translate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/afacad_medium"
 
                     android:gravity="center"
 
-                    android:text="@string/vietnamese"
+                    android:text="@string/english"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -282,10 +287,11 @@
         app:layout_constraintTop_toTopOf="@+id/box_interact">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:id="@+id/icon_switch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
 
-            android:src="@drawable/icon_assets_switch"
+            android:src="@drawable/icon_asset_nextarrow3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

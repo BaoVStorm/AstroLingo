@@ -162,6 +162,7 @@
     <string name="triple_paragraph">Triple\nParagraph</string>
 
     <!-- search activity -->
+    <string name="translate_header">Translate</string>
     <string name="vietnamese">Vietnamese</string>
     <string name="english">English</string>
     <string name="input_search">Input text</string>

@@ -1,5 +1,7 @@
 package com.example.astrolingo.function;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -60,5 +62,19 @@ public class StringManager {
             e.printStackTrace();
             return -1; // Trả về -1 nếu lỗi
         }
+    }
+
+    public static String changeStringtoURLEncoder(String input) {
+        String encoded = "";
+
+        try {
+            encoded = URLEncoder.encode(input, "UTF-8");
+            // URLEncoder sẽ mã hóa khoảng trắng thành dấu '+', thay thế bằng '%20' nếu cần
+            encoded = encoded.replace("+", "%20");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        return encoded;
     }
 }

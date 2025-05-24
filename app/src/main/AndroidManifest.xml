@@ -45,6 +45,8 @@
         <activity android:name=".activity.setting.SettingActivity" />
         <activity android:name=".activity.setting.ChinhSuaHoSoActivity" />
 
+        <activity android:name=".activity.home.translate.translateMainActivity" />
+        <activity android:name=".activity.home.translate.translateDetailActivity" />
 
 
     </application>

@@ -42,7 +42,7 @@
         >
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/translate_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:background="@color/main_color_purple"
-            app:layout_constraintBottom_toBottomOf="@+id/editText2" />
+            app:layout_constraintBottom_toBottomOf="@+id/translate_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,6 +129,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/card_origin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/afacad_medium"
@@ -160,13 +161,14 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/card_translate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/afacad_medium"
 
                     android:gravity="center"
 
-                    android:text="@string/vietnamese"
+                    android:text="@string/english"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -184,10 +186,11 @@
         app:layout_constraintTop_toTopOf="@+id/box_interact">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:id="@+id/icon_switch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
 
-            android:src="@drawable/icon_assets_switch"
+            android:src="@drawable/icon_asset_nextarrow3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
