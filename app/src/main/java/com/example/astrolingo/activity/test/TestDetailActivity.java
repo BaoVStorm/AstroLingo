@@ -35,7 +35,6 @@ public class TestDetailActivity extends AppCompatActivity {
         backIcon.setOnClickListener(v ->{
             Log.d("TestDetailActivity", "Back clicked - finishing activity");
             finish();
-//           startActivity(new Intent(TestDetailActivity.this, TestFragment.class));
         });
         //Xử lý sự kiện khi nhấn nút "Bắt đầu nào"
 //        Button startButton = findViewById(R.id.startButton);

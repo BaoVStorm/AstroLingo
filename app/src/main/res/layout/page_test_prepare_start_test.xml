@@ -36,7 +36,7 @@
             android:id="@+id/testTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test 10 ETS 2024"
+            android:text="@string/testTitle"
             android:textSize="32sp"
             android:textColor="#8553D5"
             android:fontFamily="@font/afacad_bold" />
@@ -45,7 +45,7 @@
             android:id="@+id/testTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thời gian: 120 phút"
+            android:text="@string/test_time"
             android:textSize="24sp"
             android:textColor="@color/black"
             android:fontFamily="@font/afacad_medium"
@@ -55,12 +55,10 @@
             android:id="@+id/testQuestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Câu hỏi: 200"
+            android:text="@string/number_of_questions"
             android:textSize="24sp"
             android:textColor="@color/black"
-
-            android:fontFamily="@font/afacad_medium"
-
+            android:fontFamily="@font/afacad_regular"
             android:layout_marginBottom="24dp" />
 
         <ImageView
@@ -68,6 +66,16 @@
             android:layout_height="250dp"
             android:src="@drawable/icon_work" />
 
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/startnow"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/afacad_bold"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="#8553D5" />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/button_forgotPassword"
             android:layout_width="200dp"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background1"
+    android:background="@drawable/background3"
     android:padding="20dp">
 
     <!-- Header: Avatar + Username + Coin + Logout -->
@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/avatarImageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:src="@drawable/icon_ava2"
             android:scaleType="centerCrop" />
 
@@ -71,7 +71,7 @@
             android:fontFamily="@font/afacad_regular"
             android:text="@string/setting_dangxuat"
             android:textSize="18sp"
-            android:textColor="#9C27B0"
+            android:textColor="@color/main_color"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="12dp" />
     </LinearLayout>
@@ -96,6 +96,7 @@
 
             <!-- Item example -->
             <LinearLayout
+                android:id="@+id/btnChinhSuaHoSo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -107,13 +108,13 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_chinhsuahoso"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_medium"
+                    android:fontFamily="@font/afacad_bold"
                     android:text="@string/chinhsuahoso"
                     android:textSize="18sp"
                     android:textColor="@color/black"/>
@@ -139,7 +140,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_ngonngu"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -158,7 +159,7 @@
                     android:fontFamily="@font/afacad_regular"
                     android:text="@string/select_ngonngusudung"
                     android:textSize="18sp"
-                    android:textColor="#9C27B0"/>
+                    android:textColor="@color/main_color" />
             </LinearLayout>
             <!-- Divider between items -->
             <View
@@ -178,7 +179,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_giaodientoi"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -207,7 +208,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_hienthi"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -236,7 +237,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_nhacnhohoctap"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -265,7 +266,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_phanhoi"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -294,7 +295,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icon_setting_danhgia5sao"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -323,7 +324,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/icpn_setting_dieukhoansudung"
-                    app:tint="#9C27B0" />
+                    app:tint="@color/main_color" />
 
                 <TextView
                     android:layout_width="wrap_content"

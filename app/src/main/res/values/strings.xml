@@ -113,4 +113,30 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Nữ</string>
+
+    <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
+    <string name="seemore">See more</string>
+    <string name="miniTestTitle">TOEIC Listening &amp; Reading MiniTest | </string>
+    <string name="fullTestTitle">TOEIC Listening &amp; Reading FullTest | </string>
+
+    <!-- Giao diện Chuẩn bị làm bài test có nút Bắt đầu nào  -->
+    <string name="startnow">Start Now</string>
+    <string name="number_of_questions">Number of Questions: 200</string>
+    <string name="test_time">Duration: 120 minutes</string>
+    <string name="testTitle">Test 10 ETS 2024</string>
+    <!-- Giao diện đầu tiên của trang Làm lại câu sai khi nhấn nút "Câu làm sai" ở HomePage-->
+    <string name="retry_wrong_answer">Retry Wrong Answers</string>
+
+    <string name="listening_comprehension">Listening Comprehension</string>
+    <string name="picture_description">Picture\nDescription</string>
+    <string name="ques_and_ans">Q&amp;A</string>
+    <string name="conversation">Conversation</string>
+    <string name="short_talk">Short Talk</string>
+
+    <string name="reading_comprehension">Reading Comprehension</string>
+    <string name="fill_the_blank">Fill the blank</string>
+    <string name="fill_the_paragraph">Complete\nParagraph</string>
+    <string name="single_paragraph">Single\nParagraph</string>
+    <string name="double_paragraph">Double\nParagraph</string>
+    <string name="triple_paragraph">Triple\nParagraph</string>
 </resources>

@@ -1,8 +1,10 @@
 package com.example.astrolingo.activity.home;
 
 import android.graphics.Paint;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.activity.RetryWrongAnswerActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -25,6 +28,12 @@ public class HomeFragment extends Fragment {
         // init leaderboard
         leaderboard_seeMore = view.findViewById(R.id.leaderboard_see_more);
         leaderboard_seeMore.setPaintFlags(leaderboard_seeMore.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        CardView cardview = view.findViewById(R.id.icon_wrong_answer_CardView);
+        cardview.setOnClickListener(v ->{
+           Intent intent = new Intent(getContext(), RetryWrongAnswerActivity.class);
+           startActivity(intent);
+        });
 
         return view;
     }
