@@ -1,12 +1,22 @@
 package com.example.astrolingo.activity.home.translate;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -16,7 +26,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.AnswerTestMananger;
+import com.example.astrolingo.Service.KeyboardUtil;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.Service.UtilService;
 import com.example.astrolingo.activity.test.TestDetailMainActivity;
 import com.example.astrolingo.api.TestApi;
 import com.example.astrolingo.domain.test.nav_answer;
@@ -29,11 +41,14 @@ import org.json.JSONObject;
 public class translateMainActivity extends AppCompatActivity {
     private SharedPreferenceClass sharedPreClass;
     private CardView word_history_button, word_mark_button;
-    private TextView header_title, button_search, translate_text, card_origin, card_translate;
-    private ImageView backIcon, icon_switch;
+    private TextView header_title, button_search, card_origin, card_translate;
+    private EditText translate_text;
+    private ImageView backIcon, icon_switch, icon_paste, icon_copy;
     private View header;
     private String textTranslate;
+    private LinearLayout box_interact2;
     private boolean isTranslateEnglish;
+    ClipboardManager clipboard;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -45,6 +60,7 @@ public class translateMainActivity extends AppCompatActivity {
         isTranslateEnglish = true;
 
         sharedPreClass = new SharedPreferenceClass(this);
+        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 
         header = findViewById(R.id.header);
 
@@ -58,6 +74,10 @@ public class translateMainActivity extends AppCompatActivity {
         card_origin = findViewById(R.id.card_origin);
         card_translate = findViewById(R.id.card_translate);
 
+        box_interact2 = findViewById(R.id.box_interact2);
+        icon_paste = findViewById(R.id.icon_paste);
+        icon_copy = findViewById(R.id.icon_copy);
+
         // init value
         header_title.setText(this.getString(R.string.translate_header));
 
@@ -65,7 +85,8 @@ public class translateMainActivity extends AppCompatActivity {
         button_search.setOnClickListener(v ->{
             textTranslate = translate_text.getText().toString();
 
-            translateText();
+            if(!textTranslate.isEmpty())
+                translateText();
         });
 
         icon_switch.setOnClickListener(v ->{
@@ -80,8 +101,32 @@ public class translateMainActivity extends AppCompatActivity {
 
         });
 
+        icon_copy.setOnClickListener(v ->{
+            String text = translate_text.getText().toString();
+
+            if(!text.isEmpty())
+                copyToClipboard(text);
+        });
+
+        icon_paste.setOnClickListener(v ->{
+            pasteToEditText(translate_text);
+        });
+
         backIcon.setOnClickListener(v ->{
             finish();
+        });
+
+        // sự kiện với keyboard
+        View rootView = findViewById(android.R.id.content);
+
+        KeyboardUtil.setKeyboardVisibilityListener(rootView, isVisible -> {
+            if (isVisible) {
+                // Keyboard is visible
+                box_interact2.setVisibility(View.GONE);
+            } else {
+                // Keyboard is hidden
+                box_interact2.setVisibility(View.VISIBLE);
+            }
         });
     }
 
@@ -109,9 +154,46 @@ public class translateMainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        UtilService UtilService = new UtilService();
+
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View view = getCurrentFocus();
+            if (view instanceof EditText) {
+                int[] screenCoords = new int[2];
+                view.getLocationOnScreen(screenCoords);
+                float x = ev.getRawX() + view.getLeft() - screenCoords[0];
+                float y = ev.getRawY() + view.getTop() - screenCoords[1];
+
+                if (x < view.getLeft() || x > view.getRight() ||
+                        y < view.getTop() || y > view.getBottom()) {
+                    UtilService.hideKeyboard(view, this);
+                    view.clearFocus();
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    public void copyToClipboard(String text) {
+        ClipData clip = ClipData.newPlainText("label", text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "Đã lưu vào bộ nhớ tạm", Toast.LENGTH_SHORT).show();
+    }
+
+    public void pasteToEditText(EditText editText) {
+        if (clipboard.hasPrimaryClip() && clipboard.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
+            ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+            String pasteData = item.getText().toString();
+            editText.setText(pasteData); // hoặc append nếu muốn nối
+        }
+    }
+
 //    @Override
 //    protected void onRestart() {
 //        super.onRestart();
 //        finish();
 //    }
+
 }

@@ -1,17 +1,25 @@
 package com.example.astrolingo.activity.home.translate;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.astrolingo.Service.KeyboardUtil;
+import com.example.astrolingo.Service.UtilService;
 import com.example.astrolingo.api.translateApi;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,9 +37,12 @@ public class translateDetailActivity extends AppCompatActivity {
     private ImageView backIcon, icon_switch;
     private View header;
     private EditText origin_text, translate_text;
+    private LinearLayout box_interact;
+    private ImageView icon_copy_origin, icon_copy_translate;
     private String textTranslate;
     private ProgressBar progressBar;
     private boolean isTranslateEnglish;
+    private ClipboardManager clipboard;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -51,6 +62,7 @@ public class translateDetailActivity extends AppCompatActivity {
 
 
         sharedPreClass = new SharedPreferenceClass(this);
+        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 
         header = findViewById(R.id.header);
 
@@ -68,6 +80,11 @@ public class translateDetailActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressBar);
 
+        icon_copy_origin = findViewById(R.id.icon_copy_origin);
+        icon_copy_translate = findViewById(R.id.icon_copy_translate);
+
+        box_interact = findViewById(R.id.box_interact);
+
         // init value
         progressBar.setVisibility(View.GONE);
         header_title.setText(this.getString(R.string.translate_header));
@@ -76,9 +93,10 @@ public class translateDetailActivity extends AppCompatActivity {
 
         // event
         button_search.setOnClickListener(v ->{
-            textTranslate = translate_text.getText().toString();
+            textTranslate = origin_title.getText().toString();
 
-            translateText();
+            if(!textTranslate.isEmpty())
+                translateText();
         });
 
         icon_switch.setOnClickListener(v -> {
@@ -89,8 +107,35 @@ public class translateDetailActivity extends AppCompatActivity {
             finish();
         });
 
+        icon_copy_origin.setOnClickListener(v -> {
+            String text = origin_text.getText().toString();
+
+            if(!text.isEmpty())
+                copyToClipboard(text);
+        });
+
+        icon_copy_translate.setOnClickListener(v -> {
+            String text = translate_text.getText().toString();
+
+            if(!text.isEmpty())
+                copyToClipboard(text);
+        });
+
         // set value
         translateText();
+
+        // sự kiện với keyboard
+        View rootView = findViewById(android.R.id.content);
+
+        KeyboardUtil.setKeyboardVisibilityListener(rootView, isVisible -> {
+            if (isVisible) {
+                // Keyboard is visible
+                box_interact.setVisibility(View.GONE);
+            } else {
+                // Keyboard is hidden
+                box_interact.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void translateText() {
@@ -111,8 +156,8 @@ public class translateDetailActivity extends AppCompatActivity {
                         String translatedText = response.getString("translation");
 
                         updateTextTranslate(translatedText);
-                        progressBar.setVisibility(View.GONE);
                         enableText(origin_text);
+                        progressBar.setVisibility(View.GONE);
                     } catch (JSONException e) {
                         Toast.makeText(translateDetailActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         throw new RuntimeException(e);
@@ -164,12 +209,50 @@ public class translateDetailActivity extends AppCompatActivity {
 
     private void disableText(TextView tv) {
         tv.setFocusable(false);
+        tv.setFocusableInTouchMode(false);
         tv.setTextColor(getColor(R.color.grey));
     }
 
     private void enableText(TextView tv) {
         tv.setFocusable(true);
+        tv.setFocusableInTouchMode(true);
         tv.setTextColor(getColor(R.color.black_light));
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        UtilService UtilService = new UtilService();
+
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View view = getCurrentFocus();
+            if (view instanceof EditText) {
+                int[] screenCoords = new int[2];
+                view.getLocationOnScreen(screenCoords);
+                float x = ev.getRawX() + view.getLeft() - screenCoords[0];
+                float y = ev.getRawY() + view.getTop() - screenCoords[1];
+
+                if (x < view.getLeft() || x > view.getRight() ||
+                        y < view.getTop() || y > view.getBottom()) {
+                    UtilService.hideKeyboard(view, this);
+                    view.clearFocus();
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    public void copyToClipboard(String text) {
+        ClipData clip = ClipData.newPlainText("label", text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "Đã lưu vào bộ nhớ tạm", Toast.LENGTH_SHORT).show();
+    }
+
+    public void pasteToEditText(EditText editText) {
+        if (clipboard.hasPrimaryClip() && clipboard.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
+            ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+            String pasteData = item.getText().toString();
+            editText.setText(pasteData); // hoặc append nếu muốn nối
+        }
     }
 
 //    @Override

@@ -66,6 +66,7 @@
 
             android:singleLine="false"
             android:hint="@string/input_search"
+            android:textColor="@color/black_light"
 
             android:textSize="30sp"
 
@@ -88,6 +89,28 @@
             android:textSize="20dp"
 
             app:layout_constraintBottom_toTopOf="@+id/line1" />
+
+        <ImageView
+            android:id="@+id/icon_paste"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/icon_asset_paste"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="10dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/icon_copy"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/icon_asset_copy"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <View
             android:id="@+id/line1"
@@ -199,7 +222,7 @@
     <LinearLayout
         android:id="@+id/box_interact2"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="125dp"
         android:background="@color/background_word"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -215,8 +238,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/word_history_button"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_marginBottom="40dp"
 
                 app:cardCornerRadius="60dp"
@@ -229,7 +252,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
+                    android:padding="13dp"
                     android:src="@drawable/icon_assets_history"
                     />
 
@@ -238,7 +261,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
 
                 android:text="@string/word_translated"
                 android:fontFamily="@font/afacad_medium"
@@ -258,8 +281,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/word_mark_button"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
 
                 app:cardCornerRadius="60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -272,7 +295,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
+                    android:padding="13dp"
                     android:src="@drawable/icon_assets_mark"
                     />
 
@@ -281,7 +304,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="12dp"
 
                 android:text="@string/word_mark"
                 android:fontFamily="@font/afacad_medium"

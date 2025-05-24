@@ -1,6 +1,10 @@
 package com.example.astrolingo.Service;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
