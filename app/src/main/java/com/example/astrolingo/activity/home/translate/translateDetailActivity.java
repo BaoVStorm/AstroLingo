@@ -6,6 +6,8 @@ import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.Service.KeyboardUtil;
 import com.example.astrolingo.Service.UtilService;
+import com.example.astrolingo.api.UserLookupHistoryApi;
 import com.example.astrolingo.api.translateApi;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +33,8 @@ import com.example.astrolingo.Service.SharedPreferenceClass;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class translateDetailActivity extends AppCompatActivity {
     private SharedPreferenceClass sharedPreClass;
@@ -93,14 +98,15 @@ public class translateDetailActivity extends AppCompatActivity {
 
         // event
         button_search.setOnClickListener(v ->{
-            textTranslate = origin_title.getText().toString();
+            textTranslate = origin_text.getText().toString();
 
             if(!textTranslate.isEmpty())
-                translateText();
+                translateText(textTranslate, isTranslateEnglish);
         });
 
         icon_switch.setOnClickListener(v -> {
             switchLanguage();
+            translate_text.setText("");
         });
 
         backIcon.setOnClickListener(v ->{
@@ -122,7 +128,7 @@ public class translateDetailActivity extends AppCompatActivity {
         });
 
         // set value
-        translateText();
+        translateText(textTranslate, isTranslateEnglish);
 
         // sự kiện với keyboard
         View rootView = findViewById(android.R.id.content);
@@ -136,17 +142,36 @@ public class translateDetailActivity extends AppCompatActivity {
                 box_interact.setVisibility(View.VISIBLE);
             }
         });
+
+        // reset translate_text
+        origin_text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Xoá nội dung dịch khi người dùng nhập
+                translate_text.setText("");
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý
+            }
+        });
+
+
     }
 
-    private void translateText() {
+    private void translateText(String word, boolean isTranslateEnglish_) {
 //        textTranslate
 //        isTranslateEnglish
         progressBar.setVisibility(View.VISIBLE);
         disableText(origin_text);
 
         translateApi.translateLanguage(
-            textTranslate,
-            isTranslateEnglish,
+            word,
+            isTranslateEnglish_,
             this,
             new Response.Listener<JSONObject>() {
                 @Override
@@ -158,6 +183,8 @@ public class translateDetailActivity extends AppCompatActivity {
                         updateTextTranslate(translatedText);
                         enableText(origin_text);
                         progressBar.setVisibility(View.GONE);
+
+                        addUserLookUpHistory(word, translatedText, isTranslateEnglish_);
                     } catch (JSONException e) {
                         Toast.makeText(translateDetailActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         throw new RuntimeException(e);
@@ -253,6 +280,42 @@ public class translateDetailActivity extends AppCompatActivity {
             String pasteData = item.getText().toString();
             editText.setText(pasteData); // hoặc append nếu muốn nối
         }
+    }
+
+    private void addUserLookUpHistory(String word, String meaning, boolean isTranslateEnglish_) {
+//        "user_id": "6826953fdd0f324c408858d9",
+//        "word": "4",
+//        "meaning": "quang hợp",
+//        "isTranslateEnglish": "false"
+
+//        "vocab_id": "optional"
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("user_id", sharedPreClass.getValue_string("user_id"));
+        params.put("word", word);
+        params.put("meaning", meaning);
+        params.put("isTranslateEnglish", String.valueOf(isTranslateEnglish_));
+
+        UserLookupHistoryApi.addLookUpHistory(
+            params,
+            this,
+            sharedPreClass.getValue_string("token"),
+            new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    // Xử lý khi thành công
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    // Xử lý khi có lỗi
+                    Toast.makeText(translateDetailActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        );
+
+
     }
 
 //    @Override

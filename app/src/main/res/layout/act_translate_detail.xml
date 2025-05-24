@@ -215,7 +215,7 @@
 
             android:fontFamily="@font/afacad_medium"
             android:gravity="center"
-            android:text="Tra Từ vựng"
+            android:text="@string/translate_text"
             android:textColor="@color/white"
 
             android:textSize="20sp"
