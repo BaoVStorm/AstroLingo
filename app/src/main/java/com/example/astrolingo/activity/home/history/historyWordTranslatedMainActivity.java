@@ -60,6 +60,9 @@ public class historyWordTranslatedMainActivity extends AppCompatActivity {
 
         listview_history_word = findViewById(R.id.listview_history_word);
 
+        // init
+        header_title.setText(getString(R.string.historySearch_header));
+
         // set Listener filter
         setListenerFilter();
 
@@ -75,6 +78,7 @@ public class historyWordTranslatedMainActivity extends AppCompatActivity {
         // default filter all
         unHighLightAllFilter();
         highLightFilter(filter_all);
+
     }
 
     private void setListenerFilter() {

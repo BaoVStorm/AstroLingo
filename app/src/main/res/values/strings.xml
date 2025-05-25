@@ -171,6 +171,7 @@
     <string name="word_mark">Words marked</string>
 
     <!--  history search activity -->
+    <string name="historySearch_header">Searched Words</string>
     <string name="all">All</string>
 
 
