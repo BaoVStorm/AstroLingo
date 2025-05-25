@@ -29,6 +29,9 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
     private final List<vocabulary> originalList;   // Danh sách đầy đủ
     private List<vocabulary> displayList;          // Danh sách đang hiển thị
     private ClipboardManager clipboard;
+    private int curTopicId = 1;
+    private int curLevelId = 0;     // mặc định sẽ là tất cả
+
     public learn_word_adapter(Context context, List<vocabulary> words, ClipboardManager clipboard) {
         super(context, 0, words);
         this.originalList = new ArrayList<>(words);
@@ -71,21 +74,35 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         return convertView;
     }
 
-//    public void filterEnglish() {
-//        displayList.clear();
-//        for (history_word item : originalList) {
-//            if (item.isTranslateEnglish()) {
-//                displayList.add(item);
-//            }
-//        }
-//        notifyDataSetChanged();
-//    }
-//
-//    public void filterAll() {
-//        displayList.clear();
-//        displayList.addAll(originalList);
-//        notifyDataSetChanged();
-//    }
+    public void filterTopic(int topic_id) {
+        curTopicId = topic_id;
+
+        updateDisplayList();
+    }
+
+    public void filterLevel(int level_id) {
+        curLevelId = level_id;
+
+        updateDisplayList();
+    }
+
+    public void filterLevelAndTopic(int level_id, int topic_id) {
+        curLevelId = level_id;
+        curTopicId = topic_id;
+
+        updateDisplayList();
+    }
+
+    private void updateDisplayList() {
+        displayList.clear();
+        for (vocabulary item : originalList) {
+            if (item.getTopicId() == curTopicId + 1 && (curLevelId == 0 || item.getLevelId() == curLevelId)) {
+                displayList.add(item);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
 //    public void filterVietnamese() {
 //        displayList.clear();
 //        for (history_word item : originalList) {
