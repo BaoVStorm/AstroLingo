@@ -51,6 +51,8 @@
 
         <activity android:name=".activity.home.history.historyWordTranslatedMainActivity" />
 
+        <activity android:name=".activity.home.learn_vocab.learnVocabMainActivity" />
+
     </application>
 
 </manifest>

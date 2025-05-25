@@ -174,5 +174,11 @@
     <string name="historySearch_header">Searched Words</string>
     <string name="all">All</string>
 
+    <!--  learn vocabulary -->
+    <string name="learnVocabulary_header">Learn Vocabulary</string>
+    <string name="topic">Topic:</string>
+    <string name="level">Level:</string>
+    <string name="chooseWord">Choose words</string>
+    <string name="matchWord">Match words</string>
 
 </resources>

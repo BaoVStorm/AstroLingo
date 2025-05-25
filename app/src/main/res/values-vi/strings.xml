@@ -164,4 +164,11 @@
     <string name="historySearch_header">Từ đã tra</string>
     <string name="all">Tất cả</string>
 
+    <!--  learn vocabulary -->
+    <string name="learnVocabulary_header">Học từ vựng</string>
+    <string name="topic">Chủ đề:</string>
+    <string name="level">Mức độ:</string>
+    <string name="chooseWord">Chọn từ</string>
+    <string name="matchWord">Ghép từ</string>
+
 </resources>
