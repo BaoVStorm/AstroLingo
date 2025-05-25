@@ -49,6 +49,7 @@
         <activity android:name=".activity.home.translate.translateMainActivity" />
         <activity android:name=".activity.home.translate.translateDetailActivity" />
 
+        <activity android:name=".activity.home.history.historyWordTranslatedMainActivity" />
 
     </application>
 

@@ -7,7 +7,7 @@ public class history_word {
     String word = "", meaning = "";
     String date = "";
 
-    history_word() {
+    public history_word() {
     }
 
     public history_word(boolean isTranslateEnglish, String word, String meaning, String date) {

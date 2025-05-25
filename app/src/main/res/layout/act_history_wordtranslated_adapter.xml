@@ -12,6 +12,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_adapter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -44,7 +45,7 @@
                 android:id="@+id/icon_mark"
                 android:layout_width="25dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="8dp"
                 android:src="@drawable/icon_assets_star_uncheck"
 
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +123,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="50dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginTop="17dp"
 
                 android:gravity="right"

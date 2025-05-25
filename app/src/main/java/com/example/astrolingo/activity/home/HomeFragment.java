@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.activity.home.translate.translateMainActivity;
 import com.example.astrolingo.activity.test.TestSubmitActivity;
 import com.example.astrolingo.api.UserApi;
@@ -37,7 +38,7 @@ public class HomeFragment extends Fragment {
     TextView leaderboard_seeMore, headerText;
 
     LinearLayout first_place_Section, second_place_Section, third_place_Section, fourth_place_Section, fifth_place_Section, sixth_place_Section;
-    CardView vocab_search;
+    CardView vocab_search, icon_lookuped_word_CardView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +59,12 @@ public class HomeFragment extends Fragment {
         vocab_search = view.findViewById(R.id.icon_vocab_search_CardView);
         vocab_search.setOnClickListener(v-> {
            startActivity(new Intent(getActivity(), translateMainActivity.class));
+        });
+
+        icon_lookuped_word_CardView = view.findViewById(R.id.icon_lookuped_word_CardView);
+        icon_lookuped_word_CardView.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), historyWordTranslatedMainActivity.class);
+            startActivity(intent);
         });
 
         // Get 5 user section
