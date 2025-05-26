@@ -1,5 +1,6 @@
 package com.example.astrolingo.apdapter.home.learn_word;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -76,6 +77,8 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.act_word_learn_adapter, parent, false);
         }
+
+        ConstraintLayout main_adapter = convertView.findViewById(R.id.main_adapter);
 
         TextView word_text, pronunciation_text, type_text, meaning_text;
         word_text = convertView.findViewById(R.id.word_text);
@@ -179,6 +182,33 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
             }
         });
 
+        // init dialog detail
+        Dialog dialog_info = new Dialog(context);
+        dialog_info.setContentView(R.layout.act_word_learn_dialog_detail);
+        dialog_info.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_info.getWindow().setBackgroundDrawable(context.getDrawable(R.drawable.page_test_detail_dialog_info_bg));
+        dialog_info.setCanceledOnTouchOutside(true);
+
+
+        // init value dialog
+        TextView second_word = dialog_info.findViewById(R.id.second_word);
+        second_word.setText(words.getWord());
+
+        TextView second_word_meaning_english = dialog_info.findViewById(R.id.second_word_meaning_english);
+        second_word_meaning_english.setText(words.getMeaningEnglish());
+
+        TextView second_word_meaning_vietnamese = dialog_info.findViewById(R.id.second_word_meaning_vietnamese);
+        second_word_meaning_vietnamese.setText(words.getMeaningVietnamese());
+
+        TextView second_example_meaning_english = dialog_info.findViewById(R.id.second_example_meaning_english);
+        second_example_meaning_english.setText(words.getExampleEnglish());
+
+        TextView second_example_meaning_vietnamese = dialog_info.findViewById(R.id.second_example_meaning_vietnamese);
+        second_example_meaning_vietnamese.setText(words.getExampleVietnamese());
+
+        main_adapter.setOnClickListener(v -> {
+            dialog_info.show();
+        });
 
         return convertView;
     }
