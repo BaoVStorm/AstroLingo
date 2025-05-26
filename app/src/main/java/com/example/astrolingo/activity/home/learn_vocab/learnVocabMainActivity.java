@@ -311,6 +311,7 @@ public class learnVocabMainActivity extends AppCompatActivity {
                             String image_url = jsonObject.optString("image_url", "");
                             String audio_url = jsonObject.optString("audio_url", "");
                             String pronunciation = jsonObject.optString("pronunciation", "");
+                            boolean isStar = jsonObject.optBoolean("isStar", false);
 
                             int topic_id = jsonObject.has("topic_id") ? jsonObject.getInt("topic_id") : 1;
                             int level_id = jsonObject.has("level_id") ? jsonObject.getInt("level_id") : 1;
@@ -319,6 +320,7 @@ public class learnVocabMainActivity extends AppCompatActivity {
                             vob.setPronunciation(pronunciation);
                             vob.setImageUrl(image_url);
                             vob.setAudioUrl(audio_url);
+                            vob.setIsStar(isStar);
 
                             List_words.add(vob);
                         }

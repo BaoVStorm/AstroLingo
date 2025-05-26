@@ -96,6 +96,11 @@ public class history_word_adapter extends ArrayAdapter<history_word> {
             translate_title.setText(getContext().getString(R.string.english));
         }
 
+        if(words.getIsStar())
+            icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+        else
+            icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+
         EditText origin_text = bottomDialog_filter.findViewById(R.id.origin_text);
         EditText translate_text = bottomDialog_filter.findViewById(R.id.translate_text);
 

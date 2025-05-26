@@ -7,7 +7,7 @@ public class vocabulary implements Serializable {
     private String word, type, pronunciation;
     private String meaning_vietnamese, meaning_english;
     private String example_english, example_vietnamese;
-
+    private boolean isStar;
     private String image_url, audio_url;
     private int topic_id, level_id;
 
@@ -25,7 +25,9 @@ public class vocabulary implements Serializable {
         this.topic_id = topic_id;
         this.level_id = level_id;
     }
-
+    public void setIsStar(boolean isStar) {
+        this.isStar = isStar;
+    }
     public void setPronunciation(String pronunciation) {
         if(pronunciation == null || pronunciation.isEmpty() || Objects.equals(pronunciation, ""))
             pronunciation = "/'" + word + "/";
@@ -45,7 +47,9 @@ public class vocabulary implements Serializable {
         this.audio_url = audio_url;
     }
 
-
+    public boolean isStar() {
+        return isStar;
+    }
     public String getWord() {
         return word;
     }

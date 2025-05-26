@@ -139,9 +139,10 @@ public class historyWordTranslatedMainActivity extends AppCompatActivity {
                             String word = jsonObject.getString("word");
                             String meaning = jsonObject.getString("meaning");
                             String date = jsonObject.getString("lookup_at_vietnam");
+                            boolean isStar = jsonObject.getBoolean("isStar");
 
                             history_word historyWord = new history_word(isTranslateEnglish, word, meaning, date);
-
+                            historyWord.setIsStar(isStar);
                             history_words.add(historyWord);
                         }
 

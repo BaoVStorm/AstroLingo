@@ -6,6 +6,7 @@ public class history_word {
     boolean isTranslateEnglish = true;
     String word = "", meaning = "";
     String date = "";
+    boolean isStar = false;
 
     public history_word() {
     }
@@ -17,6 +18,12 @@ public class history_word {
         this.date = date;
     }
 
+    public void setIsStar(boolean isStar) {
+        this.isStar = isStar;
+    }
+    public boolean getIsStar() {
+        return isStar;
+    }
     public String getDate() {
         return date;
     }

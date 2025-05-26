@@ -100,6 +100,12 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
             }
         });
 
+        ImageView icon_mark = convertView.findViewById(R.id.icon_mark);
+        if(words.isStar())
+            icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+        else
+            icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+
 
         return convertView;
     }
