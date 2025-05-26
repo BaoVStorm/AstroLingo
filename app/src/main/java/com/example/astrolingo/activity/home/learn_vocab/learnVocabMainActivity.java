@@ -92,9 +92,6 @@ public class learnVocabMainActivity extends AppCompatActivity {
 
         initDialog();
 
-        // get ListHistoryWord
-        getListWords();
-
         //
         getListVocabTopics();
         getListVocabLevels();
@@ -113,6 +110,12 @@ public class learnVocabMainActivity extends AppCompatActivity {
             finish();
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getListWords();
     }
 
     private void initDialog() {

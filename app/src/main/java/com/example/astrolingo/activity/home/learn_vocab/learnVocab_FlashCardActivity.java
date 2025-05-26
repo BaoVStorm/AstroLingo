@@ -51,6 +51,7 @@ public class learnVocab_FlashCardActivity extends AppCompatActivity {
 
         // init Value
         learnWordFlashcardAdapter = new learn_word_flashcard_adapter(this, list_words, viewPager);
+        learnWordFlashcardAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
         viewPager.setAdapter(learnWordFlashcardAdapter);
 
 

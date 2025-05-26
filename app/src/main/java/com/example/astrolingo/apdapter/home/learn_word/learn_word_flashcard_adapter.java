@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -18,6 +19,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 
@@ -27,8 +30,11 @@ import java.util.List;
 
 import com.example.astrolingo.Service.AudioManager;
 import com.example.astrolingo.apdapter.test.TestDetailAdapter;
+import com.example.astrolingo.api.UserStarApi;
 import com.example.astrolingo.domain.home.learn_word.vocabulary;
 import com.example.astrolingo.function.AudioListener;
+
+import org.json.JSONObject;
 
 
 public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -37,6 +43,12 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
     private final Context context;
     private final List<vocabulary> vocabularyList;
     private ViewPager2 viewPager;
+    private String user_id, token;
+
+    public void setUserId(String user_id, String token) {
+        this.user_id = user_id;
+        this.token = token;
+    }
 
     public static class CardViewHolder extends RecyclerView.ViewHolder {
         View cardFront, cardBack;
@@ -46,6 +58,7 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
         TextView second_example_meaning_english, second_example_meaning_vietnamese;
         ImageView imageQuestion;
         ImageView front_icon_loud, second_icon_loud;
+        ImageView front_icon_mark, second_icon_mark;
         boolean isFront = true;
 
         public CardViewHolder(@NonNull View itemView) {
@@ -73,6 +86,9 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
 
             front_icon_loud = itemView.findViewById(R.id.front_icon_loud);
             second_icon_loud = itemView.findViewById(R.id.second_icon_loud);
+
+            front_icon_mark = itemView.findViewById(R.id.front_icon_mark);
+            second_icon_mark = itemView.findViewById(R.id.second_icon_mark);
         }
     }
 
@@ -92,7 +108,6 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
         vocabulary word = vocabularyList.get(position);
 
         CardViewHolder viewHolder = (CardViewHolder) holder;
@@ -233,7 +248,83 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
             }
         });
 
+        // init star
+        if(word.getIsStar()) {
+            viewHolder.front_icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+            viewHolder.second_icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+        }
+        else {
+            viewHolder.front_icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+            viewHolder.second_icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+        }
 
+        // set mark
+        markStar(viewHolder.front_icon_mark, viewHolder, word);
+        markStar(viewHolder.second_icon_mark, viewHolder, word);
+    }
+
+    private void markStar(ImageView icon_mark, CardViewHolder viewHolder, vocabulary word) {
+        icon_mark.setOnClickListener(v-> {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("user_id", user_id);
+            params.put("type_star", "vocabulary");
+            params.put("vocab_id", word.getVocabId());
+
+            if(word.getIsStar()) {
+                // remove star
+
+                UserStarApi.removeWordUserStars(
+                    params,
+                    context,
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
+
+                            viewHolder.front_icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+                            viewHolder.second_icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+                            word.setIsStar(false);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+            else {
+                // add star
+
+                UserStarApi.addWordUserStars(
+                    params,
+                    context,
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+
+                            viewHolder.front_icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+                            viewHolder.second_icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+                            word.setIsStar(true);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+        });
     }
 
     @Override
