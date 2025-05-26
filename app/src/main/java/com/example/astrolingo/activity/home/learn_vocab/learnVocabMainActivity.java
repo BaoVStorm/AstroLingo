@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,8 @@ public class learnVocabMainActivity extends AppCompatActivity {
     private Dialog dialog_level;
     private BottomSheetDialog bottomDialog_topic;
 
+    private TextView flashcard;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -82,7 +85,7 @@ public class learnVocabMainActivity extends AppCompatActivity {
 
         listview_learnWord = findViewById(R.id.listview_learnWord);
 
-
+        flashcard = findViewById(R.id.flashcard);
 
         // init
         header_title.setText(getString(R.string.learnVocabulary_header));
@@ -96,7 +99,17 @@ public class learnVocabMainActivity extends AppCompatActivity {
         getListVocabTopics();
         getListVocabLevels();
 
+        // set event
+
+        flashcard.setOnClickListener(v->{
+            Intent intent = new Intent(learnVocabMainActivity.this, learnVocab_FlashCardActivity.class);
+            intent.putExtra("list_words", learnWordAdapter.getDisplayList());
+            startActivity(intent);
+        });
+
         backIcon.setOnClickListener(v->{
+            dialog_level.dismiss();
+            bottomDialog_topic.dismiss();
             finish();
         });
 

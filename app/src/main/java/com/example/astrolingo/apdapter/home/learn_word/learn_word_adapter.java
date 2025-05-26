@@ -133,6 +133,10 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         notifyDataSetChanged();
     }
 
+    public ArrayList<vocabulary> getDisplayList() {
+        return (ArrayList<vocabulary>) displayList;
+    }
+
 //    public void filterVietnamese() {
 //        displayList.clear();
 //        for (history_word item : originalList) {

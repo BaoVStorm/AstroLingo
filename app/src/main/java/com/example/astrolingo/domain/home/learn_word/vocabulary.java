@@ -1,8 +1,9 @@
 package com.example.astrolingo.domain.home.learn_word;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class vocabulary {
+public class vocabulary implements Serializable {
     private String word, type, pronunciation;
     private String meaning_vietnamese, meaning_english;
     private String example_english, example_vietnamese;

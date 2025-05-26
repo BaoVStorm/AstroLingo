@@ -21,12 +21,13 @@
         <TextView
             android:id="@+id/format_textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Page"
             android:textSize="20sp"
             android:gravity="center"
             android:paddingVertical="13dp"
-            tools:ignore="MissingConstraints"
+
+            android:fontFamily="@font/afacad_medium"
             />
 
         <View
