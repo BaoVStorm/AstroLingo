@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.activity.home.game_hangman.GameActivity;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
 import com.example.astrolingo.activity.home.translate.translateMainActivity;
@@ -95,7 +96,18 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+
+
+        // game_hangman
+        CardView hangmanCard = view.findViewById(R.id.icon_hangman_CardView);
+        hangmanCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), GameActivity.class);
+            startActivity(intent);
+        });
+
+
         return view;
+
     }
 
     private void setUpLeaderBoard(View view) {
