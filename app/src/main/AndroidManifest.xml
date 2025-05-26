@@ -53,6 +53,8 @@
 
         <activity android:name=".activity.home.learn_vocab.learnVocabMainActivity" />
 
+        <activity android:name=".activity.home.game_hangman.GameActivity" />
+
     </application>
 
 </manifest>
