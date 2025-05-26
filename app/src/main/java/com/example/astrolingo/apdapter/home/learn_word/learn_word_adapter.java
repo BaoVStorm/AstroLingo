@@ -3,6 +3,7 @@ package com.example.astrolingo.apdapter.home.learn_word;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.Service.AudioManager;
 import com.example.astrolingo.domain.home.learn_word.vocabulary;
+import com.example.astrolingo.function.AudioListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +35,7 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
     private ClipboardManager clipboard;
     private int curTopicId = 1;
     private int curLevelId = 0;     // mặc định sẽ là tất cả
+    private Context context;
 
     public learn_word_adapter(Context context, List<vocabulary> words, ClipboardManager clipboard) {
         super(context, 0, words);
@@ -38,6 +43,7 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         this.displayList = new ArrayList<>(words);
 
         this.clipboard = clipboard;
+        this.context = context;
     }
 
     @Override
@@ -70,6 +76,30 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         pronunciation_text.setText(words.getPronunciation());
         type_text.setText(words.getTypeOfWord());
         meaning_text.setText(words.getMeaningVietnamese());
+
+        ImageView icon_loud = convertView.findViewById(R.id.icon_loud);
+
+
+        icon_loud.setOnClickListener(v -> {
+            if(!AudioManager.isPlaying()) {
+                AudioManager.setAudio(context ,words.getAudioUrl(), new AudioListener() {
+                    @Override
+                    public void onPrepared() {
+                        icon_loud.setImageResource(R.drawable.icon_asset_loud3);
+                    }
+
+                    @Override
+                    public void onCompletion() {
+                        icon_loud.setImageResource(R.drawable.icon_asset_loud);
+                    }
+                    @Override
+                    public void onError() {
+                        Log.e("AUDIO", "Error during playback");
+                    }
+                });
+            }
+        });
+
 
         return convertView;
     }
