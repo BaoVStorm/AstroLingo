@@ -10,7 +10,7 @@ public class vocabulary implements Serializable {
     private boolean isStar;
     private String image_url, audio_url;
     private int topic_id, level_id;
-
+    private String vocab_id;
     public vocabulary() {
     }
 
@@ -25,8 +25,19 @@ public class vocabulary implements Serializable {
         this.topic_id = topic_id;
         this.level_id = level_id;
     }
+
+    public void setVocabId(String vocab_id) {
+        this.vocab_id = vocab_id;
+    }
+    public String getVocabId() {
+        return vocab_id;
+    }
+
     public void setIsStar(boolean isStar) {
         this.isStar = isStar;
+    }
+    public boolean getIsStar() {
+        return isStar;
     }
     public void setPronunciation(String pronunciation) {
         if(pronunciation == null || pronunciation.isEmpty() || Objects.equals(pronunciation, ""))

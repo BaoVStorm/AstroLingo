@@ -312,6 +312,7 @@ public class learnVocabMainActivity extends AppCompatActivity {
                             String audio_url = jsonObject.optString("audio_url", "");
                             String pronunciation = jsonObject.optString("pronunciation", "");
                             boolean isStar = jsonObject.optBoolean("isStar", false);
+                            String vocab_id = jsonObject.getString("_id");
 
                             int topic_id = jsonObject.has("topic_id") ? jsonObject.getInt("topic_id") : 1;
                             int level_id = jsonObject.has("level_id") ? jsonObject.getInt("level_id") : 1;
@@ -321,13 +322,14 @@ public class learnVocabMainActivity extends AppCompatActivity {
                             vob.setImageUrl(image_url);
                             vob.setAudioUrl(audio_url);
                             vob.setIsStar(isStar);
+                            vob.setVocabId(vocab_id);
 
                             List_words.add(vob);
                         }
 
                         learnWordAdapter = new learn_word_adapter(learnVocabMainActivity.this, List_words, clipboard);
                         learnWordAdapter.filterLevelAndTopic(0, 0);
-
+                        learnWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
                         listview_learnWord.setAdapter(learnWordAdapter);
 
                     } catch (JSONException e) {

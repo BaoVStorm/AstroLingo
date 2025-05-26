@@ -7,6 +7,7 @@ public class history_word {
     String word = "", meaning = "";
     String date = "";
     boolean isStar = false;
+    String user_lookup_id = "";
 
     public history_word() {
     }
@@ -18,6 +19,12 @@ public class history_word {
         this.date = date;
     }
 
+    public void setUserLookupId(String user_lookup_id) {
+        this.user_lookup_id = user_lookup_id;
+    }
+    public String getUserLookupId() {
+        return user_lookup_id;
+    }
     public void setIsStar(boolean isStar) {
         this.isStar = isStar;
     }

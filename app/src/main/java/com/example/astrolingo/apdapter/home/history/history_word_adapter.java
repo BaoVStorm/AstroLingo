@@ -3,6 +3,7 @@ package com.example.astrolingo.apdapter.home.history;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +17,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
+import com.example.astrolingo.api.UserStarApi;
 import com.example.astrolingo.domain.home.history.history_word;
 import com.example.astrolingo.domain.test.nav_answer;
 import com.example.astrolingo.domain.test.question_test;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -33,12 +40,19 @@ public class history_word_adapter extends ArrayAdapter<history_word> {
     private final List<history_word> originalList;   // Danh sách đầy đủ
     private List<history_word> displayList;          // Danh sách đang hiển thị
     private ClipboardManager clipboard;
+    private String user_id, token;
+
     public history_word_adapter(Context context, List<history_word> words, ClipboardManager clipboard) {
         super(context, 0, words);
         this.originalList = new ArrayList<>(words);
         this.displayList = new ArrayList<>(words);
 
         this.clipboard = clipboard;
+    }
+
+    public void setUserId(String user_id, String token) {
+        this.user_id = user_id;
+        this.token = token;
     }
 
     @Override
@@ -132,6 +146,67 @@ public class history_word_adapter extends ArrayAdapter<history_word> {
         word_text.setText(words.getWord());
         meaning_text.setText(words.getMeaning());
         time_text.setText(words.getDate());
+
+        // set Star History Word
+        icon_mark.setOnClickListener(v-> {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("user_id", user_id);
+            params.put("type_star", "translate");
+            params.put("user_lookup_id", words.getUserLookupId());
+
+            if(words.getIsStar()) {
+                // remove star
+
+                UserStarApi.removeWordUserStars(
+                    params,
+                    getContext(),
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
+
+                            icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+                            words.setIsStar(false);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+            else {
+                // add star
+
+                UserStarApi.addWordUserStars(
+                    params,
+                    getContext(),
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+
+                            icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+                            words.setIsStar(true);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+        });
 
         return convertView;
     }

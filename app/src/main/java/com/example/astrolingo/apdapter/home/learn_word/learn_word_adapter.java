@@ -17,15 +17,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.AudioManager;
+import com.example.astrolingo.api.UserStarApi;
 import com.example.astrolingo.domain.home.learn_word.vocabulary;
 import com.example.astrolingo.function.AudioListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class learn_word_adapter extends ArrayAdapter<vocabulary> {
@@ -36,6 +42,7 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
     private int curTopicId = 1;
     private int curLevelId = 0;     // mặc định sẽ là tất cả
     private Context context;
+    private String user_id, token;
 
     public learn_word_adapter(Context context, List<vocabulary> words, ClipboardManager clipboard) {
         super(context, 0, words);
@@ -44,6 +51,11 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
 
         this.clipboard = clipboard;
         this.context = context;
+    }
+
+    public void setUserId(String user_id, String token) {
+        this.user_id = user_id;
+        this.token = token;
     }
 
     @Override
@@ -101,10 +113,71 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         });
 
         ImageView icon_mark = convertView.findViewById(R.id.icon_mark);
-        if(words.isStar())
+        if(words.getIsStar())
             icon_mark.setImageResource(R.drawable.icon_assets_star_check);
         else
             icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+
+        // set Star Vocabulary
+        icon_mark.setOnClickListener(v-> {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("user_id", user_id);
+            params.put("type_star", "vocabulary");
+            params.put("vocab_id", words.getVocabId());
+
+            if(words.getIsStar()) {
+                // remove star
+
+                UserStarApi.removeWordUserStars(
+                    params,
+                    getContext(),
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
+
+                            icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
+                            words.setIsStar(false);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+            else {
+                // add star
+
+                UserStarApi.addWordUserStars(
+                    params,
+                    getContext(),
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+
+                            icon_mark.setImageResource(R.drawable.icon_assets_star_check);
+                            words.setIsStar(true);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                );
+            }
+        });
 
 
         return convertView;

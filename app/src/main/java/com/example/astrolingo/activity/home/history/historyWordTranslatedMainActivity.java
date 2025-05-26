@@ -140,14 +140,16 @@ public class historyWordTranslatedMainActivity extends AppCompatActivity {
                             String meaning = jsonObject.getString("meaning");
                             String date = jsonObject.getString("lookup_at_vietnam");
                             boolean isStar = jsonObject.getBoolean("isStar");
+                            String user_lookup_id = jsonObject.getString("_id");
 
                             history_word historyWord = new history_word(isTranslateEnglish, word, meaning, date);
                             historyWord.setIsStar(isStar);
+                            historyWord.setUserLookupId(user_lookup_id);
                             history_words.add(historyWord);
                         }
 
                         historyWordAdapter = new history_word_adapter(historyWordTranslatedMainActivity.this, history_words, clipboard);
-
+                        historyWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
                         listview_history_word.setAdapter(historyWordAdapter);
 
                     } catch (JSONException e) {
