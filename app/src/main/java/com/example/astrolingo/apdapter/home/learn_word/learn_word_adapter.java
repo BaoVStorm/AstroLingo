@@ -78,7 +78,7 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
         meaning_text.setText(words.getMeaningVietnamese());
 
         ImageView icon_loud = convertView.findViewById(R.id.icon_loud);
-
+        icon_loud.setImageResource(R.drawable.icon_asset_loud1);
 
         icon_loud.setOnClickListener(v -> {
             if(!AudioManager.isPlaying()) {
@@ -90,7 +90,7 @@ public class learn_word_adapter extends ArrayAdapter<vocabulary> {
 
                     @Override
                     public void onCompletion() {
-                        icon_loud.setImageResource(R.drawable.icon_asset_loud);
+                        icon_loud.setImageResource(R.drawable.icon_asset_loud1);
                     }
                     @Override
                     public void onError() {
