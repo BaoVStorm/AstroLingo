@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +25,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.example.astrolingo.Service.AudioManager;
 import com.example.astrolingo.apdapter.test.TestDetailAdapter;
 import com.example.astrolingo.domain.home.learn_word.vocabulary;
+import com.example.astrolingo.function.AudioListener;
 
 
 public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -39,8 +42,10 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
         View cardFront, cardBack;
         TextView front_word_text, second_word, front_pronunciation_text, front_fullPage, second_fullPage;
         TextView second_word_meaning_english, second_word_meaning_vietnamese;
+        TextView front_currentPage, second_currentPage;
         TextView second_example_meaning_english, second_example_meaning_vietnamese;
         ImageView imageQuestion;
+        ImageView front_icon_loud, second_icon_loud;
         boolean isFront = true;
 
         public CardViewHolder(@NonNull View itemView) {
@@ -62,6 +67,12 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
             second_example_meaning_vietnamese = itemView.findViewById(R.id.second_example_meaning_vietnamese);
 
             imageQuestion = itemView.findViewById(R.id.imageQuestion);
+
+            front_currentPage = itemView.findViewById(R.id.front_currentPage);
+            second_currentPage = itemView.findViewById(R.id.second_currentPage);
+
+            front_icon_loud = itemView.findViewById(R.id.front_icon_loud);
+            second_icon_loud = itemView.findViewById(R.id.second_icon_loud);
         }
     }
 
@@ -100,16 +111,25 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
                 backAnim.setTarget(viewHolder.cardBack);
                 frontAnim.start();
                 backAnim.start();
+
+                // fix lỗi khi load backCard nhắn vào loud thì load loud của front
+                viewHolder.front_icon_loud.setClickable(false);
             } else {
                 frontAnim.setTarget(viewHolder.cardBack);
                 backAnim.setTarget(viewHolder.cardFront);
                 frontAnim.start();
                 backAnim.start();
+
+                // fix lỗi khi load backCard nhắn vào loud thì load loud của front
+                viewHolder.front_icon_loud.setClickable(true);
             }
             viewHolder.isFront = !viewHolder.isFront;
         });
 
         // init value
+        viewHolder.front_currentPage.setText((position + 1) + "");
+        viewHolder.second_currentPage.setText((position + 1) + "");
+
         viewHolder.front_word_text.setText(word.getWord());
         viewHolder.second_word.setText(word.getWord());
 
@@ -150,6 +170,7 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
             viewHolder.second_example_meaning_vietnamese.setText(exampleVietnamese);
         }
 
+        // set image
         String imageUrl = word.getImageUrl();
 
         if(imageUrl.isEmpty())
@@ -167,6 +188,51 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
             }
         }
 
+        // set audio
+        viewHolder.front_icon_loud.setImageResource(R.drawable.icon_asset_loud1);
+
+        viewHolder.front_icon_loud.setOnClickListener(v -> {
+            if(!AudioManager.isPlaying()) {
+                AudioManager.setAudio(context , word.getAudioUrl(), new AudioListener() {
+                    @Override
+                    public void onPrepared() {
+                        viewHolder.front_icon_loud.setImageResource(R.drawable.icon_asset_loud3);
+                    }
+
+                    @Override
+                    public void onCompletion() {
+                        viewHolder.front_icon_loud.setImageResource(R.drawable.icon_asset_loud1);
+                    }
+                    @Override
+                    public void onError() {
+                        Log.e("AUDIO", "Error during playback");
+                    }
+                });
+            }
+        });
+
+        viewHolder.second_icon_loud.setImageResource(R.drawable.icon_asset_loud1);
+
+        viewHolder.second_icon_loud.setOnClickListener(v -> {
+            if(!AudioManager.isPlaying()) {
+                AudioManager.setAudio(context , word.getAudioUrl(), new AudioListener() {
+                    @Override
+                    public void onPrepared() {
+                        viewHolder.second_icon_loud.setImageResource(R.drawable.icon_asset_loud3);
+                    }
+
+                    @Override
+                    public void onCompletion() {
+                        viewHolder.second_icon_loud.setImageResource(R.drawable.icon_asset_loud1);
+                    }
+                    @Override
+                    public void onError() {
+                        Log.e("AUDIO", "Error during playback");
+                    }
+                });
+            }
+        });
+
 
     }
 
@@ -174,70 +240,6 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
     public int getItemCount() {
         return vocabularyList.size();
     }
-
-/*
-
-    @SuppressLint("SetTextI18n")
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_word_learn_flashcard_adapter);
-
-        // init
-        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        sharedPreClass = new SharedPreferenceClass(this);
-
-
-        View card_front = findViewById(R.id.font_card);
-        View card_back = findViewById(R.id.second_card);
-
-        float scale = getApplicationContext().getResources().getDisplayMetrics().density;
-        card_front.setCameraDistance(8000 * scale);
-        card_back.setCameraDistance(8000 * scale);
-
-        AnimatorSet frontAnim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.front_card_animator);
-        AnimatorSet backAnim = (AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.back_card_animator);
-
-        card_front.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                flipCard(card_front, card_back, frontAnim, backAnim);
-            }
-        });
-
-        card_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                flipCard(card_front, card_back, frontAnim, backAnim);
-            }
-        });
-
-
-//        backIcon.setOnClickListener(v->{
-//            dialog_level.dismiss();
-//            bottomDialog_topic.dismiss();
-//            finish();
-//        });
-
-    }
-
-    private void flipCard(View card_front, View card_back, AnimatorSet frontAnim, AnimatorSet backAnim) {
-        if (isFront) {
-            frontAnim.setTarget(card_front);
-            backAnim.setTarget(card_back);
-            frontAnim.start();
-            backAnim.start();
-            isFront = false;
-        } else {
-            frontAnim.setTarget(card_back);
-            backAnim.setTarget(card_front);
-            frontAnim.start();
-            backAnim.start();
-            isFront = true;
-        }
-    }
-*/
-
 
 }
 
