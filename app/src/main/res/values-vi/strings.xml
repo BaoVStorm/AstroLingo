@@ -177,4 +177,9 @@
     <string name="save_translate_type">Từ đã tra</string>
     <string name="save_create_type">Từ đã tạo</string>
 
+    <string name="createWord">Tạo từ của bạn</string>
+    <string name="input_word">Nhập từ của bạn <font color="#C70707">*</font></string>
+    <string name="input_meaning">Nhập nghĩa của từ <font color="#C70707">*</font></string>
+    <string name="create">Tạo</string>
+
 </resources>

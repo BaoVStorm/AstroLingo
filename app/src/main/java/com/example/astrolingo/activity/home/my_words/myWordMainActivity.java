@@ -1,10 +1,13 @@
 package com.example.astrolingo.activity.home.my_words;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,6 +49,8 @@ public class myWordMainActivity extends AppCompatActivity {
     private ClipboardManager clipboard;
     private ConstraintLayout box_createWord;
 
+    private Dialog dialog_createWord;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -72,6 +77,8 @@ public class myWordMainActivity extends AppCompatActivity {
         box_createWord = findViewById(R.id.box_createWord);
 
         // init
+        initDialog_createWord();
+
         header_title.setText(getString(R.string.myWord_header));
 
         // set Listener filter
@@ -93,12 +100,95 @@ public class myWordMainActivity extends AppCompatActivity {
         highLightFilter(filter_vocabulary);
 
         // set created Word
-        box_createWord.setOnClickListener(v -> {
-            createMyWord();
+        box_addWord.setOnClickListener(v -> {
+//            createMyWord();
+            dialog_createWord.show();
         });
     }
 
     private void createMyWord() {
+
+    }
+
+    private void initDialog_createWord() {
+        dialog_createWord = new Dialog(this);
+        dialog_createWord.setContentView(R.layout.act_my_word_dialog_create_word);
+        dialog_createWord.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog_createWord.getWindow().setBackgroundDrawable(getDrawable(R.drawable.page_test_detail_dialog_info_bg));
+        dialog_createWord.setCanceledOnTouchOutside(true);
+
+        // edit detail dialog
+        ConstraintLayout create_button = dialog_createWord.findViewById(R.id.create_button);
+        EditText input_word = dialog_createWord.findViewById(R.id.input_word);
+        EditText input_meaning = dialog_createWord.findViewById(R.id.input_meaning);
+
+        // set button event
+        create_button.setOnClickListener(v -> {
+            dialog_createWord.dismiss();
+
+            String word = input_word.getText().toString();
+            String meaning = input_meaning.getText().toString();
+
+            createWord(word, meaning);
+        });
+
+    }
+
+    private void createWord(String word, String meaning) {
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("user_id", sharedPreClass.getValue_string("user_id"));
+        params.put("type_star", "create");
+        params.put("word", word);
+        params.put("meaning", meaning);
+
+        UserStarApi.addWordUserStars(
+                params,
+                this,
+                sharedPreClass.getValue_string("token"),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Xử lý khi thành công
+                        // Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+
+                        try {
+                            JSONObject jsonObject = response.getJSONObject("userStars");
+
+                            String id = jsonObject.getString("_id");
+
+                            myWords myWord = new myWords();
+                            myWord.setType("create");
+                            myWord.setId(id);
+
+                            boolean isTranslateEnglish = false;
+                            String word = jsonObject.getString("word");
+                            String meaning = jsonObject.getString("meaning");
+                            String date = jsonObject.getString("starred_at_vietnam");
+                            String user_lookup_id = jsonObject.getString("_id");
+
+                            history_word historyWord = new history_word(isTranslateEnglish, word, meaning, date);
+                            historyWord.setUserLookupId(user_lookup_id);
+
+                            myWord.setWord(historyWord);
+
+                            list_MyWords.add(myWord);
+                            myWordAdapter.notifyDataSetChanged();
+                            myWordAdapter.filterCreated();
+
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Xử lý khi có lỗi
+                        Toast.makeText(myWordMainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
 
     }
 
@@ -195,7 +285,7 @@ public class myWordMainActivity extends AppCompatActivity {
                                     myWord.setVocabulary(vob);
                                 }
                                 else {
-                                    boolean isTranslateEnglish = false;
+                                    boolean isTranslateEnglish = jsonObject.optBoolean("isTranslateEnglish", false);
                                     String word = jsonObject.getString("word");
                                     String meaning = jsonObject.getString("meaning");
                                     String date = jsonObject.getString("starred_at_vietnam");

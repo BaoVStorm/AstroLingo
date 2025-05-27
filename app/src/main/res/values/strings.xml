@@ -187,5 +187,9 @@
     <string name="save_translate_type">Translate</string>
     <string name="save_create_type">Created</string>
 
+    <string name="createWord">Create your word</string>
+    <string name="input_word">Input your word <font color="#C70707">*</font></string>
+    <string name="input_meaning">Input meaning of word <font color="#C70707">*</font></string>
+    <string name="create">Create</string>
 
 </resources>

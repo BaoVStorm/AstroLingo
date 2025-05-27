@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="16dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="25dp"
+        >
+
+
+        <TextView
+            android:id="@+id/text_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createWord"
+            android:layout_marginTop="5dp"
+
+            android:textSize="20sp"
+            android:fontFamily="@font/afacad_medium"
+            android:textColor="@color/black_light"
+
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_pause">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_word"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/input_word"
+                    app:layout_constraintTop_toTopOf="@+id/input_word"
+
+                    app:srcCompat="@drawable/icon_assets_word"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/input_word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:ems="9"
+                    android:fontFamily="@font/afacad_medium"
+
+                    android:hint="@string/input_word"
+                    android:inputType="text"
+
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_word"
+
+                    tools:ignore="MissingConstraints" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+
+                    android:layout_marginTop="0dp"
+
+                    android:background="@color/main_color_purple"
+
+                    app:layout_constraintLeft_toLeftOf="@+id/box_word"
+                    app:layout_constraintRight_toRightOf="@+id/box_word"
+                    app:layout_constraintTop_toBottomOf="@+id/input_word" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/box_meaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/box_word"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/icon_meaning"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/input_meaning"
+                    app:layout_constraintTop_toTopOf="@+id/input_meaning"
+
+                    app:srcCompat="@drawable/icon_assets_meaning"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/input_meaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:ems="9"
+                    android:fontFamily="@font/afacad_medium"
+
+                    android:hint="@string/input_meaning"
+                    android:inputType="text"
+
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@+id/icon_meaning"
+
+                    tools:ignore="MissingConstraints" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+
+                    android:layout_marginTop="0dp"
+
+                    android:background="@color/main_color_purple"
+
+                    app:layout_constraintLeft_toLeftOf="@+id/icon_meaning"
+                    app:layout_constraintRight_toRightOf="@+id/input_meaning"
+                    app:layout_constraintTop_toBottomOf="@+id/input_meaning" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/create_button"
+            android:layout_width="175dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
+
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:elevation="2dp"
+            android:focusable="true"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_bold"
+
+                android:text="@string/create"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

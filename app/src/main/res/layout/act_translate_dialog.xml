@@ -54,31 +54,31 @@
             <EditText
                 android:id="@+id/origin_text"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-
                 android:layout_height="match_parent"
+
+                android:layout_weight="1"
                 android:background="@null"
 
-                android:focusable="false"
                 android:cursorVisible="false"
-                android:longClickable="false"
-
+                android:focusable="false"
                 android:fontFamily="@font/afacad_medium"
+
                 android:gravity="top"
+                android:hint="@string/input_search"
                 android:imeOptions="flagNoEnterAction"
 
                 android:inputType="textMultiLine"
-                android:overScrollMode="ifContentScrolls"
+                android:longClickable="false"
 
+                android:overScrollMode="ifContentScrolls"
                 android:paddingHorizontal="25dp"
                 android:paddingTop="50dp"
+
                 android:paddingBottom="30dp"
-
                 android:scrollbars="vertical"
-                android:scrollHorizontally="false"
 
+                android:scrollHorizontally="false"
                 android:singleLine="false"
-                android:hint="@string/input_search"
                 android:textColor="@color/dark_grey"
                 android:textSize="25sp"
 

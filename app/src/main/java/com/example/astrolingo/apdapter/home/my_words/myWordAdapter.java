@@ -47,6 +47,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
     private static final int TYPE_HISTORY_WORD = 1;
     ClipboardManager clipboard;
     private Context context;
+    private int saveTopPadding = -1;
 
     private final List<myWords> originalList;   // Danh sách đầy đủ
     private List<myWords> displayList;          // Danh sách đang hiển thị
@@ -57,7 +58,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         super(context, R.layout.act_word_learn_adapter, listWords);
         this.context = context;
 
-        this.originalList = new ArrayList<>(listWords);
+        this.originalList = listWords;
         this.displayList = new ArrayList<>(listWords);
 
         this.clipboard = clipboard;
@@ -72,7 +73,6 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
     public int getViewTypeCount() {
         return 2;
     }
-
 
     @Override
     public int getCount() {
@@ -114,10 +114,8 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
             setTypeVocabulary(convertView, words.getVocabulary());
         } else {
 
-            setTypeHistoryWord(convertView, words.getWord());
+            setTypeHistoryWord(convertView, words.getWord(), words.getType());
         }
-
-
 
 
         return convertView;
@@ -255,7 +253,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         });
     }
 
-    private void setTypeHistoryWord(View convertView, history_word words) {
+    private void setTypeHistoryWord(View convertView, history_word words, String typeOfWord) {
         TextView translateType = convertView.findViewById(R.id.translateType);
         TextView word_text = convertView.findViewById(R.id.word_text);
         TextView meaning_text = convertView.findViewById(R.id.meaning_text);
@@ -264,6 +262,12 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         BottomSheetDialog bottomDialog_filter;
 
         // init value
+        if(!Objects.equals(typeOfWord, "translate")) {
+            translateType.setVisibility(View.GONE);
+        }
+        else
+            translateType.setVisibility(View.VISIBLE);
+
         bottomDialog_filter = new BottomSheetDialog(getContext());
         bottomDialog_filter.setContentView(R.layout.act_translate_dialog);
         bottomDialog_filter.setCanceledOnTouchOutside(true);
@@ -283,19 +287,38 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         TextView origin_title = bottomDialog_filter.findViewById(R.id.origin_title);
         TextView translate_title = bottomDialog_filter.findViewById(R.id.translate_title);
 
-        if(!words.isTranslateEnglish()) {
-            origin_title.setText(getContext().getString(R.string.english));
-            translate_title.setText(getContext().getString(R.string.vietnamese));
+        EditText origin_text = bottomDialog_filter.findViewById(R.id.origin_text);
+        EditText translate_text = bottomDialog_filter.findViewById(R.id.translate_text);
+
+        if(saveTopPadding == -1)
+            saveTopPadding = origin_text.getPaddingTop();
+
+        if(Objects.equals(typeOfWord, "translate")) {
+            origin_title.setVisibility(View.VISIBLE);
+            translate_title.setVisibility(View.VISIBLE);
+
+            if(!words.isTranslateEnglish()) {
+                origin_title.setText(getContext().getString(R.string.english));
+                translate_title.setText(getContext().getString(R.string.vietnamese));
+            }
+            else {
+                origin_title.setText(getContext().getString(R.string.vietnamese));
+                translate_title.setText(getContext().getString(R.string.english));
+            }
+
+            origin_text.setPadding(origin_text.getPaddingLeft(), saveTopPadding, origin_text.getPaddingRight(), origin_text.getPaddingBottom());
+            translate_text.setPadding(translate_text.getPaddingLeft(), saveTopPadding, translate_text.getPaddingRight(), translate_text.getPaddingBottom());
         }
         else {
-            origin_title.setText(getContext().getString(R.string.vietnamese));
-            translate_title.setText(getContext().getString(R.string.english));
+            origin_title.setVisibility(View.GONE);
+            translate_title.setVisibility(View.GONE);
+
+            origin_text.setPadding(origin_text.getPaddingLeft(), 60, origin_text.getPaddingRight(), origin_text.getPaddingBottom());
+            translate_text.setPadding(translate_text.getPaddingLeft(), 60, translate_text.getPaddingRight(), translate_text.getPaddingBottom());
         }
 
         icon_mark.setImageResource(R.drawable.icon_assets_star_check);
 
-        EditText origin_text = bottomDialog_filter.findViewById(R.id.origin_text);
-        EditText translate_text = bottomDialog_filter.findViewById(R.id.translate_text);
 
         origin_text.setText(words.getWord());
         translate_text.setText(words.getMeaning());
@@ -400,7 +423,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
     }
 
     public void filterCreated() {
-        updateDisplayList("created");
+        updateDisplayList("create");
     }
 
     private void updateDisplayList(String type) {
