@@ -185,6 +185,7 @@
     <!-- history test -->
     <string name="listTestResults">Danh sách các kết quả thi của bạn</string>
     <string name="historyTest_header">Lịch sử thi</string>
+    <string name="certificate">Chứng chỉ</string>
 
 
 </resources>

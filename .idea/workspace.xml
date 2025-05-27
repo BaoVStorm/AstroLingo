@@ -227,7 +227,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68b29106-eec6-41a3-9cf6-afe695f0530d" name="Changes" comment="pull">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/history_test/history_test_adapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/history_test/historyTestDetailActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -235,9 +235,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/history_test/historyTestMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/history_test/historyTestMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/history_test/history_test_adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/history_test/history_test_adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/domain/home/history_test/history_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/domain/home/history_test/history_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-vi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-vi/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,6 +307,7 @@
       <recent name="D:\UIT\NAM 3\Astrolingo_VStorm\AstroLingo\app\src\main\res\anim" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.astrolingo.activity.home.history_test" />
       <recent name="com.example.astrolingo.apdapter.home.history_test" />
     </key>
   </component>

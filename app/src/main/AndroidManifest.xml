@@ -62,6 +62,7 @@
         <activity android:name=".activity.home.my_words.myWordMainActivity"/>
 
         <activity android:name=".activity.home.history_test.historyTestMainActivity"/>
+        <activity android:name=".activity.home.history_test.historyTestDetailActivity"/>
 
     </application>
 

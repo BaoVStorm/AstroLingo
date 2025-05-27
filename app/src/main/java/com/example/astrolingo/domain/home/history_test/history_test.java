@@ -1,6 +1,8 @@
 package com.example.astrolingo.domain.home.history_test;
 
-public class history_test {
+import java.io.Serializable;
+
+public class history_test implements Serializable {
     private String test_id;
     private String certificate_name;
     private String awarded_at;

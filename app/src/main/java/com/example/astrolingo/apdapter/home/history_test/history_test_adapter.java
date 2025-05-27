@@ -1,33 +1,22 @@
 package com.example.astrolingo.apdapter.home.history_test;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
-import com.example.astrolingo.api.UserStarApi;
+import com.example.astrolingo.activity.home.history_test.historyTestDetailActivity;
+import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
+import com.example.astrolingo.activity.home.learn_vocab.learnVocab_FlashCardActivity;
 import com.example.astrolingo.domain.home.history_test.history_test;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class history_test_adapter extends ArrayAdapter<history_test> {
@@ -62,6 +51,8 @@ public class history_test_adapter extends ArrayAdapter<history_test> {
         TextView score_spe = convertView.findViewById(R.id.score_spe);
         TextView fullScore_text = convertView.findViewById(R.id.fullScore_text);
 
+        ConstraintLayout main_adapter = convertView.findViewById(R.id.main_adapter);
+
         // set data
         assert word != null;
         title_test.setText(word.getCertificate_name());
@@ -82,6 +73,15 @@ public class history_test_adapter extends ArrayAdapter<history_test> {
             score_spe.setTextColor(context.getColor(R.color.highScore));
             fullScore_text.setTextColor(context.getColor(R.color.highScore));
         }
+
+        main_adapter.setOnClickListener(v -> {
+            Intent intent = new Intent(context, historyTestDetailActivity.class);
+            intent.putExtra("word", word);
+
+            if (context != null) {
+                ((Activity) context).startActivity(intent);
+            }
+        });
 
         return convertView;
     }
