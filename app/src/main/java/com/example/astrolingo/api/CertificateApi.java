@@ -53,6 +53,41 @@ public class CertificateApi {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public static void getCertificate(String user_id, Context context, Response.Listener<JSONObject> onSuccess, Response.ErrorListener onError) {
+        String apiurl = context.getString(R.string.api_key) + "api/certificate/getCertificate";
+
+        apiurl = apiurl + "?user_id=" + user_id;
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                apiurl,
+                null,
+                onSuccess, // listener thành công truyền từ Activity
+                onError    // listener lỗi truyền từ Activity
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+
+        // Cấu hình retry
+        int socketTime = 7000;
+        RetryPolicy policy = new DefaultRetryPolicy(
+                socketTime,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        );
+        jsonObjectRequest.setRetryPolicy(policy);
+
+        // Thêm request vào hàng đợi
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(jsonObjectRequest);
+    }
+
+
     /*
         ------ gọi hàm getUserSchema tại 1 activity nào đó (để lấy dữ liệu của người dùng từ token đã có) -----
         TestApi.getPart( <part_id>, this, token,

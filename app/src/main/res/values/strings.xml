@@ -194,5 +194,6 @@
 
     <!-- history test -->
     <string name="listTestResults">List of your test results</string>
+    <string name="historyTest_header">History test</string>
 
 </resources>

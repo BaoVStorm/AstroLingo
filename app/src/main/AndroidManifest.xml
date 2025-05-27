@@ -57,10 +57,11 @@
         <activity android:name=".activity.home.game_quiz.QuizGameActivity" />
         <activity android:name=".activity.home.game_quiz.BossAct" />
 
-
         <activity android:name=".activity.home.learn_vocab.learnVocab_FlashCardActivity"/>
 
         <activity android:name=".activity.home.my_words.myWordMainActivity"/>
+
+        <activity android:name=".activity.home.history_test.historyTestMainActivity"/>
 
     </application>
 
