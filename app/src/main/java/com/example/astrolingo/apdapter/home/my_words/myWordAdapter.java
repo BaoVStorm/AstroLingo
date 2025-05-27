@@ -111,17 +111,17 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
 
         if (viewType == TYPE_VOCABULARY) {
 
-            setTypeVocabulary(convertView, words.getVocabulary());
+            setTypeVocabulary(convertView, words.getVocabulary(), words);
         } else {
 
-            setTypeHistoryWord(convertView, words.getWord(), words.getType());
+            setTypeHistoryWord(convertView, words.getWord(), words);
         }
 
 
         return convertView;
     }
 
-    private void setTypeVocabulary(View convertView, vocabulary words) {
+    private void setTypeVocabulary(View convertView, vocabulary words, myWords word) {
         ConstraintLayout main_adapter = convertView.findViewById(R.id.main_adapter);
 
         TextView word_text, pronunciation_text, type_text, meaning_text;
@@ -163,66 +163,36 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
 
         icon_mark.setImageResource(R.drawable.icon_assets_star_check);
 
-        // set Star Vocabulary
-//        icon_mark.setOnClickListener(v-> {
-//            HashMap<String, String> params = new HashMap<>();
-//            params.put("user_id", user_id);
-//            params.put("type_star", "vocabulary");
-//            params.put("vocab_id", words.getVocabId());
-//
-//            if(words.getIsStar()) {
-//                // remove star
-//
-//                UserStarApi.removeWordUserStars(
-//                        params,
-//                        getContext(),
-//                        token,
-//                        new Response.Listener<JSONObject>() {
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//                                // Xử lý khi thành công
-//                                // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
-//
-//                                icon_mark.setImageResource(R.drawable.icon_assets_star_uncheck);
-//                                words.setIsStar(false);
-//                            }
-//                        },
-//                        new Response.ErrorListener() {
-//                            @Override
-//                            public void onErrorResponse(VolleyError error) {
-//                                // Xử lý khi có lỗi
-//                                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                );
-//            }
-//            else {
-//                // add star
-//
-//                UserStarApi.addWordUserStars(
-//                        params,
-//                        getContext(),
-//                        token,
-//                        new Response.Listener<JSONObject>() {
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//                                // Xử lý khi thành công
-//                                // Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
-//
-//                                icon_mark.setImageResource(R.drawable.icon_assets_star_check);
-//                                words.setIsStar(true);
-//                            }
-//                        },
-//                        new Response.ErrorListener() {
-//                            @Override
-//                            public void onErrorResponse(VolleyError error) {
-//                                // Xử lý khi có lỗi
-//                                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                );
-//            }
-//        });
+        // set Star History Word
+        icon_mark.setOnClickListener(v-> {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("id", word.getId());
+
+            UserStarApi.removeWordUserStarsById(
+                    params,
+                    context,
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
+
+                            originalList.remove(word);
+                            displayList.remove(word);
+                            notifyDataSetChanged();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            );
+
+        });
 
         // init dialog detail
         Dialog dialog_info = new Dialog(context);
@@ -253,7 +223,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         });
     }
 
-    private void setTypeHistoryWord(View convertView, history_word words, String typeOfWord) {
+    private void setTypeHistoryWord(View convertView, history_word words, myWords word) {
         TextView translateType = convertView.findViewById(R.id.translateType);
         TextView word_text = convertView.findViewById(R.id.word_text);
         TextView meaning_text = convertView.findViewById(R.id.meaning_text);
@@ -262,7 +232,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         BottomSheetDialog bottomDialog_filter;
 
         // init value
-        if(!Objects.equals(typeOfWord, "translate")) {
+        if(!Objects.equals(word.getType(), "translate")) {
             translateType.setVisibility(View.GONE);
         }
         else
@@ -293,7 +263,7 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         if(saveTopPadding == -1)
             saveTopPadding = origin_text.getPaddingTop();
 
-        if(Objects.equals(typeOfWord, "translate")) {
+        if(Objects.equals(word.getType(), "translate")) {
             origin_title.setVisibility(View.VISIBLE);
             translate_title.setVisibility(View.VISIBLE);
 
@@ -350,12 +320,65 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
         time_text.setText(words.getDate());
 
         // set Star History Word
-//        icon_mark.setOnClickListener(v-> {
-//            HashMap<String, String> params = new HashMap<>();
-//            params.put("user_id", user_id);
-//            params.put("type_star", "translate");
-//            params.put("user_lookup_id", words.getUserLookupId());
-//
+        icon_mark.setOnClickListener(v-> {
+            HashMap<String, String> params = new HashMap<>();
+            params.put("id", word.getId());
+
+            UserStarApi.removeWordUserStarsById(
+                    params,
+                    context,
+                    token,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // Xử lý khi thành công
+                            // Toast.makeText(getContext(), "Xoá thành công", Toast.LENGTH_SHORT).show();
+
+                            originalList.remove(word);
+                            displayList.remove(word);
+                            notifyDataSetChanged();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            );
+
+        });
+    }
+
+
+    public void filterVocabulary() {
+        updateDisplayList("vocabulary");
+    }
+
+    public void filterTranslate() {
+        updateDisplayList("translate");
+    }
+
+    public void filterCreated() {
+        updateDisplayList("create");
+    }
+
+    private void updateDisplayList(String type) {
+        displayList.clear();
+        for (myWords item : originalList) {
+            if (item.getType().equals(type)) {
+                displayList.add(item);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+
+}
+
+
+
 //            if(words.getIsStar()) {
 //                // remove star
 //
@@ -410,32 +433,3 @@ public class myWordAdapter extends ArrayAdapter<myWords> {
 //                        }
 //                );
 //            }
-//        });
-    }
-
-
-    public void filterVocabulary() {
-        updateDisplayList("vocabulary");
-    }
-
-    public void filterTranslate() {
-        updateDisplayList("translate");
-    }
-
-    public void filterCreated() {
-        updateDisplayList("create");
-    }
-
-    private void updateDisplayList(String type) {
-        displayList.clear();
-        for (myWords item : originalList) {
-            if (item.getType().equals(type)) {
-                displayList.add(item);
-            }
-        }
-        notifyDataSetChanged();
-    }
-
-
-}
-

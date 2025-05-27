@@ -106,6 +106,39 @@ public class UserStarApi {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public static void removeWordUserStarsById(HashMap<String, String> params, Context context, String token, Response.Listener<JSONObject> onSuccess, Response.ErrorListener onError) {
+        String apiurl = context.getString(R.string.api_key) + "api/user_star/removeWordUserStarsById";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                apiurl,
+                new JSONObject(params),
+                onSuccess, // listener thành công truyền từ Activity
+                onError    // listener lỗi truyền từ Activity
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                headers.put("Authorization", "Bearer " + token); // nếu cần token
+                return headers;
+            }
+        };
+
+        // Cấu hình retry
+        int socketTime = 7000;
+        RetryPolicy policy = new DefaultRetryPolicy(
+                socketTime,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        );
+        jsonObjectRequest.setRetryPolicy(policy);
+
+        // Thêm request vào hàng đợi
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(jsonObjectRequest);
+    }
+
     //    [
 //        {
 //            "_id": "6831edd8e4dfc22d7b190491",
