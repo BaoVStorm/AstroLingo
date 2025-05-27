@@ -62,4 +62,6 @@ dependencies {
     implementation(libs.pinview)
 
     implementation(libs.material.v1110)
+
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
 }
