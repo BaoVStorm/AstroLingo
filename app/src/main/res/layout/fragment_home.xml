@@ -482,7 +482,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lịch sử"
+                        android:text="Lịch sử Thi"
                         android:paddingTop="2dp"
                         android:fontFamily="@font/afacad_medium"
                         android:textSize="@dimen/text_button_home"

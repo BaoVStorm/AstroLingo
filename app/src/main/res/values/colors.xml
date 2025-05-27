@@ -51,5 +51,8 @@
     <!-- search word -->
     <color name="background_word">#E8E3F2</color>
 
+    <!-- history test -->
+    <color name="highScore">#0FCA0F</color>
+
 
 </resources>
