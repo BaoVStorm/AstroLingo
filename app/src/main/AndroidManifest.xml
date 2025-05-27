@@ -54,6 +54,9 @@
         <activity android:name=".activity.home.learn_vocab.learnVocabMainActivity" />
 
         <activity android:name=".activity.home.game_hangman.GameActivity" />
+        <activity android:name=".activity.home.game_quiz.QuizGameActivity" />
+        <activity android:name=".activity.home.game_quiz.BossAct" />
+
 
         <activity android:name=".activity.home.learn_vocab.learnVocab_FlashCardActivity"/>
 

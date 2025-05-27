@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
+import com.example.astrolingo.activity.home.game_quiz.QuizGameActivity;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
 import com.example.astrolingo.activity.home.my_words.myWordMainActivity;
@@ -111,6 +112,14 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), GameActivity.class);
             startActivity(intent);
         });
+
+        //icon_word_attack_CardView
+        CardView quizgameCard = view.findViewById(R.id.icon_word_attack_CardView);
+        quizgameCard.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), QuizGameActivity.class);
+            startActivity(intent);
+        });
+
 
 
         return view;
