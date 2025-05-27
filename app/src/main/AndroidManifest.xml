@@ -57,6 +57,8 @@
 
         <activity android:name=".activity.home.learn_vocab.learnVocab_FlashCardActivity"/>
 
+        <activity android:name=".activity.home.my_words.myWordMainActivity"/>
+
     </application>
 
 </manifest>
