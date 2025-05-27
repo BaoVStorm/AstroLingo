@@ -53,6 +53,7 @@
 
     <!-- history test -->
     <color name="highScore">#0FCA0F</color>
+    <color name="lowScore">#F00404</color>
 
 
 </resources>

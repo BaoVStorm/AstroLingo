@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.apdapter.home.history.history_word_adapter;
+import com.example.astrolingo.apdapter.home.history_test.history_test_adapter;
 import com.example.astrolingo.api.CertificateApi;
 import com.example.astrolingo.api.UserLookupHistoryApi;
 import com.example.astrolingo.domain.home.history.history_word;
@@ -35,6 +37,8 @@ public class historyTestMainActivity extends AppCompatActivity {
     private ImageView backIcon;
     private TextView header_title;
     private ArrayList<history_test> historyTests = new ArrayList<>();
+    private ListView lv_testResults;
+    private history_test_adapter historyTestAdapter;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -49,6 +53,8 @@ public class historyTestMainActivity extends AppCompatActivity {
 
         backIcon = header.findViewById(R.id.backIcon);
         header_title = header.findViewById(R.id.header_title);
+
+        lv_testResults = findViewById(R.id.lv_testResults);
 
         // init
         header_title.setText(getString(R.string.historyTest_header));
@@ -84,6 +90,7 @@ public class historyTestMainActivity extends AppCompatActivity {
 //                    "awarded_at_vietnam": "23/05/2025 | 09:23:38"
 //            },
 
+        historyTests.clear();
         CertificateApi.getCertificate(
                 sharedPreClass.getValue_string("user_id"),
                 this,
@@ -121,9 +128,9 @@ public class historyTestMainActivity extends AppCompatActivity {
                                 historyTests.add(historyTest);
                             }
 
-//                            historyWordAdapter = new history_word_adapter(historyWordTranslatedMainActivity.this, history_words, clipboard);
-//                            historyWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
-//                            listview_history_word.setAdapter(historyWordAdapter);
+                            historyTestAdapter = new history_test_adapter(historyTestMainActivity.this, historyTests);
+                            // historyTestAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
+                            lv_testResults.setAdapter(historyTestAdapter);
 
                         } catch (JSONException e) {
                             Toast.makeText(historyTestMainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
