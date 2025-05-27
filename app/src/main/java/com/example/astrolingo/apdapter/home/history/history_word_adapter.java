@@ -182,6 +182,8 @@ public class history_word_adapter extends ArrayAdapter<history_word> {
             }
             else {
                 // add star
+                params.put("word", words.getWord());
+                params.put("meaning", words.getMeaning());
 
                 UserStarApi.addWordUserStars(
                     params,

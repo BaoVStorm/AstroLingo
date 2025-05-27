@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -18,8 +20,12 @@ import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.apdapter.home.history.history_word_adapter;
+import com.example.astrolingo.apdapter.home.my_words.myWordAdapter;
 import com.example.astrolingo.api.UserLookupHistoryApi;
+import com.example.astrolingo.api.UserStarApi;
 import com.example.astrolingo.domain.home.history.history_word;
+import com.example.astrolingo.domain.home.learn_word.vocabulary;
+import com.example.astrolingo.domain.home.my_word.myWords;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,19 +36,21 @@ import java.util.HashMap;
 
 public class myWordMainActivity extends AppCompatActivity {
     private SharedPreferenceClass sharedPreClass;
-    private ArrayList<history_word> history_words = new ArrayList<>();
+    private ArrayList<myWords> list_MyWords = new ArrayList<>();
     private View header;
-    private ListView listview_history_word;
+    private ListView listview_marked_word;
     private ImageView backIcon;
-    private TextView filter_english, filter_all, filter_vietnamese, header_title;
-    private history_word_adapter historyWordAdapter;
+    private TextView filter_vocabulary, filter_translate, filter_created, header_title;
+    private CardView box_addWord;
+    private myWordAdapter myWordAdapter;
     private ClipboardManager clipboard;
+    private ConstraintLayout box_createWord;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_history_wordtranslated);
+        setContentView(R.layout.act_my_word_main);
 
         // init
         clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -53,11 +61,15 @@ public class myWordMainActivity extends AppCompatActivity {
         backIcon = header.findViewById(R.id.backIcon);
         header_title = header.findViewById(R.id.header_title);
 
-        filter_english = findViewById(R.id.filter_english);
-        filter_all = findViewById(R.id.filter_all);
-        filter_vietnamese = findViewById(R.id.filter_vietnamese);
+        filter_vocabulary = findViewById(R.id.filter_vocabulary);
+        filter_translate = findViewById(R.id.filter_translate);
+        filter_created = findViewById(R.id.filter_created);
 
-        listview_history_word = findViewById(R.id.listview_history_word);
+        listview_marked_word = findViewById(R.id.listview_marked_word);
+
+        box_addWord = findViewById(R.id.box_addWord);
+
+        box_createWord = findViewById(R.id.box_createWord);
 
         // init
         header_title.setText(getString(R.string.myWord_header));
@@ -67,39 +79,55 @@ public class myWordMainActivity extends AppCompatActivity {
 
         // backIcon
         backIcon.setOnClickListener(v ->{
-            history_words.clear();
+            list_MyWords.clear();
             finish();
         });
 
+        box_createWord.setVisibility(View.GONE);
+
         // get ListHistoryWord
-        getListHistoryWord();
+        getListUserStarWord();
 
         // default filter all
         unHighLightAllFilter();
-        highLightFilter(filter_all);
+        highLightFilter(filter_vocabulary);
+
+        // set created Word
+        box_createWord.setOnClickListener(v -> {
+            createMyWord();
+        });
+    }
+
+    private void createMyWord() {
 
     }
 
     private void setListenerFilter() {
-        filter_english.setOnClickListener(v -> {
-            historyWordAdapter.filterEnglish();
+        filter_vocabulary.setOnClickListener(v -> {
+            myWordAdapter.filterVocabulary();
+
+            box_createWord.setVisibility(View.GONE);
 
             unHighLightAllFilter();
-            highLightFilter(filter_english);
+            highLightFilter(filter_vocabulary);
         });
 
-        filter_all.setOnClickListener(v -> {
-            historyWordAdapter.filterAll();
+        filter_translate.setOnClickListener(v -> {
+            myWordAdapter.filterTranslate();
+
+            box_createWord.setVisibility(View.GONE);
 
             unHighLightAllFilter();
-            highLightFilter(filter_all);
+            highLightFilter(filter_translate);
         });
 
-        filter_vietnamese.setOnClickListener(v -> {
-            historyWordAdapter.filterVietnamese();
+        filter_created.setOnClickListener(v -> {
+            myWordAdapter.filterCreated();
+
+            box_createWord.setVisibility(View.VISIBLE);
 
             unHighLightAllFilter();
-            highLightFilter(filter_vietnamese);
+            highLightFilter(filter_created);
         });
     }
     private void unHighLightFilter(TextView filter) {
@@ -107,52 +135,90 @@ public class myWordMainActivity extends AppCompatActivity {
         filter.setTextColor(this.getColor(R.color.dark_grey));
     }
     private void unHighLightAllFilter() {
-        unHighLightFilter(filter_english);
-        unHighLightFilter(filter_all);
-        unHighLightFilter(filter_vietnamese);
+        unHighLightFilter(filter_vocabulary);
+        unHighLightFilter(filter_translate);
+        unHighLightFilter(filter_created);
     }
     private void highLightFilter(TextView filter) {
         filter.setBackgroundResource(R.drawable.page_test_detail_dialog_filter_part_bg);
         filter.setTextColor(this.getColor(R.color.main_color_purple_dark));
     }
 
-    private void getListHistoryWord() {
+    private void getListUserStarWord() {
         HashMap<String, String> params = new HashMap<>();
         params.put("user_id", sharedPreClass.getValue_string("user_id"));
 
-        UserLookupHistoryApi.getLookUpHistory(
+        UserStarApi.getWordUserStars(
                 params,
                 this,
-                sharedPreClass.getValue_string("token"),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         // Xử lý khi thành công
                         try {
-                            JSONArray jsonArray = response.getJSONArray("listUserLookupHistory");
+                            JSONArray jsonArray = response.getJSONArray("userStars");
 
                             for(int i = 0; i < jsonArray.length(); i ++) {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                                boolean isTranslateEnglish = jsonObject.getBoolean("isTranslateEnglish");
-                                String word = jsonObject.getString("word");
-                                String meaning = jsonObject.getString("meaning");
-                                String date = jsonObject.getString("lookup_at_vietnam");
-                                boolean isStar = jsonObject.getBoolean("isStar");
-                                String user_lookup_id = jsonObject.getString("_id");
+                                String type_star = jsonObject.getString("type_star");
+                                String id = jsonObject.getString("_id");
 
-                                history_word historyWord = new history_word(isTranslateEnglish, word, meaning, date);
-                                historyWord.setIsStar(isStar);
-                                historyWord.setUserLookupId(user_lookup_id);
-                                history_words.add(historyWord);
+                                myWords myWord = new myWords();
+                                myWord.setType(type_star);
+                                myWord.setId(id);
+
+                                if(type_star.equals("vocabulary")) {
+
+                                    String word = jsonObject.optString("word", "");
+                                    String type = jsonObject.optString("type", "");
+                                    String meaning_vietnamese = jsonObject.optString("meaning_vietnamese", "");
+                                    String meaning_english = jsonObject.optString("meaning_english", "");
+                                    String example_vietnamese = jsonObject.optString("example_vietnamese", "");
+                                    String example_english = jsonObject.optString("example_english", "");
+                                    String image_url = jsonObject.optString("image_url", "");
+                                    String audio_url = jsonObject.optString("audio_url", "");
+                                    String pronunciation = jsonObject.optString("pronunciation", "");
+                                    boolean isStar = jsonObject.optBoolean("isStar", false);
+                                    String vocab_id = jsonObject.getString("_id");
+
+                                    int topic_id = jsonObject.has("topic_id") ? jsonObject.getInt("topic_id") : 1;
+                                    int level_id = jsonObject.has("level_id") ? jsonObject.getInt("level_id") : 1;
+
+                                    vocabulary vob = new vocabulary(word, type, meaning_vietnamese, meaning_english, example_vietnamese, example_english, topic_id, level_id);
+                                    vob.setPronunciation(pronunciation);
+                                    vob.setImageUrl(image_url);
+                                    vob.setAudioUrl(audio_url);
+                                    vob.setIsStar(isStar);
+                                    vob.setVocabId(vocab_id);
+
+                                    myWord.setVocabulary(vob);
+                                }
+                                else {
+                                    boolean isTranslateEnglish = false;
+                                    String word = jsonObject.getString("word");
+                                    String meaning = jsonObject.getString("meaning");
+                                    String date = jsonObject.getString("starred_at_vietnam");
+                                    String user_lookup_id = jsonObject.getString("_id");
+
+                                    history_word historyWord = new history_word(isTranslateEnglish, word, meaning, date);
+                                    historyWord.setUserLookupId(user_lookup_id);
+
+                                    myWord.setWord(historyWord);
+                                }
+
+                                list_MyWords.add(myWord);
+
                             }
 
-                            historyWordAdapter = new history_word_adapter(historyWordTranslatedMainActivity.this, history_words, clipboard);
-                            historyWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
-                            listview_history_word.setAdapter(historyWordAdapter);
+                            myWordAdapter = new myWordAdapter(myWordMainActivity.this, list_MyWords, clipboard);
+                            myWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
+                            myWordAdapter.filterVocabulary();
+
+                            listview_marked_word.setAdapter(myWordAdapter);
 
                         } catch (JSONException e) {
-                            Toast.makeText(historyWordTranslatedMainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(myWordMainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                             throw new RuntimeException(e);
                         }
                     }
@@ -161,7 +227,7 @@ public class myWordMainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Xử lý khi có lỗi
-                        Toast.makeText(historyWordTranslatedMainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(myWordMainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
         );

@@ -51,7 +51,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
-    public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<testDetail_page> itemList;
     private ViewPager2 viewPager;
 
