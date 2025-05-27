@@ -181,4 +181,11 @@
     <string name="chooseWord">Choose words</string>
     <string name="matchWord">Match words</string>
 
+    <!-- my word activity -->
+    <string name="myWord_header">Marked Word</string>
+    <string name="save_vocabulary_type">Vocabulary</string>
+    <string name="save_translate_type">Translate</string>
+    <string name="save_create_type">Created</string>
+
+
 </resources>

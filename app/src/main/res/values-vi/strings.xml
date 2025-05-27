@@ -171,4 +171,10 @@
     <string name="chooseWord">Chọn từ</string>
     <string name="matchWord">Ghép từ</string>
 
+    <!-- my word activity -->
+    <string name="myWord_header">Từ đã đánh dấu</string>
+    <string name="save_vocabulary_type">Từ vựng</string>
+    <string name="save_translate_type">Từ đã tra</string>
+    <string name="save_create_type">Từ đã tạo</string>
+
 </resources>
