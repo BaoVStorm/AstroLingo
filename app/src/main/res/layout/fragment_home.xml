@@ -281,76 +281,76 @@
                 </LinearLayout>
 
                 <!-- TreasureG -->
-                <LinearLayout
-                    android:id="@+id/treasuregSection"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/wordattackSection"
-                    android:layout_marginStart="7dp"
-                    android:orientation="vertical"
-                    android:gravity="center">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/treasuregSection"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toEndOf="@id/wordattackSection"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/icon_treasure_g_CardView"
-                        android:layout_width="@dimen/size_button_home"
-                        android:layout_height="@dimen/size_button_home"
-                        android:layout_marginTop="5dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="2dp"
-                        app:cardUseCompatPadding="true">
-                        <ImageView
-                            android:id="@+id/icon_treasure_g_ImageView"
-                            android:layout_width="@dimen/size_icon_home"
-                            android:layout_height="@dimen/size_icon_home"
-                            android:layout_gravity="center"
-                            android:src="@drawable/icon_treasure_g" />
-                    </androidx.cardview.widget.CardView>
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:id="@+id/icon_treasure_g_CardView"-->
+<!--                        android:layout_width="@dimen/size_button_home"-->
+<!--                        android:layout_height="@dimen/size_button_home"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        app:cardElevation="2dp"-->
+<!--                        app:cardUseCompatPadding="true">-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/icon_treasure_g_ImageView"-->
+<!--                            android:layout_width="@dimen/size_icon_home"-->
+<!--                            android:layout_height="@dimen/size_icon_home"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/icon_treasure_g" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TreasureG"
-                        android:paddingTop="2dp"
-                        android:fontFamily="@font/afacad_medium"
-                        android:textSize="@dimen/text_button_home"
-                        android:layout_gravity="center_horizontal"/>
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="TreasureG"-->
+<!--                        android:paddingTop="2dp"-->
+<!--                        android:fontFamily="@font/afacad_medium"-->
+<!--                        android:textSize="@dimen/text_button_home"-->
+<!--                        android:layout_gravity="center_horizontal"/>-->
+<!--                </LinearLayout>-->
 
-                <!-- Puzword -->
-                <LinearLayout
-                    android:id="@+id/puzwordSection"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/treasuregSection"
-                    android:layout_marginStart="7dp"
-                    android:orientation="vertical"
-                    android:gravity="center">
+<!--                &lt;!&ndash; Puzword &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/puzwordSection"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toEndOf="@id/treasuregSection"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/icon_puzword_CardView"
-                        android:layout_width="@dimen/size_button_home"
-                        android:layout_height="@dimen/size_button_home"
-                        android:layout_marginTop="5dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="2dp"
-                        app:cardUseCompatPadding="true">
-                        <ImageView
-                            android:id="@+id/icon_puzword_ImageView"
-                            android:layout_width="@dimen/size_icon_home"
-                            android:layout_height="@dimen/size_icon_home"
-                            android:layout_gravity="center"
-                            android:src="@drawable/icon_puzword" />
-                    </androidx.cardview.widget.CardView>
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:id="@+id/icon_puzword_CardView"-->
+<!--                        android:layout_width="@dimen/size_button_home"-->
+<!--                        android:layout_height="@dimen/size_button_home"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        app:cardElevation="2dp"-->
+<!--                        app:cardUseCompatPadding="true">-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/icon_puzword_ImageView"-->
+<!--                            android:layout_width="@dimen/size_icon_home"-->
+<!--                            android:layout_height="@dimen/size_icon_home"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/icon_puzword" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Puzword"
-                        android:paddingTop="2dp"
-                        android:fontFamily="@font/afacad_medium"
-                        android:textSize="@dimen/text_button_home"
-                        android:layout_gravity="center_horizontal"/>
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Puzword"-->
+<!--                        android:paddingTop="2dp"-->
+<!--                        android:fontFamily="@font/afacad_medium"-->
+<!--                        android:textSize="@dimen/text_button_home"-->
+<!--                        android:layout_gravity="center_horizontal"/>-->
+<!--                </LinearLayout>-->
             </RelativeLayout>
 
 <!--            //////////////////////////////////////////////////////////////////////////////-->

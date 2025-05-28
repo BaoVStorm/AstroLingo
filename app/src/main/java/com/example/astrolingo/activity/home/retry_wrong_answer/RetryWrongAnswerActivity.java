@@ -1,4 +1,4 @@
-package com.example.astrolingo.activity;
+package com.example.astrolingo.activity.home.retry_wrong_answer;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,7 @@ public class RetryWrongAnswerActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_retry_wrong_answer);
+        setContentView(R.layout.act_retry_wrong_answer);
 
         backIcon = findViewById(R.id.backIcon);
         backIcon.setOnClickListener(v ->{

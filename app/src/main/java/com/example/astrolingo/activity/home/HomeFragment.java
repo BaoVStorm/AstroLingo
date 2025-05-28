@@ -28,13 +28,12 @@ import com.example.astrolingo.activity.home.history_test.historyTestMainActivity
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
 import com.example.astrolingo.activity.home.my_words.myWordMainActivity;
 import com.example.astrolingo.activity.home.translate.translateMainActivity;
-import com.example.astrolingo.activity.test.TestSubmitActivity;
 import com.example.astrolingo.api.UserApi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.example.astrolingo.activity.RetryWrongAnswerActivity;
+import com.example.astrolingo.activity.home.retry_wrong_answer.RetryWrongAnswerActivity;
 
 
 public class HomeFragment extends Fragment {
