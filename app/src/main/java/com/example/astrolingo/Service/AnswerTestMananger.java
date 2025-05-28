@@ -112,7 +112,7 @@ public class AnswerTestMananger {
             JSONObject answer = new JSONObject();
             answer.put("selected_answer", navAnswer.getCurrentChoose());
             answer.put("is_wrong", !navAnswer.checkAnswer());
-
+            answer.put("correct_answer", navAnswer.getCorrectAnswer());
             answer.put("question_number", navAnswer.getQuestion_id());
             answer.put("question_id", navAnswer.getQuestion_id_text());
             answer.put("group_question_id", navAnswer.getGroup_question_id());

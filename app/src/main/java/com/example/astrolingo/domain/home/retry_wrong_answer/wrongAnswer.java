@@ -1,7 +1,7 @@
 package com.example.astrolingo.domain.home.retry_wrong_answer;
 
 public class wrongAnswer {
-    private int selected_answer;
+    private int selected_answer, correct_answer;
     private boolean is_wrong;
     private String answered_at;
     private int test_id;
@@ -27,6 +27,12 @@ public class wrongAnswer {
     }
 
     // Getters and Setters
+    public int getCorrect_answer() {
+        return correct_answer;
+    }
+    public void setCorrect_answer(int correct_answer) {
+        this.correct_answer = correct_answer;
+    }
     public int getSelected_answer() { return selected_answer; }
     public void setSelected_answer(int selected_answer) { this.selected_answer = selected_answer; }
 

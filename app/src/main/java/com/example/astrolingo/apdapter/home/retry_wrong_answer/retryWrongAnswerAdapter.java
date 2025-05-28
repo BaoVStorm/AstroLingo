@@ -15,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.astrolingo.R;
 import com.example.astrolingo.activity.home.history_test.historyTestDetailActivity;
+import com.example.astrolingo.activity.test.checkAnswerResultActivity;
 import com.example.astrolingo.domain.home.history_test.history_test;
 import com.example.astrolingo.domain.home.retry_wrong_answer.wrongAnswer;
 
@@ -63,7 +64,19 @@ public class retryWrongAnswerAdapter extends ArrayAdapter<wrongAnswer> {
         ConstraintLayout main_adapter = convertView.findViewById(R.id.main_adapter);
 
 
+        main_adapter.setOnClickListener(v -> {
+            Intent intent = new Intent(context, checkAnswerResultActivity.class);
 
+            intent.putExtra("question_id", word.getQuestion_number());
+            intent.putExtra("part_id", word.getPart_id());
+            intent.putExtra("group_question_id", word.getGroup_question_id());
+            intent.putExtra("selected_number", word.getSelected_answer());
+            intent.putExtra("correct_number", word.getCorrect_answer());
+
+            if (context != null) {
+                ((Activity) context).startActivity(intent);
+            }
+        });
 
         return convertView;
     }

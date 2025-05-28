@@ -98,6 +98,7 @@ public class RetryWrongAnswerDetailActivity extends AppCompatActivity{
 
         HashMap<String, String> params = new HashMap<>();
         params.put("user_id", sharedPreClass.getValue_string("user_id"));
+        params.put("part_id", part + "");
 
         UserAnswerApi.getWrongAnswers(
                 params,
@@ -114,6 +115,7 @@ public class RetryWrongAnswerDetailActivity extends AppCompatActivity{
                                 JSONObject item = jsonArray.getJSONObject(i);
 
                                 int selected_answer = item.getInt("selected_answer");
+                                int correct_answer = item.getInt("correct_answer");
                                 boolean is_wrong = item.getBoolean("is_wrong");
                                 String answered_at = item.getString("starred_at_vietnam");
                                 int test_id = item.getInt("test_id");
@@ -134,6 +136,7 @@ public class RetryWrongAnswerDetailActivity extends AppCompatActivity{
                                         question_number
                                 );
 
+                                answer.setCorrect_answer(correct_answer);
                                 answer.setTest_title(test_title);
 
                                 List_WrongAnswer.add(answer);
