@@ -29,6 +29,8 @@ import com.example.astrolingo.Service.AnswerTestMananger;
 import com.example.astrolingo.Service.KeyboardUtil;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.Service.UtilService;
+import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
+import com.example.astrolingo.activity.home.my_words.myWordMainActivity;
 import com.example.astrolingo.activity.test.TestDetailMainActivity;
 import com.example.astrolingo.api.TestApi;
 import com.example.astrolingo.domain.test.nav_answer;
@@ -94,11 +96,13 @@ public class translateMainActivity extends AppCompatActivity {
         });
 
         word_history_button.setOnClickListener(v ->{
-
+            Intent intent = new Intent(this, historyWordTranslatedMainActivity.class);
+            startActivity(intent);
         });
 
         word_mark_button.setOnClickListener(v ->{
-
+            Intent intent = new Intent(this, myWordMainActivity.class);
+            startActivity(intent);
         });
 
         icon_copy.setOnClickListener(v ->{
