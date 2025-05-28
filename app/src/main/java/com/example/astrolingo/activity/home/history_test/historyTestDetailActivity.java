@@ -118,8 +118,12 @@ public class historyTestDetailActivity extends AppCompatActivity {
     }
 
     private void setDate() {
-        test_date_content.setText(word.getAwarded_at());
-        valid_date_content.setText(word.getAwarded_at());
+        String curDate = word.getAwarded_at();
+
+        test_date_content.setText(curDate.split(" \\| ")[0]);
+
+        String next2Year = DateUtils.addTwoYears(curDate);
+        valid_date_content.setText(next2Year);
     }
 
     private void getUserInfo() {

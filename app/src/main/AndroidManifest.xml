@@ -64,6 +64,8 @@
         <activity android:name=".activity.home.history_test.historyTestMainActivity"/>
         <activity android:name=".activity.home.history_test.historyTestDetailActivity"/>
 
+        <activity android:name=".activity.test.checkAnswerResultActivity"/>
+
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package com.example.astrolingo.apdapter.test;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,8 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.activity.home.history_test.historyTestDetailActivity;
+import com.example.astrolingo.activity.test.checkAnswerResultActivity;
 import com.example.astrolingo.domain.test.nav_answer;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -30,6 +34,7 @@ public class ResultQuestionAdapter extends ArrayAdapter<nav_answer> {
 
     private final List<nav_answer> originalList;   // Danh sách đầy đủ
     private List<nav_answer> displayList;          // Danh sách đang hiển thị
+    private Context context;
 
     public void setBottomDialog_filter(BottomSheetDialog bottomDialog_filter) {
         this.bottomDialog_filter = bottomDialog_filter;
@@ -39,6 +44,7 @@ public class ResultQuestionAdapter extends ArrayAdapter<nav_answer> {
         super(context, 0, questions);
         this.originalList = new ArrayList<>(questions);
         this.displayList = new ArrayList<>(questions);
+        this.context = context;
     }
 
     @Override
@@ -76,6 +82,8 @@ public class ResultQuestionAdapter extends ArrayAdapter<nav_answer> {
             convertView = LayoutInflater.from(getContext())
                     .inflate(R.layout.page_test_detail_dialog_filter_adapter_answer, parent, false);
         }
+
+        ConstraintLayout main_adapter = convertView.findViewById(R.id.main_adapter);
 
         ImageView icon_warning = convertView.findViewById(R.id.icon_warning);
         TextView question_text = convertView.findViewById(R.id.question_text);
@@ -141,6 +149,22 @@ public class ResultQuestionAdapter extends ArrayAdapter<nav_answer> {
 
         question_text.setOnClickListener(v -> {
             bottomDialog_filter.dismiss();
+        });
+
+        main_adapter.setOnClickListener(v->{
+            Intent intent = new Intent(context, checkAnswerResultActivity.class);
+//            intent.putExtra("group_question_id", word);
+
+            intent.putExtra("question_id", question.getQuestion_id());
+            intent.putExtra("part_id", question.getPart());
+            intent.putExtra("group_question_id", question.getGroup_question_id());
+            intent.putExtra("selected_number", question.getCurrentChoose());
+            intent.putExtra("correct_number", question.getCorrectAnswer());
+
+
+            if (context != null) {
+                ((Activity) context).startActivity(intent);
+            }
         });
 
         return convertView;
