@@ -57,10 +57,6 @@ public class MainActivity extends AppCompatActivity {
                     header.setText(getString(R.string.testFragment));
                     loadFragment(new TestFragment(), false);
                     return true;
-                } else if (id == R.id.navCourse) {
-                    header.setText(getString(R.string.courseFragment));
-                    loadFragment(new CourseFragment(), false);
-                    return true;
                 } else if (id == R.id.navAI) {
                     header.setText(getString(R.string.AiFragment));
                     loadFragment(new AiFragment(), false);
@@ -70,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(new SettingFragment(), false);
                     return true;
                 }
+
+//                else if (id == R.id.navCourse) {
+//                    header.setText(getString(R.string.courseFragment));
+//                    loadFragment(new CourseFragment(), false);
+//                    return true;
+//                }
 
                 return false;
             }
