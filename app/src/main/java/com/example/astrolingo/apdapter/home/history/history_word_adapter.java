@@ -152,6 +152,7 @@ public class history_word_adapter extends ArrayAdapter<history_word> {
             HashMap<String, String> params = new HashMap<>();
             params.put("user_id", user_id);
             params.put("type_star", "translate");
+            params.put("isTranslateEnglish", words.isTranslateEnglish() + "");
             params.put("user_lookup_id", words.getUserLookupId());
 
             if(words.getIsStar()) {

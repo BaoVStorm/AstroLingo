@@ -24,16 +24,16 @@ import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
 import com.example.astrolingo.activity.home.game_quiz.QuizGameActivity;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
+import com.example.astrolingo.activity.home.history_test.historyTestMainActivity;
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
 import com.example.astrolingo.activity.home.my_words.myWordMainActivity;
 import com.example.astrolingo.activity.home.translate.translateMainActivity;
-import com.example.astrolingo.activity.test.TestSubmitActivity;
 import com.example.astrolingo.api.UserApi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.example.astrolingo.activity.RetryWrongAnswerActivity;
+import com.example.astrolingo.activity.home.retry_wrong_answer.RetryWrongAnswerMainActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     TextView leaderboard_seeMore, headerText;
 
     LinearLayout first_place_Section, second_place_Section, third_place_Section, fourth_place_Section, fifth_place_Section, sixth_place_Section;
-    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView;
+    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView, icon_test_history_CardView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -83,6 +83,12 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        icon_test_history_CardView = view.findViewById(R.id.icon_test_history_CardView);
+        icon_test_history_CardView.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), historyTestMainActivity.class);
+            startActivity(intent);
+        });
+
         // Get 5 user section
         first_place_Section = view.findViewById(R.id.first_place_Section);
         second_place_Section = view.findViewById(R.id.second_place_Section);
@@ -100,7 +106,7 @@ public class HomeFragment extends Fragment {
 
         CardView cardview = view.findViewById(R.id.icon_wrong_answer_CardView);
         cardview.setOnClickListener(v ->{
-            Intent intent = new Intent(getContext(), RetryWrongAnswerActivity.class);
+            Intent intent = new Intent(getContext(), RetryWrongAnswerMainActivity.class);
             startActivity(intent);
         });
 

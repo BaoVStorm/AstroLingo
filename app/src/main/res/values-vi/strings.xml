@@ -182,4 +182,13 @@
     <string name="input_meaning">Nhập nghĩa của từ <font color="#C70707">*</font></string>
     <string name="create">Tạo</string>
 
+    <!-- history test -->
+    <string name="listTestResults">Danh sách các kết quả thi của bạn</string>
+    <string name="historyTest_header">Lịch sử thi</string>
+    <string name="certificate">Chứng chỉ</string>
+
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Câu làm sai</string>
+    <string name="rewatch_wrong_answer_detail">Xem danh sách các câu đã làm sai</string>
+
 </resources>

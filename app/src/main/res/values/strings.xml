@@ -192,4 +192,13 @@
     <string name="input_meaning">Input meaning of word <font color="#C70707">*</font></string>
     <string name="create">Create</string>
 
+    <!-- history test -->
+    <string name="listTestResults">List of your test results</string>
+    <string name="historyTest_header">History test</string>
+    <string name="certificate">Certificate</string>
+
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Wrong Answer</string>
+    <string name="rewatch_wrong_answer_detail">Rewatch wrong answer</string>
+
 </resources>

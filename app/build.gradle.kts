@@ -63,5 +63,5 @@ dependencies {
 
     implementation(libs.material.v1110)
 
-    implementation("com.google.android.flexbox:flexbox:3.0.0")
+    implementation(libs.flexbox)
 }

@@ -41,7 +41,8 @@
         <activity android:name=".activity.test.TestDetailMainActivity" />
         <activity android:name=".activity.test.TestSubmitActivity" />
 
-        <activity android:name=".activity.RetryWrongAnswerActivity"/>
+        <activity android:name=".activity.home.retry_wrong_answer.RetryWrongAnswerMainActivity"/>
+        <activity android:name=".activity.home.retry_wrong_answer.RetryWrongAnswerDetailActivity"/>
 
         <activity android:name=".activity.setting.SettingActivity" />
         <activity android:name=".activity.setting.ChinhSuaHoSoActivity" />
@@ -57,10 +58,14 @@
         <activity android:name=".activity.home.game_quiz.QuizGameActivity" />
         <activity android:name=".activity.home.game_quiz.BossAct" />
 
-
         <activity android:name=".activity.home.learn_vocab.learnVocab_FlashCardActivity"/>
 
         <activity android:name=".activity.home.my_words.myWordMainActivity"/>
+
+        <activity android:name=".activity.home.history_test.historyTestMainActivity"/>
+        <activity android:name=".activity.home.history_test.historyTestDetailActivity"/>
+
+        <activity android:name=".activity.test.checkAnswerResultActivity"/>
 
     </application>
 
