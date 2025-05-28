@@ -197,4 +197,8 @@
     <string name="historyTest_header">History test</string>
     <string name="certificate">Certificate</string>
 
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Wrong Answer</string>
+    <string name="rewatch_wrong_answer_detail">Rewatch wrong answer</string>
+
 </resources>

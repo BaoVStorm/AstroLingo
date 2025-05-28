@@ -33,7 +33,7 @@ import com.example.astrolingo.api.UserApi;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.example.astrolingo.activity.home.retry_wrong_answer.RetryWrongAnswerActivity;
+import com.example.astrolingo.activity.home.retry_wrong_answer.RetryWrongAnswerMainActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -106,7 +106,7 @@ public class HomeFragment extends Fragment {
 
         CardView cardview = view.findViewById(R.id.icon_wrong_answer_CardView);
         cardview.setOnClickListener(v ->{
-            Intent intent = new Intent(getContext(), RetryWrongAnswerActivity.class);
+            Intent intent = new Intent(getContext(), RetryWrongAnswerMainActivity.class);
             startActivity(intent);
         });
 

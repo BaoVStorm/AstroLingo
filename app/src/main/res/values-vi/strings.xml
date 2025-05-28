@@ -187,5 +187,8 @@
     <string name="historyTest_header">Lịch sử thi</string>
     <string name="certificate">Chứng chỉ</string>
 
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Câu làm sai</string>
+    <string name="rewatch_wrong_answer_detail">Xem danh sách các câu đã làm sai</string>
 
 </resources>
