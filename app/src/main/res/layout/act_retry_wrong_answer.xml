@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/purple_header"
             android:layout_marginTop="20dp"
-            android:paddingLeft="8dp"
+            android:paddingLeft="20dp"
             android:text="@string/listening_comprehension"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -94,7 +94,7 @@
             android:layout_below="@id/titleListeningComprehension"
             android:layout_marginTop="15dp"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            >
 
             <!-- Mô tả tranh -->
             <LinearLayout
@@ -106,17 +106,15 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_picture_description_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
 
                     <ImageView
                         android:id="@+id/icon_picture_description_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_picture_description" />
                 </androidx.cardview.widget.CardView>
@@ -145,16 +143,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_question_and_answer_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
                     <ImageView
                         android:id="@+id/icon_question_and_answer_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_question_and_answer" />
                 </androidx.cardview.widget.CardView>
@@ -183,16 +179,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_conversation_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
                     <ImageView
                         android:id="@+id/icon_conversation_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_conversation" />
                 </androidx.cardview.widget.CardView>
@@ -221,16 +215,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_short_talk_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
                     <ImageView
                         android:id="@+id/icon_short_talk_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_short_talk" />
                 </androidx.cardview.widget.CardView>
@@ -256,7 +248,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/listeningComprehensionSection"
             android:layout_marginTop="20dp"
-            android:paddingLeft="8dp"
+            android:paddingLeft="20dp"
             android:text="@string/reading_comprehension"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -283,17 +275,15 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_fill_the_blank_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
 
                     <ImageView
                         android:id="@+id/icon_fill_the_blank_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_fill_the_blank" />
                 </androidx.cardview.widget.CardView>
@@ -322,16 +312,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_fill_the_paragraph_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
                     <ImageView
                         android:id="@+id/icon_fill_the_paragraph_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_fill_the_paragraph" />
                 </androidx.cardview.widget.CardView>
@@ -358,17 +346,15 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/icon_single_paragraph_CardView"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
 
                     <ImageView
                         android:id="@+id/icon_single_paragraph_ImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/icon_single_paragraph" />
                 </androidx.cardview.widget.CardView>
@@ -376,7 +362,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Read\nSentences"
+                    android:text="@string/read_sentences"
                     android:paddingTop="2dp"
                     android:fontFamily="@font/afacad_medium"
                     android:textSize="16sp"

@@ -141,12 +141,13 @@
     <string name="listening_comprehension">Nghe hiểu</string>
     <string name="picture_description">Mô tả\ntranh</string>
     <string name="ques_and_ans">Hỏi-Đáp</string>
-    <string name="conversation">Đoạn hội thoại</string>
-    <string name="short_talk">Bài nói ngắn</string>
+    <string name="conversation">Đoạn hội\nthoại</string>
+    <string name="short_talk">Bài nói\nngắn</string>
 
     <string name="reading_comprehension">Đọc hiểu</string>
-    <string name="fill_the_blank">Hoàn thành câu</string>
+    <string name="fill_the_blank">Hoàn thành\ncâu</string>
     <string name="fill_the_paragraph">Hoàn thành\nđoạn văn</string>
+    <string name="read_sentences">Đọc đoạn\nvăn</string>
     <string name="single_paragraph">Đoạn đơn</string>
     <string name="double_paragraph">Đoạn kép</string>
     <string name="triple_paragraph">Đoạn tam</string>

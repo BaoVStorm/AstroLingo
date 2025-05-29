@@ -155,8 +155,9 @@
     <string name="short_talk">Short Talk</string>
 
     <string name="reading_comprehension">Reading Comprehension</string>
-    <string name="fill_the_blank">Fill the blank</string>
+    <string name="fill_the_blank">Fill the\nblank</string>
     <string name="fill_the_paragraph">Complete\nParagraph</string>
+    <string name="read_sentences">Read\nsentences</string>
     <string name="single_paragraph">Single\nParagraph</string>
     <string name="double_paragraph">Double\nParagraph</string>
     <string name="triple_paragraph">Triple\nParagraph</string>
