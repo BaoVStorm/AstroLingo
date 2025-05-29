@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
@@ -191,7 +192,14 @@ public class HomeFragment extends Fragment {
                             scoreView.setText(String.valueOf(user.getInt("score")));
 
                             if (!user.isNull("photo_url")) {
-                                iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+
+                                // iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+
+                                Glide.with(view.getContext())
+                                        .load(user.getString("photo_url"))
+                                        .placeholder(R.drawable.icon_ava2) // hình mặc định nếu chưa có ảnh
+                                        .error(R.drawable.icon_ava2)         // hình nếu lỗi tải
+                                        .into(iconView);
                             }
                         }
 

@@ -65,13 +65,18 @@
 
             tools:ignore="MissingConstraints">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/top2_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
 
                 android:src="@drawable/icon_ava2" />
 
@@ -139,15 +144,20 @@
 
             tools:ignore="MissingConstraints">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/top1_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
 
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
                 android:src="@drawable/icon_ava2" />
+
 
             <LinearLayout
                 android:id="@+id/coin_and_score_top1"
@@ -210,14 +220,18 @@
 
             tools:ignore="MissingConstraints">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/top3_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
 
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
                 android:src="@drawable/icon_ava2" />
 
             <LinearLayout
@@ -279,11 +293,20 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="15dp"/>
             
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/icon_ava2"
+
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/main_color_purple_dark"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
+
                 android:layout_marginEnd="15dp"/>
 
             <LinearLayout
@@ -386,11 +409,20 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="15dp"/>
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/icon_ava2"
+
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/main_color_purple_dark"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
+
                 android:layout_marginEnd="15dp"/>
 
             <LinearLayout
@@ -491,11 +523,20 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="15dp"/>
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top6"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/icon_ava2"
+
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/main_color_purple_dark"
+                app:strokeWidth="1dp"
+                android:padding="1dp"
+
                 android:layout_marginEnd="15dp"/>
 
             <LinearLayout

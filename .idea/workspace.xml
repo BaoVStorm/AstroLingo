@@ -170,6 +170,11 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_setting_chinhsuahoso.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_test_check_answer_result.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
@@ -277,8 +282,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68b29106-eec6-41a3-9cf6-afe695f0530d" name="Changes" comment="pull">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_home_leaderboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_home_leaderboard.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../astrolingoAPI" beforeDir="false" afterPath="$PROJECT_DIR$/../astrolingoAPI" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
