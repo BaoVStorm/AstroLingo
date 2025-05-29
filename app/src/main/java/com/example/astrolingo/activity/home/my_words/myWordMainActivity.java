@@ -106,10 +106,6 @@ public class myWordMainActivity extends AppCompatActivity {
         });
     }
 
-    private void createMyWord() {
-
-    }
-
     private void initDialog_createWord() {
         dialog_createWord = new Dialog(this);
         dialog_createWord.setContentView(R.layout.act_my_word_dialog_create_word);

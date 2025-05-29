@@ -145,6 +145,11 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/header.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
@@ -240,6 +245,11 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_test_prepare_start_test.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
@@ -268,10 +278,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68b29106-eec6-41a3-9cf6-afe695f0530d" name="Changes" comment="pull">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/my_words/myWordMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/my_words/myWordMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/test/TestFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/test/TestFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../astrolingoAPI" beforeDir="false" afterPath="$PROJECT_DIR$/../astrolingoAPI" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
