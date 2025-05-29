@@ -267,9 +267,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68b29106-eec6-41a3-9cf6-afe695f0530d" name="Changes" comment="pull">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_translate_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_translate_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../astrolingoAPI" beforeDir="false" afterPath="$PROJECT_DIR$/../astrolingoAPI" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
