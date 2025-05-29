@@ -54,7 +54,7 @@ public class translateApi {
         };
 
         // Cấu hình retry
-        int socketTime = 7000;
+        int socketTime = 3500;
         RetryPolicy policy = new DefaultRetryPolicy(
                 socketTime,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

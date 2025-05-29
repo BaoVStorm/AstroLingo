@@ -7,9 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.astrolingo.R;
+import com.example.astrolingo.apdapter.ai.messageChatboxAdapter;
+import com.example.astrolingo.domain.ai.messageChatbox;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +35,8 @@ public class AiFragment extends Fragment {
 
     public AiFragment() {
         // Required empty public constructor
+
+
     }
 
     public static AiFragment newInstance(String param1, String param2) {
@@ -48,6 +57,12 @@ public class AiFragment extends Fragment {
         }
     }
 
+    private ListView lv_chatbox;
+    private EditText editText;
+    private ImageView sentMessage;
+    private messageChatboxAdapter messageAdapter;
+    private ArrayList<messageChatbox> list_message = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -61,6 +76,34 @@ public class AiFragment extends Fragment {
             }
         }
 
+        lv_chatbox = view.findViewById(R.id.lv_chatbox);
+        editText = view.findViewById(R.id.editText);
+        sentMessage = view.findViewById(R.id.sentMessage);
+
+        // init listview
+        initValueListView();
+
+        messageAdapter = new messageChatboxAdapter(getContext(), list_message);
+        lv_chatbox.setAdapter(messageAdapter);
+        messageAdapter.notifyDataSetChanged();
+
+        sentMessage.setOnClickListener(v-> {
+            String mess = editText.getText().toString();
+
+            if (!mess.isEmpty()) {
+                messageChatbox userChat = new messageChatbox(mess, true);
+                list_message.add(userChat);
+                messageAdapter.notifyDataSetChanged();
+            }
+
+            editText.setText("");
+        });
+
         return view;
+    }
+
+    private void initValueListView() {
+        messageChatbox aiChat = new messageChatbox("tôi là AI - Astrolingo được phát triển bởi nhóm 6. Tôi có thể giúp được gì không?", false);
+        list_message.add(aiChat);
     }
 }
