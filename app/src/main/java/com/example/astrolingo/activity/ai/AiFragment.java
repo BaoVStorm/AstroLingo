@@ -26,6 +26,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -120,9 +121,9 @@ public class AiFragment extends Fragment {
         return view;
     }
 
-    private void chatAI(String mess, Context context) {
+    private void chatAI(String messg, Context context) {
         HashMap<String, String> params = new HashMap<>();
-        params.put("query", mess);
+        params.put("query", messg);
 
         ChatBoxApi.chat(
                 params,

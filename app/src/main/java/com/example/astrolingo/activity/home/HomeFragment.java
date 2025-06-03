@@ -22,6 +22,8 @@ import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.activity.MainActivity;
+import com.example.astrolingo.activity.ai.AiFragment;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
 import com.example.astrolingo.activity.home.game_quiz.QuizGameActivity;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
@@ -43,7 +45,7 @@ public class HomeFragment extends Fragment {
     TextView leaderboard_seeMore, headerText;
 
     LinearLayout first_place_Section, second_place_Section, third_place_Section, fourth_place_Section, fifth_place_Section, sixth_place_Section;
-    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView, icon_test_history_CardView;
+    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView, icon_test_history_CardView, icon_chatbot_CardView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,6 +90,18 @@ public class HomeFragment extends Fragment {
         icon_test_history_CardView.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), historyTestMainActivity.class);
             startActivity(intent);
+        });
+
+        icon_chatbot_CardView = view.findViewById(R.id.icon_chatbot_CardView);
+        icon_chatbot_CardView.setOnClickListener(v -> {
+            if (getActivity() instanceof MainActivity) {
+                ((MainActivity) getActivity()).navigateTo(
+                        new AiFragment(),
+                        R.string.AiFragment,
+                        R.id.navAI,
+                        false
+                );
+            }
         });
 
         // Get 5 user section

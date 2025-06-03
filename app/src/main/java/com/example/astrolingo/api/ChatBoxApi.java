@@ -38,7 +38,7 @@ public class ChatBoxApi {
         };
 
         // Cấu hình retry
-        int socketTime = 200000;
+        int socketTime = 60000;
         RetryPolicy policy = new DefaultRetryPolicy(
                 socketTime,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

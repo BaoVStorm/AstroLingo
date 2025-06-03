@@ -67,6 +67,52 @@ public class translateApi {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public static void translateLanguage2(String textTranslate, boolean isTranslateEnglish, Context context, Response.Listener<JSONArray> onSuccess, Response.ErrorListener onError) {
+
+
+        String apiurl = "";
+
+        if(isTranslateEnglish)
+            apiurl = context.getString(R.string.api_translateVTE_key2);
+        else
+            apiurl = context.getString(R.string.api_translateETV_key2);
+
+        String encoderString = StringManager.changeStringtoURLEncoder(textTranslate);
+
+        apiurl = apiurl + encoderString;
+
+
+        Log.d("TRANSLATE_URL", "Requesting URL: " + apiurl);
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                apiurl,
+                null,
+                onSuccess, // listener thành công truyền từ Activity
+                onError    // listener lỗi truyền từ Activity
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+
+        // Cấu hình retry
+        int socketTime = 3500;
+        RetryPolicy policy = new DefaultRetryPolicy(
+                socketTime,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        );
+        jsonObjectRequest.setRetryPolicy(policy);
+
+        // Thêm request vào hàng đợi
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        requestQueue.add(jsonObjectRequest);
+    }
+
     /*
         ------ gọi hàm getUserSchema tại 1 activity nào đó (để lấy dữ liệu của người dùng từ token đã có) -----
         translateApi.translateLanguage( textTranslate, isTranslateEnglish, this,

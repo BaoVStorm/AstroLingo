@@ -290,8 +290,8 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/afacad_medium"
                 android:textColor="#A911AC"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"/>
             
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top4"
@@ -307,7 +307,7 @@
                 app:strokeWidth="1dp"
                 android:padding="1dp"
 
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="18dp"/>
 
             <LinearLayout
                 android:id="@+id/top4_content"
@@ -364,7 +364,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginEnd="2dp" >
+                android:layout_marginEnd="2dp"
+                android:visibility="gone"
+                >
 
                 <ImageView
                     android:id="@+id/top4_polygon_icon"
@@ -406,8 +408,8 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/afacad_medium"
                 android:textColor="#A911AC"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"/>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top5"
@@ -423,7 +425,7 @@
                 app:strokeWidth="1dp"
                 android:padding="1dp"
 
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="18dp"/>
 
             <LinearLayout
                 android:id="@+id/top5_content"
@@ -479,7 +481,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginEnd="2dp" >
+                android:layout_marginEnd="2dp"
+                android:visibility="gone"
+                >
 
                 <ImageView
                     android:id="@+id/top5_polygon_icon"
@@ -509,7 +513,7 @@
             android:orientation="horizontal"
             android:padding="12dp"
             android:background="@drawable/rounded_board_white"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -520,8 +524,8 @@
                 android:textSize="18sp"
                 android:fontFamily="@font/afacad_medium"
                 android:textColor="#A911AC"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"/>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon_top6"
@@ -537,7 +541,7 @@
                 app:strokeWidth="1dp"
                 android:padding="1dp"
 
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="18dp"/>
 
             <LinearLayout
                 android:id="@+id/top6_content"
@@ -594,7 +598,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginEnd="2dp" >
+                android:layout_marginEnd="2dp"
+                android:visibility="gone"
+                >
 
                 <ImageView
                     android:id="@+id/top6_polygon_icon"
@@ -625,6 +631,8 @@
             android:text="Xem thêm"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="5dp"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            />
     </LinearLayout>
 </LinearLayout>

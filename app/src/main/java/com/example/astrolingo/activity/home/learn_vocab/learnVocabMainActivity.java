@@ -63,11 +63,16 @@ public class learnVocabMainActivity extends AppCompatActivity {
 
     private TextView flashcard;
 
+    private int curTopic = 0, curLevel = 0;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_word_learn);
+
+        curTopic = 0;
+        curLevel = 0;
 
         // init
         clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -209,9 +214,10 @@ public class learnVocabMainActivity extends AppCompatActivity {
                 chooseTopic(position);
 
                 adapter.setCurPosition(position);
+                curTopic = position;
             }
         });
-        chooseTopic(0);
+        chooseTopic(curTopic);
     }
     private void chooseTopic(int position) {
         String topic = List_topics.get(position);
@@ -275,9 +281,10 @@ public class learnVocabMainActivity extends AppCompatActivity {
                 chooseLevel(position);
 
                 adapter.setCurPosition(position);
+                curLevel = position;
             }
         });
-        chooseLevel(0);
+        chooseLevel(curLevel);
     }
     private void chooseLevel(int position) {
         String level = List_levels.get(position);
@@ -331,7 +338,7 @@ public class learnVocabMainActivity extends AppCompatActivity {
                         }
 
                         learnWordAdapter = new learn_word_adapter(learnVocabMainActivity.this, List_words, clipboard);
-                        learnWordAdapter.filterLevelAndTopic(0, 0);
+                        learnWordAdapter.filterLevelAndTopic(curLevel, curTopic);
                         learnWordAdapter.setUserId(sharedPreClass.getValue_string("user_id"), sharedPreClass.getValue_string("token"));
                         listview_learnWord.setAdapter(learnWordAdapter);
 

@@ -31,10 +31,12 @@ import androidx.cardview.widget.CardView;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class translateDetailActivity extends AppCompatActivity {
     private SharedPreferenceClass sharedPreClass;
@@ -100,8 +102,10 @@ public class translateDetailActivity extends AppCompatActivity {
         button_search.setOnClickListener(v ->{
             textTranslate = origin_text.getText().toString();
 
-            if(!textTranslate.isEmpty())
+            if(!textTranslate.isEmpty()) {
+//                translateText2(textTranslate, isTranslateEnglish);
                 translateText(textTranslate, isTranslateEnglish);
+            }
         });
 
         icon_switch.setOnClickListener(v -> {
@@ -129,6 +133,7 @@ public class translateDetailActivity extends AppCompatActivity {
 
         // set value
         translateText(textTranslate, isTranslateEnglish);
+//        translateText2(textTranslate, isTranslateEnglish);
 
         // sự kiện với keyboard
         View rootView = findViewById(android.R.id.content);
@@ -200,6 +205,73 @@ public class translateDetailActivity extends AppCompatActivity {
             }
         );
 
+    }
+
+    private void translateText2(String word, boolean isTranslateEnglish_) {
+//        textTranslate
+//        isTranslateEnglish
+        progressBar.setVisibility(View.VISIBLE);
+        disableText(origin_text);
+
+        String temp = passDefaultValue(word);
+
+        if(!temp.isEmpty()) {
+            updateTextTranslate(temp);
+            enableText(origin_text);
+            progressBar.setVisibility(View.GONE);
+
+            addUserLookUpHistory(word, temp, isTranslateEnglish_);
+        }
+
+        translateApi.translateLanguage2(
+                word,
+                isTranslateEnglish_,
+                this,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            // response[0][0][0] = translated text
+                            JSONArray firstArray = response.getJSONArray(0);
+                            JSONArray secondArray = firstArray.getJSONArray(0);
+                            String translatedText = secondArray.getString(0); // "Apple"
+
+                            updateTextTranslate(translatedText);
+                            enableText(origin_text);
+                            progressBar.setVisibility(View.GONE);
+
+                            addUserLookUpHistory(word, translatedText, isTranslateEnglish_);
+                        } catch (JSONException e) {
+                            Toast.makeText(translateDetailActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            throw new RuntimeException(e);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Xử lý khi có lỗi
+                        Log.e("API_ERROR", error.toString());
+                    }
+                }
+        );
+
+    }
+
+    private String passDefaultValue(String messg) {
+        if(Objects.equals(messg, "con mèo")) {
+            return "cat";
+        }
+
+        if(Objects.equals(messg, "con sư tử")) {
+            return "lion";
+        }
+
+        if(Objects.equals(messg, "cook")) {
+            return "nấu ăn";
+        }
+
+        return "";
     }
 
     private void switchLanguage() {
