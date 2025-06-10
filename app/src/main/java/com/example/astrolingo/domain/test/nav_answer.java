@@ -6,6 +6,7 @@ public class nav_answer {
     private int correctAnswer = 10;
     private int question_id, part;
     private String question_id_text, group_question_id;
+    private int position;
 
     public nav_answer() {
         this.count_ans = 0;
@@ -22,6 +23,12 @@ public class nav_answer {
     }
     public void setGroup_question_id(String group_question_id) {
         this.group_question_id = group_question_id;
+    }
+    public void setPosition(int position) {
+        this.position = position;
+    }
+    public int getPosition() {
+        return position;
     }
     public void setCurrentChoose(int currentChoose) {
         this.currentChoose = currentChoose;

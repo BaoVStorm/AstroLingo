@@ -215,7 +215,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             }
 
             // add question and set adapter into listView
-            addQuestion(list_QuestionTest, item, viewHolder.lv_question.getContext(), viewHolder);
+            addQuestion(list_QuestionTest, item, viewHolder.lv_question.getContext(), viewHolder, position);
 
             if(item.getType() == 1) {
                 // is Listening Page
@@ -360,7 +360,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
-    private void addQuestion(List<question_test> list_QuestionTest, testDetail_page item, Context context, ListeningViewHolder viewHolder) {
+    private void addQuestion(List<question_test> list_QuestionTest, testDetail_page item, Context context, ListeningViewHolder viewHolder, int position) {
         // list_QuestionTest.add(new question_test("What does the woman want to find?", "(A) Some money", "(B) A file", "(C) An office key", "(D) A check", 2));
 
         SharedPreferenceClass sharedClass = new SharedPreferenceClass(context);
@@ -453,10 +453,14 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                                 navAnswer.setInfo(part_id, question_id);
                                 navAnswer.setGroup_question_id(object.getString("group_question_id"));
                                 navAnswer.setQuestion_id_text(object.getString("question_id"));
+//                                navAnswer.setPosition(position);
 
 //                                AnswerTestMananger.map_answer.put(question_id, navAnswer);
                                 AnswerTestMananger.list_answer.add(navAnswer);
                             }
+//                            else {
+//                                AnswerTestMananger.list_answer.get(question_id - 1).setPosition(position);
+//                            }
                         }
 
                         String group_question_id = item.getGroupQuestionId();

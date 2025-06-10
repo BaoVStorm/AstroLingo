@@ -128,7 +128,9 @@ public class FilterQuestionAdapter extends ArrayAdapter<nav_answer> {
         question_text.setText(getContext().getString(R.string.Sentence) + " " + question.getQuestion_id());
 
         question_text.setOnClickListener(v -> {
-            viewPager.setCurrentItem(question.getQuestion_id() + question.getPart() - 1, false);
+//            viewPager.setCurrentItem(question.getQuestion_id() + question.getPart() - 1, false);
+            viewPager.setCurrentItem(question.getPosition() + question.getPart(), false);
+
             bottomDialog_filter.dismiss();
         });
 

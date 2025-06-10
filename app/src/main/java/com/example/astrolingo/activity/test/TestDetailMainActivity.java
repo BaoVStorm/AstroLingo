@@ -516,6 +516,8 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
     }
 
+    private int position = -1;
+    private String lastestGroupQuestion = "";
 
     private void getAndAddQuestionOfTest(int test_id) {
 
@@ -551,8 +553,9 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
                                 JSONObject object = jsonArray.getJSONObject(i);
 
+                                String group_question_id = object.getString("group_question_id");
                                 int question_id = StringManager.extractLastNumber(object.getString("question_id"));
-                                int part_id = StringManager.extractNumberFromSecondPart(object.getString("group_question_id"));
+                                int part_id = StringManager.extractNumberFromSecondPart(group_question_id);
                                 int count_ans = 0;
                                 int correct_ans = 1;
 
@@ -571,11 +574,17 @@ public class TestDetailMainActivity extends AppCompatActivity  {
                                 if(!object.isNull("correct_answer"))
                                     correct_ans = object.getInt("correct_answer");
 
+                                if(!group_question_id.equals(lastestGroupQuestion)) {
+                                    lastestGroupQuestion = group_question_id;
+                                    position++;
+                                }
+
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
                                 navAnswer.setCorrectAnswer(correct_ans);
                                 navAnswer.setInfo(part_id, question_id);
-                                navAnswer.setGroup_question_id(object.getString("group_question_id"));
+                                navAnswer.setGroup_question_id(group_question_id);
                                 navAnswer.setQuestion_id_text(object.getString("question_id"));
+                                navAnswer.setPosition(position);
 
 //                            AnswerTestMananger.map_answer.put(question_id, navAnswer);
                                 AnswerTestMananger.list_answer.add(navAnswer);
