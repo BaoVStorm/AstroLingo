@@ -67,6 +67,8 @@ public class checkAnswerResultActivity extends AppCompatActivity {
     View navQuestion1, navQuestion2, navQuestion3, navQuestion4, navQuestion5;
     View navAnswer1, navAnswer2, navAnswer3, navAnswer4;
 
+    private ImageView backIcon;
+
     // audio
     public Handler handler = new Handler();
     public Runnable updateSeekBar= null;
@@ -114,12 +116,17 @@ public class checkAnswerResultActivity extends AppCompatActivity {
         audio_pause = viewHolder.findViewById(R.id.audio_pause);
         audio_pause.setImageResource(R.drawable.icon_asset_play_fill);
 
+        backIcon = findViewById(R.id.backIcon);
+
         // init navAnswer, mavQuestion
         initNavAnswer(viewHolder);
 
         // add image (if exist)
         getListImageUrl();
 
+        backIcon.setOnClickListener(v ->{
+            finish();
+        });
     }
 
     private void getListImageUrl() {
