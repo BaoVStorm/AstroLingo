@@ -101,7 +101,7 @@
 
             <ImageView
                 android:id="@+id/topic_icon_dropdown"
-                android:layout_width="20dp"
+                android:layout_width="18dp"
                 android:layout_height="20dp"
                 android:layout_marginBottom="2dp"
                 android:src="@drawable/icon_asset_dropdown2"
@@ -187,8 +187,8 @@
 
             <ImageView
                 android:id="@+id/level_icon_dropdown"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="2dp"
                 android:src="@drawable/icon_asset_dropdown2"
@@ -305,7 +305,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="5dp"
         android:divider="@null"
         android:dividerHeight="0dp"
 

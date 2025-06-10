@@ -5,10 +5,16 @@
     <string name="api_translateVTE_key" translatable="false">https://lingva.ml/api/v1/vi/en/</string>
     <string name="api_translateETV_key" translatable="false">https://lingva.ml/api/v1/en/vi/</string>
 
+    <string name="api_translateVTE_key2" translatable="false">https://translate.googleapis.com/translate_a/single?client=gtx&amp;sl=vi&amp;tl=en&amp;dt=t&amp;q=</string>
+    <string name="api_translateETV_key2" translatable="false">https://translate.googleapis.com/translate_a/single?client=gtx&amp;sl=en&amp;tl=vi&amp;dt=t&amp;q=</string>
+
+
     <string name="api_key_server" translatable="false">http://13.215.189.134:3000/</string>
     <string name="api_key_aws" translatable="false">http://10.0.2.2:3000/</string>
 
     <string name="client_ID" translatable="false">377354537953-q2eg1baq8mvdggc5cb8jh6ouhq7osuo4.apps.googleusercontent.com</string>
+
+    <string name="api_chatBox_key" translatable="false">https://7533-2402-800-6379-25d-467-fa5d-a72e-18b9.ngrok-free.app/</string>
     <!-- - - - - - - - - - - - - - - - - - - -->
 
     <string name="navHome">Home</string>
@@ -118,6 +124,13 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Female</string>
+    <!-- Giới tính-->
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
 
     <!--  Test  -->
     <string name="Sentence">Sen</string>
@@ -155,8 +168,9 @@
     <string name="short_talk">Short Talk</string>
 
     <string name="reading_comprehension">Reading Comprehension</string>
-    <string name="fill_the_blank">Fill the blank</string>
+    <string name="fill_the_blank">Fill the\nblank</string>
     <string name="fill_the_paragraph">Complete\nParagraph</string>
+    <string name="read_sentences">Read\nsentences</string>
     <string name="single_paragraph">Single\nParagraph</string>
     <string name="double_paragraph">Double\nParagraph</string>
     <string name="triple_paragraph">Triple\nParagraph</string>

@@ -18,7 +18,7 @@
     <!-- Home page -->
     <dimen name="text_title_home">18sp</dimen>
     <dimen name="text_button_home">15sp</dimen>
-    <dimen name="size_button_home">75dp</dimen>
+    <dimen name="size_button_home">70dp</dimen>
     <dimen name="size_icon_home">48dp</dimen>
     
     <!-- Ai page -->

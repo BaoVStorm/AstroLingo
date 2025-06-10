@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background5"
+    tools:context=".activity.home.game_quiz.QuizGameActivity">
+
+    <TextView
+        android:id="@+id/textScreen"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:fontFamily="@font/afacad_semibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HANGMAN" />
+
+
+    <ImageView
+        android:id="@+id/bigboss"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_game1"
+        android:layout_width="250dp"
+        android:layout_height="220dp" />
+
+
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textColor="#FFF"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:fontFamily="@font/afacad_semibold"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Hello!\n Ready for the game?" />
+
+    <Button
+        android:id="@+id/textTitle"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:paddingBottom="10dp"
+        android:text="START"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/purple"
+        android:textColor="@color/background_word"
+        android:textSize="28sp" />
+
+
+    <TextView
+        android:id="@+id/textBtn"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:fontFamily="@font/afacad_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Home" />
+
+</LinearLayout>

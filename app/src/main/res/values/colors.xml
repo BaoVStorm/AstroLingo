@@ -55,5 +55,7 @@
     <color name="highScore">#0FCA0F</color>
     <color name="lowScore">#F00404</color>
 
+    <!-- ai    -->
+    <color name="background_user_input">#3F7AE6</color>
 
 </resources>

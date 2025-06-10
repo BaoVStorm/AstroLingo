@@ -21,52 +21,22 @@
             android:scaleType="centerCrop"
             />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ListView
+            android:id="@+id/lv_chatbox"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+
+            android:divider="@null"
+            android:dividerHeight="0dp"
+
             app:layout_constraintBottom_toTopOf="@+id/box_input"
             app:layout_constraintTop_toTopOf="@+id/background"
             >
 
-            <!-- message -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:paddingTop="30dp"
-                tools:ignore="MissingConstraints">
-
-                <ImageView
-                    android:id="@+id/icon_ai"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/icon_ai"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    />
-
-                <TextView
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="23dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/rounded_message_ai"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="15dp"
-                    android:text="Hello. I'm Chat Ai. \n____________________________________________________________________________________________________________________________________"
-                    android:fontFamily="@font/afacad_medium"
-                    android:textSize="16sp"
-                    android:elevation="10dp"
-
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/icon_ai" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ListView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/box_input"
@@ -143,6 +113,17 @@
 
             
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/process_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateTint="@color/loading"
+
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/lv_chatbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

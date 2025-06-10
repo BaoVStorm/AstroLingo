@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.api.TestApi;
+import com.google.android.flexbox.FlexboxLayout;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -54,12 +55,12 @@ public class TestFragment extends Fragment {
         fullTestTitle.setText("TOEIC Listening & Reading FullTest | " + 15);
         miniTestTitle.setText("TOEIC Listening & Reading MiniTest | " + 13);
 
-        populateTests(view, view.findViewById(R.id.fullTestGrid), "true");
-        populateTests(view, view.findViewById(R.id.miniTestGrid), "false");
+        populateTests(view, view.findViewById(R.id.fullTestGrid), view.findViewById(R.id.fullContainer), "true");
+        populateTests(view, view.findViewById(R.id.miniTestGrid), view.findViewById(R.id.miniContainer), "false");
         return view;
     }
 
-    private void populateTests(View view, GridLayout gridlayout, String isFullTest){
+    private void populateTests(View view, GridLayout gridlayout, FlexboxLayout flexboxLayout, String isFullTest){
         gridlayout.removeAllViews();
 
         TestApi.getListTest(isFullTest,
@@ -69,7 +70,7 @@ public class TestFragment extends Fragment {
                 @Override
                 public void onResponse(JSONArray response) {
                     // Xử lý khi thành công
-                    addTest(response, gridlayout);
+                    addTest(response, gridlayout, flexboxLayout);
                 }
             },
             new Response.ErrorListener() {
@@ -82,7 +83,7 @@ public class TestFragment extends Fragment {
         );
     }
 
-    private void addTest(JSONArray jsonArray, GridLayout gridlayout) {
+    private void addTest(JSONArray jsonArray, GridLayout gridlayout, FlexboxLayout flexboxLayout) {
 //        for(int i = 0; i < displayCount; i++){
 //            View itemView = inflater.inflate(R.layout.page_test_main_item, gridlayout, false);
 //            TextView itemLabel = itemView.findViewById(R.id.itemLabel);
@@ -108,9 +109,9 @@ public class TestFragment extends Fragment {
 //
 //            gridlayout.addView(itemView);
 //        }
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-
         try {
+
+            LayoutInflater inflater = LayoutInflater.from(getContext());
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 if (jsonArray.isNull(i))
@@ -118,21 +119,28 @@ public class TestFragment extends Fragment {
 
                 JSONObject testObject = jsonArray.getJSONObject(i);
 
-                View itemView = inflater.inflate(R.layout.page_test_main_item, gridlayout, false);
+                View itemView = inflater.inflate(R.layout.page_test_main_item, flexboxLayout, false);
                 TextView itemLabel = itemView.findViewById(R.id.itemLabel);
 
                 String nameLabel = testObject.getString("title");
-
                 itemLabel.setText(nameLabel);
 
-                itemView.setOnClickListener(v ->{
+                // Set click event
+                itemView.setOnClickListener(v -> {
                     Intent intent = new Intent(getContext(), TestDetailActivity.class);
                     intent.putExtra("testObject", testObject.toString());
-
                     startActivity(intent);
                 });
 
-                gridlayout.addView(itemView);
+                // Set layout params for spacing
+                FlexboxLayout.LayoutParams params = new FlexboxLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                params.setMargins(16, 16, 16, 16); // khoảng cách giữa các ô
+
+                itemView.setLayoutParams(params);
+
+                flexboxLayout.addView(itemView);
             }
 
         }

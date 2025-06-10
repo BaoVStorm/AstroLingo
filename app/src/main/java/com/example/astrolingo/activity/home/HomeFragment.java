@@ -19,10 +19,15 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.activity.MainActivity;
+import com.example.astrolingo.activity.ai.AiFragment;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
+import com.example.astrolingo.activity.home.game_hangman.StartGame;
 import com.example.astrolingo.activity.home.game_quiz.QuizGameActivity;
+import com.example.astrolingo.activity.home.game_quiz.StartGameWordAttack;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.activity.home.history_test.historyTestMainActivity;
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
@@ -42,7 +47,7 @@ public class HomeFragment extends Fragment {
     TextView leaderboard_seeMore, headerText;
 
     LinearLayout first_place_Section, second_place_Section, third_place_Section, fourth_place_Section, fifth_place_Section, sixth_place_Section;
-    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView, icon_test_history_CardView;
+    CardView vocab_search, icon_lookuped_word_CardView, icon_learn_vocab_CardView, icon_word_of_you_CardView, icon_test_history_CardView, icon_chatbot_CardView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -89,6 +94,18 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        icon_chatbot_CardView = view.findViewById(R.id.icon_chatbot_CardView);
+        icon_chatbot_CardView.setOnClickListener(v -> {
+            if (getActivity() instanceof MainActivity) {
+                ((MainActivity) getActivity()).navigateTo(
+                        new AiFragment(),
+                        R.string.AiFragment,
+                        R.id.navAI,
+                        false
+                );
+            }
+        });
+
         // Get 5 user section
         first_place_Section = view.findViewById(R.id.first_place_Section);
         second_place_Section = view.findViewById(R.id.second_place_Section);
@@ -115,17 +132,16 @@ public class HomeFragment extends Fragment {
         // game_hangman
         CardView hangmanCard = view.findViewById(R.id.icon_hangman_CardView);
         hangmanCard.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), GameActivity.class);
+            Intent intent = new Intent(getActivity(), StartGame.class);
             startActivity(intent);
         });
 
         //icon_word_attack_CardView
         CardView quizgameCard = view.findViewById(R.id.icon_word_attack_CardView);
         quizgameCard.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), QuizGameActivity.class);
+            Intent intent = new Intent(getActivity(), StartGameWordAttack.class);
             startActivity(intent);
         });
-
 
 
         return view;
@@ -191,7 +207,14 @@ public class HomeFragment extends Fragment {
                             scoreView.setText(String.valueOf(user.getInt("score")));
 
                             if (!user.isNull("photo_url")) {
-                                iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+
+                                // iconView.setImageURI(Uri.parse(user.getString("photo_url")));
+
+                                Glide.with(view.getContext())
+                                        .load(user.getString("photo_url"))
+                                        .placeholder(R.drawable.icon_ava2) // hình mặc định nếu chưa có ảnh
+                                        .error(R.drawable.icon_ava2)         // hình nếu lỗi tải
+                                        .into(iconView);
                             }
                         }
 

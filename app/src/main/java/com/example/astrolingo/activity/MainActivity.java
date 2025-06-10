@@ -103,8 +103,13 @@ public class MainActivity extends AppCompatActivity {
 //                .commit();
 //
 //    }
+    public void navigateTo(Fragment fragment, int headerResId, int navItemId, boolean isInit) {
+        header.setText(getString(headerResId));
+        bottomNav.setSelectedItemId(navItemId); // cập nhật giao diện nav
+        loadFragment(fragment, isInit);
+    }
 
-    private void loadFragment(Fragment fragment, boolean isInit) {
+    public void loadFragment(Fragment fragment, boolean isInit) {
         String tag = fragment.getClass().getSimpleName();
         FragmentManager fragmentManager = getSupportFragmentManager();
 

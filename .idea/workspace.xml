@@ -5,6 +5,16 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/act_game_hangman_start.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/act_game_wordattack_start.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
@@ -135,7 +145,7 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_course.xml">
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ai.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
         </config>
@@ -150,12 +160,32 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/header.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/loginregister_load.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/loginregister_login.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_chatbox_ai_adapter.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_chatbox_user_adapter.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
         </config>
@@ -250,6 +280,11 @@
           <theme>@style/Theme.AstroLingo</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml">
+        <config>
+          <theme>@style/Theme.AstroLingo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/page_test_prepare_start_test.xml">
         <config>
           <theme>@style/Theme.AstroLingo</theme>
@@ -277,15 +312,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68b29106-eec6-41a3-9cf6-afe695f0530d" name="Changes" comment="pull">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/game_hangman/StartGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/game_quiz/StartGameWordAttack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/ai/messageChatboxAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/api/ChatBoxApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/domain/ai/messageChatbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_message_user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_game_hangman_start.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_game_wordattack_start.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_chatbox_ai_adapter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_chatbox_user_adapter.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/game_hangman/GameConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/game_hangman/GameConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/ai/AiFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/ai/AiFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/learn_vocab/learnVocabMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/learn_vocab/learnVocabMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/my_words/myWordMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/my_words/myWordMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/translate/translateDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/home/translate/translateDetailActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/setting/ChinhSuaHoSoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/setting/ChinhSuaHoSoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/test/TestFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/activity/test/TestFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/history_test/history_test_adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/apdapter/home/history_test/history_test_adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/api/translateApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/astrolingo/api/translateApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_test_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_history_wordtranslated_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_retry_wrong_answer_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_translate_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_translate_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_dialog_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_dialog_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_dialog_topic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_dialog_topic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_flashcard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_flashcard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_flashcard_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_word_learn_flashcard_adapter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_game_wordattack2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_game_wordattack2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ai.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ai.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_home_leaderboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_home_leaderboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_setting_chinhsuahoso.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_setting_chinhsuahoso.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/page_test_main_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-vi/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-vi/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,6 +382,44 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AstroLingo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AstroLingo" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AstroLingo" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AstroLingo" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -337,9 +457,9 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Homework/Year3/UngDungDiDong_NT118.P22/DoAn/AstroLingo/app/src/main/res/layout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Homework/Year3/UngDungDiDong_NT118.P22/DoAn/AstroLingo/app/src/main/res/drawable&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDK Location&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -347,6 +467,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Homework\Year3\UngDungDiDong_NT118.P22\DoAn\AstroLingo\app\src\main\res\drawable" />
       <recent name="D:\Homework\Year3\UngDungDiDong_NT118.P22\DoAn\AstroLingo\app\src\main\res\layout" />
       <recent name="D:\UIT\NAM 3\Astrolingo_VStorm\AstroLingo\app\src\main\res\drawable" />
     </key>
@@ -469,12 +590,12 @@
       <map>
         <entry key="com.example.astrolingo">
           <value>
-            <CheckInfo lastCheckTimestamp="1749527041944" />
+            <CheckInfo lastCheckTimestamp="1749528628129" />
           </value>
         </entry>
         <entry key="com.example.astrolingo.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1749527041945" />
+            <CheckInfo lastCheckTimestamp="1749528628102" />
           </value>
         </entry>
       </map>

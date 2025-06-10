@@ -58,7 +58,7 @@ public class history_test_adapter extends ArrayAdapter<history_test> {
         title_test.setText(word.getCertificate_name());
         time_text.setText(word.getAwarded_at());
 
-        score_text.setText(String.valueOf(word.getTotal_score()));
+        score_text.setText(String.valueOf(word.getCorrect_count()));
 
         int fullScore = word.getCorrect_count() + word.getWrong_count();
         fullScore_text.setText(String.valueOf(fullScore));

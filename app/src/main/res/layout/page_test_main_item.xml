@@ -9,22 +9,19 @@ Ngoài ra sẽ dễ thiết lập code cho sự kiện click trên các item nà
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="2dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="16dp">
+    >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/size_button_home"
-        android:layout_height="@dimen/size_button_home"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
         android:layout_marginTop="5dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="2dp"
         app:cardUseCompatPadding="true">
 
         <ImageView
-            android:layout_width="@dimen/size_icon_home"
-            android:layout_height="@dimen/size_icon_home"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_gravity="center"
             android:src="@drawable/icon_test_item" />
     </androidx.cardview.widget.CardView>

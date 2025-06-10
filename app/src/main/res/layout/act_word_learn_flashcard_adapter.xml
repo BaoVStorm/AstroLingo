@@ -19,8 +19,8 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="325dp"
-            android:layout_height="630dp"
+            android:layout_width="310dp"
+            android:layout_height="600dp"
 
             app:cardCornerRadius="30dp"
             app:cardElevation="8dp"
@@ -268,12 +268,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/font_card"
 
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="325dp"
-            android:layout_height="630dp"
+            android:layout_width="310dp"
+            android:layout_height="600dp"
 
             app:cardCornerRadius="30dp"
             app:cardElevation="8dp"
