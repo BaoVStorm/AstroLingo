@@ -142,8 +142,7 @@
                 android:layout_marginVertical="5dp"
                 android:background="@color/white"
                 android:clickable="true"
-                android:focusable="true"
-                >
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -151,18 +150,17 @@
                     android:src="@drawable/icon_setting_chinhsuahoso"
                     app:tint="@color/main_color" />
 
-                <TextView
-                    android:id="@+id/txtFullName"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/editFullName"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="@string/chinhsuahoso_name"
-                    android:textSize="16sp"/>
-
+                    android:hint="@string/chinhsuahoso_name"
+                    android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Divider between items -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -175,8 +173,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_marginVertical="5dp"
-                >
+                android:layout_marginVertical="5dp">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -186,31 +183,28 @@
 
                 <TextView
                     android:id="@+id/txtEmail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_email"
-                    android:textSize="16sp"/>
-
+                    android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Divider between items -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/main_color" />
 
             <!-- Số điện thoại -->
-            <!-- Email -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_marginVertical="5dp"
-                >
+                android:layout_marginVertical="5dp">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -218,33 +212,30 @@
                     android:src="@drawable/icon_setting_phone"
                     app:tint="@color/main_color" />
 
-                <TextView
-                    android:id="@+id/txtPhone"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/editPhone"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
-                    android:text="@string/chinhsuahoso_sdt"
-                    android:textSize="16sp"/>
-
+                    android:hint="@string/chinhsuahoso_sdt"
+                    android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Divider between items -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/main_color" />
 
             <!-- Ngày sinh -->
-            <!-- Email -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_marginVertical="5dp"
-                >
+                android:layout_marginVertical="5dp">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -252,33 +243,30 @@
                     android:src="@drawable/icon_setting_calendar"
                     app:tint="@color/main_color" />
 
-                <TextView
-                    android:id="@+id/txtDate"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/editDate"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_date"
-                    android:textSize="16sp"/>
-
+                    android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Divider between items -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/main_color" />
 
             <!-- Giới tính -->
-            <!-- Email -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_marginVertical="5dp"
-                >
+                android:layout_marginVertical="5dp">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -286,24 +274,19 @@
                     android:src="@drawable/icon_setting_gender"
                     app:tint="@color/main_color" />
 
-                <TextView
-                    android:id="@+id/txtGender"
-                    android:layout_width="wrap_content"
+                <Spinner
+                    android:id="@+id/spinnerGender"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:fontFamily="@font/afacad_medium"
-                    android:text="@string/chinhsuahoso_gender"
-                    android:textSize="16sp"/>
-
+                    android:background="@android:color/transparent" />
             </LinearLayout>
 
-            <!-- Divider between items -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/main_color" />
-
-
         </LinearLayout>
     </ScrollView>
 

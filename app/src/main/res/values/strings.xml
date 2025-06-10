@@ -124,6 +124,13 @@
     <string name="chinhsuahoso_sdt">0123456789</string>
     <string name="chinhsuahoso_date">01/01/2004</string>
     <string name="chinhsuahoso_gender">Female</string>
+    <!-- Giới tính-->
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
 
     <!--  Test  -->
     <string name="Sentence">Sen</string>

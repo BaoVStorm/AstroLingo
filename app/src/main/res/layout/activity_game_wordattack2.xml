@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background6"
+    android:background="@drawable/background7"
     tools:context=".activity.home.game_quiz.QuizGameActivity">
 
     <TextView
         android:id="@+id/textScreen"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:textColor="#FFF"
+        android:textColor="@color/main_color_purple_dark"
         android:textSize="30sp"
         android:fontFamily="@font/afacad_semibold"
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
         android:id="@+id/textQuestion"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:textColor="#FFF"
+        android:textColor="@color/main_color_purple_dark"
         android:textAlignment="center"
         android:textSize="28sp"
         android:fontFamily="@font/afacad_semibold"
@@ -44,22 +44,22 @@
 
     <Button
         android:id="@+id/textTitle"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:text="Continue"
         android:paddingBottom="10dp"
-        android:textSize="28sp"
-        android:background="@drawable/bgbtn"
-        android:layout_width="280dp"
-        android:layout_height="70dp" />
+        android:text="CONTINUE"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/main_color_purple_dark"
+        android:textColor="@color/background_word"
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/textBtn"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/main_color_purple_dark"
         android:textSize="22sp"
         android:fontFamily="@font/afacad_medium"
         android:layout_width="wrap_content"

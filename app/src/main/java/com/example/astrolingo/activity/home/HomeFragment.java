@@ -25,7 +25,9 @@ import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.MainActivity;
 import com.example.astrolingo.activity.ai.AiFragment;
 import com.example.astrolingo.activity.home.game_hangman.GameActivity;
+import com.example.astrolingo.activity.home.game_hangman.StartGame;
 import com.example.astrolingo.activity.home.game_quiz.QuizGameActivity;
+import com.example.astrolingo.activity.home.game_quiz.StartGameWordAttack;
 import com.example.astrolingo.activity.home.history.historyWordTranslatedMainActivity;
 import com.example.astrolingo.activity.home.history_test.historyTestMainActivity;
 import com.example.astrolingo.activity.home.learn_vocab.learnVocabMainActivity;
@@ -130,17 +132,16 @@ public class HomeFragment extends Fragment {
         // game_hangman
         CardView hangmanCard = view.findViewById(R.id.icon_hangman_CardView);
         hangmanCard.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), GameActivity.class);
+            Intent intent = new Intent(getActivity(), StartGame.class);
             startActivity(intent);
         });
 
         //icon_word_attack_CardView
         CardView quizgameCard = view.findViewById(R.id.icon_word_attack_CardView);
         quizgameCard.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), QuizGameActivity.class);
+            Intent intent = new Intent(getActivity(), StartGameWordAttack.class);
             startActivity(intent);
         });
-
 
 
         return view;
