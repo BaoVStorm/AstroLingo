@@ -7,13 +7,16 @@
         <domain includeSubdomains="true">13.215.189.134</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">18.140.5.206</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">astrolingo.onrender.com</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">lingva.ml</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">7533-2402-800-6379-25d-467-fa5d-a72e-18b9.ngrok-free.app</domain>
+        <domain includeSubdomains="true">9fa0-125-235-187-4.ngrok-free.app</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">translate.googleapis.com</domain>

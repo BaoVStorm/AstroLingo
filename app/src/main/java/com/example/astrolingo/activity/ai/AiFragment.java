@@ -1,5 +1,6 @@
 package com.example.astrolingo.activity.ai;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.astrolingo.R;
+import com.example.astrolingo.Service.UtilService;
 import com.example.astrolingo.apdapter.ai.messageChatboxAdapter;
 import com.example.astrolingo.api.ChatBoxApi;
 import com.example.astrolingo.domain.ai.messageChatbox;
@@ -74,6 +77,7 @@ public class AiFragment extends Fragment {
     private ArrayList<messageChatbox> list_message = new ArrayList<>();
     private ProgressBar process_bar;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -117,6 +121,33 @@ public class AiFragment extends Fragment {
 
             editText.setText("");
         });
+
+        // Tắt keyboard khi keyboard hiện lên khi nhập tin nhắn (sự kiện giao diện)
+//        view.setOnTouchListener((v, event) -> {
+//            UtilService UtilService = new UtilService();
+//
+//            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//                View currentFocus = getActivity().getCurrentFocus();
+//                if (currentFocus instanceof EditText) {
+//                    int[] screenCoords = new int[2];
+//                    currentFocus.getLocationOnScreen(screenCoords);
+//                    float x = event.getRawX();
+//                    float y = event.getRawY();
+//
+//                    float left = screenCoords[0];
+//                    float top = screenCoords[1];
+//                    float right = left + currentFocus.getWidth();
+//                    float bottom = top + currentFocus.getHeight();
+//
+//                    if (x < left || x > right || y < top || y > bottom) {
+//                        // Ẩn bàn phím và xóa focus
+//                        UtilService.hideKeyboard(currentFocus, getActivity());
+//                        currentFocus.clearFocus();
+//                    }
+//                }
+//            }
+//            return false; // Cho phép các sự kiện tiếp tục truyền đến các View con
+//        });
 
         return view;
     }

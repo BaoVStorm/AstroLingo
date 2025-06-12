@@ -3,6 +3,9 @@ package com.example.astrolingo.activity.setting;
 import android.net.Uri;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,15 +21,23 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
+import com.example.astrolingo.Service.SharedPreferenceClass;
+import com.example.astrolingo.Service.UtilService;
+import com.example.astrolingo.activity.home.translate.translateDetailActivity;
+import com.example.astrolingo.api.UserApi;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
 
 public class ChinhSuaHoSoActivity extends AppCompatActivity {
+    SharedPreferenceClass sharedPreClass;
     private JSONObject userObject;
     private ImageView avatarImageView, backIcon;
     TextView usernameTextView, coinTextView, txtEmail;
@@ -40,6 +51,9 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_setting_chinhsuahoso);
+
+        // Khởi tạo SharedPreferenceClass
+        sharedPreClass = new SharedPreferenceClass(this);
 
         // get view
         avatarImageView = findViewById(R.id.imgAvatar);
@@ -149,27 +163,72 @@ public class ChinhSuaHoSoActivity extends AppCompatActivity {
         String fullName = editFullName.getText().toString().trim();
         String phone = editPhone.getText().toString().trim();
         String dateOfBirth = editDate.getText().toString().trim();
-        String gender = spinnerGender.getSelectedItem().toString();
 
-        if (fullName.isEmpty() || phone.isEmpty() || dateOfBirth.isEmpty()) {
+        String[] genderArrayEn = getResources().getStringArray(R.array.fit_gender_array);  // Lấy mảng gender bằng tiếng Anh
+
+        String gender = genderArrayEn[spinnerGender.getSelectedItemPosition()];;
+
+        if (fullName.isEmpty() || phone.isEmpty()) {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
 
         try {
+            userObject.put("user_id", sharedPreClass.getValue_string("user_id"));
             userObject.put("full_name", fullName);
             userObject.put("phone_number", phone);
             userObject.put("date_of_birth", dateOfBirth);
+
             userObject.put("gender", gender);
 
+            Log.d("userObject", userObject.toString());
+
             // TODO: Nếu có API backend thì gọi tại đây để cập nhật
+            UserApi.updateUserInfo(
+                    userObject,
+                    this,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Toast.makeText(ChinhSuaHoSoActivity.this, "Chỉnh sửa thành công", Toast.LENGTH_SHORT).show();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // Xử lý khi có lỗi
+                            Log.e("API_ERROR", error.toString());
+                            Toast.makeText(ChinhSuaHoSoActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            );
 
-
-            Toast.makeText(this, "Chỉnh sửa thành công", Toast.LENGTH_SHORT).show();
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "Chỉnh sửa thất bại", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        UtilService UtilService = new UtilService();
+
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View view = getCurrentFocus();
+            if (view instanceof EditText) {
+                int[] screenCoords = new int[2];
+                view.getLocationOnScreen(screenCoords);
+                float x = ev.getRawX() + view.getLeft() - screenCoords[0];
+                float y = ev.getRawY() + view.getTop() - screenCoords[1];
+
+                if (x < view.getLeft() || x > view.getRight() ||
+                        y < view.getTop() || y > view.getBottom()) {
+                    UtilService.hideKeyboard(view, this);
+                    view.clearFocus();
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
 }

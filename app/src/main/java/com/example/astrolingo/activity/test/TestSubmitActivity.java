@@ -25,6 +25,7 @@ import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.apdapter.test.FilterQuestionAdapter;
 import com.example.astrolingo.apdapter.test.ResultQuestionAdapter;
 import com.example.astrolingo.api.CertificateApi;
+import com.example.astrolingo.api.ScoreAPI;
 import com.example.astrolingo.api.UserApi;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -230,6 +231,31 @@ public class TestSubmitActivity extends AppCompatActivity {
         );
     }
 
+    private void updateUserScore() {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("user_id", user_id);
+        params.put("test_id", String.valueOf(test_id));
+        params.put("max_score", String.valueOf(total_score_test));
+
+        ScoreAPI.updateScore(
+                params,
+                this,
+                new Response.Listener<JSONObject>() {
+                    public void onResponse(JSONObject response) {
+                        // Xử lý khi thành công
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Xử lý khi có lỗi
+                        Log.e("API_ERROR", error.toString());
+                        Toast.makeText(TestSubmitActivity.this, String.valueOf(test_id) + " - " + user_id, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+    }
+
     private void getUserInfo() {
         UserApi.getUserSchema(
             this,
@@ -245,6 +271,8 @@ public class TestSubmitActivity extends AppCompatActivity {
                         updateViewUser();
                         saveTestScore();
                         addUserAnswer();
+
+                        updateUserScore();
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }

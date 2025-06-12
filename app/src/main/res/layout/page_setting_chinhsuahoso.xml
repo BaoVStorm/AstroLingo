@@ -87,7 +87,7 @@
                     android:id="@+id/txtUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Username"
+                    android:text=""
                     android:textColor="@color/purple"
                     android:fontFamily="@font/afacad_bold"
                     android:textSize="22sp" />
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_bold"
-                    android:text="0"
+                    android:text=""
                     android:textColor="@color/orange"
                     android:textStyle="bold"
                     android:layout_marginStart="8dp"
@@ -158,6 +158,8 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:hint="@string/chinhsuahoso_name"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -189,6 +191,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_email"
+                    android:textColor="@color/dark_grey"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -220,6 +223,8 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:hint="@string/chinhsuahoso_sdt"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -230,6 +235,7 @@
 
             <!-- Ngày sinh -->
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -251,10 +257,13 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/afacad_medium"
                     android:text="@string/chinhsuahoso_date"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
             </LinearLayout>
 
             <View
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/main_color" />
@@ -280,7 +289,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:background="@android:color/transparent" />
+                     />
             </LinearLayout>
 
             <View

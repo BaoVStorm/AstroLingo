@@ -75,13 +75,11 @@ public class TestDetailMainActivity extends AppCompatActivity  {
 
         initDialog();
 
-        // get test object
-        testString = getIntent().getStringExtra("testObject");
-
         // add temp value
         list_page = new ArrayList<>();
-//        list_page.add(new testDetail_page("start_part"));
-//        list_page.add(new testDetail_page("part1"));
+
+        // get test object
+        testString = getIntent().getStringExtra("testObject");
 
         try {
             testObject = new JSONObject(testString);
@@ -100,10 +98,11 @@ public class TestDetailMainActivity extends AppCompatActivity  {
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(testDetailAdapter != null)
-                    testDetailAdapter.release();
-
-                exitActivity();
+//                if(testDetailAdapter != null)
+//                    testDetailAdapter.release();
+//
+//                exitActivity();
+                dialog_pause.show();
             }
         });
 

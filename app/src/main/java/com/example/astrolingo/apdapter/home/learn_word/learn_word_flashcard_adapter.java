@@ -45,6 +45,12 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
     private ViewPager2 viewPager;
     private String user_id, token;
 
+    public learn_word_flashcard_adapter(Context context, List<vocabulary> vocabularyList, ViewPager2 viewPager) {
+        this.context = context;
+        this.vocabularyList = vocabularyList;
+        this.viewPager = viewPager;
+    }
+
     public void setUserId(String user_id, String token) {
         this.user_id = user_id;
         this.token = token;
@@ -90,12 +96,6 @@ public class learn_word_flashcard_adapter extends RecyclerView.Adapter<RecyclerV
             front_icon_mark = itemView.findViewById(R.id.front_icon_mark);
             second_icon_mark = itemView.findViewById(R.id.second_icon_mark);
         }
-    }
-
-    public learn_word_flashcard_adapter(Context context, List<vocabulary> vocabularyList, ViewPager2 viewPager) {
-        this.context = context;
-        this.vocabularyList = vocabularyList;
-        this.viewPager = viewPager;
     }
 
     @NonNull

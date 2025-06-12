@@ -115,11 +115,12 @@ public class learnVocabMainActivity extends AppCompatActivity {
             finish();
         });
 
+        getListWords();
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onRestart() {
+        super.onRestart();
         getListWords();
     }
 

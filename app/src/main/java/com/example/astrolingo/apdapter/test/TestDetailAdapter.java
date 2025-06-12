@@ -115,28 +115,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
-//    public static class ReadingViewHolder extends RecyclerView.ViewHolder {
-//        ListView lv_question;
-//        ImageView audio_reply5, audio_pause, audio_forward5;
-//        TextView audio_starttime, audio_endtime;
-//        SeekBar audio_seekbar;
-//
-//        public ReadingViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//
-//            lv_question = itemView.findViewById(R.id.lv_question);
-//            audio_reply5 = itemView.findViewById(R.id.audio_reply5);
-//            audio_pause = itemView.findViewById(R.id.audio_pause);
-//            audio_forward5 = itemView.findViewById(R.id.audio_forward5);
-//
-//            audio_starttime = itemView.findViewById(R.id.audio_starttime);
-//            audio_endtime = itemView.findViewById(R.id.audio_endtime);
-//
-//            audio_seekbar = itemView.findViewById(R.id.audio_seekbar);
-//        }
-//    }
-
-    // ---------------------------------- ----------------------------------
+    // ---------------------------------------------------------------------
 
     @NonNull
     @Override
@@ -148,18 +127,12 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             view = inflater.inflate(R.layout.page_test_detail_startpart, parent, false);
 
             return new StartPartViewHolder(view);
-
-        } else if (viewType == 1) {
-            view = inflater.inflate(R.layout.page_test_detail_listening, parent, false);
-
-            return new ListeningViewHolder(view);
-
-        } else {
+        }
+        else {
             view = inflater.inflate(R.layout.page_test_detail_listening, parent, false);
 
             return new ListeningViewHolder(view);
         }
-
     }
 
     @Override
@@ -168,7 +141,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return item.getType();
     }
 
-
     // Audio
     public Handler handler = new Handler();
     public Runnable updateSeekBar= null;
@@ -176,7 +148,6 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     // Lưu số câu hỏi trong 1 group_question và số đáp án, câu trả lời trong 1 câu hỏi
     HashMap<String, ArrayList<Integer>> map_groupQuestion = new HashMap<>();     // key: group_question_id, value: danh sách các mã câu hỏi
     // HashMap<Integer, nav_answer> map_answer = new HashMap<>();     // key: mã câu hỏi, value: nav_answer(count_ans, currentChoose)
-
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -235,6 +206,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         viewHolder.audio_seekbar.setProgress(0);
                         viewHolder.audio_starttime.setText(NumberManager.numberToTime_minute(0));
 
+                        // media Được tair thành công
                         curMediaPlayer.setOnPreparedListener(mp -> {
                             viewHolder.audio_seekbar.setVisibility(View.VISIBLE);
                             viewHolder.audio_endtime.setText(NumberManager.numberToTime_minute(mp.getDuration()));
@@ -446,21 +418,16 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                             list_question.add(question_id);
 
                             // add to HashMap map_answer
-//                            if(!AnswerTestMananger.map_answer.containsKey(question_id)) {
                             if(AnswerTestMananger.list_answer.size() < question_id) {
                                 nav_answer navAnswer = new nav_answer(0, count_ans);
                                 navAnswer.setCorrectAnswer(correctNumber);
                                 navAnswer.setInfo(part_id, question_id);
                                 navAnswer.setGroup_question_id(object.getString("group_question_id"));
                                 navAnswer.setQuestion_id_text(object.getString("question_id"));
-//                                navAnswer.setPosition(position);
 
-//                                AnswerTestMananger.map_answer.put(question_id, navAnswer);
                                 AnswerTestMananger.list_answer.add(navAnswer);
                             }
-//                            else {
-//                                AnswerTestMananger.list_answer.get(question_id - 1).setPosition(position);
-//                            }
+
                         }
 
                         String group_question_id = item.getGroupQuestionId();
@@ -468,7 +435,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         if(!map_groupQuestion.containsKey(group_question_id))
                             map_groupQuestion.put(group_question_id, list_question);
 
-                        editNavAnswer(group_question_id, viewHolder);
+                        editNavAnswer(group_question_id, viewHolder, position);
 
                         QuestionAdapter adapter = new QuestionAdapter(viewHolder.lv_question.getContext(), list_QuestionTest);
                         viewHolder.lv_question.setAdapter(adapter);
@@ -490,7 +457,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     }
 
-    private void editNavAnswer(String group_question_id, ListeningViewHolder viewHolder) {
+    private void editNavAnswer(String group_question_id, ListeningViewHolder viewHolder, int position) {
         if(!map_groupQuestion.containsKey(group_question_id))
             return;
 
@@ -527,7 +494,7 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         view.findViewById(R.id.navQuestion_highlight).setVisibility(View.GONE);
                     }
 
-                    chooseQuestion(list_question.get(finalI), viewHolder);
+                    chooseQuestion(list_question.get(finalI), viewHolder, position);
                     v.findViewById(R.id.navQuestion_highlight).setVisibility(View.VISIBLE);
                 });
             }
@@ -542,11 +509,11 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
 
         // choose question1
-        chooseQuestion(list_question.get(0), viewHolder);
+        chooseQuestion(list_question.get(0), viewHolder, position);
         viewHolder.navQuestion1.findViewById(R.id.navQuestion_highlight).setVisibility(View.VISIBLE);
     }
 
-    private void chooseQuestion(int question_id, ListeningViewHolder viewHolder) {
+    private void chooseQuestion(int question_id, ListeningViewHolder viewHolder, int position) {
 //        if(!AnswerTestMananger.map_answer.containsKey(question_id))
         if(AnswerTestMananger.list_answer.size()< question_id)
                 return;
@@ -575,6 +542,11 @@ public class TestDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 }
 
                 highlightAnswer(v, viewHolder);
+
+//                if (viewPager != null && position + 1 < itemList.size()) {
+//                    viewPager.setCurrentItem(position + 1, true); // true = animate
+//                }
+
             });
         }
 

@@ -1,5 +1,7 @@
 package com.example.astrolingo.activity.setting;
 
+import static androidx.core.app.ActivityCompat.recreate;
+
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -23,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.example.astrolingo.R;
 
 // API library
+import com.example.astrolingo.Service.LocaleHelper;
 import com.example.astrolingo.Service.SharedPreferenceClass;
 import com.example.astrolingo.activity.LoginActivity;
 import com.example.astrolingo.activity.MainActivity;
@@ -33,6 +36,8 @@ import com.android.volley.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 public class SettingFragment extends Fragment {
     SharedPreferenceClass sharedPreClass;
     private JSONObject userObject;
@@ -41,6 +46,7 @@ public class SettingFragment extends Fragment {
     ImageView avatarImageView;
     TextView usernameTextView, coinTextView;
     TextView headerText;
+    TextView languageTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,7 @@ public class SettingFragment extends Fragment {
         avatarImageView = view.findViewById(R.id.avatarImageView);
         usernameTextView = view.findViewById(R.id.usernameTextView);
         coinTextView = view.findViewById(R.id.coinTextView);
+        languageTextView = view.findViewById(R.id.languageTextView);
 
         // set up underline
         logout_field.setPaintFlags(logout_field.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -97,6 +104,14 @@ public class SettingFragment extends Fragment {
 
         // insert UserAPI
         insertUserAPI(view);
+
+        languageTextView.setOnClickListener(v -> {
+            LocaleHelper.toggleLanguage(this.getContext());
+
+            if (getActivity() != null) {
+                getActivity().recreate();
+            }
+        });
 
         return view;
     }

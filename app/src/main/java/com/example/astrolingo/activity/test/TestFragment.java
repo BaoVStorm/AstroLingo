@@ -52,8 +52,8 @@ public class TestFragment extends Fragment {
         // init
         TextView fullTestTitle = view.findViewById(R.id.fullTestTitle);
         TextView miniTestTitle = view.findViewById(R.id.miniTestTitle);
-        fullTestTitle.setText("TOEIC Listening & Reading FullTest | " + 15);
-        miniTestTitle.setText("TOEIC Listening & Reading MiniTest | " + 13);
+        fullTestTitle.setText("TOEIC Listening & Reading FullTest | 8");
+        miniTestTitle.setText("TOEIC Listening & Reading MiniTest | 8");
 
         populateTests(view, view.findViewById(R.id.fullTestGrid), view.findViewById(R.id.fullContainer), "true");
         populateTests(view, view.findViewById(R.id.miniTestGrid), view.findViewById(R.id.miniContainer), "false");

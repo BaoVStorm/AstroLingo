@@ -39,7 +39,7 @@
                 android:id="@+id/usernameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="USERNAME"
+                android:text=""
                 android:fontFamily="@font/afacad_bold"
                 android:textColor="#9A2276"
                 android:textStyle="bold"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/afacad_bold"
-                    android:text="200"
+                    android:text=""
                     android:textColor="#FF9800"
                     android:textSize="16sp" />
 
