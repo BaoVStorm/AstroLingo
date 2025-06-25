@@ -1,0 +1,55 @@
+[versions]
+agp = "8.8.1"
+circleimageview = "3.0.0"
+
+#credentials = "1.5.0"
+#googleid = "1.1.1"
+flexbox = "3.0.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+materialVersion = "1.11.0"
+picasso = "2.5.2"
+
+pinview = "1.4.4"
+playServicesAuth = "21.3.0"
+viewpager2 = "1.1.0"
+volley = "1.2.1"
+core = "1.16.0"
+annotations = "15.0"
+
+[libraries]
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+
+#credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+#credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+#googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
+flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.16.0"}
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version = "4.16.0"}
+glide-okhttp3 = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version = "4.16.0"}
+material-v1110 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+
+pinview = { module = "io.github.chaosleung:pinview", version.ref = "pinview" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+volley = { module = "com.android.volley:volley", version.ref = "volley" }
+core = { group = "androidx.core", name = "core", version.ref = "core" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TestPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.test.TestFragment"
+    android:background="@color/green">
+
+    <!-- Background cố định -->
+    <ImageView
+        android:id="@+id/fixed_background_testpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background4" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_test"
+            android:orientation="vertical">
+
+    <!--        FullTest session-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/fullTestTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOEIC Listening Reading FullTest | 0"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/afacad_bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fullTestSeeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seemore"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:textColor="#560088"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/fullContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                app:flexWrap="wrap"
+                app:flexDirection="row"
+                app:justifyContent="center"
+                />
+
+            <GridLayout
+                android:id="@+id/fullTestGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:rowCount="3"
+                android:paddingHorizontal="16dp"
+                android:useDefaultMargins="true"/>
+
+    <!--        MiniTest session-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/miniTestTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOEIC Listening Reading MiniTest | 0"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/afacad_bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/miniTestSeeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seemore"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/afacad_regular"
+                    android:textColor="#560088"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/miniContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                app:flexWrap="wrap"
+                app:flexDirection="row"
+                app:justifyContent="center"
+                />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/miniTestGrid"
+                android:columnCount="4"
+                android:alignmentMode="alignMargins"
+                android:rowCount="3"
+                android:paddingHorizontal="16dp"
+                android:useDefaultMargins="true"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:srcCompat="@drawable/background4"
+
+        tools:layout_editor_absoluteY="28dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/main_color_purple"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/afacad_bold"
+            android:gravity="center"
+
+            android:text="@string/registerPage"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/back_press_color"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/afacad_regular"
+        android:text="@string/copyright"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+
+        android:layout_marginBottom="15dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/box_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        android:layout_marginBottom="37dp"
+        app:srcCompat="@drawable/icon_happy"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/main_color_purple"
+
+        android:fontFamily="@font/afacad_bold"
+        android:textSize="@dimen/logo_text_size"
+
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        app:layout_constraintTop_toBottomOf="@+id/box_username"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/icon_name"
+            android:layout_width="31dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/input_mail"
+            app:layout_constraintTop_toTopOf="@+id/input_mail"
+
+            app:srcCompat="@drawable/icon_assets_email"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/input_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/afacad_medium"
+
+            android:hint="@string/registerWithEmail"
+            android:inputType="textPersonName"
+
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@+id/icon_name"
+
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+
+            android:layout_marginTop="0dp"
+
+            android:background="@color/main_color_purple"
+
+            app:layout_constraintLeft_toLeftOf="@+id/icon_name"
+            app:layout_constraintRight_toRightOf="@+id/input_mail"
+            app:layout_constraintTop_toBottomOf="@+id/input_mail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.33"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/icon_username"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/input_username"
+            app:layout_constraintTop_toTopOf="@+id/input_username"
+
+            app:srcCompat="@drawable/icon_assets_user"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/input_username"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/afacad_medium"
+
+            android:hint="@string/RegisterWithUserName"
+            android:inputType="text"
+
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@+id/icon_username"
+
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+
+            android:layout_marginTop="0dp"
+
+            android:background="@color/main_color_purple"
+
+            app:layout_constraintLeft_toLeftOf="@+id/icon_username"
+            app:layout_constraintRight_toRightOf="@+id/input_username"
+            app:layout_constraintTop_toBottomOf="@+id/input_username" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/box_email"
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        >
+
+        <ImageView
+            android:id="@+id/icon_telephone"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+
+            android:layout_marginBottom="2dp"
+
+            app:srcCompat="@drawable/icon_tel"
+
+            app:layout_constraintTop_toTopOf="@+id/input_telephone"
+            app:layout_constraintBottom_toBottomOf="@+id/input_telephone"
+
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/input_telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/afacad_medium"
+
+            android:inputType="phone"
+            android:hint="@string/registerWithTel"
+
+            android:textSize="16sp"
+
+            app:layout_constraintLeft_toRightOf="@+id/icon_telephone"
+
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+
+            android:layout_marginTop="0dp"
+
+            android:background="@color/main_color_purple"
+            app:layout_constraintTop_toBottomOf="@+id/input_telephone"
+            app:layout_constraintLeft_toLeftOf="@+id/icon_telephone"
+            app:layout_constraintRight_toRightOf="@+id/input_telephone"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/box_telephone"
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        >
+
+        <ImageView
+            android:id="@+id/icon_password"
+            android:layout_width="31dp"
+            android:layout_height="28dp"
+
+            android:layout_marginBottom="2dp"
+
+            app:srcCompat="@drawable/icon_assets_privatelock"
+
+            app:layout_constraintTop_toTopOf="@+id/input_password"
+            app:layout_constraintBottom_toBottomOf="@+id/input_password"
+
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/afacad_medium"
+
+            android:inputType="textPassword"
+            android:hint="@string/loginWithPassword"
+
+            android:textSize="16sp"
+
+            app:layout_constraintLeft_toRightOf="@+id/icon_password"
+
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+
+            android:layout_marginTop="0dp"
+
+            android:background="@color/main_color_purple"
+            app:layout_constraintTop_toBottomOf="@+id/input_password"
+            app:layout_constraintLeft_toLeftOf="@+id/icon_password"
+            app:layout_constraintRight_toRightOf="@+id/input_password"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_passwordAu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/box_password"
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        >
+
+        <ImageView
+            android:id="@+id/icon_passwordAu"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+
+            android:layout_marginBottom="2dp"
+
+            app:srcCompat="@drawable/icon_assets_repassword"
+
+            app:layout_constraintTop_toTopOf="@+id/input_passwordAu"
+            app:layout_constraintBottom_toBottomOf="@+id/input_passwordAu"
+
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/input_passwordAu"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:ems="10"
+            android:fontFamily="@font/afacad_medium"
+
+            android:inputType="textPassword"
+            android:hint="@string/registerWithPassword"
+
+            android:textSize="16sp"
+
+            app:layout_constraintLeft_toRightOf="@+id/icon_passwordAu"
+
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+
+            android:layout_marginTop="0dp"
+
+            android:background="@color/main_color_purple"
+            app:layout_constraintTop_toBottomOf="@+id/input_passwordAu"
+            app:layout_constraintLeft_toLeftOf="@+id/icon_passwordAu"
+            app:layout_constraintRight_toRightOf="@+id/input_passwordAu"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox_rule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/registerLogin_rule"
+
+        android:fontFamily="@font/afacad_medium"
+        android:textSize="@dimen/policy_text_size"
+
+        android:gravity="start"
+
+        android:layout_marginTop="@dimen/gap_login_register_page"
+        app:layout_constraintTop_toBottomOf="@+id/box_passwordAu"
+        app:layout_constraintLeft_toLeftOf="@+id/box_passwordAu"
+        app:layout_constraintRight_toRightOf="@+id/box_passwordAu"
+        />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="@dimen/button_input_width"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/afacad_bold"
+        android:text="@string/register"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:backgroundTint="@color/loginRegister_button_color"
+        android:paddingHorizontal="40dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_rule" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/field_loginRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/have_account"
+
+            android:fontFamily="@font/afacad_medium"
+            android:textSize="@dimen/font_size_label"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/login_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_marginStart="5dp"
+            app:layout_constraintLeft_toRightOf="@+id/textView5"
+
+            android:fontFamily="@font/afacad_bold"
+            android:textSize="@dimen/font_size_label"
+            android:textColor="@color/text_color_selector"
+            tools:ignore="MissingConstraints"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/error_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_email_empty"
+        android:visibility="invisible"
+
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_email"
+        />
+
+    <TextView
+        android:id="@+id/error_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_username_specialsympol"
+        android:visibility="invisible"
+
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_username"
+        />
+
+    <TextView
+        android:id="@+id/error_telephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_telephone_invalid"
+        android:visibility="invisible"
+
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_telephone"
+        />
+
+    <TextView
+        android:id="@+id/error_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_password_invalid"
+        android:visibility="invisible"
+
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_password"
+        />
+
+    <TextView
+        android:id="@+id/error_passwordAu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_repassword_invalid"
+        android:visibility="invisible"
+
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_passwordAu"
+        />
+
+    <TextView
+        android:id="@+id/error_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/afacad_medium"
+        android:text="@string/error_checkboxes"
+        android:visibility="invisible"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox_rule"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/loading"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/button_register"
+        app:layout_constraintBottom_toBottomOf="@+id/button_register"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_register"
+
+        tools:ignore="MissingConstraints"
+        >
+
+    </ProgressBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

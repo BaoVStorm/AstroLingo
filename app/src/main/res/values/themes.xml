@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.AstroLingo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/primary_color</item>-->
+<!--        <item name="colorSecondary">@color/secondary_color</item>-->
+        <!-- ... thêm tùy chỉnh nếu cần -->
+    </style>
+</resources>

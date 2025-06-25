@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TestPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.test.TestFragment"
+    android:background="@color/green">
+
+    <!-- Background cố định -->
+    <ImageView
+        android:id="@+id/fixed_background_page_test_prepare_start_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/back_press_color_purple"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/testTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test 10 ETS 2024"
+            android:layout_marginTop="10dp"
+            android:textSize="32sp"
+            android:textColor="#8553D5"
+            android:fontFamily="@font/afacad_bold" />
+
+        <TextView
+            android:id="@+id/testTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời gian: 120 phút"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacad_medium"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/testQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Câu hỏi: 200"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/afacad_medium"
+
+            android:layout_marginBottom="34dp" />
+
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:src="@drawable/icon_work" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_forgotPassword"
+            android:layout_width="@dimen/button_input_width"
+            android:layout_height="@dimen/button_input_height"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_button"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/box_username"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/afacad_medium"
+
+                android:text="Bắt đầu nào"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</FrameLayout>

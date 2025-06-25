@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navHome">Trang Chủ</string>
+    <string name="navTest">Thi</string>
+    <string name="navCourse">Lộ Trình</string>
+    <string name="navAI">AI</string>
+    <string name="navSetting">Cá Nhân</string>
+
+    <string name="app_name">AstroLingo</string>
+
+    <string name="homeFragment">Trang Chủ</string>
+
+    <string name="testFragment">Thi</string>
+
+    <string name="courseFragment">Lộ Trình</string>
+
+    <string name="AiFragment">AI</string>
+
+    <string name="settingFragment">Điều Chỉnh Cá Nhân</string>
+
+    <string name="copyright">Bản quyền 2025 © AstroLingo</string>
+
+    <!-- Login Page String  -->
+    <string name="next">Tiếp tục</string>
+    <string name="got_it">Hoàn thành</string>
+    <string name="verifyEmail">Xác thực email</string>
+    <string name="verifyEmailCode">Hãy nhập 4 số mã đã được gửi đến email của bạn!</string>
+    <string name="createNewPass">Tạo mật khẩu mới</string>
+    <string name="enterNewPass">Nhập mật khẩu mới của bạn!</string>
+
+    <string name="loginPage">Đăng nhập</string>
+    <string name="registerPage">Đăng ký</string>
+    <string name="forgotPasswordPage">Quên mật khẩu</string>
+    <string name="loginWithUserName">Nhập tên tài khoản hoặc email <font color="#EB4B4B">*</font> </string>
+    <string name="RegisterWithUserName">Nhập tên tài khoản của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="loginWithPassword">Nhập mật khẩu của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+    <string name="registerWithName">Nhập tên của bạn</string>
+    <string name="registerWithEmail">Nhập email của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="registerWithTel">Nhập số điện thoại của bạn</string>
+    <string name="registerWithPassword">Xác nhận mật khẩu của bạn <font color="#EB4B4B">*</font> </string>
+    <string name="forgotPassword">Quên mật khẩu?</string>
+
+    <string name="loginRegister_rule">
+        Bằng việc đăng nhập vào AstroLingo, bạn đã đồng ý với <font color="#5616BA">Điều khoản và chính sách bảo mật</font> bảo mật của chúng tôi <font color="#C70707">*</font>
+    </string>
+
+    <string name="registerLogin_rule">
+        Bằng việc đăng ký vào AstroLingo, bạn đã đồng ý với <font color="#5616BA">Điều khoản và chính sách bảo mật</font> bảo mật của chúng tôi <font color="#C70707">*</font>
+    </string>
+
+    <string name="have_account">Bạn đã có tài khoản?</string>
+    <string name="dont_have_account">Bạn chưa có tài khoản?</string>
+
+    <string name="error_name_empty">Tên của bạn không được để trống!</string>
+    <string name="error_name_specialsympol">Tên của bạn không được có ký tự đặc biệt!</string>
+
+    <string name="error_username_empty">Tên tài khoản của bạn không được để trống!</string>
+    <string name="error_username_specialsympol">Tên tài khoản không được có ký tự đặc biệt hay khoảng trắng!</string>
+
+    <string name="error_telephone_empty">Số điện thoại không được để trống!</string>
+    <string name="error_telephone_invalid">Số điện thoại nên bắt đầu bằng 0 và có 10–11 chữ số!</string>
+
+    <string name="error_email_empty">Email của bạn không được để trống!</string>
+    <string name="error_email_invalid">Email của bạn không hợp lệ!</string>
+    <string name="error_email_exist">Email của bạn đã tồn tại!</string>
+
+    <string name="error_password_empty">Mật khẩu của bạn không được để trống!</string>
+    <string name="error_password_invalid">Mật khẩu của bạn phải có ít nhất 8 ký tự!</string>
+
+    <string name="error_repassword_empty">Xác nhận mật khẩu của bạn không được để trống!</string>
+    <string name="error_repassword_invalid">Xác nhận mật khẩu không khớp với mật khẩu!</string>
+
+    <string name="error_login_empty">Tên tài khoản hoặc mật khẩu không được để trống!</string>
+    <string name="error_login_invalid">Tên tài khoản hoặc mật khẩu không hợp lệ!</string>
+
+    <string name="error_digited_invalid">Hãy nhập 4 số mã đã được gửi đến email của bạn!</string>
+
+    <string name="error_checkboxes">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
+
+    <string name="tickRule">Bạn phải đồng ý với điều khoản và chính sách bảo mật!</string>
+
+    <string name="verification_success">Xác thực thành công</string>
+    <string name="verification_success_detail">Địa chỉ email của bạn đã được xác thực thành công.</string>
+
+    <string name="resetpassword_success">Mật khẩu của bạn đã được thiết lập lại thành công</string>
+
+    <string name="dont_get_email">Bạn chưa nhận được email?</string>
+    <string name="resend">Gửi lại</string>
+
+    <!-- Setting Page String  -->
+    <string name="chinhsuahoso">Chỉnh sửa hồ sơ</string>
+    <string name="ngonngusudung">Ngôn ngữ sử dụng</string>
+    <string name="giaodientoi">Giao diện tối</string>
+    <string name="hienthi">Hiển thị</string>
+    <string name="nhacnhohoctap">Nhắc nhở học tập</string>
+    <string name="phanhoihotro">Phản hồi và hỗ trợ</string>
+    <string name="danhgia5sao">Đánh giá 5 sao</string>
+    <string name="dieukhoansudung">Điều khoản sử dụng</string>
+    <string name="select_ngonngusudung">Tiếng Việt</string>
+    <string name="setting_dangxuat">Đăng xuất</string>
+
+    <!-- Setting Page "Chỉnh sửa hồ sơ" String  -->
+    <string name="chinhsuahoso_name">Anh Đào</string>
+    <string name="chinhsuahoso_email">anhdao@gmai.com</string>
+    <string name="chinhsuahoso_sdt">0123456789</string>
+    <string name="chinhsuahoso_date">01/01/2004</string>
+    <string name="chinhsuahoso_gender">Nữ</string>
+    <!-- Giới tính-->
+    <string-array name="gender_array">
+        <item>Nam</item>
+        <item>Nữ</item>
+        <item>Khác</item>
+    </string-array>
+
+    <!--  Test  -->
+    <string name="Sentence">Câu</string>
+    <string name="Submit">Nộp bài</string>
+    <string name="part">Phần</string>
+    <string name="howToDoTest">Hướng đẫn làm bài thi</string>
+    <string name="listening">Nghe hiểu</string>
+    <string name="listening_description">Lắng nghe đoạn ghi âm và nhìn vào bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="reading">Đọc hiểu</string>
+    <string name="reading_description">Đọc các câu hỏi và bức ảnh (nếu có) để chọn câu trả lời phù hợp.</string>
+    <string name="wantContinue">Bạn có muốn tiếp tục?</string>
+    <string name="Continue">Tiếp tục</string>
+    <string name="Exit">Thoát</string>
+    <string name="wantSubmit">Bạn có muốn nộp bài?</string>
+    <string name="submit">Nộp bài</string>
+    <string name="no">Không</string>
+
+
+    <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
+    <string name="seemore">Xem thêm</string>
+    <string name="miniTestTitle">TOEIC Listening Reading MiniTest | </string>
+    <string name="fullTestTitle">TOEIC Listening Reading FullTest | </string>
+
+    <!-- Giao diện Chuẩn bị làm bài test có nút Bắt đầu nào  -->
+    <string name="startnow">Bắt đầu nào</string>
+    <string name="number_of_questions">Số câu hỏi: 200</string>
+    <string name="test_time">Thời gian: 120 phút</string>
+    <string name="testTitle">Test 10 ETS 2024</string>
+
+    <!-- Giao diện đầu tiên của trang Làm lại câu sai khi nhấn nút "Câu làm sai" ở HomePage-->
+    <string name="retry_wrong_answer">Làm lại câu sai</string>
+    <string name="listening_comprehension">Nghe hiểu</string>
+    <string name="picture_description">Mô tả\ntranh</string>
+    <string name="ques_and_ans">Hỏi-Đáp</string>
+    <string name="conversation">Đoạn hội\nthoại</string>
+    <string name="short_talk">Bài nói\nngắn</string>
+
+    <string name="reading_comprehension">Đọc hiểu</string>
+    <string name="fill_the_blank">Hoàn thành\ncâu</string>
+    <string name="fill_the_paragraph">Hoàn thành\nđoạn văn</string>
+    <string name="read_sentences">Đọc đoạn\nvăn</string>
+    <string name="single_paragraph">Đoạn đơn</string>
+    <string name="double_paragraph">Đoạn kép</string>
+    <string name="triple_paragraph">Đoạn tam</string>
+
+    <!-- search activity -->
+    <string name="translate_header">Dịch văn bản</string>
+    <string name="vietnamese">Việt</string>
+    <string name="english">Anh</string>
+    <string name="input_search">Nhập văn bản</string>
+    <string name="translate_text">Dịch văn bản</string>
+    <string name="word_translated">Từ đã tra</string>
+    <string name="word_mark">Từ đã đánh dấu</string>
+
+    <!--  history search activity -->
+    <string name="historySearch_header">Từ đã tra</string>
+    <string name="all">Tất cả</string>
+
+    <!--  learn vocabulary -->
+    <string name="learnVocabulary_header">Học từ vựng</string>
+    <string name="topic">Chủ đề:</string>
+    <string name="level">Mức độ:</string>
+    <string name="chooseWord">Chọn từ</string>
+    <string name="matchWord">Ghép từ</string>
+
+    <!-- my word activity -->
+    <string name="myWord_header">Từ đã đánh dấu</string>
+    <string name="save_vocabulary_type">Từ vựng</string>
+    <string name="save_translate_type">Từ đã tra</string>
+    <string name="save_create_type">Từ đã tạo</string>
+
+    <string name="createWord">Tạo từ của bạn</string>
+    <string name="input_word">Nhập từ của bạn <font color="#C70707">*</font></string>
+    <string name="input_meaning">Nhập nghĩa của từ <font color="#C70707">*</font></string>
+    <string name="create">Tạo</string>
+
+    <!-- history test -->
+    <string name="listTestResults">Danh sách các kết quả thi của bạn</string>
+    <string name="historyTest_header">Lịch sử thi</string>
+    <string name="certificate">Chứng chỉ</string>
+
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Câu làm sai</string>
+    <string name="rewatch_wrong_answer_detail">Xem danh sách các câu đã làm sai</string>
+
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/iconTranslate"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/transparent"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/icon_lookuped_word"
+
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:srcCompat="@drawable/background3" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="20dp"
+        android:gravity="center"
+        android:text="Danh sách các từ đã được dịch bằng"
+
+        android:fontFamily="@font/afacad_medium"
+        android:textColor="@color/dark_grey"
+        android:textSize="18sp"
+
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage" />
+
+    <LinearLayout
+        android:id="@+id/box_type"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/page_test_detail_dialog_filter_grouppart_bg"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title">
+
+        <TextView
+            android:id="@+id/filter_english"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/page_test_detail_dialog_filter_part_bg"
+            android:fontFamily="@font/afacad_medium"
+
+            android:gravity="center"
+            android:text="@string/english"
+            android:textColor="@color/main_color_purple_dark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/filter_all"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/afacad_medium"
+
+            android:gravity="center"
+            android:text="@string/all"
+            android:textColor="@color/dark_grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/filter_vietnamese"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/afacad_medium"
+
+            android:gravity="center"
+            android:text="@string/vietnamese"
+            android:textColor="@color/dark_grey"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_history_word"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="12dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
+        app:layout_constraintTop_toBottomOf="@+id/box_type" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/format_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/format_textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Recheck your answers"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:paddingVertical="22dp"
+
+            android:fontFamily="@font/afacad_medium"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@+id/format_textView"
+            />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+
+            android:clickable="true"
+
+            android:focusable="true"
+            android:src="@drawable/back_press_color_purple"
+            android:background="@android:color/transparent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/ListeningViewHolder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        layout="@layout/page_test_detail_listening"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/format_header" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

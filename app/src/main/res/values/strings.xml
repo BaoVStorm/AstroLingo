@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Không được phép thay đổi dòng này  -->
+    <string name="api_key" translatable="false">http://18.140.5.206:3000/</string>
+    <string name="api_translateVTE_key" translatable="false">https://lingva.ml/api/v1/vi/en/</string>
+    <string name="api_translateETV_key" translatable="false">https://lingva.ml/api/v1/en/vi/</string>
+
+    <string name="api_translateVTE_key2" translatable="false">https://translate.googleapis.com/translate_a/single?client=gtx&amp;sl=vi&amp;tl=en&amp;dt=t&amp;q=</string>
+    <string name="api_translateETV_key2" translatable="false">https://translate.googleapis.com/translate_a/single?client=gtx&amp;sl=en&amp;tl=vi&amp;dt=t&amp;q=</string>
+
+
+    <string name="api_key_server" translatable="false">https://astrolingo.onrender.com/</string>
+    <string name="api_key_aws" translatable="false">http://10.0.2.2:3000/</string>
+
+    <string name="client_ID" translatable="false">377354537953-q2eg1baq8mvdggc5cb8jh6ouhq7osuo4.apps.googleusercontent.com</string>
+
+    <string name="api_chatBox_key" translatable="false">https://9fa0-125-235-187-4.ngrok-free.app/</string>
+    <!-- - - - - - - - - - - - - - - - - - - -->
+
+    <string name="navHome">Home</string>
+    <string name="navTest">Test</string>
+    <string name="navCourse">Course</string>
+    <string name="navAI">AI</string>
+    <string name="navSetting">Setting</string>
+
+    <string name="app_name">AstroLingo</string>
+
+    <string name="homeFragment">Home Page</string>
+
+    <string name="testFragment">Test Page</string>
+
+    <string name="courseFragment">Course Page</string>
+
+    <string name="AiFragment">AI Page</string>
+
+    <string name="settingFragment">Setting Page</string>
+
+    <string name="copyright">Copyright 2025 © AstroLingo</string>
+
+    <!-- Login, Register Page String  -->
+    <string name="next">Next</string>
+    <string name="got_it">Got it</string>
+    <string name="verifyEmail">Verify Your Email</string>
+    <string name="verifyEmailCode">Please Enter The 4 Digit Code Sent To Your Email!</string>
+    <string name="createNewPass">Create New Password</string>
+    <string name="enterNewPass">Enter your new Password!</string>
+
+    <string name="loginPage">Login Page</string>
+    <string name="registerPage">Register Page</string>
+    <string name="forgotPasswordPage">Forgot Password</string>
+    <string name="loginWithUserName">Enter your username or email <font color="#EB4B4B">*</font> </string>
+    <string name="RegisterWithUserName">Enter your username <font color="#EB4B4B">*</font> </string>
+    <string name="loginWithPassword">Enter your password <font color="#EB4B4B">*</font> </string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="registerWithName">Enter your name</string>
+    <string name="registerWithEmail">Enter your email <font color="#EB4B4B">*</font> </string>
+    <string name="registerWithTel">Enter your telephone</string>
+    <string name="registerWithPassword">Re-enter your password <font color="#EB4B4B">*</font> </string>
+    <string name="forgotPassword">Forgot password?</string>
+
+    <string name="loginRegister_rule">
+        By logging into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
+    </string>
+
+    <string name="registerLogin_rule">
+        By registering into AstroLingo, you agree to our <font color="#5616BA">Terms and Privacy Policy</font> <font color="#C70707">*</font>
+    </string>
+    <string name="have_account">Do you have an account?</string>
+    <string name="dont_have_account">Don\'t you have an account?</string>
+
+    <string name="error_name_empty">Name yield shouldn\'t be empty!</string>
+    <string name="error_name_specialsympol">Name yield shouldn\'t have special symbol!</string>
+
+    <string name="error_username_empty">Username yield shouldn\'t be empty!</string>
+    <string name="error_username_specialsympol">Username yield shouldn\'t have special symbol or space!</string>
+
+    <string name="error_email_empty">Email yield shouldn\'t be empty!</string>
+    <string name="error_email_invalid">Email yield isn\'t valid!</string>
+    <string name="error_email_exist">Email yield is already exist!</string>
+
+    <string name="error_telephone_empty">Telephone yield shouldn\'t be empty!</string>
+    <string name="error_telephone_invalid">Telephone yield should start by 0 and have 10–11 digits!</string>
+
+    <string name="error_password_empty">Password yield shouldn\'t be empty!</string>
+    <string name="error_password_invalid">Password yield shoundn\'t be less than 8 characters!</string>
+
+    <string name="error_repassword_empty">Re-password yield shouldn\'t be empty!</string>
+    <string name="error_repassword_invalid">Re-password yield isn\'t match with password!</string>
+
+    <string name="error_login_empty">Username or password yield shouldn\'t be empty!</string>
+    <string name="error_login_invalid">Username or password yield is invalid!</string>
+
+    <string name="error_digited_invalid">Please enter 4 digits sent to your email!</string>
+
+    <string name="error_checkboxes">You have to agree out term and privacy policy!</string>
+
+    <string name="tickRule">You have to agree out term and privacy policy!</string>
+
+    <string name="verification_success">Verification Success</string>
+    <string name="verification_success_detail">Your email address was successfully verified.</string>
+
+    <string name="resetpassword_success">Your password has been reset successfully.</string>
+
+    <string name="dont_get_email">Didn\'t you get e-mail?</string>
+    <string name="resend">Send it again</string>
+
+
+    <!-- Setting Page String  -->
+    <!-- Setting Page String  -->
+    <string name="chinhsuahoso">Edit Profile</string>
+    <string name="ngonngusudung">Language</string>
+    <string name="giaodientoi">Dark Mode</string>
+    <string name="hienthi">Display</string>
+    <string name="nhacnhohoctap">Study Reminder</string>
+    <string name="phanhoihotro">Feedback and Support</string>
+    <string name="danhgia5sao">Rate 5 Stars</string>
+    <string name="dieukhoansudung">Terms of Use</string>
+    <string name="select_ngonngusudung">English</string>
+    <string name="setting_dangxuat">Log out</string>
+    <!-- Setting Page "Chỉnh sửa hồ sơ" String  -->
+    <string name="chinhsuahoso_name">Anh Đào</string>
+    <string name="chinhsuahoso_email">anhdao@gmai.com</string>
+    <string name="chinhsuahoso_sdt">0123456789</string>
+    <string name="chinhsuahoso_date">01/01/2004</string>
+    <string name="chinhsuahoso_gender">Female</string>
+    <!-- Giới tính-->
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="fit_gender_array" translatable="false">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <!--  Test  -->
+    <string name="Sentence">Sen</string>
+    <string name="Submit">Submit</string>
+    <string name="part">Part</string>
+    <string name="howToDoTest">How to do test</string>
+    <string name="listening">Listening</string>
+    <string name="listening_description">Listen audio and look at pictures (if exist) to choose the correct answer.</string>
+    <string name="reading">Reading</string>
+    <string name="reading_description">Reading questions and look at pictures (if exist) below to choose the answer.</string>
+    <string name="wantContinue">Do you want to continue?</string>
+    <string name="Continue">Continue</string>
+    <string name="Exit">Exit</string>
+    <string name="wantSubmit">Do you want to submit?</string>
+    <string name="submit">Submit</string>
+    <string name="no">No</string>
+
+    <!-- Giao diện Test Page khi nhấn vào icon Test ở navbar   -->
+    <string name="seemore">See more</string>
+    <string name="miniTestTitle">TOEIC Listening &amp; Reading MiniTest | </string>
+    <string name="fullTestTitle">TOEIC Listening &amp; Reading FullTest | </string>
+
+    <!-- Giao diện Chuẩn bị làm bài test có nút Bắt đầu nào  -->
+    <string name="startnow">Start Now</string>
+    <string name="number_of_questions">Number of Questions: 200</string>
+    <string name="test_time">Duration: 120 minutes</string>
+    <string name="testTitle">Test 10 ETS 2024</string>
+    <!-- Giao diện đầu tiên của trang Làm lại câu sai khi nhấn nút "Câu làm sai" ở HomePage-->
+    <string name="retry_wrong_answer">Retry Wrong Answers</string>
+
+    <string name="listening_comprehension">Listening Comprehension</string>
+    <string name="picture_description">Picture\nDescription</string>
+    <string name="ques_and_ans">Q&amp;A</string>
+    <string name="conversation">Conversation</string>
+    <string name="short_talk">Short Talk</string>
+
+    <string name="reading_comprehension">Reading Comprehension</string>
+    <string name="fill_the_blank">Fill the\nblank</string>
+    <string name="fill_the_paragraph">Complete\nParagraph</string>
+    <string name="read_sentences">Read\nsentences</string>
+    <string name="single_paragraph">Single\nParagraph</string>
+    <string name="double_paragraph">Double\nParagraph</string>
+    <string name="triple_paragraph">Triple\nParagraph</string>
+
+    <!-- search activity -->
+    <string name="translate_header">Translate</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="english">English</string>
+    <string name="input_search">Input text</string>
+    <string name="translate_text">Translate text</string>
+    <string name="word_translated">Words translated</string>
+    <string name="word_mark">Words marked</string>
+
+    <!--  history search activity -->
+    <string name="historySearch_header">Searched Words</string>
+    <string name="all">All</string>
+
+    <!--  learn vocabulary -->
+    <string name="learnVocabulary_header">Learn Vocabulary</string>
+    <string name="topic">Topic:</string>
+    <string name="level">Level:</string>
+    <string name="chooseWord">Choose words</string>
+    <string name="matchWord">Match words</string>
+
+    <!-- my word activity -->
+    <string name="myWord_header">Marked Word</string>
+    <string name="save_vocabulary_type">Vocabulary</string>
+    <string name="save_translate_type">Translate</string>
+    <string name="save_create_type">Created</string>
+
+    <string name="createWord">Create your word</string>
+    <string name="input_word">Input your word <font color="#C70707">*</font></string>
+    <string name="input_meaning">Input meaning of word <font color="#C70707">*</font></string>
+    <string name="create">Create</string>
+
+    <!-- history test -->
+    <string name="listTestResults">List of your test results</string>
+    <string name="historyTest_header">History test</string>
+    <string name="certificate">Certificate</string>
+
+    <!-- Rewatch wrong Answer  -->
+    <string name="rewatch_wrong_answer">Wrong Answer</string>
+    <string name="rewatch_wrong_answer_detail">Rewatch wrong answer</string>
+
+</resources>

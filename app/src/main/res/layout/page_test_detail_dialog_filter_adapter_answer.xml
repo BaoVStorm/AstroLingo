@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_adapter"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    >
+
+    <ImageView
+        android:id="@+id/icon_warning"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icon_assets_warning" />
+
+    <TextView
+        android:id="@+id/question_text"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginStart="6dp"
+
+        android:text="Câu 1"
+        android:textSize="17sp"
+        android:fontFamily="@font/afacad_medium"
+        android:textColor="@color/dark_grey"
+
+        app:layout_constraintStart_toEndOf="@+id/icon_warning" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/question_text">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navAnswer1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+
+            android:layout_weight="1"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarImageView1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/dark_grey"
+                app:strokeWidth="1.5dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/navAnswer_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="A"
+                android:textSize="22sp"
+                android:fontFamily="@font/afacad_regular"
+                android:textColor="@color/dark_grey"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navAnswer2"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+
+            android:layout_weight="1"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarImageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/dark_grey"
+                app:strokeWidth="1.5dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/navAnswer_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="B"
+                android:textSize="22sp"
+                android:fontFamily="@font/afacad_regular"
+                android:textColor="@color/dark_grey"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navAnswer3"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+
+            android:layout_weight="1"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarImageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/dark_grey"
+                app:strokeWidth="1.5dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/navAnswer_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="C"
+                android:textSize="22sp"
+                android:fontFamily="@font/afacad_regular"
+                android:textColor="@color/dark_grey"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navAnswer4"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+
+            android:layout_weight="1"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarImageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                app:strokeColor="@color/dark_grey"
+                app:strokeWidth="1.5dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/navAnswer_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="D"
+                android:textSize="22sp"
+                android:fontFamily="@font/afacad_regular"
+                android:textColor="@color/dark_grey"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

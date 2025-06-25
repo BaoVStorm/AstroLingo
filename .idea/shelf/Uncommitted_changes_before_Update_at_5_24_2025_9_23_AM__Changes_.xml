@@ -1,0 +1,431 @@
+<changelist name="Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]" date="1748053404825" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 5/24/2025 9:23 AM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_short_talk.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_short_talk.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_fill_the_blank.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_fill_the_blank.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_conversation.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_conversation.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_question_and_answer.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_question_and_answer.png" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_back_white.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_back_white.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$PlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_triple_paragraph.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_triple_paragraph.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$CredentialsPlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_double_paragraph.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_double_paragraph.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/metadata.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_picture_description.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_picture_description.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_fill_the_paragraph.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_fill_the_paragraph.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/metadata.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PlayLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/d234bd1a5da98e4123f8ad3669bc07c5dcfd0093/classes/org/gradle/accessors/dm/LibrariesForLibs$GlideLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ExtLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/4cca7aba00e9e100339e6421b5bd840347d77de8/classes/org/gradle/accessors/dm/LibrariesForLibs$CredentialsPlayServicesLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/b612d7925e67c933357fef2f4788dd32ba4e87fc/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$EspressoLibraryAccessors.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/icon_single_paragraph.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_24_2025_9_23_AM_[Changes]/icon_single_paragraph.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/8ea2114bee6cc59b9af714a226215d7d883d4b0d/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/c5cd8a2fe1b1083f448ddccb7325cc4239c7f698/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/e5fcb7d79d0dd211eb8566d84565d43d8c6197b9/classes/org/gradle/accessors/dm/LibrariesForLibs$ExtLibraryAccessors.class" />
+  </binary>
+</changelist>

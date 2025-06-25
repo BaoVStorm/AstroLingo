@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_light">#232323</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FFC0C0C0</color>
+    <color name="dark_grey">#6A6A6A</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="light_blue">#3030A0</color>
+    <color name="green">#FF00FF00</color>
+    <color name="red">#FFFF0000</color>
+    <color name="yellow">#FFFFEB3B</color>
+    <color name="purple">#FF800080</color>
+    <color name="orange">#FF5733</color>
+    <color name="header_question">#9E0396</color>
+
+    <color name="main_color">#B92ED5</color>
+    <color name="main_color_purple">#8452D3</color>
+    <color name="main_color_purple_dark">#6F37BF</color>
+    <color name="bottom_nav_icon_color_uncheck">#9E9E9E</color>
+    <color name="bottom_nav_icon_color_check">#96009E</color>
+    <color name="bottom_nav_ripple_color">#10AB7FD9</color>
+
+    <color name="test">#EB4B4B</color>
+
+
+    <!-- ai page -->
+    <color name="input_ai">#EBEBEB</color>
+
+
+    <!-- login register button -->
+
+    <color name="loading">#BFAAE6</color>
+    <color name="loginRegister_button_color">#8452D3</color>
+    <color name="button_field_hover">#682AD1</color>
+
+    <!--  seekbar (test)  -->
+    <color name="colorPrimary">#8452D3</color>
+
+    <color name="chooseAnswer">#7640C8</color>
+    <color name="chooseAnswer_Border">#6938BC</color>
+
+    <color name="correctAnswer">#18A42E</color>
+    <color name="correctAnswer_Border">#1B8E2C</color>
+
+    <color name="wrongAnswer">#BF194B</color>
+    <color name="wrongAnswer_Border">#A21F46</color>
+
+    <color name="colorPrimaryLight">#8E74C3</color>
+
+    <!-- search word -->
+    <color name="background_word">#E8E3F2</color>
+
+    <!-- history test -->
+    <color name="highScore">#0FCA0F</color>
+    <color name="lowScore">#F00404</color>
+
+    <!-- ai    -->
+    <color name="background_user_input">#3F7AE6</color>
+
+</resources>

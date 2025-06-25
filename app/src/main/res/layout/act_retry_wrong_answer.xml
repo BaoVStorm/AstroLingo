@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <!-- Background cố định -->
+    <ImageView
+        android:id="@+id/fixed_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/purple_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Purple Header -->
+            <include
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/header"
+
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iconTranslate"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icon_wrong_answer"
+
+                app:layout_constraintBottom_toBottomOf="@+id/header"
+                app:layout_constraintEnd_toEndOf="@+id/header"
+                app:layout_constraintTop_toTopOf="@+id/header" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- Icon phi hành gia nằm cố định ở giữa theo chiều dọc mép bên phải của parent-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/astrolingo_imageview"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="100dp"
+                android:src="@drawable/icon_hi5"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.892" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Nghe hiểu title -->
+        <TextView
+            android:id="@+id/titleListeningComprehension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/purple_header"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/listening_comprehension"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacad_bold" />
+
+        <!-- Nghe hiểu Section -->
+        <RelativeLayout
+            android:id="@+id/listeningComprehensionSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleListeningComprehension"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="16dp"
+            >
+
+            <!-- Mô tả tranh -->
+            <LinearLayout
+                android:id="@+id/pictureDescriptionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_picture_description_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:id="@+id/icon_picture_description_ImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_picture_description" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/picture_description"
+                    android:paddingTop="2dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <!-- Hỏi-Đáp -->
+            <LinearLayout
+                android:id="@+id/questions_answers_Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/pictureDescriptionSection"
+                android:layout_marginStart="7dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_question_and_answer_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+                    <ImageView
+                        android:id="@+id/icon_question_and_answer_ImageView"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_question_and_answer" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ques_and_ans"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:paddingTop="2dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <!-- Đoạn hội thoại -->
+            <LinearLayout
+                android:id="@+id/conversationSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/questions_answers_Section"
+                android:layout_marginStart="7dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_conversation_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+                    <ImageView
+                        android:id="@+id/icon_conversation_ImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_conversation" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/conversation"
+                    android:paddingTop="2dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <!-- Bài nói ngắn -->
+            <LinearLayout
+                android:id="@+id/shortTalkSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/conversationSection"
+                android:layout_marginStart="7dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_short_talk_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+                    <ImageView
+                        android:id="@+id/icon_short_talk_ImageView"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_short_talk" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/short_talk"
+                    android:paddingTop="2dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        ////////////////////////////////////////////////////////////
+        <!-- Đọc hiểu title -->
+        <TextView
+            android:id="@+id/titleReadingComprehension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listeningComprehensionSection"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/reading_comprehension"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/afacad_bold" />
+
+        <!-- Đọc hiểu Section -->
+        <!-- Part 5,6 -->
+        <RelativeLayout
+            android:id="@+id/part56readingComprehensionSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleReadingComprehension"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <!-- Hoàn thành câu -->
+            <LinearLayout
+                android:id="@+id/fillTheBlankSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_fill_the_blank_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:id="@+id/icon_fill_the_blank_ImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_fill_the_blank" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fill_the_blank"
+                    android:paddingTop="2dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <!-- Hoàn thành đoạn văn -->
+            <LinearLayout
+                android:id="@+id/fillTheParagraph_Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/fillTheBlankSection"
+                android:layout_marginStart="7dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_fill_the_paragraph_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+                    <ImageView
+                        android:id="@+id/icon_fill_the_paragraph_ImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_fill_the_paragraph" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fill_the_paragraph"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:paddingTop="2dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/singleParagraphSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@id/fillTheParagraph_Section"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/icon_single_paragraph_CardView"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:id="@+id/icon_single_paragraph_ImageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_single_paragraph" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/read_sentences"
+                    android:paddingTop="2dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

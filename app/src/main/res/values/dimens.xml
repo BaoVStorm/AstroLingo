@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_base">16dp</dimen>
+    <dimen name="font_size_label">16sp</dimen>
+    <dimen name="font_cap">13sp</dimen>
+    <dimen name="font_body">20sp</dimen>
+    <dimen name="ems_input">10</dimen>
+
+
+    <!--  login register page  -->
+    <dimen name="gap_login_register_page">25dp</dimen>
+    <dimen name="error_text_size">14sp</dimen>
+    <dimen name="logo_text_size">30sp</dimen>
+    <dimen name="policy_text_size">14sp</dimen>
+    <dimen name="button_input_width">200dp</dimen>
+    <dimen name="button_input_height">40dp</dimen>
+
+    <!-- Home page -->
+    <dimen name="text_title_home">18sp</dimen>
+    <dimen name="text_button_home">15sp</dimen>
+    <dimen name="size_button_home">70dp</dimen>
+    <dimen name="size_icon_home">48dp</dimen>
+    
+    <!-- Ai page -->
+    <dimen name="corner_radius_message_ai">20dp</dimen>
+</resources>

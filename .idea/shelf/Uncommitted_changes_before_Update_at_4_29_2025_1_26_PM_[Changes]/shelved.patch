@@ -1,0 +1,1219 @@
+Index: app/src/main/res/layout/fragment_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/HomePage\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activity.home.HomeFragment\"\r\n    android:background=\"@color/yellow\"\r\n    >\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:textSize=\"30dp\"\r\n        android:gravity=\"center\"\r\n        android:text=\"@string/homeFragment\" />\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home.xml b/app/src/main/res/layout/fragment_home.xml
+--- a/app/src/main/res/layout/fragment_home.xml	(revision 0c116988feba06bbb57bcfef469daad3e6e4820e)
++++ b/app/src/main/res/layout/fragment_home.xml	(date 1745907968421)
+@@ -1,19 +1,627 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<FrameLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:id="@+id/HomePage"
+     android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".activity.home.HomeFragment"
+-    android:background="@color/yellow"
+-    >
++    android:layout_height="match_parent">
++
++    <!-- Background cố định -->
++    <ImageView
++        android:id="@+id/fixed_background"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:scaleType="centerCrop"
++        android:src="@drawable/background4" />
++
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:fillViewport="true" >
++
++        <RelativeLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:padding="16dp">
+ 
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:textSize="30dp"
+-        android:gravity="center"
+-        android:text="@string/homeFragment" />
++            <!-- Welcome CardView -->
++            <androidx.cardview.widget.CardView
++                android:id="@+id/welcome_img_homepage_CardView"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="5dp"
++                app:cardCornerRadius="12dp"
++                app:cardElevation="4dp">
++
++                <ImageView
++                    android:id="@+id/welcome_img_homepage_ImageView"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:adjustViewBounds="true"
++                    android:scaleType="fitCenter"
++                    android:src="@drawable/background10" />
++            </androidx.cardview.widget.CardView>
++
++            <!-- Từ vựng title -->
++            <TextView
++                android:id="@+id/titleVocabulary"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/welcome_img_homepage_CardView"
++                android:layout_marginTop="25dp"
++                android:text="Từ vựng"
++                android:textSize="20sp"
++                android:fontFamily="@font/afacad_bold" />
++
++            <ImageView
++                android:id="@+id/icon_info_titleVocabulary_ImageView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_toEndOf="@id/titleVocabulary"
++                android:layout_below="@id/welcome_img_homepage_CardView"
++                android:layout_marginTop="30dp"
++                android:layout_marginStart="20dp"
++                android:src="@drawable/icon_info" />
++
++            <!-- Vocabulary Section -->
++            <RelativeLayout
++                android:id="@+id/vocabSection"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/titleVocabulary"
++                android:layout_marginTop="0dp">
++
++                <!-- Tra từ vựng -->
++                <LinearLayout
++                    android:id="@+id/lookupSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_alignParentStart="true"
++                    android:orientation="vertical">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_vocab_search_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++
++                        <ImageView
++                            android:id="@+id/icon_vocab_search_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_vocab_search" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Tra từ vựng"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Học từ vựng -->
++                <LinearLayout
++                    android:id="@+id/learnSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/lookupSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_learn_vocab_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++
++                        <ImageView
++                            android:id="@+id/icon_learn_vocab_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_learn_vocab" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Học từ vựng"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Từ của bạn -->
++                <LinearLayout
++                    android:id="@+id/yourVocabSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/learnSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_word_of_you_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_word_of_you_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_word_of_you" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Từ của bạn"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++            </RelativeLayout>
++
++            //////////////////////////////////////////////////////////////////////////////////
++            <!-- Trò chơi title -->
++            <TextView
++                android:id="@+id/titleGame"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/vocabSection"
++                android:layout_marginTop="25dp"
++                android:text="Trò chơi"
++                android:textSize="20sp"
++                android:fontFamily="@font/afacad_bold" />
++
++            <ImageView
++                android:id="@+id/icon_info_titleGame_ImageView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_toEndOf="@id/titleGame"
++                android:layout_below="@id/vocabSection"
++                android:layout_marginTop="30dp"
++                android:layout_marginStart="20dp"
++                android:src="@drawable/icon_info" />
++
++            <!-- Game Section -->
++            <RelativeLayout
++                android:id="@+id/gameSection"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/titleGame"
++                android:layout_marginTop="0dp">
++
++                <!-- Hangman -->
++                <LinearLayout
++                    android:id="@+id/hangmanSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_alignParentStart="true"
++                    android:orientation="vertical">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_hangman_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
+ 
++                        <ImageView
++                            android:id="@+id/icon_hangman_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_hangman" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Hangman"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Word attack -->
++                <LinearLayout
++                    android:id="@+id/wordattackSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/hangmanSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_word_attack_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_word_attack_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_word_attack" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Word attack"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- TreasureG -->
++                <LinearLayout
++                    android:id="@+id/treasuregSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/wordattackSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_treasure_g_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_treasure_g_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_treasure_g" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="TreasureG"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Puzword -->
++                <LinearLayout
++                    android:id="@+id/puzwordSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/treasuregSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_puzword_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_puzword_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_puzword" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Puzword"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++            </RelativeLayout>
++
++            //////////////////////////////////////////////////////////////////////////////
++            <!-- Lịch sử title -->
++            <TextView
++                android:id="@+id/titleHistory"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/gameSection"
++                android:layout_marginTop="25dp"
++                android:text="Lịch sử"
++                android:textSize="20sp"
++                android:fontFamily="@font/afacad_bold" />
++
++            <ImageView
++                android:id="@+id/icon_info_titleHistory_ImageView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_toEndOf="@id/titleHistory"
++                android:layout_below="@id/gameSection"
++                android:layout_marginTop="30dp"
++                android:layout_marginStart="26dp"
++                android:src="@drawable/icon_info" />
++
++            <!-- History Section -->
++            <RelativeLayout
++                android:id="@+id/historySection"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/titleHistory"
++                android:layout_marginTop="0dp">
++
++                <!-- Từ đã tra -->
++                <LinearLayout
++                    android:id="@+id/wordlookupedSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_alignParentStart="true"
++                    android:orientation="vertical">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_lookuped_word_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++
++                        <ImageView
++                            android:id="@+id/icon_lookuped_word_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_lookuped_word" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Từ đã tra"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Câu làm sai -->
++                <LinearLayout
++                    android:id="@+id/wronganswerSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/wordlookupedSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_wrong_answer_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_wrong_answer_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_wrong_answer" />
++                    </androidx.cardview.widget.CardView>
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Câu làm sai"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- Lịch sử -->
++                <LinearLayout
++                    android:id="@+id/testHistorySection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/wronganswerSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_test_history_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_test_history_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_test_history" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Lịch sử"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++            </RelativeLayout>
++
++            //////////////////////////////////////////////////////////////
++            <!-- AI title -->
++            <TextView
++                android:id="@+id/titleAI"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/historySection"
++                android:layout_marginTop="25dp"
++                android:text="AI"
++                android:textSize="20sp"
++                android:fontFamily="@font/afacad_bold" />
++
++            <ImageView
++                android:id="@+id/icon_info_titleAI_ImageView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_toEndOf="@id/titleAI"
++                android:layout_below="@id/historySection"
++                android:layout_marginTop="30dp"
++                android:layout_marginStart="63dp"
++                android:src="@drawable/icon_info" />
++
++            <!-- AI Section -->
++            <RelativeLayout
++                android:id="@+id/AISection"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/titleAI"
++                android:layout_marginTop="0dp">
++
++                <!-- Chatbot -->
++                <LinearLayout
++                    android:id="@+id/chatbotSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_alignParentStart="true"
++                    android:orientation="vertical">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_chatbot_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++
++                        <ImageView
++                            android:id="@+id/icon_chatbot_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_chatbot" />
++                    </androidx.cardview.widget.CardView>
++
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="Chatbot"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++
++                <!-- AI Writing -->
++                <LinearLayout
++                    android:id="@+id/AIWritingSection"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_toEndOf="@id/chatbotSection"
++                    android:layout_marginStart="7dp"
++                    android:orientation="vertical"
++                    android:gravity="center">
++
++                    <androidx.cardview.widget.CardView
++                        android:id="@+id/icon_ai_writing_CardView"
++                        android:layout_width="90dp"
++                        android:layout_height="90dp"
++                        android:layout_marginTop="5dp"
++                        app:cardCornerRadius="10dp"
++                        app:cardElevation="2dp"
++                        app:cardUseCompatPadding="true">
++                        <ImageView
++                            android:id="@+id/icon_ai_writing_ImageView"
++                            android:layout_width="60dp"
++                            android:layout_height="60dp"
++                            android:layout_gravity="center"
++                            android:src="@drawable/icon_ai_writing" />
++                    </androidx.cardview.widget.CardView>
++                    <TextView
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="AI Writing"
++                        android:paddingTop="2dp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textSize="16sp"
++                        android:layout_gravity="center_horizontal"/>
++                </LinearLayout>
++            </RelativeLayout>
++
++            //////////////////////////////////////////////////////////////////////////////////
++            <!-- Bảng xếp hạng title -->
++            <TextView
++                android:id="@+id/titleScoreboard"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_below="@id/AISection"
++                android:layout_marginTop="25dp"
++                android:text="Bảng xếp hạng"
++                android:textSize="20sp"
++                android:fontFamily="@font/afacad_bold" />
++
++            <ImageView
++                android:id="@+id/icon_info_titleScoreboard_ImageView"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_toEndOf="@id/titleScoreboard"
++                android:layout_below="@id/AISection"
++                android:layout_marginTop="30dp"
++                android:layout_marginStart="20dp"
++                android:src="@drawable/icon_info" />
++
++            <!-- Bảng xếp hạng Section -->
++<!--            <include-->
++<!--                android:id="@+id/scoreboardSection"-->
++<!--                layout="@layout/page_home_leaderboard"-->
++<!--                android:layout_width="match_parent"-->
++<!--                android:layout_height="wrap_content"-->
++<!--                android:layout_marginTop="20dp"-->
++<!--                android:layout_below="@id/titleScoreboard"/>-->
++
++        </RelativeLayout>
++    </ScrollView>
+ </FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/page_home_leaderboard.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/page_home_leaderboard.xml b/app/src/main/res/layout/page_home_leaderboard.xml
+new file mode 100644
+--- /dev/null	(date 1745907968422)
++++ b/app/src/main/res/layout/page_home_leaderboard.xml	(date 1745907968422)
+@@ -0,0 +1,507 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical"
++    android:padding="16dp"
++    android:background="@drawable/bg_leaderboad">
++
++    <FrameLayout
++        xmlns:android="http://schemas.android.com/apk/res/android"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++
++    <!-- Background leaderboard cố định -->
++        <ImageView
++            android:id="@+id/fixed_leaderboard_background"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:adjustViewBounds="true"
++            android:scaleType="fitCenter"
++            android:src="@drawable/leadboard"
++            android:layout_gravity="center"/>
++    
++        <!-- Top 3  -->
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal"
++            android:gravity="center"
++            android:layout_marginBottom="16dp">
++
++            <!-- 2nd Place -->
++            <LinearLayout
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:paddingTop="120dp"
++                android:layout_marginLeft="30dp"
++                android:orientation="vertical"
++                android:gravity="center">
++
++                <TextView
++                    android:id="@+id/top2_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="Hihi"
++                    android:fontFamily="@font/afacad_medium"
++                    android:textColor="#fff"
++                    android:gravity="center"
++                    android:paddingBottom="8dp"/>
++
++                <ImageView
++                    android:id="@+id/top2_icon"
++                    android:src="@drawable/icon_ava2"
++                    android:layout_width="65dp"
++                    android:layout_height="65dp"/>
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top2"
++                    android:paddingTop="5dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top2_coin_icon"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top2_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="6666"
++                        android:textColor="#FFD700"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++
++            ////////////////////////////////////////////////////
++            <!-- 1st Place -->
++            <LinearLayout
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="5dp"
++                android:layout_marginTop="17dp"
++                android:orientation="vertical"
++                android:gravity="center">
++
++                <TextView
++                    android:id="@+id/top1_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="Hehe"
++                    android:fontFamily="@font/afacad_medium"
++                    android:textColor="#fff"
++                    android:gravity="center"
++                    android:paddingBottom="1dp"/>
++
++                <ImageView
++                    android:id="@+id/top1_icon"
++                    android:src="@drawable/icon_lead"
++                    android:layout_width="110dp"
++                    android:layout_height="110dp"/>
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top1"
++                    android:paddingTop="3dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top1_coin_icon"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top1_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="9999"
++                        android:textColor="#FFD700"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++
++            /////////////////////////////////////////////////////////
++            <!-- 3rd Place -->
++            <LinearLayout
++                android:layout_width="0dp"
++                android:layout_weight="1"
++                android:layout_height="wrap_content"
++                android:paddingTop="120dp"
++                android:layout_marginRight="30dp"
++                android:orientation="vertical"
++                android:gravity="center">
++
++                <TextView
++                    android:id="@+id/top3_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="Haha"
++                    android:fontFamily="@font/afacad_medium"
++                    android:textColor="#fff"
++                    android:gravity="center"
++                    android:paddingBottom="8dp"/>
++
++                <ImageView
++                    android:id="@+id/top3_icon"
++                    android:src="@drawable/icon_ava2"
++                    android:layout_width="65dp"
++                    android:layout_height="65dp"/>
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top3"
++                    android:paddingTop="5dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top3_coin_icon"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top3_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="3333"
++                        android:textColor="#FFD700"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++        </LinearLayout>
++    </FrameLayout>
++
++    <!-- Danh sách hạng tiếp theo -->
++    <LinearLayout
++        android:id="@+id/rankingsList"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="15dp"
++        android:orientation="vertical">
++
++
++        <!-- 4th place -->
++        <LinearLayout
++            android:id="@+id/fourth_place_Section"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal"
++            android:padding="12dp"
++            android:background="@drawable/white_background_retangle"
++            android:layout_marginBottom="20dp"
++            android:gravity="center_vertical">
++
++            <TextView
++                android:id="@+id/top4_rank"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="4"
++                android:textSize="25sp"
++                android:fontFamily="@font/afacad_medium"
++                android:textColor="#A911AC"
++                android:layout_marginStart="10dp"
++                android:layout_marginEnd="20dp"/>
++            
++            <ImageView
++                android:id="@+id/icon_top4"
++                android:layout_width="58dp"
++                android:layout_height="58dp"
++                android:src="@drawable/icon_ava2"
++                android:layout_marginEnd="20dp"/>
++
++            <LinearLayout
++                android:id="@+id/top4_content"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp">
++
++                <TextView
++                    android:id="@+id/top4_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="congphandeptrai"
++                    android:textColor="#000000"
++                    android:textSize="20sp" />
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top4"
++                    android:paddingTop="5dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top4_coin_icon"
++                        android:layout_width="25dp"
++                        android:layout_height="25dp"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top4_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="2222"
++                        android:textSize="17sp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textColor="#A4A40F"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++
++            <!-- View rỗng để đẩy phần tử tiếp theo sang phải kết hợp với layout_marginEnd
++            để đảm bảo khối có id là hienthithem luôn nằm cách mép rìa phải một khoảng cách 20dp -->
++            <View
++                android:layout_width="wrap_content"
++                android:layout_height="0dp"
++                android:layout_weight="1" />
++
++            <LinearLayout
++                android:id="@+id/hienthithem_4thSection"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp" >
++
++                <ImageView
++                    android:id="@+id/top4_polygon_icon"
++                    android:layout_width="20dp"
++                    android:layout_height="20dp"
++                    android:paddingRight="0dp"
++                    android:src="@drawable/icon_polygon_item_leadboard"/>
++
++                <TextView
++                    android:id="@+id/hienthithem_4thSection_number"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="+6"
++                    android:textColor="#000000"
++                    android:textSize="18sp" />
++            </LinearLayout>
++
++        </LinearLayout>
++
++        ///////////////////////////////////////////////////
++        <!-- 5th place -->
++        <LinearLayout
++            android:id="@+id/fifth_place_Section"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal"
++            android:padding="12dp"
++            android:background="@drawable/white_background_retangle"
++            android:layout_marginBottom="20dp"
++            android:gravity="center_vertical">
++
++            <TextView
++                android:id="@+id/top5_rank"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="5"
++                android:textSize="25sp"
++                android:fontFamily="@font/afacad_medium"
++                android:textColor="#A911AC"
++                android:layout_marginStart="10dp"
++                android:layout_marginEnd="20dp"/>
++
++            <ImageView
++                android:id="@+id/icon_top5"
++                android:layout_width="58dp"
++                android:layout_height="58dp"
++                android:src="@drawable/icon_ava2"
++                android:layout_marginEnd="20dp"/>
++
++            <LinearLayout
++                android:id="@+id/top5_content"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp">
++
++                <TextView
++                    android:id="@+id/top5_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="congphan again??"
++                    android:textColor="#000000"
++                    android:textSize="20sp" />
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top5"
++                    android:paddingTop="5dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top5_coin_icon"
++                        android:layout_width="25dp"
++                        android:layout_height="25dp"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top5_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="1111"
++                        android:textSize="17sp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textColor="#A4A40F"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++
++            <!-- View rỗng để đẩy phần tử tiếp theo sang phải kết hợp với layout_marginEnd
++            để đảm bảo khối có id là hienthithem luôn nằm cách mép rìa phải một khoảng cách 20dp -->
++            <View
++                android:layout_width="wrap_content"
++                android:layout_height="0dp"
++                android:layout_weight="1" />
++
++            <LinearLayout
++                android:id="@+id/hienthithem_5thSection"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp" >
++
++                <ImageView
++                    android:id="@+id/top5_polygon_icon"
++                    android:layout_width="20dp"
++                    android:layout_height="20dp"
++                    android:paddingRight="0dp"
++                    android:src="@drawable/icon_polygon_item_leadboard"/>
++
++                <TextView
++                    android:id="@+id/hienthithem_5thSection_number"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="+6"
++                    android:textColor="#000000"
++                    android:textSize="18sp" />
++            </LinearLayout>
++        </LinearLayout>
++
++        ///////////////////////////////////////////////
++        <!-- 6th place -->
++        <LinearLayout
++            android:id="@+id/sixth_place_Section"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal"
++            android:padding="12dp"
++            android:background="@drawable/white_background_retangle"
++            android:layout_marginBottom="20dp"
++            android:gravity="center_vertical">
++
++            <TextView
++                android:id="@+id/top6_rank"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="6"
++                android:textSize="25sp"
++                android:fontFamily="@font/afacad_medium"
++                android:textColor="#A911AC"
++                android:layout_marginStart="10dp"
++                android:layout_marginEnd="20dp"/>
++
++            <ImageView
++                android:id="@+id/icon_top6"
++                android:layout_width="58dp"
++                android:layout_height="58dp"
++                android:src="@drawable/icon_ava2"
++                android:layout_marginEnd="20dp"/>
++
++            <LinearLayout
++                android:id="@+id/top6_content"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp">
++
++                <TextView
++                    android:id="@+id/top6_name"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="wow! congphandeptrai"
++                    android:textColor="#000000"
++                    android:textSize="20sp" />
++
++                <LinearLayout
++                    android:id="@+id/coin_and_score_top6"
++                    android:paddingTop="5dp"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                    <ImageView
++                        android:id="@+id/top6_coin_icon"
++                        android:layout_width="25dp"
++                        android:layout_height="25dp"
++                        android:paddingRight="0dp"
++                        android:src="@drawable/icon_coin_leaderboard"/>
++                    <TextView
++                        android:id="@+id/top6_score"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:text="999"
++                        android:textSize="17sp"
++                        android:fontFamily="@font/afacad_medium"
++                        android:textColor="#A4A40F"
++                        android:gravity="center"/>
++                </LinearLayout>
++            </LinearLayout>
++
++            <!-- View rỗng để đẩy phần tử tiếp theo sang phải kết hợp với layout_marginEnd
++            để đảm bảo khối có id là hienthithem luôn nằm cách mép rìa phải một khoảng cách 20dp -->
++            <View
++                android:layout_width="wrap_content"
++                android:layout_height="0dp"
++                android:layout_weight="1" />
++
++            <LinearLayout
++                android:id="@+id/hienthithem_6thSection"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_marginEnd="20dp" >
++
++                <ImageView
++                    android:id="@+id/top6_polygon_icon"
++                    android:layout_width="20dp"
++                    android:layout_height="20dp"
++                    android:paddingRight="0dp"
++                    android:src="@drawable/icon_polygon_item_leadboard"/>
++
++                <TextView
++                    android:id="@+id/hienthithem_6thSection_number"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/afacad_medium"
++                    android:text="+6"
++                    android:textColor="#000000"
++                    android:textSize="18sp" />
++            </LinearLayout>
++        </LinearLayout>
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:fontFamily="@font/afacad_italic"
++            android:textSize="20sp"
++            android:textColor="#fff"
++            android:text="Xem thêm"
++            android:layout_marginTop="10dp"
++            android:gravity="center_horizontal"/>
++    </LinearLayout>
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activity.MainActivity\">\r\n\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:id=\"@+id/format_header\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        >\r\n\r\n        <TextView\r\n            android:id=\"@+id/format_textView\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Page\"\r\n            android:textSize=\"20sp\"\r\n            android:gravity=\"center\"\r\n            android:paddingVertical=\"13dp\"\r\n            tools:ignore=\"MissingConstraints\"\r\n            />\r\n\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"4dp\"\r\n            android:background=\"@color/main_color\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/format_textView\"\r\n            />\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n\r\n\r\n    <FrameLayout\r\n        android:id=\"@+id/format_frameLayout\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"0dp\"\r\n        app:layout_constraintRight_toRightOf=\"parent\"\r\n        app:layout_constraintLeft_toLeftOf=\"parent\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/format_bottomNav\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/format_header\"\r\n         >\r\n    </FrameLayout>\r\n\r\n    <!-- Shadow giả -->\r\n\r\n    <View\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"20dp\"\r\n        android:background=\"@drawable/shadow_top\"\r\n        tools:ignore=\"MissingConstraints\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/format_bottomNav\" />\r\n\r\n    <com.google.android.material.bottomnavigation.BottomNavigationView\r\n        android:id=\"@+id/format_bottomNav\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingHorizontal=\"20dp\"\r\n\r\n        android:elevation=\"10dp\"\r\n        android:background=\"@color/white\"\r\n\r\n        app:menu=\"@menu/bottom_nav_menu\"\r\n        app:itemRippleColor=\"@color/bottom_nav_ripple_color\"\r\n        app:itemIconTint=\"@color/bottom_nav_icon_color\"\r\n        app:itemIconSize=\"35dp\"\r\n        app:itemTextColor=\"@color/bottom_nav_icon_color\"\r\n\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        >\r\n    </com.google.android.material.bottomnavigation.BottomNavigationView>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 0c116988feba06bbb57bcfef469daad3e6e4820e)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1745907968421)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main"
+@@ -62,21 +63,20 @@
+         android:id="@+id/format_bottomNav"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
++        android:background="@color/white"
++
++        android:elevation="10dp"
+         android:paddingHorizontal="20dp"
+ 
+-        android:elevation="10dp"
+-        android:background="@color/white"
+-
+-        app:menu="@menu/bottom_nav_menu"
++        app:itemIconSize="35dp"
++        app:itemIconTint="@color/bottom_nav_icon_color"
+         app:itemRippleColor="@color/bottom_nav_ripple_color"
+-        app:itemIconTint="@color/bottom_nav_icon_color"
+-        app:itemIconSize="35dp"
+         app:itemTextColor="@color/bottom_nav_icon_color"
+-
+         app:layout_constraintBottom_toBottomOf="parent"
++
+         app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
+         app:layout_constraintStart_toStartOf="parent"
+-        >
+-    </com.google.android.material.bottomnavigation.BottomNavigationView>
++        app:menu="@menu/bottom_nav_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file

@@ -1,0 +1,356 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    android:padding="20dp">
+
+    <!-- Header: Avatar + Username + Coin + Logout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="15dp"
+        android:layout_marginVertical="5dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_ava2"
+
+            app:shapeAppearanceOverlay="@style/CircularImageView"
+            app:strokeColor="@color/main_color_purple"
+            app:strokeWidth="2dp"
+            android:padding="1dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USERNAME"
+                android:fontFamily="@font/afacad_bold"
+                android:textColor="#9A2276"
+                android:textStyle="bold"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/coinTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/afacad_bold"
+                    android:text=""
+                    android:textColor="#FF9800"
+                    android:textSize="20sp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/icon_setting_danhgia5sao"
+                    android:layout_marginStart="4dp"
+                    app:tint="#FF9800" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/logoutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/afacad_regular"
+            android:text="@string/setting_dangxuat"
+            android:textSize="18sp"
+            android:textColor="@color/main_color"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#9C27B0" />
+
+    <!-- List of Settings -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Item example -->
+            <LinearLayout
+                android:id="@+id/btnChinhSuaHoSo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_chinhsuahoso"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_bold"
+                    android:text="@string/chinhsuahoso"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+            <!-- Item Ngôn ngữ sử dụng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_ngonngu"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/ngonngusudung"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/languageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/afacad_regular"
+                    android:text="@string/select_ngonngusudung"
+                    android:textSize="18sp"
+                    android:textColor="@color/main_color" />
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Giao diện tối -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_giaodientoi"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/giaodientoi"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Hiển thị -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_hienthi"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/hienthi"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Nhắc nhở học tập -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_nhacnhohoctap"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/nhacnhohoctap"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Phản hồi và hỗ trợ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_phanhoi"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/phanhoihotro"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Đánh giá 5 sao -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_setting_danhgia5sao"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/danhgia5sao"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+            <!-- Item Điều khoản sử dụng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:layout_marginVertical="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icpn_setting_dieukhoansudung"
+                    app:tint="@color/main_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/afacad_medium"
+                    android:text="@string/dieukhoansudung"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <!-- Divider between items -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9C27B0" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

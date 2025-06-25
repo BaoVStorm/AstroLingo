@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navHome"
+        android:icon="@drawable/icon_home_96"
+        android:title="@string/navHome" />
+    <item
+        android:id="@+id/navTest"
+        android:icon="@drawable/icon_test_96"
+        android:title="@string/navTest"
+        />
+<!--    <item-->
+<!--        android:id="@+id/navCourse"-->
+<!--        android:icon="@drawable/icon_course_96"-->
+<!--        android:title="@string/navCourse" />-->
+    <item
+        android:id="@+id/navAI"
+        android:icon="@drawable/icon_ai_96"
+        android:title="@string/navAI" />
+    <item
+        android:id="@+id/navSetting"
+        android:icon="@drawable/icon_setting_96"
+        android:title="@string/navSetting" />
+</menu>

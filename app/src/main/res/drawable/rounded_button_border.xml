@@ -1,0 +1,22 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#20FFFFFF">
+
+    <!-- Hình dạng chính: nền trong suốt, có viền và bo góc -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="4dp"
+                android:color="@color/loginRegister_button_color" />
+            <corners android:radius="52dp" />
+        </shape>
+    </item>
+
+    <!-- Mask để ripple bo góc -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+            <corners android:radius="52dp" />
+        </shape>
+    </item>
+</ripple>

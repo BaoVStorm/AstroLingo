@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/header"
+
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/iconTranslate"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/transparent"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/icon_vocab_search"
+
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintBottom_toTopOf="@+id/box_interact"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/origin_text"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+
+                android:fontFamily="@font/afacad_medium"
+                android:gravity="top"
+                android:imeOptions="flagNoEnterAction"
+
+                android:inputType="textMultiLine"
+                android:overScrollMode="ifContentScrolls"
+
+                android:paddingHorizontal="25dp"
+                android:paddingTop="50dp"
+                android:paddingBottom="30dp"
+
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+
+                android:singleLine="false"
+                android:hint="@string/input_search"
+                android:textColor="@color/black_light"
+                android:textSize="30sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/translate_text"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textColor="@color/light_blue"
+
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:longClickable="false"
+
+                android:fontFamily="@font/afacad_medium"
+                android:gravity="top"
+                android:imeOptions="flagNoEnterAction"
+
+                android:inputType="textMultiLine"
+                android:overScrollMode="ifContentScrolls"
+
+                android:paddingHorizontal="25dp"
+                android:paddingTop="50dp"
+                android:paddingBottom="30dp"
+
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+
+                android:singleLine="false"
+
+                android:textSize="30sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@+id/box_input"
+            app:layout_constraintBottom_toTopOf="@+id/button_search"
+            >
+
+            <TextView
+                android:id="@+id/origin_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+
+                android:fontFamily="@font/afacad_regular"
+                android:text="@string/vietnamese"
+                android:textColor="@color/dark_grey"
+
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/main_color"
+                android:layout_marginHorizontal="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/translate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+
+                android:fontFamily="@font/afacad_regular"
+                android:text="@string/english"
+                android:textColor="@color/dark_grey"
+
+                android:textSize="16sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="30dp"
+                android:indeterminateTint="@color/loading"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_copy_origin"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icon_asset_copy"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+
+                app:layout_constraintBottom_toTopOf="@+id/line2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/icon_copy_translate"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icon_asset_copy"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="10dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/button_search"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/button_search"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:fontFamily="@font/afacad_medium"
+            android:gravity="center"
+            android:text="@string/translate_text"
+            android:textColor="@color/white"
+
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/main_color_purple"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/box_interact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_word"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="125dp"
+                android:layout_height="65dp"
+                android:layout_marginVertical="15dp"
+                android:padding="15dp"
+                app:cardCornerRadius="15dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/card_origin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/afacad_medium"
+
+                    android:gravity="center"
+
+                    android:text="@string/vietnamese"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="125dp"
+                android:layout_height="65dp"
+                android:layout_marginVertical="15dp"
+                app:cardCornerRadius="15dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/card_translate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/afacad_medium"
+
+                    android:gravity="center"
+
+                    android:text="@string/english"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/box_interact"
+        app:layout_constraintEnd_toEndOf="@+id/box_interact"
+        app:layout_constraintStart_toStartOf="@+id/box_interact"
+        app:layout_constraintTop_toTopOf="@+id/box_interact">
+
+        <ImageView
+            android:id="@+id/icon_switch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:src="@drawable/icon_asset_nextarrow3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

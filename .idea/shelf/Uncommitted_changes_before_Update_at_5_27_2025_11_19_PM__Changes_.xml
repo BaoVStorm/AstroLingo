@@ -1,0 +1,50 @@
+<changelist name="Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]" date="1748362750589" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 5/27/2025 11:19 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/outputFiles.bin" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/bgpink.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/bgpink.png" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/bgquestion.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/bgquestion.png" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/bgbtn.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/bgbtn.png" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/bgpurple.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/bgpurple.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.10.2/dependencies-accessors/402705c56638162ca042fc12facb6b3d5bd8dc2c/metadata.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.10.2/dependencies-accessors/402705c56638162ca042fc12facb6b3d5bd8dc2c/metadata.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_27_2025_11_19_PM_[Changes]/metadata.bin" />
+  </binary>
+</changelist>

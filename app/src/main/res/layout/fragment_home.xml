@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background cố định -->
+    <ImageView
+        android:id="@+id/fixed_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background4" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Welcome CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/welcome_img_homepage_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/welcome_img_homepage_ImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/background10" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Từ vựng title -->
+            <TextView
+                android:id="@+id/titleVocabulary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome_img_homepage_CardView"
+                android:layout_marginTop="25dp"
+                android:text="Từ vựng"
+                android:textSize="20sp"
+                android:fontFamily="@font/afacad_bold" />
+
+            <ImageView
+                android:id="@+id/icon_info_titleVocabulary_ImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/titleVocabulary"
+                android:layout_below="@id/welcome_img_homepage_CardView"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_info" />
+
+            <!-- Vocabulary Section -->
+            <RelativeLayout
+                android:id="@+id/vocabSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleVocabulary"
+                android:layout_marginTop="0dp">
+
+                <!-- Tra từ vựng -->
+                <LinearLayout
+                    android:id="@+id/lookupSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_vocab_search_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/icon_vocab_search_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_vocab_search" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tra từ vựng"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- Học từ vựng -->
+                <LinearLayout
+                    android:id="@+id/learnSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/lookupSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_learn_vocab_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/icon_learn_vocab_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_learn_vocab" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Học từ vựng"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- Từ của bạn -->
+                <LinearLayout
+                    android:id="@+id/yourVocabSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/learnSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_word_of_you_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+                        <ImageView
+                            android:id="@+id/icon_word_of_you_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_word_of_you" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Từ của bạn"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+<!--            //////////////////////////////////////////////////////////////////////////////////-->
+            <!-- Trò chơi title -->
+            <TextView
+                android:id="@+id/titleGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vocabSection"
+                android:layout_marginTop="25dp"
+                android:text="Trò chơi"
+                android:textSize="20sp"
+                android:fontFamily="@font/afacad_bold" />
+
+            <ImageView
+                android:id="@+id/icon_info_titleGame_ImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/titleGame"
+                android:layout_below="@id/vocabSection"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_info" />
+
+            <!-- Game Section -->
+            <RelativeLayout
+                android:id="@+id/gameSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleGame"
+                android:layout_marginTop="0dp">
+
+                <!-- Hangman -->
+                <LinearLayout
+                    android:id="@+id/hangmanSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_hangman_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/icon_hangman_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_hangman" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hangman"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- Word attack -->
+                <LinearLayout
+                    android:id="@+id/wordattackSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/hangmanSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_word_attack_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+                        <ImageView
+                            android:id="@+id/icon_word_attack_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_word_attack" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Word attack"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- TreasureG -->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/treasuregSection"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toEndOf="@id/wordattackSection"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:id="@+id/icon_treasure_g_CardView"-->
+<!--                        android:layout_width="@dimen/size_button_home"-->
+<!--                        android:layout_height="@dimen/size_button_home"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        app:cardElevation="2dp"-->
+<!--                        app:cardUseCompatPadding="true">-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/icon_treasure_g_ImageView"-->
+<!--                            android:layout_width="@dimen/size_icon_home"-->
+<!--                            android:layout_height="@dimen/size_icon_home"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/icon_treasure_g" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="TreasureG"-->
+<!--                        android:paddingTop="2dp"-->
+<!--                        android:fontFamily="@font/afacad_medium"-->
+<!--                        android:textSize="@dimen/text_button_home"-->
+<!--                        android:layout_gravity="center_horizontal"/>-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; Puzword &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/puzwordSection"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toEndOf="@id/treasuregSection"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:id="@+id/icon_puzword_CardView"-->
+<!--                        android:layout_width="@dimen/size_button_home"-->
+<!--                        android:layout_height="@dimen/size_button_home"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        app:cardElevation="2dp"-->
+<!--                        app:cardUseCompatPadding="true">-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/icon_puzword_ImageView"-->
+<!--                            android:layout_width="@dimen/size_icon_home"-->
+<!--                            android:layout_height="@dimen/size_icon_home"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/icon_puzword" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Puzword"-->
+<!--                        android:paddingTop="2dp"-->
+<!--                        android:fontFamily="@font/afacad_medium"-->
+<!--                        android:textSize="@dimen/text_button_home"-->
+<!--                        android:layout_gravity="center_horizontal"/>-->
+<!--                </LinearLayout>-->
+            </RelativeLayout>
+
+<!--            //////////////////////////////////////////////////////////////////////////////-->
+            <!-- Lịch sử title -->
+            <TextView
+                android:id="@+id/titleHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gameSection"
+                android:layout_marginTop="25dp"
+                android:text="Lịch sử"
+                android:textSize="20sp"
+                android:fontFamily="@font/afacad_bold" />
+
+            <ImageView
+                android:id="@+id/icon_info_titleHistory_ImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/titleHistory"
+                android:layout_below="@id/gameSection"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="26dp"
+                android:src="@drawable/icon_info" />
+
+            <!-- History Section -->
+            <RelativeLayout
+                android:id="@+id/historySection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleHistory"
+                android:layout_marginTop="0dp">
+
+                <!-- Từ đã tra -->
+                <LinearLayout
+                    android:id="@+id/wordlookupedSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_lookuped_word_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/icon_lookuped_word_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_lookuped_word" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Từ đã tra"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- Câu làm sai -->
+                <LinearLayout
+                    android:id="@+id/wronganswerSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/wordlookupedSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_wrong_answer_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+                        <ImageView
+                            android:id="@+id/icon_wrong_answer_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_wrong_answer" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Câu làm sai"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- Lịch sử -->
+                <LinearLayout
+                    android:id="@+id/testHistorySection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/wronganswerSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_test_history_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+                        <ImageView
+                            android:id="@+id/icon_test_history_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_test_history" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lịch sử Thi"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+<!--            //////////////////////////////////////////////////////////////-->
+            <!-- AI title -->
+            <TextView
+                android:id="@+id/titleAI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/historySection"
+                android:layout_marginTop="25dp"
+                android:text="AI"
+                android:textSize="20sp"
+                android:fontFamily="@font/afacad_bold" />
+
+            <ImageView
+                android:id="@+id/icon_info_titleAI_ImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/titleAI"
+                android:layout_below="@id/historySection"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="63dp"
+                android:src="@drawable/icon_info" />
+
+            <!-- AI Section -->
+            <RelativeLayout
+                android:id="@+id/AISection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleAI"
+                android:layout_marginTop="0dp">
+
+                <!-- Chatbot -->
+                <LinearLayout
+                    android:id="@+id/chatbotSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_chatbot_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/icon_chatbot_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_chatbot" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chatbot"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+                <!-- AI Writing -->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/AIWritingSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/chatbotSection"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/icon_ai_writing_CardView"
+                        android:layout_width="@dimen/size_button_home"
+                        android:layout_height="@dimen/size_button_home"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+                        <ImageView
+                            android:id="@+id/icon_ai_writing_ImageView"
+                            android:layout_width="@dimen/size_icon_home"
+                            android:layout_height="@dimen/size_icon_home"
+                            android:layout_gravity="center"
+                            android:src="@drawable/icon_ai_writing" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AI Writing"
+                        android:paddingTop="2dp"
+                        android:fontFamily="@font/afacad_medium"
+                        android:textSize="@dimen/text_button_home"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+<!--            //////////////////////////////////////////////////////////////////////////////////-->
+            <!-- Bảng xếp hạng title -->
+            <TextView
+                android:id="@+id/titleScoreboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AISection"
+                android:layout_marginTop="25dp"
+                android:text="Bảng xếp hạng"
+                android:textSize="20sp"
+                android:fontFamily="@font/afacad_bold" />
+
+            <ImageView
+                android:id="@+id/icon_info_titleScoreboard_ImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toEndOf="@id/titleScoreboard"
+                android:layout_below="@id/AISection"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/icon_info" />
+
+
+
+            <!-- Bảng xếp hạng Section -->
+            <include
+                android:id="@+id/scoreboardSection"
+                layout="@layout/page_home_leaderboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/titleScoreboard"/>
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/icon_lead_shadow"
+
+                android:layout_above="@id/scoreboardSection"
+                android:layout_alignParentEnd="true"
+                android:translationY="95dp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>
