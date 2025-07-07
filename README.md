@@ -14,9 +14,12 @@
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/aws.png" alt="AWS" title="AWS"/></code>
 </div>
 
-<div align="center"> <h1>iBeleaf</h1> </div>
+<div align="center"> <h1>Astrolingo</h1> </div>
 
-Mệt mỏi với cuộc sống xô bồ? Bạn đang tìm kiếm một góc xanh tươi để thư giãn và tận hưởng cuộc sống? **iBeleaf** chính là thiên đường mà bạn đang tìm kiếm! Với vô vàn giống cây xanh độc đáo, từ những chậu cây nhỏ xinh đến những cây cảnh lớn, chúng tôi cam kết mang đến cho bạn một không gian sống xanh mát và tràn đầy sức sống. Hãy để **iBeleaf** giúp bạn tạo nên một thiên đường xanh ngay tại ngôi nhà của mình!
+Mệt mỏi với việc học tiếng Anh mà không biết bắt đầu từ đâu? Bạn đang tìm kiếm một công cụ luyện thi TOEIC hiệu quả, tiện lợi và dễ sử dụng? **AstroLingo** chính là người bạn đồng hành mà bạn đang cần!
+
+Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng phong phú, chatbot AI thông minh và các mini game thú vị, **AstroLingo** giúp bạn chinh phục tiếng Anh một cách dễ dàng, mọi lúc mọi nơi. Hãy để **AstroLingo** đồng hành cùng bạn trên hành trình chinh phục TOEIC và mở rộng cơ hội tương lai!
+
 
 ## 1. Giới thiệu đồ án môn học 
 - **Tên môn học**: Phát triển ứng dụng Web
