@@ -145,7 +145,7 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 1️⃣ **Clone project**
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/BaoVStorm/Astrolingo.git
 ```
 
 2️⃣ **Mở project Android**
@@ -177,7 +177,7 @@ git clone <repo-url>
 <br/>
 
 ## 🕹️ Giao diện & chức năng
-### Trang đăng ký / đăng nhập
+### Trang đăng ký / đăng nhập / quên mật khẩu
 > ✨ đầu trang
 >
 
