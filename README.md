@@ -128,23 +128,53 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 </table>
 </div>
 
+<br/>
+
 ## 5. Nguồn dữ liệu
 
 - **Đề thi TOEIC**: Tổng hợp từ các bộ đề chuẩn ETS, nguồn EstudyMe (https://estudyme.com)
 
 - **Từ vựng**: Thu thập từ https://600tuvungtoeic.com
 
-- **AI Chatbot**: Tích hợp model ChatGPT-b4 từ Huggingface, tinh chỉnh cho nội dung TOEIC.
+- **AI Chatbot**: Tích hợp model ChatGPT-b4 từ **Huggingface**, tinh chỉnh cho nội dung TOEIC.
 
-## 5. Unique selling point
-- Phân tích, xây dựng các quy trình nghiệp vụ mua hàng, giao hàng, đổi/trả hàng sát với thực tế.
-- Xây dựng hệ thống mã giảm giá với đa dạng thể loại như voucher, coupon, free ship, buy 1 get 1,... Các mã giảm sẽ đi kèm theo điều kiện sử dụng như giá trị đơn hàng tối thiếu, số lần được sử dụng tối đa, thời hạn khả dụng của mã giảm. 
-- Tích hợp API của các bên giao hàng trung gian như GHN hay GHTK để đưa ra phí ship chính xác cho các đơn hàng giao ngoài TP.HCM.
-- Tích hợp xác thực OAuth2 cho phép đăng nhập thông qua Google, Facebook.
-- (Coming soon) Tích hợp Webhook của các bên giao hàng trung gian như GHN, GHTK để tạo đơn giao hàng, theo dõi tiến độ giao hàng.
-- Xây dựng hệ thống thông báo:
-    - User admin được thông báo về các đon hàng và các yêu cầu đổi/trả hàng thông qua Websocket (real-time)
-    - User khách hàng nhận được các email về trạng thái đơn hàng, yêu cầu đổi/trả hàng.
+<br/>
+
+## 6. Hướng dẫn cài đặt & chạy
+
+1️⃣ **Clone project**
+
+```bash
+git clone <repo-url>
+```
+
+2️⃣ **Mở project Android**
+
+- Mở bằng Android Studio
+
+- Build & chạy trên thiết bị ảo hoặc thiết bị thật
+
+3️⃣ **Chạy server Back-end**
+
+- Nguồn tham khảo:  
+
+- NodeJs API + MongoDB
+
+- Deploy trên AWS EC2 (hoặc trên local)
+
+4️⃣ **Khởi chạy AI Chatbot**
+
+- Nguồn tham khảo: 
+  
+- Model Python chạy bằng FastAPI
+
+- Tạo public API thông qua Ngrok
+
+5️⃣ **Mở trang web Admin**
+
+- Mở file HTML, chạy trên localhost hoặc server.
+
+<br/>
 
 ## 6. Phân trang
 
