@@ -26,41 +26,49 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 - **Người thực hiện**: Trần Vũ Bão
 - **Mã số sinh viên**: 22520124
 
+<br/>
+
 ## 2. Thiết kế Cơ sở dữ liệu 
 ![AstroLingo Mobile App](https://github.com/user-attachments/assets/3db923e7-64de-4cd9-ae75-4966559dd442)
 
 <div align="center">
 	<a href='https://dbdiagram.io/d/AstroLingo-Mobile-App-6807c6b71ca52373f5ebede0'>Astrolingo - dbdiagram.io<a>
 </div>
-		
+
+<br/>
+  
 ## 3. Tính năng chính
-**Ứng dụng di động**
+📱 **Ứng dụng di động**
+	
+	- Tài khoản: Đăng nhập, Đăng ký, Quên mật khẩu, Đổi mật khẩu, Đăng xuất.
+	
+	- Cá nhân: Xem & chỉnh sửa thông tin cá nhân.
+	
+	- Điểm & Xếp hạng: Tích lũy điểm, xem bảng xếp hạng.
+	
+	- Thi TOEIC: Full Test 200 câu (Listening + Reading), Mini Test 100 câu.
+	
+	- Từ vựng: Tra từ, tự thêm từ, flashcard, ghép cặp từ-nghĩa, trắc nghiệm.
+	
+	- Câu sai: Xem & làm lại câu trả lời sai.
+	
+	- Mini Game: Hangman, Puzword.
+	
+	- Chatbot AI: Trợ lý ảo trả lời câu hỏi TOEIC, ngữ pháp, từ vựng.
 
-- Tài khoản: Đăng nhập, Đăng ký, Quên mật khẩu, Đổi mật khẩu, Đăng xuất.
+<br/>
 
-- Cá nhân: Xem & chỉnh sửa thông tin cá nhân.
+🖥️ **Trang web Admin**
 
-- Điểm & Xếp hạng: Tích lũy điểm, xem bảng xếp hạng.
+	- Quản lý tài khoản người dùng.
+	
+	- Quản lý danh sách từ vựng, bài thi.
+	
+	- Giao diện: HTML, CSS, JavaScript.
 
-- Thi TOEIC: Full Test 200 câu (Listening + Reading), Mini Test 100 câu.
+<br/>
 
-- Từ vựng: Tra từ, tự thêm từ, flashcard, ghép cặp từ-nghĩa, trắc nghiệm.
-
-- Câu sai: Xem & làm lại câu trả lời sai.
-
-- Mini Game: Hangman, Puzword.
-
-- Chatbot AI: Trợ lý ảo trả lời câu hỏi TOEIC, ngữ pháp, từ vựng.
-
-**Trang web Admin**
-
-- Quản lý tài khoản người dùng.
-
-- Quản lý danh sách từ vựng, bài thi.
-
-- Giao diện: HTML, CSS, JavaScript.
-
-## 3. Công nghệ sử dụng
+## 4. Công nghệ sử dụng
 Danh sách công cụ + công nghệ:
 
 - Ngôn ngữ lập trình
