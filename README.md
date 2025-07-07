@@ -1,4 +1,4 @@
-![454533403_785974327069115_7132314954376762176_n](https://github.com/user-attachments/assets/3db4749a-228d-4bd1-a89d-bb7e35dbcd18)
+<img width="750" alt="background" src="https://github.com/user-attachments/assets/ac71f195-6db3-474b-bd78-0c3a6b14b4b6" />
 
 <div align="center">
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png" alt="Java" title="Java"/></code>
