@@ -26,21 +26,14 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 - **Người thực hiện**: Trần Vũ Bão
 - **Mã số sinh viên**: 22520124
 
-##
-2. Nhóm thực hiện
-**Tên nhóm: Coconerd** 🥥
+## 2. Thiết kế Cơ sở dữ liệu 
+![AstroLingo Mobile App](https://github.com/user-attachments/assets/3db923e7-64de-4cd9-ae75-4966559dd442)
 
-| Họ và tên          | MSSV     | Vai trò     | Liên hệ                     |
-|--------------------|----------|-------------|-----------------------------|
-|🌱  Nguyễn Đỗ Đức Minh | 22520872 | Team leader   | nddminh2021@gmail.com          |
-|🌱  Phan Thị Thủy Hiền | 22520423 | Team member | thuyhienphanthi2004@gmail.com |
-|🌱  Trần Vũ Bão   | 22520124 | Team member | tranvubao2004@gmail.com          |
-|🌱  Phan Thành Công       | 22520170 | Team member | phanthanhcong982004@gmail.com          |
+<div align="center">
+	<a href='https://dbdiagram.io/d/AstroLingo-Mobile-App-6807c6b71ca52373f5ebede0'>Astrolingo - dbdiagram.io<a>
+</div>
 
-## 3. Thiết kế Cơ sở dữ liệu 
-[dbdiagram.io](https://dbdiagram.io/d/Plant-Paradise-Database-672671edb1b39dd85843f893)
 
-![image](https://github.com/user-attachments/assets/635edd76-679f-49d3-9084-0468eb105189)
 
 ## 4. Quy trình nghiệp vụ
 
