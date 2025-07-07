@@ -128,20 +128,13 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 </table>
 </div>
 
+## 5. Nguồn dữ liệu
 
-## 4. Quy trình nghiệp vụ
+- **Đề thi TOEIC**: Tổng hợp từ các bộ đề chuẩn ETS, nguồn EstudyMe (https://estudyme.com)
 
-### 4.1 Chính sách bán hàng
-- Về việc áp dụng Voucher: Mỗi đơn mua hàng chỉ được áp dụng 1 loại Voucher
-- Về chính sách giao hàng:
-    - Các sản phẩm cây có kèm chậu: Chỉ nhận giao nội thành TP.HCM
-    - Các sản phẩm chậu: Giao hàng toàn quốc  
-- Về quy định phí giao hàng:
-    - Giao hàng nội thành TP.HCM: Đồng giá 30.000đ
-    - Giao hàng ngoại thành TP.HCM: Được tính dựa trên tổng cân nặng của đơn hàng và địa điểm nhận hàng (sử dụng API của GHN - Giao hàng nhanh)
-### 4.2 Chính sách trả hàng / hoàn tiền 
-- Đối với các sản phẩm không phải là cây, khách hàng được phép đổi/trả hàng trong vòng 30 ngày tính từ ngày nhận hàng
-- Đối với các sản phẩm cây bao gồm chậu, khách hàng được phép đổi/trả trong vòng 7 ngày tính từ ngày nhận hàng
+- **Từ vựng**: Thu thập từ https://600tuvungtoeic.com
+
+- **AI Chatbot**: Tích hợp model ChatGPT-b4 từ Huggingface, tinh chỉnh cho nội dung TOEIC.
 
 ## 5. Unique selling point
 - Phân tích, xây dựng các quy trình nghiệp vụ mua hàng, giao hàng, đổi/trả hàng sát với thực tế.
