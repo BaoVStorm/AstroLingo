@@ -181,25 +181,32 @@ git clone <repo-url>
 > ✨ đầu trang
 >
 
-
-
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/2d4fd78e-8ae7-4a7d-97a9-25d3f9a93af7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
-### Trang đăng ký / đăng nhập
-> ✨ Đăng ký với Email
+> ✨ Đăng nhập
 >
 
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/82acb917-e4fd-4a43-9477-0c4603c7e56e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p>
 
+> ✨ Đăng Ký
+>
 
-> ✨ Đăng nhập
-> 
-- Đăng nhập với Email
-- Đăng nhập với Google
-- Đăng nhập với Facebook
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/9413d2b1-8b92-45b2-970d-90f3550eeef4" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p>
 
-![image](https://github.com/user-attachments/assets/0776478c-51e1-49bb-ad14-b22a0e380f83)
+> ✨ Quên mật khẩu
+>
 
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/3b1a7d19-1ecf-47ef-8306-f751b0bb7515" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/57bc86aa-c3b9-4688-9b7e-9a7c6baec6a7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/52887b51-1826-4793-af43-43328aa6460e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/1750a391-ee78-43fc-8325-8e83cc2efa5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p>
 
 
