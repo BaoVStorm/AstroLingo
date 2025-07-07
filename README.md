@@ -32,6 +32,53 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 <div align="center">
 	<a href='https://dbdiagram.io/d/AstroLingo-Mobile-App-6807c6b71ca52373f5ebede0'>Astrolingo - dbdiagram.io<a>
 </div>
+		
+## 3. Tính năng chính
+**Ứng dụng di động**
+
+- Tài khoản: Đăng nhập, Đăng ký, Quên mật khẩu, Đổi mật khẩu, Đăng xuất.
+
+- Cá nhân: Xem & chỉnh sửa thông tin cá nhân.
+
+- Điểm & Xếp hạng: Tích lũy điểm, xem bảng xếp hạng.
+
+- Thi TOEIC: Full Test 200 câu (Listening + Reading), Mini Test 100 câu.
+
+- Từ vựng: Tra từ, tự thêm từ, flashcard, ghép cặp từ-nghĩa, trắc nghiệm.
+
+- Câu sai: Xem & làm lại câu trả lời sai.
+
+- Mini Game: Hangman, Puzword.
+
+- Chatbot AI: Trợ lý ảo trả lời câu hỏi TOEIC, ngữ pháp, từ vựng.
+
+**Trang web Admin**
+
+- Quản lý tài khoản người dùng.
+
+- Quản lý danh sách từ vựng, bài thi.
+
+- Giao diện: HTML, CSS, JavaScript.
+
+## 3. Công nghệ sử dụng
+Danh sách công cụ + công nghệ:
+
+- Ngôn ngữ lập trình
+	- FrontEnd: Java
+   	- BackEnd: NodeJs
+   	- Ai
+
+- IDE (Android Studio)
+
+- Thiết kế UI (Figma)
+
+- Database (MongoDB Compass, MongoDB Atlas)
+
+- Triển khai (AWS EC2)
+
+- Test API (Postman)
+
+
 
 
 
