@@ -185,8 +185,6 @@ git clone <repo-url>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/2d4fd78e-8ae7-4a7d-97a9-25d3f9a93af7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
-	<img src="https://github.com/user-attachments/assets/2d4fd78e-8ae7-4a7d-97a9-25d3f9a93af7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
-	<img src="https://github.com/user-attachments/assets/2d4fd78e-8ae7-4a7d-97a9-25d3f9a93af7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
 ### Trang đăng ký / đăng nhập
