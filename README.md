@@ -2,6 +2,8 @@
 	<img width="750" alt="background" src="https://github.com/user-attachments/assets/ac71f195-6db3-474b-bd78-0c3a6b14b4b6" />
 </div>
 
+<br/>
+
 <div align="center">
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png" alt="Java" title="Java"/></code>
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png" alt="JavaScript" title="JavaScript"/></code>
