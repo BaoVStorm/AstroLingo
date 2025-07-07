@@ -14,6 +14,12 @@
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/aws.png" alt="AWS" title="AWS"/></code>
 </div>
 
+<div align="center">
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/html.png" alt="HTML" title="HTML"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/css.png" alt="CSS" title="CSS"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" alt="Python" title="Python"/></code>
+</div>
+
 <div align="center"> <h1>Astrolingo</h1> </div>
 
 Mệt mỏi với việc học tiếng Anh mà không biết bắt đầu từ đâu? Bạn đang tìm kiếm một công cụ luyện thi TOEIC hiệu quả, tiện lợi và dễ sử dụng? **AstroLingo** chính là người bạn đồng hành mà bạn đang cần!
@@ -69,25 +75,58 @@ Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng
 <br/>
 
 ## 4. Công nghệ sử dụng
-Danh sách công cụ + công nghệ:
-
-- Ngôn ngữ lập trình
-	- FrontEnd: Java
-   	- BackEnd: NodeJs
-   	- Ai
-
-- IDE (Android Studio)
-
-- Thiết kế UI (Figma)
-
-- Database (MongoDB Compass, MongoDB Atlas)
-
-- Triển khai (AWS EC2)
-
-- Test API (Postman)
-
-
-
+<div align="center">
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Thành phần</th>
+      <th>Công cụ/Ngôn ngữ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Thiết kế UI</td>
+      <td>Figma</td>
+    </tr>
+    <tr>
+      <td>Thiết kế DB</td>
+      <td>dbdiagram.io</td>
+    </tr>
+    <tr>
+      <td>Front-end App</td>
+      <td>XML + Java (Android Studio)</td>
+    </tr>
+    <tr>
+      <td>Back-end App</td>
+      <td>Java + NodeJs</td>
+    </tr>
+    <tr>
+      <td>API Test</td>
+      <td>Postman</td>
+    </tr>
+    <tr>
+      <td>Database</td>
+      <td>MongoDB Compass (local) + MongoDB Atlas (cloud)</td>
+    </tr>
+    <tr>
+      <td>Server Deploy</td>
+      <td>AWS EC2</td>
+    </tr>
+    <tr>
+      <td>Trang web Admin</td>
+      <td>HTML, CSS, JavaScript</td>
+    </tr>
+    <tr>
+      <td>AI Chatbot</td>
+      <td>Python + Model Huggingface (ChatGPT-b4)</td>
+    </tr>
+    <tr>
+      <td>API AI</td>
+      <td>FastAPI + Ngrok (public endpoint)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 ## 4. Quy trình nghiệp vụ
