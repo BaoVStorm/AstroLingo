@@ -227,6 +227,22 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/7cd63a6f-a008-430c-a2b2-f80645c37e2e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+- Học từ vựng
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/5b32b3d4-ff7f-48d2-bd21-fd0957db858a" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/9dc3c867-ec05-4184-9183-6542fbdcb68b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+<p align="center" >
+	(FlashCard)
+</p> 
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/54bd922e-15e4-478a-a60c-b74dbc3741ef" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/ca257cf7-5ed2-48ed-8dfe-828bd9e48692" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
 
 
 
