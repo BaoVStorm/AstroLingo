@@ -221,15 +221,16 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 </p>
 
 #### 2.1 Từ vựng
-
-- Tra / Dịch từ vựng
+> ✨ Tra / Dịch từ vựng
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/a6a4588e-7cd8-4edc-aea6-4778ca775e90" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/7cd63a6f-a008-430c-a2b2-f80645c37e2e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-- Học từ vựng
+> ✨ Học từ vựng
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/5b32b3d4-ff7f-48d2-bd21-fd0957db858a" alt="AstroLingo Screenshot" width="280" hspace="15"/>
@@ -245,7 +246,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/ca257cf7-5ed2-48ed-8dfe-828bd9e48692" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-- Từ của bạn / đã đánh dấu
+> ✨ Từ của bạn / đã đánh dấu
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/49d08c6e-4ab9-4d65-ab2f-77655e4b3ad5" alt="AstroLingo Screenshot" width="280" hspace="15"/>
@@ -263,20 +265,23 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 
 #### 2.3 Lịch sử
 
-- Từ của bạn / đã đánh dấu
+> ✨ Từ đã tra
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/22c17130-8457-45df-8d6a-9ff742263620" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-- Lịch sử thi
+> ✨ Lịch sử thi
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/74edb631-a001-4f09-bea6-ff722b5d97de" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/eca445c8-70a7-46b0-9f0a-a7ac44fb75e3" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-- Câu làm sai
+> ✨ Câu làm sai
+>
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/3407236f-143f-49a7-bac5-5e7ac7a0b49f" alt="AstroLingo Screenshot" width="280" hspace="15"/>
