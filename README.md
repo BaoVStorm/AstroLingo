@@ -28,6 +28,7 @@ Mệt mỏi với việc học tiếng Anh mà không biết bắt đầu từ �
 
 Với những tính năng luyện thi TOEIC thực tế, thư viện từ vựng phong phú, chatbot AI thông minh và các mini game thú vị, **AstroLingo** giúp bạn chinh phục tiếng Anh một cách dễ dàng, mọi lúc mọi nơi. Hãy để **AstroLingo** đồng hành cùng bạn trên hành trình chinh phục TOEIC và mở rộng cơ hội tương lai!
 
+<br/>
 
 ## 1. Giới thiệu dự án
 - **Tên đồ án**: Ứng dụng học tiếng Anh TOEIC **AstroLingo**
