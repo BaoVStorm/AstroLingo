@@ -185,12 +185,16 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/2d4fd78e-8ae7-4a7d-97a9-25d3f9a93af7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
+<br/>
+
 > ✨ Đăng nhập
 >
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/82acb917-e4fd-4a43-9477-0c4603c7e56e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
+
+<br/>
 
 > ✨ Đăng Ký
 >
@@ -199,12 +203,15 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/9413d2b1-8b92-45b2-970d-90f3550eeef4" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
+<br/>
+
 > ✨ Quên mật khẩu
 >
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/3b1a7d19-1ecf-47ef-8306-f751b0bb7515" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/57bc86aa-c3b9-4688-9b7e-9a7c6baec6a7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<br> <br>
 	<img src="https://github.com/user-attachments/assets/52887b51-1826-4793-af43-43328aa6460e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/1750a391-ee78-43fc-8325-8e83cc2efa5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
@@ -229,6 +236,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/7cd63a6f-a008-430c-a2b2-f80645c37e2e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<br/>
+
 > ✨ Học từ vựng
 >
 
@@ -236,6 +245,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/5b32b3d4-ff7f-48d2-bd21-fd0957db858a" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/9dc3c867-ec05-4184-9183-6542fbdcb68b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
+
+<br/>
 
 <p align="center" >
 	(FlashCard)
@@ -246,12 +257,15 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/ca257cf7-5ed2-48ed-8dfe-828bd9e48692" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<br/>
+
 > ✨ Từ của bạn / đã đánh dấu
 >
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/49d08c6e-4ab9-4d65-ab2f-77655e4b3ad5" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/406f0056-a797-4b65-8884-88098df2ba5b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<br> <br>
 	<img src="https://github.com/user-attachments/assets/126ad18d-2c97-4761-a97e-944e809ce7d1" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/16fc742b-8dad-416d-a74c-fb447dcfd0ac" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
@@ -272,6 +286,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/22c17130-8457-45df-8d6a-9ff742263620" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<br/> 
+
 > ✨ Lịch sử thi
 >
 
@@ -279,6 +295,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/74edb631-a001-4f09-bea6-ff722b5d97de" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/eca445c8-70a7-46b0-9f0a-a7ac44fb75e3" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
+
+<br/> 
 
 > ✨ Câu làm sai
 >
@@ -299,17 +317,23 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/8c50e885-a084-46ba-8f54-55c3fbd0fe9b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<br/>
+
 > ✨ Thi bài test
 >
 
 <p align="center" >
 	<img src="https://github.com/user-attachments/assets/901e4d33-aa4b-47cc-aa1a-3e2d69559544" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/6fe6b39c-b757-4a9f-a81b-29840465b215" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<br> <br>
 	<img src="https://github.com/user-attachments/assets/23c5f2e6-7b27-4dcd-8374-663f81b0ca5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/c926ef06-0947-4431-9029-33754f1930cf" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<br> <br>
 	<img src="https://github.com/user-attachments/assets/7cf6b6e6-6ae5-4672-b6d0-09cbfc865713" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 	<img src="https://github.com/user-attachments/assets/a2f0ccc8-a4ae-48a0-841b-6f25f10d34d9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
+
+<br/> 
 
 > ✨ Thi bài test
 >
