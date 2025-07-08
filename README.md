@@ -243,7 +243,14 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/ca257cf7-5ed2-48ed-8dfe-828bd9e48692" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-- Từ của bạn
+- Từ của bạn / đã đánh dấu
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/49d08c6e-4ab9-4d65-ab2f-77655e4b3ad5" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/406f0056-a797-4b65-8884-88098df2ba5b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/126ad18d-2c97-4761-a97e-944e809ce7d1" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/16fc742b-8dad-416d-a74c-fb447dcfd0ac" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
 
 #### 2.2 Trò chơi
 
