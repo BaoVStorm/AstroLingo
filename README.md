@@ -159,7 +159,7 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 
 3️⃣ **Chạy server Back-end**
 
-- Nguồn tham khảo:  
+- Nguồn tham khảo: https://github.com/BaoVStorm/Backend-nodejs-astrolingo-androidApp
 
 - NodeJs API + MongoDB
 
@@ -167,7 +167,7 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 
 4️⃣ **Khởi chạy AI Chatbot**
 
-- Nguồn tham khảo: 
+- Nguồn tham khảo: https://github.com/BaoVStorm/FastAPI_AI_ChatBox
   
 - Model Python chạy bằng FastAPI
 
