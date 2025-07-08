@@ -325,5 +325,14 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/5012421d-0276-44bf-a8cf-57f53e8f5ac9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<hr/>
 
+### 5. Chỉnh sửa (Setting)
+> ✨ Ai ChatBox
+>
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/1ac87c57-1c69-4f6d-93e8-61374bd570a7" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/b8517b82-12f2-45ee-ab73-d03bed8e9f40" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
 
