@@ -209,6 +209,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/1750a391-ee78-43fc-8325-8e83cc2efa5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
+<hr/>
+
 ### 2. Trang chủ (Home)
 > ✨ trang chủ
 >
@@ -280,6 +282,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/6a70f13b-c49b-4769-88c3-95e8effc1eb9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<hr/>
+
 ### 3. Thi (Test) | Main Activity
 > ✨ Các bài thi
 >
@@ -293,8 +297,12 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 >
 
 <p align="center" >
-	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
-	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/901e4d33-aa4b-47cc-aa1a-3e2d69559544" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/6fe6b39c-b757-4a9f-a81b-29840465b215" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/23c5f2e6-7b27-4dcd-8374-663f81b0ca5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/c926ef06-0947-4431-9029-33754f1930cf" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/7cf6b6e6-6ae5-4672-b6d0-09cbfc865713" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/a2f0ccc8-a4ae-48a0-841b-6f25f10d34d9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
 <p align="center" >
