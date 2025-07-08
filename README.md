@@ -159,7 +159,7 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 
 3️⃣ **Chạy server Back-end**
 
-- Sourse BackEnd: https://github.com/BaoVStorm/Backend-nodejs-astrolingo-androidApp
+- Sourse Code: https://github.com/BaoVStorm/Backend-nodejs-astrolingo-androidApp
 
 - NodeJs API + MongoDB
 
@@ -167,13 +167,15 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 
 4️⃣ **Khởi chạy AI Chatbot**
 
-- Sourse BackEnd: https://github.com/BaoVStorm/FastAPI_AI_ChatBox
+- Sourse Code: https://github.com/BaoVStorm/FastAPI_AI_ChatBox
   
 - Model Python chạy bằng FastAPI
 
 - Tạo public API thông qua Ngrok
 
 5️⃣ **Mở trang web Admin**
+
+- Sourse Code: https://github.com/BaoVStorm/Astrolingo_WebAdmin
 
 - Mở file HTML, chạy trên localhost hoặc server.
 
