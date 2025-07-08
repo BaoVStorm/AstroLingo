@@ -257,7 +257,8 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 #### 2.2 Trò chơi
 
 <p align="center" >
-	Updating...
+	<img src="https://github.com/user-attachments/assets/f0a55b32-3f6b-4917-a8cd-990971bbd216" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/7d6b22e2-3bb8-42e5-9345-3d6bca7cf343" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
 #### 2.3 Lịch sử
