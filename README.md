@@ -368,3 +368,24 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/b8517b82-12f2-45ee-ab73-d03bed8e9f40" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+<br/>
+
+## ✈️ Hướng phát triển
+- Thêm phần luyện Speaking & Writing.
+
+- Mở rộng bộ từ vựng theo chủ đề.
+
+- Nâng cấp AI Chatbot với nhiều kịch bản hội thoại.
+
+- Triển khai app trên Google Play.
+
+<br/>
+
+## 🔗 Thông tin liên hệ
+
+- Họ tên: Trần Vũ Bão
+
+- Tel: 0915014470
+
+- Email: tranvubao2004@gmail.com
+
