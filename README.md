@@ -209,7 +209,7 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/1750a391-ee78-43fc-8325-8e83cc2efa5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
-### 2. Trang chủ
+### 2. Trang chủ (Home)
 > ✨ trang chủ
 >
 
@@ -258,5 +258,48 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	Updating...
 </p> 
 
+#### 2.3 Lịch sử
+
+- Từ của bạn / đã đánh dấu
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/22c17130-8457-45df-8d6a-9ff742263620" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+- Lịch sử thi
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/74edb631-a001-4f09-bea6-ff722b5d97de" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/eca445c8-70a7-46b0-9f0a-a7ac44fb75e3" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+- Câu làm sai
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/3407236f-143f-49a7-bac5-5e7ac7a0b49f" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/6a70f13b-c49b-4769-88c3-95e8effc1eb9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+### 3. Thi (Test) | Main Activity
+> ✨ Các bài thi
+>
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/1f6094c6-60d4-420b-bf42-fcd54ca74cf5" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/8c50e885-a084-46ba-8f54-55c3fbd0fe9b" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+> ✨ Thi bài test
+>
+
+<p align="center" >
+	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+<p align="center" >
+	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+
+</p> 
 
 
