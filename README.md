@@ -177,7 +177,7 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 <br/>
 
 ## 🕹️ Giao diện & chức năng
-### Trang đăng ký / đăng nhập / quên mật khẩu
+### 1. Trang đăng ký / đăng nhập / quên mật khẩu
 > ✨ đầu trang
 >
 
@@ -209,4 +209,12 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/1750a391-ee78-43fc-8325-8e83cc2efa5d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
+### 2. Trang chủ
+> ✨ trang chủ
+>
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/4b3590e2-2014-4761-a7b8-d1f2bc922258" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/ffa1bd2f-36c5-48af-9beb-b9317fd2161d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p>
 
