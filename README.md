@@ -243,8 +243,13 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/ca257cf7-5ed2-48ed-8dfe-828bd9e48692" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
+- Từ của bạn
 
+#### 2.2 Trò chơi
 
+<p align="center" >
+	Updating...
+</p> 
 
 
 
