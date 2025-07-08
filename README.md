@@ -20,6 +20,8 @@
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" alt="Python" title="Python"/></code>
 </div>
 
+<br/>
+
 <div align="center"> <h1>Astrolingo</h1> </div>
 
 Mệt mỏi với việc học tiếng Anh mà không biết bắt đầu từ đâu? Bạn đang tìm kiếm một công cụ luyện thi TOEIC hiệu quả, tiện lợi và dễ sử dụng? **AstroLingo** chính là người bạn đồng hành mà bạn đang cần!
