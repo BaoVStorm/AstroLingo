@@ -218,3 +218,17 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/ffa1bd2f-36c5-48af-9beb-b9317fd2161d" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p>
 
+#### 2.1 Từ vựng
+
+- Tra / Dịch từ vựng
+
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/a6a4588e-7cd8-4edc-aea6-4778ca775e90" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/7cd63a6f-a008-430c-a2b2-f80645c37e2e" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+</p> 
+
+
+
+
+
+
