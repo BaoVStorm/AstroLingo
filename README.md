@@ -305,9 +305,12 @@ git clone https://github.com/BaoVStorm/Astrolingo.git
 	<img src="https://github.com/user-attachments/assets/a2f0ccc8-a4ae-48a0-841b-6f25f10d34d9" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
-<p align="center" >
-	<img src="" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+> ✨ Thi bài test
+>
 
+<p align="center" >
+	<img src="https://github.com/user-attachments/assets/11c07736-b645-464d-b458-d69067c43d9f" alt="AstroLingo Screenshot" width="280" hspace="15"/>
+	<img src="https://github.com/user-attachments/assets/bbcbedae-8100-4f8a-9d98-c686a1bbe469" alt="AstroLingo Screenshot" width="280" hspace="15"/>
 </p> 
 
 
